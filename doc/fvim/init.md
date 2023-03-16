@@ -39,15 +39,15 @@ fvim
 
 ## `init.lua`的配置
 ```lua
-require "config.options"
-require "config.lazy"
+require("config.options")
+require("config.lazy")
 
 vim.api.nvim_create_autocmd("User", {
-  pattern = "VeryLazy",
-  callback = function()
-    require "config.autocmds"
-    require "config.keymaps"
-  end,
+	pattern = "VeryLazy",
+	callback = function()
+		require("config.autocmds")
+		require("config.keymaps")
+	end,
 })
 ```
 前两行是调用`lua/config`中的`options.lua`和`lazy.lua`（注意不需要后缀名，且默认路径为`lua/`）
@@ -58,33 +58,37 @@ vim.api.nvim_create_autocmd("User", {
 ## 配置`lazy.nvim`
 ```lua
 -- Install lazy.nvim
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  -- bootstrap lazy.nvim
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+	-- bootstrap lazy.nvim
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- Configure lazy.nvim
 require("lazy").setup("plugins", {
-  defaults = { lazy = false, version = false }, -- always use the latest git commit
-  install = { colorscheme = { "tokyonight", "gruvbox" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
-  performance = {
-    rtp = {
-      -- disable some rtp plugins
-      disabled_plugins = {
-        "gzip",
-        "matchit",
-        "matchparen",
-        "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
-      },
-    },
-  },
+	defaults = { lazy = true, version = false }, -- always use the latest git commit
+	install = { colorscheme = { "tokyonight", "gruvbox" } },
+	checker = { enabled = true }, -- automatically check for plugin updates
+	performance = {
+		rtp = {
+			-- disable some rtp plugins
+			disabled_plugins = {
+				"gzip",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
 })
 ```
 前半部分是安装`lazy.nvim`，后半部分是简单的配置`lazy.nvim`
