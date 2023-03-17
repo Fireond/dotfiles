@@ -1,0 +1,18 @@
+[submodule "zsh/.zsh/plugins/z.lua"]
+	path = zsh/.zsh/plugins/z.lua
+	url = https://github.com/skywind3000/z.lua.git
+[submodule "zsh/.zsh/plugins/fast-syntax-highlighting"]
+	path = zsh/.zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+[submodule "zsh/.zsh/plugins/zsh-autosuggestions"]
+	path = zsh/.zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "zsh/.zsh/plugins/zsh-completions"]
+	path = zsh/.zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "zsh/.zsh/plugins/zsh-vi-mode"]
+	path = zsh/.zsh/plugins/zsh-vi-mode
+	url = https://github.com/jeffreytse/zsh-vi-mode.git
+[submodule "zsh/.zsh/themes/powerlevel10k"]
+	path = zsh/.zsh/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
