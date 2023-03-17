@@ -73,7 +73,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Configure lazy.nvim
-require("lazy").setup("plugins", {
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },
+  }
 	defaults = { lazy = true, version = false }, -- always use the latest git commit
 	install = { colorscheme = { "tokyonight", "gruvbox" } },
 	checker = { enabled = true }, -- automatically check for plugin updates
