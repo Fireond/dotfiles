@@ -27,6 +27,13 @@ mv ~/.local/share/nvim ~/.local/share/nvim.fvim
 mv ~/.local/state/nvim ~/.local/state/nvim.fvim
 mv ~/.cache/nvim ~/.cache/nvim.fvim
 ```
+恢复
+```
+mv ~/.config/nvim.fvim ~/.config/nvim
+mv ~/.local/share/nvim.fvim ~/.local/share/nvim
+mv ~/.local/state/nvim.fvim ~/.local/state/nvim
+mv ~/.cache/nvim.fvim ~/.cache/nvim
+```
 
 ## Neovim文件结构
 ```
@@ -84,7 +91,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-  }
+  },
 	defaults = { lazy = true, version = false }, -- always use the latest git commit
 	install = { colorscheme = { "tokyonight", "gruvbox" } },
 	checker = { enabled = true }, -- automatically check for plugin updates

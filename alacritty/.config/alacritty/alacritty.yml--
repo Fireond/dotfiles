@@ -17,7 +17,7 @@ window:
     lines: 40
   dynamic_padding: false
   decorations: none
-  startup_mode: SimpleFullscreen
+  startup_mode: Maximized
 
 font:
   normal:
