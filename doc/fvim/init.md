@@ -22,10 +22,10 @@ stow YourConfigName
 
 ## 备份nvim相关文件
 ```shell
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-mv ~/.local/state/nvim ~/.local/state/nvim.bak
-mv ~/.cache/nvim ~/.cache/nvim.bak
+mv ~/.config/nvim ~/.config/nvim.fvim
+mv ~/.local/share/nvim ~/.local/share/nvim.fvim
+mv ~/.local/state/nvim ~/.local/state/nvim.fvim
+mv ~/.cache/nvim ~/.cache/nvim.fvim
 ```
 
 ## Neovim文件结构
