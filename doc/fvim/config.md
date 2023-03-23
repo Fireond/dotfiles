@@ -148,7 +148,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 ### Some util
 
-In `lua/util/nvim.lua`
+In `lua/util/init.lua`
 ```lua
 local Util = require("lazy.core.util")
 
