@@ -20,6 +20,14 @@ stow YourConfigName
 其作用相当于将`YourConfigName`下的所有文件放置于主目录`.dotfiles`的父级目录`~`（也就是家目录）中，也就是创建了`~/.config/nvim`。
 可将其余配置文件均利用此方法放置于`.dotfiles`中，从而只利用一个仓库管理
 
+## 备份nvim相关文件
+```shell
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
+```
+
 ## Neovim文件结构
 ```
 fvim
