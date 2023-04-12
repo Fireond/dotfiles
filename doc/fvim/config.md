@@ -180,7 +180,7 @@ function M.has(plugin)
   return require("lazy.core.config").plugins[plugin] ~= nil
 end
 
-local enabled = true
+local enabled = true -- default enable
 function M.toggle_diagnostics()
   enabled = not enabled
   if enabled then

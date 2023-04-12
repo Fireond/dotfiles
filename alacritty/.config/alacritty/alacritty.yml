@@ -10,12 +10,12 @@ selection:
 window:
   opacity: 0.7
   padding:
-    x: 6
-    y: 6
-  dimensions:
-    columns: 133
-    lines: 40
-  dynamic_padding: false
+    x: 1
+    y: 1
+  # dimensions:
+  #   columns: 133
+  #   lines: 40
+  dynamic_padding: true
   decorations: none
   startup_mode: Maximized
 
@@ -240,3 +240,7 @@ key_bindings:
   - { key: Comma, mods: Alt|Shift, chars: "\x1b<" }
   - { key: Period, mods: Alt|Shift, chars: "\x1b>" }
   - { key: Slash, mods: Alt|Shift, chars: "\x1b?" }
+
+  # Vi Mode ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+
+  - { key: Space,  mods: Command|Shift, mode: ~Search,    action: ToggleViMode            }

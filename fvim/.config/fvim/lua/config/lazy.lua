@@ -15,9 +15,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Configure lazy.nvim
 require("lazy").setup({
-  spec = {
-    { import = "plugins" },
-  },
+	spec = {
+		{ import = "plugins" },
+	},
 	defaults = { lazy = true, version = false }, -- always use the latest git commit
 	install = { colorscheme = { "tokyonight", "gruvbox" } },
 	checker = { enabled = true }, -- automatically check for plugin updates
@@ -26,7 +26,7 @@ require("lazy").setup({
 			-- disable some rtp plugins
 			disabled_plugins = {
 				"gzip",
-        "netrwPlugin",
+				"netrwPlugin",
 				"tarPlugin",
 				"tohtml",
 				"tutor",

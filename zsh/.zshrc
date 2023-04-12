@@ -119,12 +119,12 @@ function j() {
 alias ll='clear'
 alias proxy='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
 alias unproxy='unset all_proxy'
-alias python='/opt/homebrew/bin/python3'
-alias pip='/opt/homebrew/bin/pip3'
+alias python='/opt/homebrew/bin/python3.11'
+# alias pip='/opt/homebrew/bin/pip3'
 alias vi='nvim'
 alias v='nvim'
-alias czsh='vi ~/.zshrc'
-alias cala='vi ~/.config/alacritty/alacritty.yml'
+alias czsh='nvim ~/.zshrc'
+alias cala='nvim ~/.config/alacritty/alacritty.yml'
 alias szsh='source ~/.zshrc'
 alias g='git'
 alias gcl='git clone'
@@ -140,6 +140,8 @@ alias la='exa -a --color=always --group-directories-first --icons' # all files a
 alias l='exa -l --color=always --group-directories-first --icons' # tree listing
 alias disablesleep='sudo pmset -a disablesleep 1'
 alias enablesleep='sudo pmset -a disablesleep 0'
+alias op='open .'
+alias pdf='sioyek'
 
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
