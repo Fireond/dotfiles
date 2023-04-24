@@ -16,6 +16,25 @@ end
 -- Paste over currently selected text without yanking it
 map("v", "p", '"_dP', { silent = true })
 
+-- go to files
+map("n", "<leader>go", "<cmd>e ~/.config/fvim/lua/config/options.lua<cr>", { desc = "Go to options config" })
+map("n", "<leader>gk", "<cmd>e ~/.config/fvim/lua/config/keymaps.lua<cr>", { desc = "Go to keymaps config" })
+map("n", "<leader>gs", function()
+	require("luasnip.loaders").edit_snippet_files({})
+end, { desc = "Go to luasnip config" })
+map(
+	"n",
+	"<leader>gp",
+	"<cmd>Telescope file_browser path=~/.config/fvim/lua/plugins<cr>",
+	{ desc = "Go to plugins config" }
+)
+map(
+	"n",
+	"<leader>gl",
+	"<cmd>Telescope file_browser path=~/.config/fvim/lua/plugins<cr>",
+	{ desc = "Go to lazyvim config" }
+)
+
 -- better movement
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -44,13 +63,11 @@ map("n", "<Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window wid
 map("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
 map("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 
--- buffers
--- ===
--- map({ "n", "i" }, "<A-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
--- map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
--- map({ "n", "i" }, "<A-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
--- map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
--- ===
+-- Buffers
+map({ "n", "i" }, "<A-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+map({ "n", "i" }, "<A-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 -- Delete window in `mini.bufremove`
 map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
 
@@ -98,4 +115,4 @@ end, { desc = "Toggle Conceal" })
 
 -- Others
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
-map("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
+map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })

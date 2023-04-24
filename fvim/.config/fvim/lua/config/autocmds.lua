@@ -76,12 +76,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- Opens PDF files in sioyek instead of viewing the binary in Neovim
-autocmd("BufReadPost", {
+vim.api.nvim_create_autocmd("BufReadPost", {
 	pattern = "*.pdf",
 	callback = function()
-		fn.jobstart("sioyek '" .. fn.expand("%") .. "'", { detach = true })
-		api.nvim_buf_delete(0, {})
+		vim.fn.jobstart("sioyek '" .. vim.fn.expand("%") .. "'", { detach = true })
+		vim.api.nvim_buf_delete(0, {})
 	end,
-	group = augroup("OpenPDF", {}),
+	group = augroup("OpenPDF"),
 	desc = "Opens PDF file in sioyek",
 })
