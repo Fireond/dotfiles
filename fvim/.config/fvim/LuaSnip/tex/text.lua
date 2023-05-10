@@ -4,7 +4,7 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 local fmta = require("luasnip.extras.fmt").fmta
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 return {
   s({ trig = "dps", snippetType = "autosnippet" }, {
@@ -74,12 +74,16 @@ return {
     \begin{spacing}{1.1}
     \maketitle \thispagestyle{empty}
       
-      <>
+    <>
       
     \end{spacing}
     \end{document}
     ]],
-      { c(1, { t("Abstract Algebra"), t("Mathematics for Artificial Intelligence") }), i(2, "number"), i(0) }
+      {
+        c(1, { t("Abstract Algebra"), t("Mathematics for Artificial Intelligence"), t("Quantum Computer Science") }),
+        i(2, "number"),
+        i(0),
+      }
     ),
     { condition = tex.in_text }
   ),

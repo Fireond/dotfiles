@@ -22,12 +22,9 @@ map("n", "<leader>gk", "<cmd>e ~/.config/fvim/lua/config/keymaps.lua<cr>", { des
 map("n", "<leader>gs", function()
 	require("luasnip.loaders").edit_snippet_files({})
 end, { desc = "Go to luasnip config" })
-map(
-	"n",
-	"<leader>gp",
-	"<cmd>Telescope file_browser path=~/.config/fvim/lua/plugins<cr>",
-	{ desc = "Go to plugins config" }
-)
+map("n", "<leader>gp", function()
+  require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/fvim/lua/plugins" })
+end, { desc = "Go to plugins config" })
 map(
 	"n",
 	"<leader>gl",

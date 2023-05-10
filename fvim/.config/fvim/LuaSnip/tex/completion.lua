@@ -9,7 +9,7 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
@@ -157,6 +157,14 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "bot", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\bigotimes\\limits_{<>}^{<>}", {
+      i(1),
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "pd", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\prod\\limits_{<>}^{<>}", {
       i(1),
@@ -198,43 +206,43 @@ return {
   ),
   s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\int_{<>}^{<>}<> \\dd{<>}", {
+    fmta("\\int_{<>}^{<>} <> \\dd{<>}", {
       i(1),
       i(2),
-      i(0),
       i(3),
+      i(0),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "2int", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\int_{<>}^{<>}\\int_{<>}^{<>}<> \\dd{<>}\\dd{<>}", {
+    fmta("\\int_{<>}^{<>}\\int_{<>}^{<>} <> \\dd{<>}\\dd{<>}", {
       i(1),
       i(2),
       i(3),
       i(4),
-      i(0),
       i(5),
       i(6),
+      i(0),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "iint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\iint\\limits_{<>}^{<>}<> \\dd{<>}", {
+    fmta("\\iint\\limits_{<>}^{<>} <> \\dd{<>}", {
       i(1, "-\\infty"),
       i(2, "\\infty"),
-      i(0),
       i(3),
+      i(0),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "lint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\int\\limits_{<>}<> \\dd{<>}", {
+    fmta("\\int\\limits_{<>} <> \\dd{<>}", {
       i(1, "\\infty"),
-      i(0),
       i(2),
+      i(0),
     }),
     { condition = tex.in_mathzone }
   ),

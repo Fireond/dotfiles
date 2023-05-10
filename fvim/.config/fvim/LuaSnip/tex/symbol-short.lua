@@ -10,7 +10,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
@@ -43,7 +43,7 @@ return {
     t("\\in"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "notin", wordTrig = false, snippetType = "autosnippet" }, {
-    t("\\not\\in"),
+    t("not\\in"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "aa", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\forall"),
@@ -194,6 +194,9 @@ return {
   }, { condition = tex.in_mathzone }),
   s({ trig = "not", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
     t("\\not"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "par", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\partial"),
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },

@@ -8,7 +8,14 @@ local d = ls.dynamic_node
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
-local tex = require("utils.latex")
+local tex = require("util.latex")
+local get_visual = function(args, parent)
+  if #parent.snippet.env.SELECT_RAW > 0 then
+    return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
+  else -- If SELECT_RAW is empty, return a blank insert node
+    return sn(nil, i(1))
+  end
+end
 
 return {
   s(
@@ -164,6 +171,20 @@ return {
       ]],
       {
         i(0),
+      }
+    ),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "bal", snippetType = "autosnippet", priority = 2000 },
+    fmta(
+      [[
+      \begin{aligned}
+        <>
+      \end{aligned}
+      ]],
+      {
+        d(1, get_visual),
       }
     ),
     { condition = tex.in_mathzone }

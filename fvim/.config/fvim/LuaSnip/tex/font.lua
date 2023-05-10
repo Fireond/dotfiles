@@ -14,7 +14,7 @@ local get_visual = function(args, parent)
   end
 end
 
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 return {
   s(

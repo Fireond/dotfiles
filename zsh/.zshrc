@@ -123,6 +123,7 @@ alias python='/opt/homebrew/bin/python3.11'
 # alias pip='/opt/homebrew/bin/pip3'
 alias vi='nvim'
 alias v='nvim'
+alias f='NVIM_APPNAME=fvim nvim'
 alias czsh='nvim ~/.zshrc'
 alias cala='nvim ~/.config/alacritty/alacritty.yml'
 alias szsh='source ~/.zshrc'
@@ -131,9 +132,10 @@ alias gcl='git clone'
 alias gs='git status'
 alias ga='git add'
 alias gaa='git add --all'
-alias gc='git commit -m'
+alias gc='git commit'
 alias gac='git commit -am'
-alias gp='git push'
+alias gps='git push'
+alias gpl='git pull'
 alias gitlog='git log --all --graph --pretty=format:"%Cred%h%Creset %C(bold blue)%an%Creset %s %Cgreen(%cr) %Creset" --abbrev-commit'
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
 alias la='exa -a --color=always --group-directories-first --icons' # all files and directories
@@ -142,6 +144,7 @@ alias disablesleep='sudo pmset -a disablesleep 1'
 alias enablesleep='sudo pmset -a disablesleep 0'
 alias op='open .'
 alias pdf='sioyek'
+alias tt='toggle_alacritty_opacity'
 
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 

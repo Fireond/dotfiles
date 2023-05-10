@@ -16,7 +16,7 @@ local get_visual = function(args, parent)
     return sn(nil, i(1))
   end
 end
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 return {
   s({ trig = "ii", snippetType = "autosnippet" }, fmta("$<>$", i(1))),

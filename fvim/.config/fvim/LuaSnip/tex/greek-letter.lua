@@ -1,7 +1,7 @@
 local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 return {
   s({ trig = "alp", snippetType = "autosnippet", wordTrig = false }, {
@@ -96,6 +96,9 @@ return {
   }, { condition = tex.in_mathzone }),
   s({ trig = "pi", snippetType = "autosnippet", wordTrig = false }, {
     t("\\pi"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "\\pii", snippetType = "autosnippet", wordTrig = false, priority = 2000 }, {
+    t("p_i"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "Pi", snippetType = "autosnippet", wordTrig = false }, {
     t("\\Pi"),

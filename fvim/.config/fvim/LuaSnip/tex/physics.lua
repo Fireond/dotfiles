@@ -10,11 +10,11 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
-    return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
+    return sn(nil, t(parent.snippet.env.SELECT_RAW))
   else -- If SELECT_RAW is empty, return a blank insert node
     return sn(nil, i(1))
   end
@@ -109,7 +109,7 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "pm", snippetType = "autosnippet" },
+    { trig = "pmat", snippetType = "autosnippet" },
     fmta("\\pmat{<>}", {
       i(0),
     }),
@@ -196,27 +196,34 @@ return {
   ),
   s(
     { trig = "abs", snippetType = "autosnippet" },
-    fmta("\\abs{<>}", {
+    fmta("\\abs*{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "bk", snippetType = "autosnippet" },
-    fmta("\\ip{<>}{<>}", {
-      i(1),
+    { trig = "vu", snippetType = "autosnippet" },
+    fmta("\\vu{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }
   ),
-  s(
-    { trig = "kb", snippetType = "autosnippet" },
-    fmta("\\op{<>}{<>}", {
-      i(1),
-      i(0),
-    }),
-    { condition = tex.in_mathzone }
-  ),
+  -- s(
+  --   { trig = "bk", snippetType = "autosnippet" },
+  --   fmta("\\ip{<>}{<>}", {
+  --     i(1),
+  --     i(0),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
+  -- s(
+  --   { trig = "kb", snippetType = "autosnippet" },
+  --   fmta("\\op{<>}{<>}", {
+  --     i(1),
+  --     i(0),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
   s(
     { trig = "ev", snippetType = "autosnippet" },
     fmta("\\ev{<>}", {

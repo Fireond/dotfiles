@@ -9,7 +9,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
@@ -210,24 +210,31 @@ return {
   s({ trig = "det", snippetType = "autosnippet" }, fmta("\\det", {}), { condition = tex.in_mathzone }),
   s({ trig = "vol", snippetType = "autosnippet" }, fmta("\\Vol", {}), { condition = tex.in_mathzone }),
   s(
+    { trig = "->", snippetType = "autosnippet" },
+    fmta("\\xlongrightarrow{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "gt", snippetType = "autosnippet" },
     fmta("\\gt{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }
   ),
+  s({ trig = "min", snippetType = "autosnippet" }, fmta("\\min", {}), { condition = tex.in_mathzone }),
   s(
-    { trig = "min", snippetType = "autosnippet" },
+    { trig = "\\minl", snippetType = "autosnippet" },
     fmta("\\min\\limits_{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }
   ),
+  s({ trig = "max", snippetType = "autosnippet" }, fmta("\\max", {}), { condition = tex.in_mathzone }),
   s(
-    { trig = "max", snippetType = "autosnippet" },
-    fmta("\\max\\limits_{<>}", {
-      i(0),
-    }),
+    { trig = "\\maxl", snippetType = "autosnippet" },
+    fmta("\\max\\limits_{<>}", { i(0) }),
     { condition = tex.in_mathzone }
   ),
   s(
@@ -292,6 +299,27 @@ return {
   s(
     { trig = "sq", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\sqrt{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "mod", wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\mod{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "nmod", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\nmod{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "pmod", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\pmod{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }
