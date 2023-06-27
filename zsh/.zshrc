@@ -8,7 +8,12 @@ fi
 export ZSH=$HOME/.zsh
 export PATH=/Users/hanyu_yan/Library/Python/3.11/bin:$PATH
 ## In order to use the executable scripts inside ~/bin directly
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/scripts:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -140,11 +145,16 @@ alias gitlog='git log --all --graph --pretty=format:"%Cred%h%Creset %C(bold blue
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
 alias la='exa -a --color=always --group-directories-first --icons' # all files and directories
 alias l='exa -l --color=always --group-directories-first --icons' # tree listing
+alias lg='l | grep'
 alias disablesleep='sudo pmset -a disablesleep 1'
 alias enablesleep='sudo pmset -a disablesleep 0'
 alias op='open .'
 alias pdf='sioyek'
 alias tt='toggle_alacritty_opacity'
+alias jo='joshuto'
+alias a='joshuto'
+alias bs='brew search'
+alias bi='brew install'
 
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
