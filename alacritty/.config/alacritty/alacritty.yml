@@ -17,7 +17,7 @@ window:
   #   lines: 40
   dynamic_padding: true
   decorations: none
-  startup_mode: Maximized
+  # startup_mode: Maximized
 
 font:
   normal:
@@ -59,8 +59,10 @@ key_bindings:
   - { key: Return,   mods: Command|Shift, chars: "\x1c|"    } # new horizontal pane with commands menu
   - { key: T,        mods: Command,       chars: "\x1cc"    } # new tab with default shell
   - { key: T,        mods: Command|Shift, chars: "\x1cC"    } # new tab with commands menu
-  - { key: N,        mods: Command,       chars: "\x1cS"    } # switch session in current window with local sessions menu
-  - { key: N,        mods: Command|Shift, command: { program: "/opt/homebrew/bin/alacritty", args: ["msg", "create-window", "-e", "/bin/zsh", "-l", "-c", "tmux-sessions --all"] } } # open session in new window with all sessions menu across servers
+  # - { key: N,        mods: Command,       action: ""    } # switch session in current window with local sessions menu
+  - { key: N,              mods: Command,                    action: CreateNewWindow       }
+  - { key: N,        mods: Command|Shift, command: { program: "/opt/homebrew/bin/alacritty"} } # open session in new window with all sessions menu across servers
+  # , args: ["msg", "create-window", "-e", "/bin/zsh", "-l", "-c", "tmux-sessions --all"]
 
   # ----- popup window -----
   - { key: P,        mods: Command,       chars: "\x1cP"    } # close the pane
