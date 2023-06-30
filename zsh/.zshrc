@@ -14,6 +14,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# Blur {{{
+# if [[ $(ps --no-header -p $PPID -o comm) =~ '^yakuake|kitty$' ]]; then
+#         for wid in $(xdotool search --pid $PPID); do
+#             xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
+# fi
+# }}}
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -131,6 +137,7 @@ alias v='nvim'
 alias f='NVIM_APPNAME=fvim nvim'
 alias czsh='nvim ~/.zshrc'
 alias cala='nvim ~/.config/alacritty/alacritty.yml'
+alias ckitty='nvim ~/.config/kitty/kitty.conf'
 alias szsh='source ~/.zshrc'
 alias g='git'
 alias gcl='git clone'
