@@ -128,6 +128,7 @@ function j() {
 
 ### --- Alias --- ###
 alias ll='clear'
+alias jj='cd ..'
 alias proxy='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
 alias unproxy='unset all_proxy'
 alias python='/opt/homebrew/bin/python3.11'
@@ -137,6 +138,8 @@ alias v='nvim'
 alias f='NVIM_APPNAME=fvim nvim'
 alias czsh='nvim ~/.zshrc'
 alias cala='nvim ~/.config/alacritty/alacritty.yml'
+alias cyabai='nvim ~/.config/yabai/yabairc'
+alias cskhd='nvim ~/.config/skhd/skhdrc'
 alias ckitty='nvim ~/.config/kitty/kitty.conf'
 alias szsh='source ~/.zshrc'
 alias g='git'
