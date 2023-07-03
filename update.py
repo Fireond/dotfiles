@@ -11,6 +11,9 @@ def git_update():
         subprocess.run(['git', 'commit', '-m', 'update'],
                        cwd=repo_path, check=True)
 
+        subprocess.run(['git', 'push'],
+                       cwd=repo_path, check=True)
+
         print("Git update successful!")
 
     except subprocess.CalledProcessError as e:
