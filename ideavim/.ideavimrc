@@ -2,7 +2,7 @@
 " = Extensions =====================================
 " ================================================================================================
 Plug 'tpope/vim-surround'
-Plug 'preservim/nerdtree'
+set NERDTree
 Plug 'terryma/vim-multiple-cursors'
 set commentary
 set highlightedyank
@@ -43,6 +43,8 @@ omap L $
 nmap H ^
 vmap H ^
 omap H ^
+
+nmap E <action>(ShowErrorDescription)
 
 nmap <esc> :noh<cr><esc>
 nmap <A-l> <action>(NextTab)

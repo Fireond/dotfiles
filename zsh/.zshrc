@@ -109,6 +109,14 @@ function j() {
   fi
 }
 
+function brew() {
+  command brew "$@" 
+
+  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+    sketchybar --trigger brew_update
+  fi
+}
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -166,6 +174,8 @@ alias jo='joshuto'
 alias a='joshuto'
 alias bs='brew search'
 alias bi='brew install'
+alias gsu='git submodule update --remote'
+alias gsi='git submodule init'
 
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 

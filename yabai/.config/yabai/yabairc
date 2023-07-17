@@ -25,15 +25,20 @@ yabai -m config mouse_modifier alt
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
-yabai -m config external_bar all:25:0
+yabai -m config external_bar all:40:0
+
+# signal with sketchybar
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
 # general space settings
 yabai -m config layout bsp
-yabai -m config top_padding 10
-yabai -m config bottom_padding 10
-yabai -m config left_padding 10
-yabai -m config right_padding 10
-yabai -m config window_gap 10
+yabai -m config top_padding 8
+yabai -m config bottom_padding 8
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 8
 # yabai -m config window_animation_duration    0.00
 
 yabai -m rule --add app="^iStat*" sticky=on layer=above manage=off border=off
@@ -47,6 +52,9 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^WeChat$" manage=off
 yabai -m rule --add app="^HapiGo$" manage=off
+yabai -m rule --add app="^360压缩大师$" manage=off
+yabai -m rule --add app="^Font Book$" manage=off
+yabai -m rule --add app="^NeatDownloadManager$" manage=off
 # yabai -m rule --add app="^TencentMeeting$" manage=off
 
 echo "yabai configuration loaded.."
