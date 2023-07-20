@@ -4,6 +4,11 @@
 
 Reference Configurations: https://github.com/ColaMint/config/tree/main/sketchybar, https://github.com/FelixKratz/dotfiles/tree/e6288b3f4220ca1ac64a68e60fced2d4c3e3e20b
 
+**one-click installation**
+```bash
+./install_sketchybar.sh
+```
+
 Use `sf-symbols`, `jq`, `switchaudio-osx`(for audio device switching context menu), [sketchybar-app-font](https://github.com/kvndrsslr/sketchybar-app-font):
 ```bash
 brew install --cask sf-symbols
