@@ -9,7 +9,8 @@ LOCK=􀒳
 BELL=􀋚
 BELL_DOT=􀝗
 WECHAT=󰘑
-TEST=󰤑
+WIFI_ON=󰖩
+WIFI_OFF=󰖪
 
 # Git Icons
 GIT_ISSUE=􀍷
