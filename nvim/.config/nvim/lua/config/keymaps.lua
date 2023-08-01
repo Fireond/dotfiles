@@ -48,7 +48,7 @@ map("n", "<leader>gk", "<cmd>e ~/.config/nvim/lua/config/keymaps.lua<cr>", { des
 map("n", "<leader>ga", "<cmd>e ~/.config/nvim/lua/config/autocmds.lua<cr>", { desc = "Go to autocmds config" })
 map("n", "<leader>gu", "<cmd>e ~/.config/nvim/lua/util/latex.lua<cr>", { desc = "Go to util config" })
 map("n", "<leader>gl", "<cmd>e ~/.config/nvim/lua/plugins/write/latex.lua<cr>", { desc = "Go to latex.nvim config" })
-map("n", "<leader>gt", "<cmd>e ~/Documents/Latex/Package_elegantbook.tex<cr>", { desc = "Go to latex template" })
+map("n", "<leader>gt", "<cmd>e ~/Documents/Latex/note_template.tex<cr>", { desc = "Go to latex template" })
 map("n", "<leader>gi", "<cmd>e ~/Documents/Latex/latexindent.yaml<cr>", { desc = "Go to latexindent" })
 map("n", "<leader>gs", function()
   require("luasnip.loaders").edit_snippet_files({})

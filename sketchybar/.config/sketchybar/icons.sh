@@ -9,6 +9,7 @@ LOCK=􀒳
 BELL=􀋚
 BELL_DOT=􀝗
 WECHAT=󰘑
+QQ=󰘅
 WIFI_ON=󰖩
 WIFI_OFF=󰖪
 

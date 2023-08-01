@@ -17,6 +17,8 @@ brew install --cask sf-symbols
 brew install jq
 brew install switchaudio-osx
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+brew install cava
+brew install --cask background-music
 
 # clone config
 svn export https://github.com/Fireond/dotfiles.git/trunk/sketchybar/.config/sketchybar ~/.config/sketchybar
@@ -24,7 +26,7 @@ svn export https://github.com/Fireond/dotfiles.git/trunk/sketchybar/.config/sket
 # start sketchybar
 brew services start sketchybar
 ```
-Use `sf-symbols`, `jq`, `switchaudio-osx`(for audio device switching context menu), [sketchybar-app-font](https://github.com/kvndrsslr/sketchybar-app-font)
+Use `sf-symbols`, `jq`, `switchaudio-osx`(for audio device switching context menu), `cava`, `background-music`, [sketchybar-app-font](https://github.com/kvndrsslr/sketchybar-app-font)
 
 (Optional) If you use yabai (if not just remove `yabai` item from `ìtems/front_app.sh`), add yabai events:
 ```bash

@@ -251,6 +251,18 @@ return {
     { condition = line_begin }
   ),
   s(
+    { trig = "par", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \paragraph{<>}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "sec", snippetType = "autosnippet" },
     fmta(
       [[

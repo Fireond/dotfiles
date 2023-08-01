@@ -5,8 +5,17 @@ local t = ls.text_node
 local i = ls.insert_node
 local fmta = require("luasnip.extras.fmt").fmta
 local tex = require("util.latex")
+local rep = require("luasnip.extras").rep
 
 return {
+  s(
+    { trig = "operator" },
+    fmta("\\DeclareMathOperator{\\<>}{<>}", {
+      i(1),
+      rep(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
   s({ trig = "dps", snippetType = "autosnippet" }, {
     t("\\displaystyle"),
   }, { condition = tex.in_mathzone }),
@@ -95,15 +104,6 @@ return {
   -- }, { condition = tex.in_text }),
   s({ trig = "=>", snippetType = "autosnippet" }, {
     t("\\(\\implies\\)"),
-  }, { condition = tex.in_text }),
-  s({ trig = "pid", snippetType = "autosnippet" }, {
-    t("P.I.D."),
-  }, { condition = tex.in_text }),
-  s({ trig = "ufd", snippetType = "autosnippet" }, {
-    t("U.F.D."),
-  }, { condition = tex.in_text }),
-  s({ trig = "ed", snippetType = "autosnippet" }, {
-    t("E.D."),
   }, { condition = tex.in_text }),
   s(
     { trig = "homework" },

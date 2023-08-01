@@ -11,6 +11,7 @@ return {
         ["["] = { name = "+prev" },
         ["<leader><tab>"] = { name = "+tabs" },
         ["<leader>c"] = { name = "+code" },
+        ["<leader>t"] = { name = "+terminal" },
         ["<leader>f"] = { name = "+file/find" },
         ["<leader>q"] = { name = "+quit/session" },
         ["<leader>g"] = { name = "+go to" },

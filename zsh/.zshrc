@@ -8,7 +8,7 @@ fi
 export ZSH=$HOME/.zsh
 export PATH=/Users/hanyu_yan/Library/Python/3.11/bin:$PATH
 ## In order to use the executable scripts inside ~/bin directly
-export PATH=$HOME/scripts:$PATH
+export PATH=$HOME/.bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -160,6 +160,7 @@ alias gc='git commit'
 alias gac='git commit -am'
 alias gps='git push'
 alias gpl='git pull'
+alias upd='git pull; git add --all; git commit -m "update"; git push'
 alias gitlog='git log --all --graph --pretty=format:"%Cred%h%Creset %C(bold blue)%an%Creset %s %Cgreen(%cr) %Creset" --abbrev-commit'
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
 alias la='exa -a --color=always --group-directories-first --icons' # all files and directories

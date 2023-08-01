@@ -100,6 +100,12 @@ return {
     })
   ),
   s(
+    { trig = "ttt", snippetType = "autosnippet" },
+    fmta("\\texttt{<>}", {
+      i(0),
+    })
+  ),
+  s(
     { trig = "tbf", snippetType = "autosnippet", priority = 2000 },
     fmta("\\textbf{<>}", {
       d(1, get_visual),

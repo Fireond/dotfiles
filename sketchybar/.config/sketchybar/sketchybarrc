@@ -51,6 +51,8 @@ defaults=(
 	label.padding_right=$PADDINGS
 	padding_right=$PADDINGS
 	padding_left=$PADDINGS
+	background.padding_right=$PADDINGS
+	background.padding_left=$PADDINGS
 	background.height=26
 	background.corner_radius=9
 	background.border_width=2
@@ -79,10 +81,12 @@ source "$ITEM_DIR/calendar.sh"
 # source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/wifi.sh"
+# source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/wechat.sh"
-source "$ITEM_DIR/test.sh"
-source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/qq.sh"
+# source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/cava.sh"
+source "$ITEM_DIR/music.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update

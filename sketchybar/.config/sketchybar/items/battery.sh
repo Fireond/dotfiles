@@ -7,6 +7,7 @@ battery=(
 	padding_right=0
 	padding_left=0
 	label.drawing=on
+	label.padding_right=10
 	update_freq=120
 )
 

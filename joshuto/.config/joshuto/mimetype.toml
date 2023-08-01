@@ -25,6 +25,7 @@ text_default	= [
 ]
 
 reader_default	= [
+  { command = "sioyek" },
 	{ command = "evince", fork = true, silent = true },
 ]
 

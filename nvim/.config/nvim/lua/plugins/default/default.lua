@@ -15,19 +15,22 @@ return {
   },
   {
     "echasnovski/mini.bufremove",
-    -- stylua: ignore
-    keys =  function ()
-      return {
-      { "<leader>d", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer" },
-    }
-    end ,
+    keys = {
+      {
+        "<leader>d",
+        function()
+          require("mini.bufremove").delete(0, false)
+        end,
+        desc = "Delete Buffer",
+      },
+    },
   },
-  {
-    "akinsho/bufferline.nvim",
-    keys = function()
-      return {}
-    end,
-  },
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   keys = function()
+  --     return {}
+  --   end,
+  -- },
   {
     "nvim-telescope/telescope.nvim",
     keys = {
@@ -36,14 +39,14 @@ return {
       { "<leader>uC", false },
     },
   },
-  {
-    "lewis6991/gitsigns.nvim",
-    opts = {
-      on_attach = function()
-        return {}
-      end,
-    },
-  },
+  -- {
+  --   "lewis6991/gitsigns.nvim",
+  --   opts = {
+  --     on_attach = function()
+  --       return {}
+  --     end,
+  --   },
+  -- },
   {
     "echasnovski/mini.surround",
     opts = {
