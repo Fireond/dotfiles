@@ -1,6 +1,15 @@
-bookmark = [
-	{ key = "r",	path = "/" },
-	{ key = "e",	path = "/etc" },
+[[bookmark]]
+key = "p"
+path = "~/Documents/pdfs/"
 
-	{ key = "h",	path = "~/" },
-]
+[[bookmark]]
+key = "c"
+path = "/Users/hanyu_yan/Documents/Courses/"
+
+[[bookmark]]
+key = "l"
+path = "~/Documents/Latex/"
+
+[[bookmark]]
+key = "e"
+path = "/etc"

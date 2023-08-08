@@ -1,7 +1,12 @@
 return {
   {
     "abecodes/tabout.nvim",
-    dependencies = "nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "L3MON4D3/LuaSnip",
+      "hrsh7th/nvim-cmp",
+    },
+    lazy = false,
     config = {
       tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
       backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
@@ -10,6 +15,7 @@ return {
       default_tab = "<C-t>", -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
       default_shift_tab = "<C-w>", -- reverse shift default action,
       enable_backwards = true, -- well ...
+      completion = true,
       tabouts = {
         { open = "'", close = "'" },
         { open = '"', close = '"' },

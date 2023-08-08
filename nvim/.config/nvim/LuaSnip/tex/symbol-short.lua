@@ -57,6 +57,12 @@ return {
   s({ trig = "==", wordTrig = false, snippetType = "autosnippet" }, {
     t("&="),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "\\leq=", wordTrig = false, snippetType = "autosnippet" }, {
+    t("&\\leq"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "\\geq=", wordTrig = false, snippetType = "autosnippet" }, {
+    t("&\\geq"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "~=", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\approx"),
   }, { condition = tex.in_mathzone }),
@@ -206,6 +212,9 @@ return {
   }, { condition = tex.in_mathzone }),
   s({ trig = "lor", snippetType = "autosnippet" }, {
     t("\\lor"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "po", snippetType = "autosnippet" }, {
+    t("\\propto"),
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },

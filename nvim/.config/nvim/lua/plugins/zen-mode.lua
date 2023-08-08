@@ -1,6 +1,7 @@
 return {
   {
     "folke/zen-mode.nvim",
+    enabled = false,
     config = {
       window = {
         options = {

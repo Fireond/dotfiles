@@ -60,6 +60,7 @@ yabai -m rule --add app="^MonitorControl$" manage=off
 yabai -m rule --add app="^Tencent Lemon$" manage=off
 yabai -m rule --add app="^Kap$" manage=off border=off
 yabai -m rule --add app="^Snipaste$" manage=off border=off
+yabai -m rule --add app="^摸鱼单词$" manage=off border=off
 # yabai -m rule --add app="^TencentMeeting$" manage=off
 
 echo "yabai configuration loaded.."

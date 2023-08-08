@@ -16,6 +16,9 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
+  s({ trig = "con", snippetType = "autosnippet" }, {
+    t("\\text{const.}"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "dps", snippetType = "autosnippet" }, {
     t("\\displaystyle"),
   }, { condition = tex.in_mathzone }),
@@ -38,12 +41,28 @@ return {
   s({ trig = "and", snippetType = "autosnippet" }, {
     t("\\text{\\ and\\ }"),
   }, { condition = tex.in_mathzone }),
+  s(
+    { trig = "setc", snippetType = "autosnippet" },
+    fmta("\\setcounter{<>}{<>}", {
+      c(1, { t("exercise"), t("theorem") }),
+      i(2),
+    }),
+    { condition = tex.in_text }
+  ),
 
   s({ trig = "label", snippetType = "autosnippet" }, {
     t("\\label{"),
     i(0),
     t("}"),
   }, { condition = tex.in_text, show_condition = tex.in_text }),
+  s(
+    { trig = "href", snippetType = "autosnippet" },
+    fmta("\\href{<>}{<>}", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex.in_text }
+  ),
 
   s({ trig = "wlog", snippetType = "autosnippet" }, {
     t("without loss of generality"),

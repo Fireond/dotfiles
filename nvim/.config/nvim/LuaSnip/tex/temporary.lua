@@ -26,4 +26,25 @@ return {
   -- s({ trig = "tv", snippetType = "autosnippet" }, fmta("\\mathrm{TV}", {}), { condition = tex.in_mathzone }),
   -- s({ trig = "ce", snippetType = "autosnippet" }, fmta("\\mathrm{couple}", {}), { condition = tex.in_mathzone }),
   -- s({ trig = "mix", snippetType = "autosnippet" }, fmta("\\mathrm{mix}", {}), { condition = tex.in_mathzone }),
+  s({ trig = "\\psii", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\psi_i"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "\\varphii", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\varphi_i"),
+  }, { condition = tex.in_mathzone }),
+  s(
+    { trig = "(%a);", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\tilde{<>}", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s({ trig = "\\psi;", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\tilde{\\psi}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "\\varphi;", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\tilde{\\varphi}"),
+  }, { condition = tex.in_mathzone }),
 }

@@ -25,7 +25,7 @@ return {
       \(<>\)
       ]],
       {
-        i(0),
+        i(1),
       }
     ),
     { condition = tex.in_text }
@@ -39,7 +39,7 @@ return {
       .\]
       ]],
       {
-        i(0),
+        i(1),
       }
     ),
     { condition = tex.in_text }
@@ -83,6 +83,21 @@ return {
       \end{proof}
       ]],
       {
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "bex", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{exercise}[<>]
+        <>
+      \end{exercise}
+      ]],
+      {
+        i(1),
         i(0),
       }
     ),
@@ -285,6 +300,11 @@ return {
       }
     ),
     { condition = line_begin }
+  ),
+  s(
+    { trig = "subsubsection", snippetType = "autosnippet" },
+    c(1, { sn(nil, { t("\\subsubsection{"), i(1), t("}") }), sn(nil, { t("\\subsubsection*{"), i(1), t("{") }) }),
+    { condition = tex.in_text }
   ),
   s(
     { trig = "sss", snippetType = "autosnippet" },

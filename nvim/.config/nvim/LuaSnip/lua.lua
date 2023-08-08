@@ -30,6 +30,20 @@ return {
   ),
   ls.parser.parse_snippet("lm", "local M = {}\n\n$1 \n\nreturn M"),
   s(
+    { trig = "csnip", snippetType = "autosnippet" },
+    fmta(
+      [[
+      s(
+        { trig = "<>", snippetType = "autosnippet" },
+        c(1, { sn(nil, { t("\\<>{"), i(1), t("}") }), sn(nil, { t("\\<>*{"), i(1), t("{") }) }),
+        { condition = tex.<> }
+      ),
+      ]],
+      { i(1), rep(1), rep(1), c(2, { t("in_text"), t("in_quantikz"), t("in_mathzone") }) }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "optsnip", snippetType = "autosnippet" },
     fmta(
       [[

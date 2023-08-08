@@ -36,10 +36,10 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "bk", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\braket{<>}{<>}", {
-      i(1),
-      i(2),
+    { trig = "bk", snippetType = "autosnippet" },
+    c(1, {
+      sn(nil, { t("\\braket{"), i(1), t("}{"), i(2), t("}") }),
+      sn(nil, { t("\\braket[3]{"), i(1), t("}{"), i(2), t("}{"), i(3), t("}") }),
     }),
     { condition = tex.in_mathzone }
   ),
@@ -54,28 +54,28 @@ return {
   s(
     { trig = "pab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab( <> )", {
-      i(0),
+      i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "Bab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab\\{ <> \\}", {
-      i(0),
+      i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "bab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab[ <> ]", {
-      i(0),
+      i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "\\forallb", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab<< <> >>", {
-      i(0),
+      i(1),
     }),
     { condition = tex.in_mathzone }
   ),

@@ -120,10 +120,11 @@ keymap = [
 	{ keys = [ "m", "M" ],		command = "linemode sizemtime" },
 
 	{ keys = [ "g", "r" ],		command = "cd /" },
-	{ keys = [ "g", "c" ],		command = "cd ~/.config" },
+	# { keys = [ "g", "c" ],		command = "cd ~/.config" },
 	{ keys = [ "g", "d" ],		command = "cd ~/Downloads" },
-	{ keys = [ "g", "e" ],		command = "cd /etc" },
-	{ keys = [ "g", "h" ],		command = "cd ~/" },
+	{ keys = [ "g", "l" ],		command = "cd ~/Documents/Latex/" },
+	{ keys = [ "g", "c" ],		command = "cd ~/Documents/Courses/" },
+	{ keys = [ "g", "p" ],		command = "cd ~/Documents/pdfs/" },
 	{ keys = [ "?" ],		command = "help" }
 ]
 
