@@ -44,6 +44,13 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "ev", snippetType = "autosnippet" },
+    fmta("\\braket[1]{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "kb", snippetType = "autosnippet" },
     c(1, {
       sn(nil, { t("\\ketbra{"), i(1), t("}{"), i(2), t("}") }),

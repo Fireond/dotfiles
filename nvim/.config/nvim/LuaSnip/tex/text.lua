@@ -9,7 +9,7 @@ local rep = require("luasnip.extras").rep
 
 return {
   s(
-    { trig = "operator" },
+    { trig = "DeclareMathOperator" },
     fmta("\\DeclareMathOperator{\\<>}{<>}", {
       i(1),
       rep(1),

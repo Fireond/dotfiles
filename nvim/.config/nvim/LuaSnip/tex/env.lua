@@ -89,6 +89,21 @@ return {
     { condition = line_begin }
   ),
   s(
+    { trig = "bep", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{problem}[<>]
+        <>
+      \end{problem}
+      ]],
+      {
+        i(1),
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "bex", snippetType = "autosnippet" },
     fmta(
       [[
@@ -302,8 +317,8 @@ return {
     { condition = line_begin }
   ),
   s(
-    { trig = "subsubsection", snippetType = "autosnippet" },
-    c(1, { sn(nil, { t("\\subsubsection{"), i(1), t("}") }), sn(nil, { t("\\subsubsection*{"), i(1), t("{") }) }),
+    { trig = "sss", snippetType = "autosnippet" },
+    c(1, { sn(nil, { t("\\subsubsection{"), i(1), t("}") }), sn(nil, { t("\\subsubsection*{"), i(1), t("}") }) }),
     { condition = tex.in_text }
   ),
   s(

@@ -385,4 +385,7 @@ return {
     { condition = tex.in_mathzone }
   ),
   s({ trig = "pr", wordTrig = false, snippetType = "autosnippet" }, fmta("\\Pr", {}), { condition = tex.in_mathzone }),
+  s({ trig = "sch", snippetType = "autosnippet" }, {
+    t("\\Sch"),
+  }, { condition = tex.in_mathzone }),
 }

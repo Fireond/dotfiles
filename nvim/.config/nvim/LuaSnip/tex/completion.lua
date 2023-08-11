@@ -142,6 +142,14 @@ return {
     })
   ),
   s(
+    { trig = "\\](%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\] <>", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+    })
+  ),
+  s(
     { trig = "lim", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\lim\\limits_{<>}", {
       i(1),

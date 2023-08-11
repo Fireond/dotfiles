@@ -10,7 +10,7 @@ return {
               build = {
                 -- executable = "pdflatex",
                 -- args = {},
-                onSave = true,
+                onSave = false,
               },
               -- rootDirectory = "..",
               forwardSearch = {
