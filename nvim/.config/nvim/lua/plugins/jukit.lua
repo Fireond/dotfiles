@@ -1,6 +1,7 @@
 return {
   {
     "luk400/vim-jukit",
+    enabled = false,
     keys = {
       { "<leader>ln", "<cmd>call jukit#splits#output()<cr>", desc = "Open output window" },
       { "<leader>lN", "<cmd>call jukit#splits#close_output_split()<cr>", desc = "Close output window" },

@@ -24,6 +24,44 @@ return {
     )
   ),
   s(
+    { trig = "mte", wordTrig = false },
+    fmta(
+      [[
+      <>_string = "<>"
+      <>_tex = MathTex(r"<>", tex_template=myTemplate)
+      with self.voiceover(text=<>_string) as tracker:
+          self.play(Write(<>_tex))
+    ]],
+      {
+        i(1),
+        i(2),
+        rep(1),
+        i(3),
+        rep(1),
+        rep(1),
+      }
+    )
+  ),
+  s(
+    { trig = "text", wordTrig = false },
+    fmta(
+      [[
+      <>_string = "<>"
+      <>_text = Text(<>_string)
+      with self.voiceover(text=<>_string) as tracker:
+          self.play(Write(<>_text), run_time=tracker.duration)
+    ]],
+      {
+        i(1),
+        i(2),
+        rep(1),
+        rep(1),
+        rep(1),
+        rep(1),
+      }
+    )
+  ),
+  s(
     { trig = "spt", wordTrig = false, snippetType = "autosnippet" },
     fmta(
       [[

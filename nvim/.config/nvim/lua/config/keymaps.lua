@@ -21,6 +21,37 @@ map("n", "<leader>rt", function()
   require("")
 end)
 
+-- learn
+local function shortenPath(originalPath)
+  local parts = {}
+  for part in originalPath:gmatch("[^/]+") do
+    table.insert(parts, part)
+  end
+  local shortenedPath = ""
+  if #parts >= 4 then
+    shortenedPath = parts[#parts - 3] .. "/" .. parts[#parts - 2] .. "/" .. parts[#parts - 1] .. "/" .. parts[#parts]
+  else
+    shortenedPath = originalPath
+  end
+  shortenedPath = string.gsub(shortenedPath, "\\ ", " ")
+  return shortenedPath
+end
+
+map("n", "<leader>ls", function()
+  local fileName = vim.fn.expand("%:p")
+  local pdfName = fileName:gsub("%.tex$", ".pdf"):gsub(" ", "\\ ")
+  local suffix = ".tex"
+  if fileName:sub(-#suffix) == suffix then
+    local submit = "learn submit " .. pdfName
+    local output = vim.api.nvim_call_function("system", { submit })
+    local msg = "Submit " .. shortenPath(pdfName) .. "\n" .. output
+    msg = msg:gsub("\n$", "")
+    require("notify")(msg, "info", { title = "Learn submit" })
+  else
+    require("notify")("Not a tex file", "error", { title = "Learn submit" })
+  end
+end, { desc = "Submit" })
+
 -- movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })
 map({ "n", "v", "o" }, "L", "$", { desc = "Use 'L' as '$'" })
@@ -47,7 +78,7 @@ map("n", "<leader>go", "<cmd>e ~/.config/nvim/lua/config/options.lua<cr>", { des
 map("n", "<leader>gk", "<cmd>e ~/.config/nvim/lua/config/keymaps.lua<cr>", { desc = "Go to keymaps config" })
 map("n", "<leader>ga", "<cmd>e ~/.config/nvim/lua/config/autocmds.lua<cr>", { desc = "Go to autocmds config" })
 map("n", "<leader>gu", "<cmd>e ~/.config/nvim/lua/util/latex.lua<cr>", { desc = "Go to util config" })
-map("n", "<leader>gl", "<cmd>e ~/.config/nvim/lua/plugins/write/latex.lua<cr>", { desc = "Go to latex.nvim config" })
+map("n", "<leader>gl", "<cmd>e ~/Documents/Latex/Package_elegantbook.tex<cr>", { desc = "Go to latex.nvim config" })
 map("n", "<leader>gt", "<cmd>e ~/Documents/Latex/note_template.tex<cr>", { desc = "Go to latex template" })
 map("n", "<leader>gi", "<cmd>e ~/Documents/Latex/latexindent.yaml<cr>", { desc = "Go to latexindent" })
 map("n", "<leader>gs", function()
@@ -75,7 +106,11 @@ map("n", "<leader>h", "a<C-g>u<Esc>[s1z=`]a<C-g>u<Esc>", { desc = "Check spell" 
 map("n", "<leader>H", "a<C-g>u<Esc>[szg`]a<C-g>u<Esc>", { desc = "Add word to dictionary" })
 
 map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
-map("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
+if vim.g.vscode then
+  map("n", "<leader>w", ":Write<cr>", { desc = "Save" })
+else
+  map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
+end
 map({ "n", "v", "t" }, "<leader>;", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle transparent" })
 map("n", "<leader>uc", Util.telescope("colorscheme", { enable_preview = true }), { desc = "Colorscheme with preview" })

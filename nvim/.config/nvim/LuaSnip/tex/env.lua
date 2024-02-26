@@ -86,7 +86,7 @@ return {
         i(0),
       }
     ),
-    { condition = line_begin }
+    { condition = line_begin * tex.in_text }
   ),
   s(
     { trig = "bep", snippetType = "autosnippet" },
@@ -114,6 +114,56 @@ return {
       {
         i(1),
         i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "bve", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{verbatim}
+        <>
+      \end{verbatim}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "bbi", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{thebibliography}
+        <>
+      \end{thebibliography}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s({ trig = "bib", snippetType = "autosnippet" }, {
+    t("\\bibitem"),
+  }, { condition = tex.in_bib * line_begin }),
+  s(
+    { trig = "bfi", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.5\textwidth]{<>}
+        \caption{<>}
+        \label{fig:<>}
+      \end{figure}
+      ]],
+      {
+        i(1),
+        i(2),
+        rep(2),
       }
     ),
     { condition = line_begin }
@@ -263,7 +313,7 @@ return {
       ]],
       {
         i(1),
-        i(0),
+        i(2),
       }
     ),
     { condition = line_begin }
@@ -275,7 +325,7 @@ return {
         \chapter{<>}
       ]],
       {
-        i(0),
+        i(1),
       }
     ),
     { condition = line_begin }
@@ -287,22 +337,15 @@ return {
         \paragraph{<>}
       ]],
       {
-        i(0),
+        i(1),
       }
     ),
     { condition = line_begin }
   ),
   s(
     { trig = "sec", snippetType = "autosnippet" },
-    fmta(
-      [[
-        \section{<>}
-      ]],
-      {
-        i(0),
-      }
-    ),
-    { condition = line_begin }
+    c(1, { sn(nil, { t("\\section{"), i(1), t("}") }), sn(nil, { t("\\section*{"), i(1), t("}") }) }),
+    { condition = tex.in_text * line_begin }
   ),
   s(
     { trig = "ssec", snippetType = "autosnippet" },
@@ -311,7 +354,7 @@ return {
         \subsection{<>}
       ]],
       {
-        i(0),
+        i(1),
       }
     ),
     { condition = line_begin }
@@ -319,7 +362,7 @@ return {
   s(
     { trig = "sss", snippetType = "autosnippet" },
     c(1, { sn(nil, { t("\\subsubsection{"), i(1), t("}") }), sn(nil, { t("\\subsubsection*{"), i(1), t("}") }) }),
-    { condition = tex.in_text }
+    { condition = tex.in_text * line_begin }
   ),
   s(
     { trig = "sss", snippetType = "autosnippet" },
@@ -331,6 +374,6 @@ return {
         i(0),
       }
     ),
-    { condition = line_begin }
+    { condition = line_begin * line_begin }
   ),
 }

@@ -85,7 +85,7 @@ return {
     t("\\cp"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "get", wordTrig = false, snippetType = "autosnippet" }, {
-    t("\\get"),
+    t("\\gets"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "to", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\to"),
@@ -171,6 +171,9 @@ return {
   s({ trig = "llr", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\longleftrightarrow"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "up", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\uparrow"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "cir", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\circ"),
   }, { condition = tex.in_mathzone }),
@@ -213,8 +216,20 @@ return {
   s({ trig = "lor", snippetType = "autosnippet" }, {
     t("\\lor"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "po", snippetType = "autosnippet" }, {
-    t("\\propto"),
+  s({ trig = "\\tri", snippetType = "autosnippet" }, {
+    t("\\triangle"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "emp", snippetType = "autosnippet", priority = 2000 }, {
+    t("\\emptyset"),
+  }, { condition = tex.in_mathzone }),
+  -- s({ trig = "po", snippetType = "autosnippet" }, {
+  --   t("\\propto"),
+  -- }, { condition = tex.in_mathzone }),
+  s({ trig = "neg", snippetType = "autosnippet" }, {
+    t("\\neg"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "nabla", snippetType = "autosnippet" }, {
+    t("\\nabla"),
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },

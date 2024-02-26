@@ -87,7 +87,7 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "vab", snippetType = "autosnippet" },
+    { trig = "vab", wordTrig = false, snippetType = "autosnippet" },
     c(1, { sn(nil, { t("\\ab|"), i(1), t("|") }), sn(nil, { t("\\ab*|"), i(1), t("|") }) }),
     { condition = tex.in_mathzone }
   ),

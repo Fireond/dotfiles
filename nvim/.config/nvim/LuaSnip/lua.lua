@@ -81,7 +81,7 @@ return {
         }),
        { condition = tex.<> }),
       ]],
-      { i(1), rep(1), i(2, "i(1),"), c(3, { t("in_mathzone"), t("in_quantikz") }) }
+      { i(1), rep(1), i(2, "i(1),"), c(3, { t("in_algo"), t("in_quantikz") }) }
     ),
     { condition = line_begin }
   ),

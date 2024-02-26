@@ -4,7 +4,7 @@ return {
     enabled = false,
   },
   {
-    "windwp/nvim-spectre",
+    "nvim-pack/nvim-spectre",
     enabled = false,
   },
 }

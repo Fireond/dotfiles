@@ -6,6 +6,7 @@ local i = ls.insert_node
 local fmta = require("luasnip.extras.fmt").fmta
 local tex = require("util.latex")
 local rep = require("luasnip.extras").rep
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
   s(
@@ -25,6 +26,12 @@ return {
   s({ trig = "if", snippetType = "autosnippet" }, {
     t("\\text{\\ if\\ }"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "stt", snippetType = "autosnippet" }, {
+    t("\\quad\\text{s.t.}\\quad"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "as", snippetType = "autosnippet" }, {
+    t("\\text{\\ as\\ }"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "or", snippetType = "autosnippet" }, { t("\\text{\\ or\\ }") }, { condition = tex.in_mathzone }),
   s({ trig = "otherwise", snippetType = "autosnippet" }, {
     t("\\text{\\ otherwise\\ }"),
@@ -41,6 +48,9 @@ return {
   s({ trig = "and", snippetType = "autosnippet" }, {
     t("\\text{\\ and\\ }"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "qd", snippetType = "autosnippet" }, {
+    t("\\quad"),
+  }, { condition = tex.in_mathzone }),
   s(
     { trig = "setc", snippetType = "autosnippet" },
     fmta("\\setcounter{<>}{<>}", {
@@ -49,12 +59,17 @@ return {
     }),
     { condition = tex.in_text }
   ),
+  s(
+    { trig = "PP", snippetType = "autosnippet" },
+    fmta("\\section*{Problem <>}", { i(1) }),
+    { condition = tex.in_text }
+  ),
 
-  s({ trig = "label", snippetType = "autosnippet" }, {
-    t("\\label{"),
-    i(0),
-    t("}"),
-  }, { condition = tex.in_text, show_condition = tex.in_text }),
+  -- s({ trig = "label", snippetType = "autosnippet" }, {
+  --   t("\\label{"),
+  --   i(0),
+  --   t("}"),
+  -- }, { condition = tex.in_text, show_condition = tex.in_text }),
   s(
     { trig = "href", snippetType = "autosnippet" },
     fmta("\\href{<>}{<>}", {
@@ -131,29 +146,27 @@ return {
     \documentclass{article}
     \newcommand{\Class}{<>}
     \newcommand{\Title}{Homework <>}
+    \author{Hanyu Yan}
     \input{~/Documents/Latex/Package_elegantbook.tex}
     \input{~/Documents/Latex/Sample_Homework.tex}
     \begin{document}
-    \begin{spacing}{1.1}
     \maketitle \thispagestyle{empty}
       
     <>
       
-    \end{spacing}
     \end{document}
     ]],
       {
         c(1, {
-          t("Abstract Algebra"),
-          t("Mathematics for Artificial Intelligence"),
-          t("Quantum Computer Science"),
-          t("Algebra and Computation"),
+          t("Machine Learning"),
+          t("Probability and Statistics"),
+          t("Quantum Communication and Cryptography"),
         }),
         i(2, "number"),
         i(0),
       }
     ),
-    { condition = tex.in_text }
+    { condition = tex.in_text * line_begin }
   ),
   s(
     { trig = "note" },
@@ -179,6 +192,39 @@ return {
         i(0),
       }
     ),
-    { condition = tex.in_text }
+    { condition = tex.in_text * line_begin }
+  ),
+  s(
+    { trig = "algo" },
+    fmta(
+      [[
+    \documentclass[utf8]{article}
+    \usepackage{amsmath,amssymb}
+    \usepackage{graphicx}
+    \usepackage{fullpage}
+    \usepackage{setspace}
+    \usepackage{verbatim}
+    \usepackage{algorithm}
+    \usepackage{algpseudocodex}
+    \algrenewcommand\algorithmicrequire{\textbf{Input:}}
+    \algrenewcommand\algorithmicensure{\textbf{Output:}}
+    \input{~/Documents/Latex/Package_elegantbook.tex}
+
+    \onehalfspacing
+
+    \title{\bf\huge Algorithm Design - Assignment <>}
+    \author{Hanyu Yan\\2022010860\\Class 23}
+    \date{\today}
+
+    \begin{document}
+    \maketitle
+
+    <>
+
+    \end{document}
+    ]],
+      { i(1), i(0) }
+    ),
+    { condition = tex.in_text * line_begin }
   ),
 }

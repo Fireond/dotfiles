@@ -29,12 +29,55 @@ return {
   s({ trig = "\\psii", snippetType = "autosnippet", priority = 3000 }, {
     t("\\psi_i"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "FF", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\mathcal{F}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "SS", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\mathcal{S}"),
+  }, { condition = tex.in_mathzone }),
+  s(
+    { trig = "EE", snippetType = "autosnippet" },
+    fmta("\\E_{\\sigma} \\ab[ <> ]", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
   s({ trig = "\\varphii", snippetType = "autosnippet", priority = 3000 }, {
     t("\\varphi_i"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "cc", snippetType = "autosnippet" }, {
+    t("^c"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "--", snippetType = "autosnippet", priority = 2000 }, {
+    t("^-"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "\\oplust", snippetType = "autosnippet", priority = 2000 }, {
+    t("\\OPT"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "++", snippetType = "autosnippet" }, {
+    t("^+"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "ii", snippetType = "autosnippet" }, {
+    t("\\int"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "ed", snippetType = "autosnippet" }, {
+    t("\\ed"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "cas", snippetType = "autosnippet", priority = 2000 }, {
+    t("\\cas"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "lr", snippetType = "autosnippet" }, {
+    t("\\leftrightarrow"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "sa", snippetType = "autosnippet" }, {
+    t("s_A"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "sb", snippetType = "autosnippet" }, {
+    t("s_B"),
+  }, { condition = tex.in_mathzone }),
   s(
     { trig = "(%a);", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\tilde{<>}", {
+    fmta("\\hat{<>}", {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -46,5 +89,8 @@ return {
   }, { condition = tex.in_mathzone }),
   s({ trig = "\\varphi;", snippetType = "autosnippet", priority = 3000 }, {
     t("\\tilde{\\varphi}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "IS", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\mathcal{IS}"),
   }, { condition = tex.in_mathzone }),
 }

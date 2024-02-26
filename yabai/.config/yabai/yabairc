@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 
 # global settings
 yabai -m config mouse_follows_focus off
@@ -61,6 +61,7 @@ yabai -m rule --add app="^Tencent Lemon$" manage=off
 yabai -m rule --add app="^Kap$" manage=off border=off
 yabai -m rule --add app="^Snipaste$" manage=off border=off
 yabai -m rule --add app="^摸鱼单词$" manage=off border=off
+yabai -m rule --add app="^AlDente$" manage=off
 # yabai -m rule --add app="^TencentMeeting$" manage=off
 
 echo "yabai configuration loaded.."

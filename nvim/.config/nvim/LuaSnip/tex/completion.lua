@@ -151,7 +151,21 @@ return {
   ),
   s(
     { trig = "lim", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\lim\\limits_{<>}", {
+    fmta("\\lim_{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "lsup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\limsup_{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "linf", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\liminf_{<>}", {
       i(1),
     }),
     { condition = tex.in_mathzone }
@@ -167,22 +181,22 @@ return {
   s(
     { trig = "sum", snippetType = "autosnippet" },
     c(1, {
-      sn(nil, { t("\\sum\\limits_{"), i(1), t("} ") }),
-      sn(nil, { t("\\sum\\limits_{"), i(1), t("}^{"), i(2), t("} ") }),
+      sn(nil, { t("\\sum_{"), i(1), t("} ") }),
+      sn(nil, { t("\\sum_{"), i(1), t("}^{"), i(2), t("} ") }),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "pd", snippetType = "autosnippet" },
     c(1, {
-      sn(nil, { t("\\prod\\limits_{"), i(1), t("} ") }),
-      sn(nil, { t("\\prod\\limits_{"), i(1), t("}^{"), i(2), t("} ") }),
+      sn(nil, { t("\\prod_{"), i(1), t("} ") }),
+      sn(nil, { t("\\prod_{"), i(1), t("}^{"), i(2), t("} ") }),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "bot", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigotimes\\limits_{<>}^{<>}", {
+    fmta("\\bigotimes_{<>}^{<>}", {
       i(1),
       i(2),
     }),
@@ -190,7 +204,7 @@ return {
   ),
   s(
     { trig = "bcap", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigcap\\limits_{<>}^{<>}", {
+    fmta("\\bigcap_{<>}^{<>}", {
       i(1),
       i(2),
     }),
@@ -198,7 +212,23 @@ return {
   ),
   s(
     { trig = "bcup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigcup\\limits_{<>}^{<>}", {
+    fmta("\\bigcup_{<>}^{<>}", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "blor", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\bigvee_{<>}^{<>}", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "band", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\bigwedge_{<>}^{<>}", {
       i(1),
       i(2),
     }),
@@ -206,7 +236,7 @@ return {
   ),
   s(
     { trig = "bscap", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigsqcap\\limits_{<>}^{<>}", {
+    fmta("\\bigsqcap_{<>}^{<>}", {
       i(1),
       i(2),
     }),
@@ -214,9 +244,23 @@ return {
   ),
   s(
     { trig = "bscup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigsqcup\\limits_{<>}^{<>}", {
+    fmta("\\bigsqcup_{<>}^{<>}", {
       i(1),
       i(2),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "pt", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\int <> \\d P", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "mt", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\int <> d\\mu", {
+      i(1),
     }),
     { condition = tex.in_mathzone }
   ),
@@ -245,7 +289,7 @@ return {
   ),
   s(
     { trig = "iint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\iint\\limits_{<>}^{<>} <> \\d <>", {
+    fmta("\\iint_{<>}^{<>} <> \\d <>", {
       i(1, "-\\infty"),
       i(2, "\\infty"),
       i(3),
@@ -255,7 +299,7 @@ return {
   ),
   s(
     { trig = "lint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\int\\limits_{<>} <> \\d <>", {
+    fmta("\\int_{<>} <> \\d <>", {
       i(1, "\\infty"),
       i(2),
       i(3),

@@ -1,6 +1,7 @@
 return {
   {
     "ryleelyman/latex.nvim",
+    enabled = false,
     opts = {
       conceals = {
         add = {

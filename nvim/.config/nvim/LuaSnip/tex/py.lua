@@ -138,9 +138,47 @@ print(latex)
       local to_eval = string.gsub(parent.trigger, "^QCircuit(.*)QCircuit ", "%1")
       to_eval = string.gsub(to_eval, "^%s+(.*)%s+$", "%1")
 
-      -- Replace lsh with rsh for to_eval
-      local pattern = { "ts", "I_?(%d)", "C(%w)", "dagger" }
-      local repl = { "TensorProduct", "eye(%1)", "controlled_gate_12(%1)", ".conjugate().transpose()" }
+      -- Replace lash with rash for to_evil
+      local pattern = {
+        "ts",
+        "I_?(%d)",
+        "C(%w)",
+        "dagger",
+        "\\ket{0}",
+        "\\ket{1}",
+        "\\ket{%+}",
+        "\\ket{%-}",
+        "\\ket{%+i}",
+        "\\ket{i}",
+        "\\ket{%-i}",
+        "\\bra{0}",
+        "\\bra{1}",
+        "\\bra{%+}",
+        "\\bra{%-}",
+        "\\bra{%+i}",
+        "\\bra{i}",
+        "\\bra{%-i}",
+      }
+      local repl = {
+        "TensorProduct",
+        "eye(%1)",
+        "controlled_gate_12(%1)",
+        ".conjugate().transpose()",
+        "ket0",
+        "ket1",
+        "ketp",
+        "ketm",
+        "ketpi",
+        "ketpi",
+        "ketmi",
+        "bra0",
+        "bra1",
+        "brap",
+        "bram",
+        "brapi",
+        "brapi",
+        "brami",
+      }
       for i = 1, #pattern do
         to_eval = string.gsub(to_eval, pattern[i], repl[i])
       end
@@ -164,6 +202,18 @@ e1 = Matrix([ [1], [0], [0], [0] ])
 e2 = Matrix([ [0], [1], [0], [0] ])
 e3 = Matrix([ [0], [0], [1], [0] ])
 e4 = Matrix([ [0], [0], [0], [1] ])
+ket0 = Matrix([ [1], [0] ])
+ket1 = Matrix([ [0], [1] ])
+ketp = Matrix([ [1], [1] ]) / sqrt(2)
+ketm = Matrix([ [1], [-1] ]) / sqrt(2)
+ketpi = Matrix([ [1], [I] ]) / sqrt(2)
+ketmi = Matrix([ [1], [-I] ]) / sqrt(2)
+bra0 = Matrix([ [1, 0] ])
+bra1 = Matrix([ [0, 1] ])
+brap = Matrix([ [1, 1] ]) / sqrt(2)
+bram = Matrix([ [1, -1] ]) / sqrt(2)
+brapi = Matrix([ [1, -I] ]) / sqrt(2)
+brami = Matrix([ [1, I] ]) / sqrt(2)
 out00 = e1*e1.transpose()
 out01 = e2*e2.transpose()
 out10 = e3*e3.transpose()

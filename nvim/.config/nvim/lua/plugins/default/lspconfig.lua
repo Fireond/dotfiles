@@ -3,13 +3,23 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        typst_lsp = {
+          settings = {
+            typst_lsp = {},
+          },
+        },
         texlab = {
           mason = false,
           settings = {
             texlab = {
               build = {
-                -- executable = "pdflatex",
-                -- args = {},
+                executable = "xelatex",
+                args = {
+                  "-pdf",
+                  "-interaction=nonstopmode",
+                  "-synctex=1",
+                  "%f",
+                },
                 onSave = false,
               },
               -- rootDirectory = "..",

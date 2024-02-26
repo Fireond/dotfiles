@@ -136,10 +136,13 @@ function brew() {
 
 ### --- Alias --- ###
 alias ll='clear'
+alias d='python ~/Documents/Codes/py/learn.py'
+# alias l='learn'
+alias ld='learn ddl'
 alias jj='cd ..'
 alias proxy='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
 alias unproxy='unset all_proxy'
-alias python='/opt/homebrew/bin/python3.11'
+# alias python='/opt/homebrew/bin/python3.11'
 # alias pip='/opt/homebrew/bin/pip3'
 alias vi='nvim'
 alias v='nvim'
@@ -169,7 +172,9 @@ alias lg='l | grep'
 alias disablesleep='sudo pmset -a disablesleep 1'
 alias enablesleep='sudo pmset -a disablesleep 0'
 alias op='open .'
-alias pdf='sioyek'
+function pdf() {
+    sioyek "$1" &
+}
 alias tt='toggle_alacritty_opacity'
 alias jo='joshuto'
 alias a='joshuto'
@@ -182,3 +187,19 @@ source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/hanyu_yan/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/hanyu_yan/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/hanyu_yan/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/hanyu_yan/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

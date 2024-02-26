@@ -32,6 +32,13 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "bf", snippetType = "autosnippet" },
+    fmta("\\mathbf{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "cal", snippetType = "autosnippet", priority = 2000 },
     fmta("\\mathcal{<>}", {
       d(1, get_visual),
@@ -118,15 +125,16 @@ return {
     })
   ),
   s(
-    { trig = "qq", snippetType = "autosnippet", priority = 2000 },
-    fmta("\\text{\\ <>\\ }", {
-      d(1, get_visual),
-    }, { conditon = tex.in_mathzone })
+    { trig = "qq", snippetType = "autosnippet" },
+    fmta("\\text{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "tet", snippetType = "autosnippet" },
     fmta("\\text{<>}", {
-      i(0),
+      i(1),
     })
   ),
 }

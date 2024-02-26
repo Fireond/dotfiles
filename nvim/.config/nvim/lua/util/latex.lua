@@ -44,11 +44,17 @@ end
 M.in_item = function()
   return M.in_env("itemize") or M.in_env("enumerate")
 end
+M.in_bib = function()
+  return M.in_env("thebibliography")
+end
 M.in_tikz = function()
   return M.in_env("tikzpicture")
 end
 M.in_quantikz = function()
   return M.in_env("quantikz")
+end
+M.in_algo = function()
+  return M.in_env("algorithmic")
 end
 
 -- For markdown

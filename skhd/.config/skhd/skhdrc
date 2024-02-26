@@ -8,6 +8,7 @@ cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d
 cmd + alt - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~ joshuto
 cmd + shift - return : open -na /Applications/Google\ Chrome.app
 
+
 alt - 1 : yabai -m space --focus 1
 alt - 2 : yabai -m space --focus 2
 alt - 3 : yabai -m space --focus 3

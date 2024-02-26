@@ -80,13 +80,13 @@ source "$ITEM_DIR/calendar.sh"
 # source "$ITEM_DIR/brew.sh"
 # source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/volume.sh"
+# source "$ITEM_DIR/volume.sh"
 # source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/wechat.sh"
 source "$ITEM_DIR/qq.sh"
 # source "$ITEM_DIR/cpu.sh"
-source "$ITEM_DIR/cava.sh"
-source "$ITEM_DIR/music.sh"
+# source "$ITEM_DIR/cava.sh"
+# source "$ITEM_DIR/music.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update

@@ -18,7 +18,7 @@ return {
         ["<leader>s"] = { name = "+search" },
         ["<leader>u"] = { name = "+ui" },
         ["<leader>x"] = { name = "+diagnostics/quickfix" },
-        ["<leader>l"] = { name = "+jupyter" },
+        ["<leader>l"] = { name = "+learn" },
         ["<leader>sn"] = { name = "+noice" },
         ["<leader>p"] = { name = "+preview" },
       }
