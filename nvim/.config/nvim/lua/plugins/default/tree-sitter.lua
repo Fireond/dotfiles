@@ -3,7 +3,11 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
       return {
-        highlight = { enable = true },
+        highlight = {
+          enable = true,
+          disable = { "latex" },
+          additional_vim_regex_highlighting = { "latex", "markdown" },
+        },
         indent = { enable = true, disable = { "python" } },
         context_commentstring = { enable = true, enable_autocmd = false },
         ensure_installed = {
@@ -24,7 +28,6 @@ return {
           "regex",
           "vim",
           "yaml",
-          "latex",
         },
         incremental_selection = {
           enable = true,

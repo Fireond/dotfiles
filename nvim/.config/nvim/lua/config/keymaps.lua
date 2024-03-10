@@ -15,12 +15,6 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map("t", "<esc><esc>", "<c-\\><c-n>:q!<cr>")
-
-map("n", "<leader>rt", function()
-  require("")
-end)
-
 -- learn
 local function shortenPath(originalPath)
   local parts = {}
@@ -36,21 +30,6 @@ local function shortenPath(originalPath)
   shortenedPath = string.gsub(shortenedPath, "\\ ", " ")
   return shortenedPath
 end
-
-map("n", "<leader>ls", function()
-  local fileName = vim.fn.expand("%:p")
-  local pdfName = fileName:gsub("%.tex$", ".pdf"):gsub(" ", "\\ ")
-  local suffix = ".tex"
-  if fileName:sub(-#suffix) == suffix then
-    local submit = "learn submit " .. pdfName
-    local output = vim.api.nvim_call_function("system", { submit })
-    local msg = "Submit " .. shortenPath(pdfName) .. "\n" .. output
-    msg = msg:gsub("\n$", "")
-    require("notify")(msg, "info", { title = "Learn submit" })
-  else
-    require("notify")("Not a tex file", "error", { title = "Learn submit" })
-  end
-end, { desc = "Submit" })
 
 -- movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })

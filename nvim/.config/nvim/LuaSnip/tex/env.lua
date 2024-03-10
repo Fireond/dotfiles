@@ -36,7 +36,7 @@ return {
       [[
       \[
         <>
-      .\]
+      \]
       ]],
       {
         i(1),
@@ -199,6 +199,21 @@ return {
       }
     ),
     { condition = line_begin }
+  ),
+  s(
+    { trig = "blst", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{lstlisting}[language=<>]
+        <>
+      \end{lstlisting}
+      ]],
+      {
+        i(1),
+        i(0),
+      }
+    ),
+    { condition = tex.in_text * line_begin }
   ),
   s(
     { trig = "box", snippetType = "autosnippet" },

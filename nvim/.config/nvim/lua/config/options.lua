@@ -3,7 +3,7 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en", "cjk" }
 vim.opt.spelloptions = "camel"
 vim.opt.backup = false
-vim.g.tex_flavor = "latex"
+vim.g.maplocalleader = " "
 
 local indent = 2
 -- vim.opt.expandtab = true -- Use spaces instead of tabs
@@ -20,6 +20,7 @@ vim.g.knap_settings = {
 -- jukit Config
 
 vim.g.jukit_mappings = 0
+vim.spell = false
 
 -- ============= --
 -- Vimtex Config --

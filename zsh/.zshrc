@@ -10,6 +10,9 @@ export PATH=/Users/hanyu_yan/Library/Python/3.11/bin:$PATH
 ## In order to use the executable scripts inside ~/bin directly
 export PATH=$HOME/.bin:$PATH
 
+## for Zathura to run, vimtex suggested
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -182,6 +185,7 @@ alias bs='brew search'
 alias bi='brew install'
 alias gsu='git submodule update --remote'
 alias gsi='git submodule init'
+alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
 
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 

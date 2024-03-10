@@ -1,9 +1,11 @@
 {
   "extras": [
-
+    "lazyvim.plugins.extras.lang.python",
+    "lazyvim.plugins.extras.lang.python-semshi",
+    "lazyvim.plugins.extras.lang.tex"
   ],
   "news": {
     "NEWS.md": "2123"
   },
-  "version": 2
+  "version": 3
 }

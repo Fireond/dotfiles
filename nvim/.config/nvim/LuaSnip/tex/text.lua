@@ -158,7 +158,7 @@ return {
     ]],
       {
         c(1, {
-          t("Machine Learning"),
+          t("Numerical Analysis"),
           t("Probability and Statistics"),
           t("Quantum Communication and Cryptography"),
         }),
