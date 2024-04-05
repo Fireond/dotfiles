@@ -17,9 +17,6 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  s({ trig = "con", snippetType = "autosnippet" }, {
-    t("\\text{const.}"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "dps", snippetType = "autosnippet" }, {
     t("\\displaystyle"),
   }, { condition = tex.in_mathzone }),
@@ -159,7 +156,7 @@ return {
       {
         c(1, {
           t("Numerical Analysis"),
-          t("Probability and Statistics"),
+          t("Experimental Quantum Information Processing"),
           t("Quantum Communication and Cryptography"),
         }),
         i(2, "number"),
@@ -224,6 +221,35 @@ return {
     \end{document}
     ]],
       { i(1), i(0) }
+    ),
+    { condition = tex.in_text * line_begin }
+  ),
+  s(
+    { trig = "report" },
+    fmta(
+      [[
+    %! TeX program = xelatex
+    \documentclass{article}
+    \newcommand{\Class}{<>}
+    \newcommand{\Title}{<>}
+    \author{严涵宇}
+    \usepackage[UTF8]{ctex}
+    \input{~/Documents/Latex/Package_elegantbook.tex}
+    \input{~/Documents/Latex/Sample_Homework.tex}
+    \begin{document}
+    \maketitle \thispagestyle{empty}
+      
+    <>
+      
+    \end{document}
+    ]],
+      {
+        c(1, {
+          t("量子信息实验报告"),
+        }),
+        i(2),
+        i(0),
+      }
     ),
     { condition = tex.in_text * line_begin }
   ),

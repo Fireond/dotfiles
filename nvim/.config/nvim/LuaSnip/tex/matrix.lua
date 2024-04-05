@@ -77,10 +77,10 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "pmat", snippetType = "autosnippet" },
+    { trig = "Bmat", snippetType = "autosnippet" },
     fmta(
       [[
-      \pmat{<>}
+      \Bmat{<>}
       ]],
       {
         i(0),
@@ -89,10 +89,10 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "Bmat", snippetType = "autosnippet" },
+    { trig = "dmat", snippetType = "autosnippet" },
     fmta(
       [[
-      \Bmat{<>}
+      \bdiagmat{<>}
       ]],
       {
         i(0),

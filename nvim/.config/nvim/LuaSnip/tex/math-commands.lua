@@ -359,6 +359,29 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "SI", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\SI{<>}{<>}", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "cond", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\cond(<>)", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "cqty", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\complexqty{<>}{<>}", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "gcd", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("\\gcd", {}),
     { condition = tex.in_mathzone }

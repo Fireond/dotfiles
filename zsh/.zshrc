@@ -139,8 +139,6 @@ function brew() {
 
 ### --- Alias --- ###
 alias ll='clear'
-alias d='python ~/Documents/Codes/py/learn.py'
-# alias l='learn'
 alias ld='learn ddl'
 alias jj='cd ..'
 alias proxy='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'

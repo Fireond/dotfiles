@@ -62,6 +62,8 @@ yabai -m rule --add app="^Kap$" manage=off border=off
 yabai -m rule --add app="^Snipaste$" manage=off border=off
 yabai -m rule --add app="^摸鱼单词$" manage=off border=off
 yabai -m rule --add app="^AlDente$" manage=off
+yabai -m rule --add app="^DesktopLauncher$" manage=off
+yabai -m rule --add app="^Loader$" manage=off
 # yabai -m rule --add app="^TencentMeeting$" manage=off
 
 echo "yabai configuration loaded.."

@@ -1,17 +1,9 @@
 return {
   {
-    "ekickx/clipboard-image.nvim",
+    "dfendr/clipboard-image.nvim",
     opts = { -- Default configuration for all filetype
       default = {
         img_dir = { "%:p:h", "img" },
-        img_name = function()
-          local name = os.date("%y-%m-%d-%H-%M-%S")
-
-          vim.ui.input({ prompt = "Name: ", default = name }, function(input)
-            name = input
-          end)
-          return name
-        end,
         affix = "<\n  %s\n>", -- Multi lines affix
       },
       -- You can create configuration for ceartain filetype by creating another field (markdown, in this case)
@@ -24,6 +16,10 @@ return {
           local script = string.format('./image_compressor.sh "%s"', img.path)
           os.execute(script)
         end,
+      },
+      tex = {
+        -- affix = "image:%s",
+        affix = "\\begin{figure}[htbp]\n\\centering\n\\includegraphics[width=0.5\\textwidth]{%s}\n\\caption{}\n\\label{fig:}\n\\end{figure}",
       },
     },
     ft = { "tex", "markdown" },
