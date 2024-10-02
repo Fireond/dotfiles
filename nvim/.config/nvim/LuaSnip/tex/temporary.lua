@@ -77,7 +77,7 @@ return {
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "(%a);", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\hat{<>}", {
+    fmta("\\vec{<>}", {
       f(function(_, snip)
         return snip.captures[1]
       end),

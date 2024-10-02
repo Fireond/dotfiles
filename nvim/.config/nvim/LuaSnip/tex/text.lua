@@ -68,6 +68,13 @@ return {
   --   t("}"),
   -- }, { condition = tex.in_text, show_condition = tex.in_text }),
   s(
+    { trig = "zref", snippetType = "autosnippet" },
+    fmta("\\href{run:../../../../Zotero/storage/<>}{file}", {
+      i(1),
+    }),
+    { condition = tex.in_text }
+  ),
+  s(
     { trig = "href", snippetType = "autosnippet" },
     fmta("\\href{<>}{<>}", {
       i(1),
@@ -155,9 +162,7 @@ return {
     ]],
       {
         c(1, {
-          t("Numerical Analysis"),
-          t("Experimental Quantum Information Processing"),
-          t("Quantum Communication and Cryptography"),
+          t("Quantum Computation + X"),
         }),
         i(2, "number"),
         i(0),
@@ -236,6 +241,7 @@ return {
     \usepackage[UTF8]{ctex}
     \input{~/Documents/Latex/Package_elegantbook.tex}
     \input{~/Documents/Latex/Sample_Homework.tex}
+    \renewcommand{\arraystretch}{1.3}
     \begin{document}
     \maketitle \thispagestyle{empty}
       

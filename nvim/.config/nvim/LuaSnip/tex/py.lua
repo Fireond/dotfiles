@@ -268,7 +268,7 @@ print(output)
         [[
 from sympy import *
 from latex2sympy2 import latex2sympy, latex2latex
-x, y = symbols('x y')
+x,y,a,b = symbols('x y a b')
 theta = symbols('theta')
 origin = r'%s'
 expand = latex2sympy(origin).expand()

@@ -166,9 +166,10 @@ alias gps='git push'
 alias gpl='git pull'
 alias upd='git pull; git add --all; git commit -m "update"; git push'
 alias gitlog='git log --all --graph --pretty=format:"%Cred%h%Creset %C(bold blue)%an%Creset %s %Cgreen(%cr) %Creset" --abbrev-commit'
-alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons' # all files and directories
-alias l='exa -l --color=always --group-directories-first --icons' # tree listing
+alias ls='ls'
+# alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
+# alias la='exa -a --color=always --group-directories-first --icons' # all files and directories
+# alias l='exa -l --color=always --group-directories-first --icons' # tree listing
 alias lg='l | grep'
 alias disablesleep='sudo pmset -a disablesleep 1'
 alias enablesleep='sudo pmset -a disablesleep 0'
@@ -184,6 +185,7 @@ alias bi='brew install'
 alias gsu='git submodule update --remote'
 alias gsi='git submodule init'
 alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
+alias ca='ipython --profile=calculate'
 
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 

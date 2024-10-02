@@ -96,6 +96,7 @@ keymap = [
 	{ keys = [ ";" ],		command = ":" },
 
 	{ keys = [ "'" ],		command = "shell zsh" },
+	{ keys = [ "O" ],		command = "shell open ." },
 	{ keys = [ "m", "k" ],		command = ":mkdir " },
 	{ keys = [ "c", "w" ],		command = ":rename " },
 
@@ -123,9 +124,9 @@ keymap = [
 	# { keys = [ "g", "c" ],		command = "cd ~/.config" },
 	{ keys = [ "g", "d" ],		command = "cd ~/Downloads" },
 	{ keys = [ "g", "l" ],		command = "cd ~/Documents/Latex/" },
-	{ keys = [ "g", "c" ],		command = "cd ~/Documents/Courses/c22/" },
-	{ keys = [ "g", "n" ],		command = "cd ~/Documents/Courses/c22/数值分析/homework/" },
-	{ keys = [ "g", "q" ],		command = "cd ~/Documents/Courses/c22/量子信息实验/homework/" },
+	{ keys = [ "g", "c" ],		command = "cd ~/Documents/Courses/c31/" },
+	{ keys = [ "g", "q" ],		command = "cd ~/Documents/Courses/c31/量子计算交叉应用/homework/" },
+	{ keys = [ "g", "a" ],		command = "cd ~/Documents/Courses/c31/高等原子物理学/homework/" },
 	{ keys = [ "g", "p" ],		command = "cd ~/Documents/pdfs/" },
 	{ keys = [ "g", "C" ],		command = "cd ~/Documents/Codes/" },
 	# { keys = [ "g", "p" ],		command = "cd ~/Documents/pdfs/" },

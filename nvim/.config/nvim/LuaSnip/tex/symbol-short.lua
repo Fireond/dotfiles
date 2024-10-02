@@ -183,7 +183,7 @@ return {
   s({ trig = "ihbar", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
     t("i\\hbar"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "hbar", wordTrig = false, snippetType = "autosnippet" }, {
+  s({ trig = "hbar", wordTrig = false, snippetType = "autosnippet", priority = 1500 }, {
     t("\\hbar"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "ns", wordTrig = false, snippetType = "autosnippet" }, {

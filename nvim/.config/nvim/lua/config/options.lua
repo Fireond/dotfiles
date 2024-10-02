@@ -4,6 +4,7 @@ vim.opt.spelllang = { "en", "cjk" }
 vim.opt.spelloptions = "camel"
 vim.opt.backup = false
 vim.g.maplocalleader = " "
+vim.g.mapleader = " "
 
 local indent = 2
 -- vim.opt.expandtab = true -- Use spaces instead of tabs

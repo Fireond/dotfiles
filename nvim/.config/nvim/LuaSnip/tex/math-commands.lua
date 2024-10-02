@@ -398,4 +398,7 @@ return {
   s({ trig = "\\Pii", snippetType = "autosnippet", priority = 2000 }, {
     t("P_i"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "bv", snippetType = "autosnippet", priority = 2000 }, {
+    t("\\bigg\\vert"),
+  }, { condition = tex.in_mathzone }),
 }

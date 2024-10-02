@@ -6,32 +6,23 @@ return {
       wk.setup(opts)
       local keymaps = {
         mode = { "n", "v" },
-        ["m"] = { name = "+surround" },
-        ["]"] = { name = "+next" },
-        ["["] = { name = "+prev" },
-        ["<leader><tab>"] = { name = "+tabs" },
-        ["<leader>c"] = { name = "+code" },
-        ["<leader>t"] = { name = "+terminal" },
-        ["<leader>f"] = { name = "+file/find" },
-        ["<leader>q"] = { name = "+quit/session" },
-        ["<leader>g"] = { name = "+go to" },
-        ["<leader>s"] = { name = "+search" },
-        ["<leader>u"] = { name = "+ui" },
-        ["<leader>x"] = { name = "+diagnostics/quickfix" },
-        ["<leader>l"] = { name = "+learn" },
-        ["<leader>sn"] = { name = "+noice" },
-        ["<leader>p"] = { name = "+preview" },
+        { "<leader><tab>", group = "tabs" },
+        { "<leader>c", group = "code" },
+        { "<leader>f", group = "file/find" },
+        { "<leader>g", group = "go to" },
+        { "<leader>l", group = "learn" },
+        { "<leader>p", group = "preview" },
+        { "<leader>q", group = "quit/session" },
+        { "<leader>s", group = "search" },
+        { "<leader>sn", group = "noice" },
+        { "<leader>t", group = "terminal" },
+        { "<leader>u", group = "ui" },
+        { "<leader>x", group = "diagnostics/quickfix" },
+        { "[", group = "prev" },
+        { "]", group = "next" },
+        { "m", group = "surround" },
       }
-      wk.register(keymaps)
+      wk.add(keymaps)
     end,
-    opts = {
-      triggers_blacklist = {
-        -- list of mode / prefixes that should never be hooked by WhichKey
-        -- this is mostly relevant for key maps that start with a native binding
-        -- most people should not need to change this
-        i = { "f", "j", "k" },
-        v = { "f", "j", "k" },
-      },
-    },
   },
 }

@@ -155,7 +155,7 @@ return {
       [[
       \begin{figure}[htbp]
         \centering
-        \includegraphics[width=0.5\textwidth]{<>}
+        \includegraphics[width=0.8\textwidth]{<>}
         \caption{<>}
         \label{fig:<>}
       \end{figure}
@@ -165,6 +165,30 @@ return {
         i(2),
         rep(2),
       }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "bmf", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{figure}[htbp]
+        \centering
+        \begin{minipage}[t]{0.48\textwidth}
+          \centering
+          \includegraphics[width=6cm]{}
+          \caption{}
+          \label{fig:}
+        \end{minipage}
+        \begin{minipage}[t]{0.48\textwidth}
+          \centering
+          \includegraphics[width=6cm]{}
+          \caption{}
+          \label{fig:}
+        \end{minipage}
+      \end{figure}
+      ]],
+      {}
     ),
     { condition = line_begin }
   ),
@@ -311,6 +335,30 @@ return {
       \end{center}
       ]],
       {
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "bta", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{table}[htbp]
+        \centering
+        \begin{tabular}{<>}
+          \hline
+          <>
+          \hline
+        \end{tabular}
+        \caption{<>}
+        \label{tab:<>}
+      \end{table}
+      ]],
+      {
+        i(1),
+        i(2),
+        i(3),
         i(0),
       }
     ),

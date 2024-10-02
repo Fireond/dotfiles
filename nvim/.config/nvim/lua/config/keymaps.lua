@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 
 local Util = require("lazyvim.util")
+-- local vscode = require("vscode")
 
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
@@ -86,16 +87,16 @@ map("n", "<leader>H", "a<C-g>u<Esc>[szg`]a<C-g>u<Esc>", { desc = "Add word to di
 
 map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 if vim.g.vscode then
-  map("n", "<leader>w", ":Write<cr>", { desc = "Save" })
+  map("n", "<space>w", "<cmd>w<cr>", { desc = "Save" })
 else
   map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
 end
 map({ "n", "v", "t" }, "<leader>;", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle transparent" })
-map("n", "<leader>uc", Util.telescope("colorscheme", { enable_preview = true }), { desc = "Colorscheme with preview" })
+-- map("n", "<leader>uc", Util.telescope("colorscheme", { enable_preview = true }), { desc = "Colorscheme with preview" })
 map("n", "<leader>uu", "b~ea", { desc = "Colorscheme with preview" })
 
-map({ "n", "v" }, "<leader>a", "<cmd>keepjumps normal! ggVG<cr>", { desc = "Select all" })
+map({ "n", "v" }, "<leader>a", "ggVG", { desc = "Select all" })
 map("n", "<leader>+", "<C-a>", { desc = "Increase number" })
 map("n", "<leader>-", "<C-x>", { desc = "Decrease number" })
 -- map("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Toggle zen mode" })
@@ -125,10 +126,7 @@ end, { desc = "Find clips" })
 -- Disable default keymaps
 local del = vim.keymap.del
 del("n", "<leader>bb")
-del("n", "<leader>ww")
 del("n", "<leader>wd")
-del("n", "<leader>w-")
-del("n", "<leader>w|")
 del("n", "<leader>l")
 del("n", "<leader>ft")
 del("n", "<leader>fT")

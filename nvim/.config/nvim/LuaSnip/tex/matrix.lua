@@ -134,4 +134,66 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
+  s(
+    { trig = "II3", snippetType = "autosnippet", priority = 2000 },
+    fmta(
+      [[
+      \begin{bmatrix}
+        1 & & \\
+        & 1 & \\
+        & & 1 \\
+      \end{bmatrix}
+      ]],
+      {}
+    ),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "II4", snippetType = "autosnippet", priority = 2000 },
+    fmta(
+      [[
+      \begin{bmatrix}
+        1 & & & \\
+        & 1 & & \\
+        & & 1 & \\
+        & & & 1 \\
+      \end{bmatrix}
+      ]],
+      {}
+    ),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "II5", snippetType = "autosnippet", priority = 2000 },
+    fmta(
+      [[
+      \begin{bmatrix}
+        1 & & & &\\
+        & 1 & & &\\
+        & & 1 & &\\
+        & & & 1 &\\
+        & & & & 1\\
+      \end{bmatrix}
+      ]],
+      {}
+    ),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "II6", snippetType = "autosnippet", priority = 2000 },
+    fmta(
+      [[
+      \begin{bmatrix}
+        1 & & & & &\\
+        & 1 & & & &\\
+        & & 1 & & &\\
+        & & & 1 & &\\
+        & & & & 1 &\\
+        & & & & & 1\\
+      \end{bmatrix}
+      ]],
+      {}
+    ),
+    { condition = tex.in_mathzone }
+  ),
 }
