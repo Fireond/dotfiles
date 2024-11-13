@@ -157,7 +157,7 @@ return {
     t("^\\dagger"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "perp", wordTrig = false, snippetType = "autosnippet" }, {
-    t("^\\perp"),
+    t("\\perp"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "ss", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\star"),
@@ -222,15 +222,25 @@ return {
   s({ trig = "emp", snippetType = "autosnippet", priority = 2000 }, {
     t("\\emptyset"),
   }, { condition = tex.in_mathzone }),
-  -- s({ trig = "po", snippetType = "autosnippet" }, {
-  --   t("\\propto"),
-  -- }, { condition = tex.in_mathzone }),
+  s({ trig = "po", snippetType = "autosnippet" }, {
+    t("\\propto"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "neg", snippetType = "autosnippet" }, {
     t("\\neg"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "nabla", snippetType = "autosnippet" }, {
     t("\\nabla"),
   }, { condition = tex.in_mathzone }),
+  s(
+    { trig = "b|", wordTrig = false, snippetType = "autosnippet" },
+    fmta(
+      [[
+    \Big|_{<>}
+    ]],
+      { i(1) }
+    ),
+    { condition = tex.in_mathzone }
+  ),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },
     fmta(

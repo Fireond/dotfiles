@@ -1,0 +1,11 @@
+[window]
+padding = { x = 5, y = 5 }
+decorations = "None"
+option_as_alt = "Both"
+
+[font]
+normal = { family = "DejaVuSansMono Nerd Font", style = "Book" }
+bold = { style = "Bold" }
+italic = { style = "Oblique" }
+bold_italic = { style = "Bold Oblique"}
+size = 20

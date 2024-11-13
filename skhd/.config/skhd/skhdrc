@@ -1,11 +1,12 @@
 # restart yabai
 ctrl + alt + cmd - r : yabai --restart-service
+ctrl + alt + cmd - y : brew services restart sketchybar
 
 # system control
 cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-cmd + alt - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~ joshuto
+cmd + alt - return : /Applications/kitty.app/Contents/MacOS/kitty --session /Users/hanyu_yan/.dotfiles/kitty/.config/kitty/startup_session_yazi
 cmd + shift - return : open -na /Applications/Google\ Chrome.app
 
 

@@ -12,12 +12,8 @@ yabai -m config window_topmost off
 yabai -m config window_shadow float
 yabai -m config window_opacity on
 yabai -m config window_opacity_duration 0.15
-yabai -m config active_window_opacity 1.95
-yabai -m config normal_window_opacity 1.85
-yabai -m config window_border on
-yabai -m config window_border_width 4
-yabai -m config active_window_border_color 0xff8CABC8
-yabai -m config normal_window_border_color 0xff2a2f38
+yabai -m config active_window_opacity 0.96
+yabai -m config normal_window_opacity 0.90
 yabai -m config insert_feedback_color 0xff9dd274
 yabai -m config split_ratio 0.50
 yabai -m config auto_balance off
@@ -25,7 +21,7 @@ yabai -m config mouse_modifier alt
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
-yabai -m config external_bar all:53:0
+yabai -m config external_bar all:38:0
 
 # signal with sketchybar
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
@@ -42,28 +38,66 @@ yabai -m config window_gap 8
 # yabai -m config window_animation_duration    0.00
 
 yabai -m rule --add app="^iStat*" sticky=on layer=above manage=off border=off
-yabai -m rule --add app="^System Preferences*" manage=off
 
 # disable specific apps
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Preview$" manage=off
-yabai -m rule --add app="^Karabiner-Elements$" manage=off
-yabai -m rule --add app="^QuickTime Player$" manage=off
-yabai -m rule --add app="^WeChat$" manage=off
-yabai -m rule --add app="^HapiGo$" manage=off
-yabai -m rule --add app="^360压缩大师$" manage=off
-yabai -m rule --add app="^Font Book$" manage=off
-yabai -m rule --add app="^NeatDownloadManager$" manage=off
-yabai -m rule --add app="^NetEaseMusic$" manage=off
-yabai -m rule --add app="^MonitorControl$" manage=off
-yabai -m rule --add app="^Tencent Lemon$" manage=off
-yabai -m rule --add app="^Kap$" manage=off border=off
-yabai -m rule --add app="^Snipaste$" manage=off border=off
-yabai -m rule --add app="^摸鱼单词$" manage=off border=off
-yabai -m rule --add app="^AlDente$" manage=off
-yabai -m rule --add app="^DesktopLauncher$" manage=off
-yabai -m rule --add app="^Loader$" manage=off
+disabled_apps=(
+    "^System Settings$"
+    "^Calculator$"
+    "^Preview$"
+    "^Karabiner-Elements$"
+    "^QuickTime Player$"
+    "^WeChat$"
+    "^HapiGo$"
+    "^360压缩大师$"
+    "^Font Book$"
+    "^NeatDownloadManager$"
+    "^NetEaseMusic$"
+    "^MonitorControl$"
+    "^Tencent Lemon$"
+    "^Snipaste$"
+    "^AlDente$"
+    "^DesktopLauncher$"
+    "^Loader$"
+    "^ChatGPT$"
+)
+
+for app in "${disabled_apps[@]}"; do
+    yabai -m rule --add app="$app" manage=off
+done
+
+# yabai -m rule --add app="^System Settings$" manage=off
+# yabai -m rule --add app="^Calculator$" manage=off
+# yabai -m rule --add app="^Preview$" manage=off
+# yabai -m rule --add app="^Karabiner-Elements$" manage=off
+# yabai -m rule --add app="^QuickTime Player$" manage=off
+# yabai -m rule --add app="^WeChat$" manage=off
+# yabai -m rule --add app="^HapiGo$" manage=off
+# yabai -m rule --add app="^360压缩大师$" manage=off
+# yabai -m rule --add app="^Font Book$" manage=off
+# yabai -m rule --add app="^NeatDownloadManager$" manage=off
+# yabai -m rule --add app="^NetEaseMusic$" manage=off
+# yabai -m rule --add app="^MonitorControl$" manage=off
+# yabai -m rule --add app="^Tencent Lemon$" manage=off
+# yabai -m rule --add app="^Snipaste$" manage=off border=off
+# yabai -m rule --add app="^AlDente$" manage=off
+# yabai -m rule --add app="^DesktopLauncher$" manage=off
+# yabai -m rule --add app="^Loader$" manage=off
 # yabai -m rule --add app="^TencentMeeting$" manage=off
+
+
+border_options=(
+  style=round
+  # style=square
+  width=6.0
+  hidpi=on
+	active_color=0xffe2e2e3
+	 inactive_color=0xff414550
+  # active_color=0xff8a866e
+  # background_color=0xff81969e
+  blacklist="Safari,iPhone Mirroring,Steam Helper,Microsoft PowerPoint"
+  blur_radius=5
+)
+
+# borders "${border_options[@]}"
 
 echo "yabai configuration loaded.."

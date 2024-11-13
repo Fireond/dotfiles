@@ -1,14 +1,6 @@
 return {
   "lervag/vimtex",
-  lazy = false, -- lazy-loading will disable inverse search
-  config = function()
-    vim.api.nvim_create_autocmd({ "FileType" }, {
-      group = vim.api.nvim_create_augroup("lazyvim_vimtex_conceal", { clear = true }),
-      pattern = { "bib", "tex" },
-      callback = function()
-        vim.wo.conceallevel = 2
-      end,
-    })
+  init = function()
     vim.keymap.set("n", "<localleader>lt", ":call vimtex#fzf#run()<cr>")
 
     vim.g.vimtex_syntax_conceal_disable = 1

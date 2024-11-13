@@ -1,0 +1,27 @@
+[manager]
+prepend_keymap=[
+  { on = [ "g", "d" ], run = "cd ~/Downloads" },
+  { on = [ "g", "D" ], run = "cd ~/.dotfiles" },
+	{ on = [ "g", "l" ], run = "cd ~/Documents/Latex/" },
+	{ on = [ "g", "c" ], run = "cd ~/Documents/Courses/c31/" },
+	{ on = [ "g", "q" ], run = "cd ~/Documents/Courses/c31/量子计算交叉应用/homework/" },
+	{ on = [ "g", "a" ], run = "cd ~/Documents/Courses/c31/高等原子物理学/homework/" },
+	{ on = [ "g", "p" ], run = "cd ~/Documents/pdfs/" },
+	{ on = [ "g", "C" ], run = "cd ~/Documents/Codes/" },
+	{ on = [ "g", "r" ], run = '''
+	shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm
+''' },
+
+  { on = [ "T" ], run = "plugin max-preview" },
+
+  { on = "o", run = "open --interactive" },
+  { on = "O", run = '''
+  shell 'qlmanage -p "$@"' --confirm
+''' },
+	{ on = [ "l" ], run = "plugin smart-enter" },
+	{ on = [ "k" ], run = "plugin arrow --args=-1" },
+	{ on = [ "j" ], run = "plugin arrow --args=1" },
+# 	{ on = [ "y" ], run = [ '''
+# 	shell 'echo "$@" | xclip -i -selection clipboard -t text/uri-list' --confirm
+# ''', "yank" ] },
+]

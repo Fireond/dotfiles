@@ -60,10 +60,27 @@ return {
     { condition = line_begin }
   ),
   s(
+    { trig = "(%d+)bp", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta(
+      [[
+      \begin{homeworkProblem}[Problem <>.]
+        <>
+      \end{homeworkProblem}
+      ]],
+      {
+        f(function(_, snip)
+          return snip.captures[1]
+        end),
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "bp", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{homeworkProblem}[<>]
+      \begin{homeworkProblem}[Problem <>.]
         <>
       \end{homeworkProblem}
       ]],
@@ -75,7 +92,7 @@ return {
     { condition = line_begin }
   ),
   s(
-    { trig = "bf", snippetType = "autosnippet" },
+    { trig = "bpf", snippetType = "autosnippet" },
     fmta(
       [[
       \begin{proof}

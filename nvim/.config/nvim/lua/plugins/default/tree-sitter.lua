@@ -6,8 +6,9 @@ return {
         highlight = {
           enable = true,
           disable = { "latex" },
-          additional_vim_regex_highlighting = { "latex", "markdown" },
+          additional_vim_regex_highlighting = { "markdown" },
         },
+        ignore_install = { "latex" },
         indent = { enable = true, disable = { "python" } },
         context_commentstring = { enable = true, enable_autocmd = false },
         ensure_installed = {

@@ -1,0 +1,52 @@
+[general]
+framerate = 60 ; 帧率
+samplerate = 44100 ; 采样率
+history = 60 ; 历史数据展示时长（秒）
+
+[input]
+method = portaudio
+source = "Background Music"
+
+[output]
+method = ncurses ; 输出方法
+
+[smoothing]
+integral = 5 ; 平滑值
+lookback = 10 ; 衰减值
+
+[color]
+gradient = 1 ; 使用渐变色
+;gradient_color_1 = '#8BE9FD'
+;gradient_color_2 = '#9AEDFE'
+;gradient_color_3 = '#CAA9FA'
+;gradient_color_4 = '#BD93F9'
+;gradient_color_5 = '#FF92D0'
+;gradient_color_6 = '#FF79C6'
+;gradient_color_7 = '#FF6E67'
+;gradient_color_8 = '#FF5555'
+
+gradient_color_1 = '#c6ffdd'
+gradient_color_2 = '#d5f4c4'
+gradient_color_3 = '#e4e8ab'
+gradient_color_4 = '#f3dd92'
+gradient_color_5 = '#faca85'
+gradient_color_6 = '#f9af82'
+gradient_color_7 = '#f89480'
+gradient_color_8 = '#f7797d'
+
+
+# pink
+;gradient_color_1 = '#F06292'
+;gradient_color_2 = '#BA68C8'
+;gradient_color_3 = '#9575CD'
+;gradient_color_4 = '#7986CB'
+;gradient_color_5 = '#64B5F6'
+;gradient_color_6 = '#4FC3F7'
+;gradient_color_7 = '#4DD0E1'
+;gradient_color_8 = '#4DB6AC'
+
+[bar]
+fall_speed = 2 ; 下降速度
+rise_speed = 1 ; 上升速度
+bar_width = 2 ; 频谱条宽度
+bar_gap = 1 ; 频谱条间距

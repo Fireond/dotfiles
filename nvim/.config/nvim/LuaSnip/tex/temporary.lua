@@ -29,6 +29,9 @@ return {
   s({ trig = "\\psii", snippetType = "autosnippet", priority = 3000 }, {
     t("\\psi_i"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "mm", snippetType = "autosnippet", priority = 3000 }, {
+    t("m_{\\max}"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "FF", snippetType = "autosnippet", priority = 3000 }, {
     t("\\mathcal{F}"),
   }, { condition = tex.in_mathzone }),
@@ -77,7 +80,7 @@ return {
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "(%a);", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\vec{<>}", {
+    fmta("\\hat{<>}", {
       f(function(_, snip)
         return snip.captures[1]
       end),

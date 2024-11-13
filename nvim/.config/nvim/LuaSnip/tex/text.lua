@@ -163,6 +163,8 @@ return {
       {
         c(1, {
           t("Quantum Computation + X"),
+          t("Advanced Atomic Physics"),
+          t("Electronics for Experimental Physics"),
         }),
         i(2, "number"),
         i(0),

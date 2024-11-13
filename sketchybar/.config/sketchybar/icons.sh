@@ -12,6 +12,10 @@ WECHAT=󰘑
 QQ=󰘅
 WIFI_ON=󰖩
 WIFI_OFF=󰖪
+WEATHER=
+
+# keyboard
+ABC=󰬈
 
 # Git Icons
 GIT_ISSUE=􀍷

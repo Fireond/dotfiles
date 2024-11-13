@@ -37,7 +37,7 @@ return {
         i(0),
       }
     ),
-    { condition = line_begin }
+    { condition = tex.in_text * line_begin }
   ),
   s({ trig = "ss", snippetType = "autosnippet" }, {
     t("\\State "),

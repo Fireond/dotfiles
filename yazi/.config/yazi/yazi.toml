@@ -1,0 +1,21 @@
+[manager]
+sort_by = "mtime"
+show_hidden = true
+
+
+[preview]
+max_width = 1000
+max_height = 2000
+
+[opener]
+edit = [
+	{ run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" },
+]
+pdf = [
+  { run = 'sioyek "$@" &', desc = "pdf", block = true, for = "unix"}
+]
+
+[open]
+prepend_rules = [
+  { name = "*.pdf", use = "pdf"}
+]

@@ -120,6 +120,15 @@ function brew() {
   fi
 }
 
+function a() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -147,10 +156,12 @@ alias unproxy='unset all_proxy'
 # alias pip='/opt/homebrew/bin/pip3'
 alias vi='nvim'
 alias v='nvim'
-alias f='NVIM_APPNAME=fvim nvim'
+alias vf='nvim $(fzf)'
+# alias f='NVIM_APPNAME=fvim nvim'
 alias czsh='nvim ~/.zshrc'
 alias cala='nvim ~/.config/alacritty/alacritty.yml'
 alias cyabai='nvim ~/.config/yabai/yabairc'
+alias cyazi='nvim ~/.config/yazi/keymap.toml'
 alias cskhd='nvim ~/.config/skhd/skhdrc'
 alias csket='nvim ~/.config/sketchybar/sketchybarrc'
 alias ckitty='nvim ~/.config/kitty/kitty.conf'
@@ -179,7 +190,7 @@ function pdf() {
 }
 alias tt='toggle_alacritty_opacity'
 alias jo='joshuto'
-alias a='joshuto'
+# alias a='joshuto'
 alias bs='brew search'
 alias bi='brew install'
 alias gsu='git submodule update --remote'

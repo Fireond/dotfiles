@@ -24,6 +24,19 @@ return {
     )
   ),
   s(
+    { trig = "voo", wordTrig = false, snippetType = "autosnippet" },
+    fmta(
+      [[
+    with self.voiceover(text="<>") as tracker:
+        <>
+    ]],
+      {
+        i(1),
+        i(0),
+      }
+    )
+  ),
+  s(
     { trig = "mte", wordTrig = false },
     fmta(
       [[
