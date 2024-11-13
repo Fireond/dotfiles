@@ -18,6 +18,9 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 	-- macos
 elseif wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	-- windows
+	config.set_environment_variables = {
+		COMSPEC = "C:\\Users\\18248\\AppData\\Local\\Programs\\nu\\bin\\nu.exe",
+	}
 	config.keys = {
 		{ key = "w", mods = "CTRL", action = act.CloseCurrentTab({ confirm = false }) },
 		{ key = "t", mods = "CTRL", action = act.SpawnTab("DefaultDomain") },
@@ -31,7 +34,7 @@ elseif wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	end
 	config.mouse_bindings = {
 		{
-			event = { up = { streak = 1, button = "Left" } },
+			event = { Up = { streak = 1, button = "Left" } },
 			mods = "CTRL",
 			action = act.OpenLinkAtMouseCursor,
 		},
