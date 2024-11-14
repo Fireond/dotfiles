@@ -11,7 +11,7 @@ local config = {
 	use_fancy_tab_bar = false,
 	hide_tab_bar_if_only_one_tab = true,
 
-	color_scheme = "Catppuccin Mocha",
+	color_scheme = "Catppuccin Macchiato",
 }
 
 if wezterm.target_triple == "aarch64-apple-darwin" then

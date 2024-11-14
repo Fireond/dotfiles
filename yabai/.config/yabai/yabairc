@@ -23,11 +23,6 @@ yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
 yabai -m config external_bar all:38:0
 
-# signal with sketchybar
-yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
-yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
-yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
-
 # general space settings
 yabai -m config layout bsp
 yabai -m config top_padding 8
@@ -35,10 +30,26 @@ yabai -m config bottom_padding 8
 yabai -m config left_padding 8
 yabai -m config right_padding 8
 yabai -m config window_gap 8
-# yabai -m config window_animation_duration    0.00
 
-yabai -m rule --add app="^iStat*" sticky=on layer=above manage=off border=off
 
+# auto focus window below cursor
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+# if need to disable specific app
+# yabai -m signal --add label=on_dest_refocus event=window_destroyed app!='Maccy' \
+#       action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+# yabai -m signal --add  label=on_min_refocus event=window_minimized app!='Maccy' \
+#       action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+# yabai -m signal --add  label=on_hide_refocus event=application_hidden app!='Maccy' \
+#       action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+# yabai -m signal --add  label=on_term_refocus event=application_terminated app!='Maccy' \
+#       action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+
+# signal with sketchybar
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 # disable specific apps
 disabled_apps=(
     "^System Settings$"
@@ -64,26 +75,6 @@ disabled_apps=(
 for app in "${disabled_apps[@]}"; do
     yabai -m rule --add app="$app" manage=off
 done
-
-# yabai -m rule --add app="^System Settings$" manage=off
-# yabai -m rule --add app="^Calculator$" manage=off
-# yabai -m rule --add app="^Preview$" manage=off
-# yabai -m rule --add app="^Karabiner-Elements$" manage=off
-# yabai -m rule --add app="^QuickTime Player$" manage=off
-# yabai -m rule --add app="^WeChat$" manage=off
-# yabai -m rule --add app="^HapiGo$" manage=off
-# yabai -m rule --add app="^360压缩大师$" manage=off
-# yabai -m rule --add app="^Font Book$" manage=off
-# yabai -m rule --add app="^NeatDownloadManager$" manage=off
-# yabai -m rule --add app="^NetEaseMusic$" manage=off
-# yabai -m rule --add app="^MonitorControl$" manage=off
-# yabai -m rule --add app="^Tencent Lemon$" manage=off
-# yabai -m rule --add app="^Snipaste$" manage=off border=off
-# yabai -m rule --add app="^AlDente$" manage=off
-# yabai -m rule --add app="^DesktopLauncher$" manage=off
-# yabai -m rule --add app="^Loader$" manage=off
-# yabai -m rule --add app="^TencentMeeting$" manage=off
-
 
 border_options=(
   style=round

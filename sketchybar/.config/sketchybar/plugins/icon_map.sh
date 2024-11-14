@@ -251,6 +251,12 @@ case $@ in
 "Steam Helper")
   icon_result="󰓓"
   ;;
+"ChatGPT")
+  icon_result="G"
+  ;;
+"Parsec")
+  icon_result="󱣵"
+  ;;
 "Insomnia")
   icon_result=":insomnia:"
   ;;

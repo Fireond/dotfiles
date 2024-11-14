@@ -1,13 +1,13 @@
 # restart yabai
-ctrl + alt + cmd - r : yabai --restart-service
+ctrl + alt + cmd - r : yabai --restart-service; skhd --reload
 ctrl + alt + cmd - y : brew services restart sketchybar
 
 # system control
 cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-cmd + alt - return : /Applications/kitty.app/Contents/MacOS/kitty --session /Users/hanyu_yan/.dotfiles/kitty/.config/kitty/startup_session_yazi
-cmd + shift - return : open -na /Applications/Google\ Chrome.app
+# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd - return : open -na wezterm
+cmd + shift - return : open -na "Google Chrome"
 
 
 alt - 1 : yabai -m space --focus 1
@@ -106,11 +106,6 @@ ctrl + alt - 6 : yabai -m window --space 6; yabai -m space --focus 6; sketchybar
 ctrl + alt - 7 : yabai -m window --space 7; yabai -m space --focus 7; sketchybar --trigger windows_on_spaces
 ctrl + alt - 8 : yabai -m window --space 8; yabai -m space --focus 8; sketchybar --trigger windows_on_spaces
 ctrl + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9; sketchybar --trigger windows_on_spaces
-
-# stop/start/restart yabai
-ctrl + alt - q : brew services stop yabai
-ctrl + alt - s : brew services start yabai
-ctrl + alt - r : brew services restart yabai
 
 # sketchybar
 # lalt - space : yabai -m window --toggle float; sketchybar --trigger window_focus

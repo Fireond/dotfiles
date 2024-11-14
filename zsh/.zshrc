@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 export ZSH=$HOME/.zsh
 export PATH=/Users/hanyu_yan/Library/Python/3.11/bin:$PATH
@@ -23,10 +23,6 @@ export NVM_DIR="$HOME/.nvm"
 #             xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
 # fi
 # }}}
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -152,20 +148,10 @@ alias ld='learn ddl'
 alias jj='cd ..'
 alias proxy='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
 alias unproxy='unset all_proxy'
-# alias python='/opt/homebrew/bin/python3.11'
-# alias pip='/opt/homebrew/bin/pip3'
 alias vi='nvim'
 alias v='nvim'
 alias vf='nvim $(fzf)'
-# alias f='NVIM_APPNAME=fvim nvim'
-alias czsh='nvim ~/.zshrc'
-alias cala='nvim ~/.config/alacritty/alacritty.yml'
-alias cyabai='nvim ~/.config/yabai/yabairc'
-alias cyazi='nvim ~/.config/yazi/keymap.toml'
-alias cskhd='nvim ~/.config/skhd/skhdrc'
-alias csket='nvim ~/.config/sketchybar/sketchybarrc'
-alias ckitty='nvim ~/.config/kitty/kitty.conf'
-alias szsh='source ~/.zshrc'
+
 alias g='git'
 alias gcl='git clone'
 alias gs='git status'
@@ -178,9 +164,6 @@ alias gpl='git pull'
 alias upd='git pull; git add --all; git commit -m "update"; git push'
 alias gitlog='git log --all --graph --pretty=format:"%Cred%h%Creset %C(bold blue)%an%Creset %s %Cgreen(%cr) %Creset" --abbrev-commit'
 alias ls='ls'
-# alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-# alias la='exa -a --color=always --group-directories-first --icons' # all files and directories
-# alias l='exa -l --color=always --group-directories-first --icons' # tree listing
 alias lg='l | grep'
 alias disablesleep='sudo pmset -a disablesleep 1'
 alias enablesleep='sudo pmset -a disablesleep 0'
@@ -198,10 +181,17 @@ alias gsi='git submodule init'
 alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
 alias ca='ipython --profile=calculate'
 
-source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+alias szsh='source ~/.zshrc'
+alias czsh='nvim ~/.zshrc'
+alias cala='nvim ~/.config/alacritty/alacritty.yml'
+alias cyabai='nvim ~/.config/yabai/yabairc'
+alias cyazi='nvim ~/.config/yazi/keymap.toml'
+alias cskhd='nvim ~/.config/skhd/skhdrc'
+alias csket='nvim ~/.config/sketchybar/sketchybarrc'
+alias ckitty='nvim ~/.config/kitty/kitty.conf'
+alias cwez='nvim ~/.config/wezterm/wezterm.lua'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -218,3 +208,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+#
+# # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(starship init zsh)"

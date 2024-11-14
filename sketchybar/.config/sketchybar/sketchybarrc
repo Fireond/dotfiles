@@ -90,7 +90,7 @@ source "$ITEM_DIR/qq.sh"
 # source "$ITEM_DIR/weather.sh"
 # source "$ITEM_DIR/cpu.sh"
 source "$ITEM_DIR/headphone.sh"
-source "$ITEM_DIR/cava.sh"
+# source "$ITEM_DIR/cava.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
