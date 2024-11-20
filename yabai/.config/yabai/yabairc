@@ -54,7 +54,6 @@ yabai -m signal --add event=window_destroyed action="sketchybar --trigger window
 disabled_apps=(
     "^System Settings$"
     "^Calculator$"
-    "^Preview$"
     "^Karabiner-Elements$"
     "^QuickTime Player$"
     "^WeChat$"
@@ -75,6 +74,9 @@ disabled_apps=(
 for app in "${disabled_apps[@]}"; do
     yabai -m rule --add app="$app" manage=off
 done
+
+# yabai -m rule --add app="^Preview$" title="^(?!.*pdf).*" manage=off
+
 
 border_options=(
   style=round

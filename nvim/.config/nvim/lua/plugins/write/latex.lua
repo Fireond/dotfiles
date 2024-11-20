@@ -42,12 +42,4 @@ return {
     },
     ft = "tex",
   },
-
-  -- inverse serach for LaTeX
-  {
-    "f3fora/nvim-texlabconfig",
-    config = true,
-    build = "go build",
-    ft = "tex",
-  },
 }

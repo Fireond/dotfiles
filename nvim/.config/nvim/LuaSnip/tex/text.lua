@@ -3,12 +3,37 @@ local c = ls.choice_node
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
+local f = ls.function_node
 local fmta = require("luasnip.extras.fmt").fmta
 local tex = require("util.latex")
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
+  s(
+    { trig = "(%d)(%w)i", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\({}^{<>}\\)<>", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      f(function(_, snip)
+        return snip.captures[2]
+      end),
+    }),
+    { condition = tex.in_text }
+  ),
+  s(
+    { trig = "(%d)(%w)i", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("{}^{<>}\\text{<>}", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      f(function(_, snip)
+        return snip.captures[2]
+      end),
+    }),
+    { condition = tex.in_mathzone }
+  ),
   s(
     { trig = "DeclareMathOperator" },
     fmta("\\DeclareMathOperator{\\<>}{<>}", {

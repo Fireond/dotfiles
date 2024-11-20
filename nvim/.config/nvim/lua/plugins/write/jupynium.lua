@@ -3,21 +3,28 @@ return {
     "kiyoon/jupynium.nvim",
     ft = "python",
     build = "conda run --no-capture-output -n QCX pip install .",
-    config = {
+    opts = {
       python_host = { "conda", "run", "--no-capture-output", "-n", "QCX", "python" },
       jupyter_command = { "conda", "run", "--no-capture-output", "-n", "QCX", "jupyter" },
-      default_notebook_URL = "localhost:8888",
-      auto_start_server = {
-        enable = true,
-        file_pattern = { "*.ju.*" },
+    },
+    shortsighted = true,
+    notify = {
+      ignore = {
+        "download_ipynb",
+        -- "error_download_ipynb",
+        -- "attach_and_init",
+        -- "error_close_main_page",
+        -- "notebook_closed",
       },
     },
-    -- build = "conda run --no-capture-output -n jupynium pip install .",
-    -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
     keys = {
-      { "<leader>Ko", "<cmd>JupyniumStartAndAttachToServer<cr>", desc = "Jupynium Start" },
+      { "<leader>Ko", "<cmd>JupyniumStartAndAttachToServer<cr>", desc = "Jupynium Start and Attach" },
       { "<leader>Ks", "<cmd>JupyniumStartSync<cr>", desc = "Jupynium Sync" },
+      { "<leader>Kz", "<cmd>JupyniumShortsightedToggle<cr>", desc = "Jupynium Short Sighted" },
+      { "<leader>Kc", "<cmd>JupyniumKernelSelect<cr>", desc = "Jupynium Change Kernel" },
       { "<leader>KO", "<cmd>JupyniumStartAndAttachToServerInTerminal<cr>", desc = "Jupynium Start In Terminal" },
+      { "<leader>Kj", "<cmd>JupyniumScrollDown<cr>", desc = "Jupynium Scroll Down" },
+      { "<leader>Kk", "<cmd>JupyniumScrollUp<cr>", desc = "Jupynium Scroll Up" },
     },
   },
 }

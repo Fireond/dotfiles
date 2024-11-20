@@ -14,6 +14,17 @@ return {
 
       local luasnip = require("luasnip")
       local cmp = require("cmp")
+      local compare = cmp.config.compare
+
+      table.insert(opts.sources, { name = "jupynium" })
+      opts.sorting = {
+        priority_weight = 1.0,
+        comparators = {
+          compare.score, -- Jupyter kernel completion shows prior to LSP
+          compare.recently_used,
+          compare.locality,
+        },
+      }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)

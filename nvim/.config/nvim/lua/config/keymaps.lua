@@ -101,9 +101,9 @@ map("n", "<leader>+", "<C-a>", { desc = "Increase number" })
 map("n", "<leader>-", "<C-x>", { desc = "Decrease number" })
 -- map("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Toggle zen mode" })
 map("n", "<leader>z", "zt", { desc = "Top this line" })
-map("n", "<leader>fp", function()
-  require("telescope").extensions.neoclip.default()
-end, { desc = "Find clips" })
+-- map("n", "<leader>fp", function()
+--   require("telescope").extensions.neoclip.default()
+-- end, { desc = "Find clips" })
 
 -- ============= --
 -- Vimtex Keymaps --

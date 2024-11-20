@@ -13,38 +13,12 @@ return {
       },
     },
   },
-  {
-    "echasnovski/mini.bufremove",
-    keys = {
-      {
-        "<leader>d",
-        function()
-          require("mini.bufremove").delete(0, false)
-        end,
-        desc = "Delete Buffer",
-      },
-    },
-  },
   -- {
-  --   "akinsho/bufferline.nvim",
-  --   keys = function()
-  --     return {}
-  --   end,
-  -- },
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      { "<leader>gc", false },
-      { "<leader>gs", false },
-      { "<leader>uC", false },
-    },
-  },
-  -- {
-  --   "lewis6991/gitsigns.nvim",
-  --   opts = {
-  --     on_attach = function()
-  --       return {}
-  --     end,
+  --   "nvim-telescope/telescope.nvim",
+  --   keys = {
+  --     { "<leader>gc", false },
+  --     { "<leader>gs", false },
+  --     { "<leader>uC", false },
   --   },
   -- },
   {
@@ -63,5 +37,19 @@ return {
     config = function(_, opts)
       require("mini.surround").setup(opts)
     end,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
+  {
+    "catppuccin/nvim",
+    lazy = true,
+    name = "catppuccin",
+    opts = {
+      flavour = "Mocha",
+    },
   },
 }

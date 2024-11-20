@@ -16,6 +16,6 @@ pdf = [
 ]
 
 [open]
-prepend_rules = [
-  { name = "*.pdf", use = "pdf"}
-]
+# prepend_rules = [
+#   { name = "*.pdf", use = "pdf"}
+# ]

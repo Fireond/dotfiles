@@ -125,7 +125,7 @@ return {
     })
   ),
   s(
-    { trig = "qq", snippetType = "autosnippet" },
+    { trig = "qq", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\text{<>}", {
       i(1),
     }),

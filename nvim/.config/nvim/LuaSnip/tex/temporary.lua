@@ -26,6 +26,18 @@ return {
   -- s({ trig = "tv", snippetType = "autosnippet" }, fmta("\\mathrm{TV}", {}), { condition = tex.in_mathzone }),
   -- s({ trig = "ce", snippetType = "autosnippet" }, fmta("\\mathrm{couple}", {}), { condition = tex.in_mathzone }),
   -- s({ trig = "mix", snippetType = "autosnippet" }, fmta("\\mathrm{mix}", {}), { condition = tex.in_mathzone }),
+  -- s({ trig = "ss", snippetType = "autosnippet", priority = 4000 }, {
+  --   t("\\ss"),
+  -- }, { condition = tex.in_mathzone }),
+  -- s({ trig = "pp", snippetType = "autosnippet", priority = 3000 }, {
+  --   t("\\pp"),
+  -- }, { condition = tex.in_mathzone }),
+  -- s({ trig = "dd", snippetType = "autosnippet", priority = 3000 }, {
+  --   t("\\dd"),
+  -- }, { condition = tex.in_mathzone }),
+  -- s({ trig = "ff", snippetType = "autosnippet", priority = 3000 }, {
+  --   t("\\ff"),
+  -- }, { condition = tex.in_mathzone }),
   s({ trig = "\\psii", snippetType = "autosnippet", priority = 3000 }, {
     t("\\psi_i"),
   }, { condition = tex.in_mathzone }),

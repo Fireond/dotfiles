@@ -97,24 +97,16 @@ source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZSH/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
-eval "$(lua $ZSH/plugins/z.lua/z.lua  --init zsh once enhanced)"
+# eval "$(lua $ZSH/plugins/z.lua/z.lua  --init zsh once enhanced)"
 
 ### --- Plugins Config --- ###
-function j() {
-  if [[ "$argv[1]" == "-"* ]]; then
-      z "$@"
-  else
-      cd "$@" 2> /dev/null || z "$@"
-  fi
-}
-
-function brew() {
-  command brew "$@" 
-
-  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
-    sketchybar --trigger brew_update
-  fi
-}
+# function j() {
+#   if [[ "$argv[1]" == "-"* ]]; then
+#       z "$@"
+#   else
+#       cd "$@" 2> /dev/null || z "$@"
+#   fi
+# }
 
 function a() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -212,4 +204,5 @@ unset __conda_setup
 #
 # # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"

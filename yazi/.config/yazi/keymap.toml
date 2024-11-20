@@ -21,6 +21,7 @@ prepend_keymap=[
 	{ on = [ "l" ], run = "plugin smart-enter" },
 	{ on = [ "k" ], run = "plugin arrow --args=-1" },
 	{ on = [ "j" ], run = "plugin arrow --args=1" },
+	{ on = [ "s" ], run = "plugin fzf" },
 # 	{ on = [ "y" ], run = [ '''
 # 	shell 'echo "$@" | xclip -i -selection clipboard -t text/uri-list' --confirm
 # ''', "yank" ] },

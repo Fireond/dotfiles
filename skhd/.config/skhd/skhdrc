@@ -7,6 +7,7 @@ cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 
 # cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 cmd - return : open -na wezterm
+cmd - g : open -na "/Applications/ChatGPT.app"
 cmd + shift - return : open -na "Google Chrome"
 
 
