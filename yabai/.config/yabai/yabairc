@@ -12,7 +12,7 @@ yabai -m config window_topmost off
 yabai -m config window_shadow float
 yabai -m config window_opacity on
 yabai -m config window_opacity_duration 0.15
-yabai -m config active_window_opacity 0.96
+yabai -m config active_window_opacity 1.00
 yabai -m config normal_window_opacity 0.90
 yabai -m config insert_feedback_color 0xff9dd274
 yabai -m config split_ratio 0.50
@@ -68,7 +68,7 @@ disabled_apps=(
     "^AlDente$"
     "^DesktopLauncher$"
     "^Loader$"
-    "^ChatGPT$"
+    # "^ChatGPT$"
 )
 
 for app in "${disabled_apps[@]}"; do

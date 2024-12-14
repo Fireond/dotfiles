@@ -183,6 +183,8 @@ alias csket='nvim ~/.config/sketchybar/sketchybarrc'
 alias ckitty='nvim ~/.config/kitty/kitty.conf'
 alias cwez='nvim ~/.config/wezterm/wezterm.lua'
 
+alias ai='conda activate ai'
+alias qq='conda activate QCX'
 
 
 # >>> conda initialize >>>

@@ -174,6 +174,9 @@ return {
   s({ trig = "up", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\uparrow"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "down", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\downarrow"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "cir", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\circ"),
   }, { condition = tex.in_mathzone }),

@@ -64,17 +64,6 @@ return {
           "<Plug>luasnip-prev-choice",
           mode = { "i", "s" },
         },
-        -- {
-        --   "<tab>",
-        --   function()
-        --     if require("luasnip").expand_or_jumpable() then
-        --       require("luasnip").expand_or_jump()
-        --     else
-        --       return "<tab>"
-        --     end
-        --   end,
-        --   mode = { "i", "s" },
-        -- },
       }
     end,
   },
