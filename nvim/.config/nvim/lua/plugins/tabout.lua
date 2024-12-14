@@ -7,7 +7,7 @@ return {
       "hrsh7th/nvim-cmp",
     },
     lazy = false,
-    config = {
+    opts = {
       tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
       backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
       act_as_tab = true, -- shift content if tab out is not possible
