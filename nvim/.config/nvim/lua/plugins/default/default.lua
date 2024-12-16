@@ -41,12 +41,11 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "catppuccin-mocha",
     },
   },
   {
     "catppuccin/nvim",
-    lazy = true,
     name = "catppuccin",
     opts = {
       flavour = "Mocha",

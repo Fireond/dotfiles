@@ -4,9 +4,8 @@ samplerate = 44100 ; 采样率
 history = 60 ; 历史数据展示时长（秒）
 
 [input]
-method = portaudio
-source = "Background Music"
-
+method = pipewire;
+source = auto;
 [output]
 method = ncurses ; 输出方法
 
