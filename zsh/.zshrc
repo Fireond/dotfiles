@@ -81,21 +81,12 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 
-export ZSH=$HOME/.zsh
 ### --- Plugins --- ###
-# source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-# source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-# source $ZSH/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-# fpath=($ZSH/plugins/zsh-completions/src $fpath)
-
-### --- Plugins Config --- ###
-# function j() {
-#   if [[ "$argv[1]" == "-"* ]]; then
-#       z "$@"
-#   else
-#       cd "$@" 2> /dev/null || z "$@"
-#   fi
-# }
+export ZSH=$HOME/.zsh
+source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $ZSH/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+fpath=($ZSH/plugins/zsh-completions/src $fpath)
 
 function a() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
