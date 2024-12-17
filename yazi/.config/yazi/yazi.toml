@@ -13,10 +13,11 @@ edit = [
 	{ run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" },
 ]
 pdf = [
-  { run = 'sioyek "$@" &', desc = "pdf", block = true, for = "unix"}
+  { run = 'sioyek "$@" &', desc = "pdf", block = true, for = "macos"},
+  { run = 'zathura "$@"', desc = "pdf", block = true, for = "linux"}
 ]
 
 [open]
-# prepend_rules = [
-#   { name = "*.pdf", use = "pdf"}
-# ]
+prepend_rules = [
+  { name = "*.pdf", use = "pdf"}
+]
