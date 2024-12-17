@@ -64,21 +64,40 @@ map("n", "<leader>gi", "<cmd>e ~/Documents/Latex/latexindent.yaml<cr>", { desc =
 map("n", "<leader>gs", function()
   require("luasnip.loaders").edit_snippet_files({})
 end, { desc = "Go to luasnip config" })
-map("n", "<leader>gp", function()
-  require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/nvim/lua/plugins" })
-end, { desc = "Go to plugins config" })
-map("n", "<leader>gF", function()
-  require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/nvim/ftplugin" })
-end, { desc = "Go to plugins config" })
-map("n", "<leader>gf", function()
-  require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/fvim/lua" })
-end, { desc = "Go to fvim config" })
-map("n", "<leader>gL", function()
-  require("neo-tree.command").execute({
-    toggle = true,
-    dir = "/Users/hanyu_yan/.local/share/nvim/lazy/LazyVim/lua/lazyvim/",
-  })
-end, { desc = "Go to lazyvim config" })
+
+if vim.loop.os_uname().sysname == "Darwin" then
+  map("n", "<leader>gp", function()
+    require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/nvim/lua/plugins" })
+  end, { desc = "Go to plugins config" })
+  map("n", "<leader>gF", function()
+    require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/nvim/ftplugin" })
+  end, { desc = "Go to plugins config" })
+  map("n", "<leader>gf", function()
+    require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/fvim/lua" })
+  end, { desc = "Go to fvim config" })
+  map("n", "<leader>gL", function()
+    require("neo-tree.command").execute({
+      toggle = true,
+      dir = "/Users/hanyu_yan/.local/share/nvim/lazy/LazyVim/lua/lazyvim/",
+    })
+  end, { desc = "Go to lazyvim config" })
+elseif vim.loop.os_uname().sysname == "Linux" then
+  map("n", "<leader>gp", function()
+    require("neo-tree.command").execute({ toggle = true, dir = "/home/fireond/.config/nvim/lua/plugins" })
+  end, { desc = "Go to plugins config" })
+  map("n", "<leader>gF", function()
+    require("neo-tree.command").execute({ toggle = true, dir = "/home/fireond/.config/nvim/ftplugin" })
+  end, { desc = "Go to plugins config" })
+  map("n", "<leader>gf", function()
+    require("neo-tree.command").execute({ toggle = true, dir = "/home/fireond/.config/fvim/lua" })
+  end, { desc = "Go to fvim config" })
+  map("n", "<leader>gL", function()
+    require("neo-tree.command").execute({
+      toggle = true,
+      dir = "/home/fireond/.local/share/nvim/lazy/LazyVim/lua/lazyvim/",
+    })
+  end, { desc = "Go to lazyvim config" })
+end
 
 -- Spell check
 map("i", "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check spell" })
