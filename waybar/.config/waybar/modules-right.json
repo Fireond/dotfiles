@@ -9,7 +9,7 @@
         "min-length": 6
     },
 
-"pulseaudio": {
+  "pulseaudio": {
     "format": "{icon} {volume}",
     "rotate": 0,
     "format-muted": "婢",

@@ -3,7 +3,8 @@
     "format": "{}",
     "exec": "waybar_cava.sh",
     "restart-interval": 5,
-    "hide-empty": true
+    "hide-empty": true,
+    "on-click": "playerctl play-pause"
   },
   "idle_inhibitor": {
     "format": "{icon}",
