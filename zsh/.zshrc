@@ -144,7 +144,6 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 alias c='clear'
-alias lg='l | grep'
 alias v='nvim'
 alias vi='nvim'
 alias vf='nvim $(fzf)'
