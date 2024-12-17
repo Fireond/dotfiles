@@ -41,4 +41,14 @@
         "on-scroll-down": "shift_down"
     }
   },
+
+  "custom/timer": {
+    "tooltip": true,
+    "return-type": "json",
+    "exec": "waybar-timer check",
+    "on-click": "waybar-timer minute_dialog",
+    "on-click-right": "waybar-timer datetime_dialog",
+    "on-click-middle": "waybar-timer stop",
+    "interval": 1
+  },
 }

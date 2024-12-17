@@ -1,6 +1,6 @@
 {
   "hyprland/workspaces": {
-        "format": "{name} {windows}",
+        "format": "[{name} {windows} ]",
         "format-icons": {
           "1": "",
           "2": "",
@@ -10,13 +10,16 @@
           "active": "",
           "default": ""
         },
+        "format-window-separator": " ",
         "window-rewrite-default": "",
         "window-rewrite": {
           "title<.*youtube.*>": "",
           "class<firefox>": "",
+          "class<chat-gpt>": "G",
           "class<firefox> title<.*github.*>": "",
           "kitty": "",
-          "code": "󰨞"
+          "code": "󰨞",
+          "class<org.pwmt.zathura>": "",
         },
         "disable-scroll": true,
         "rotate": 0,

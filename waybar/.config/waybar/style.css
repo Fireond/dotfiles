@@ -10,7 +10,7 @@
 @import "theme.css";
 
 window#waybar {
-    background: @bar-bg;
+    background: shade(@base, 0.9);
 }
 
 tooltip {
@@ -22,7 +22,7 @@ tooltip {
 
 #workspaces button {
     box-shadow: none;
-	text-shadow: none;
+    text-shadow: none;
     padding: 0px;
     border-radius: 12px;
     margin-top: 4px;
@@ -31,13 +31,13 @@ tooltip {
     padding-left: 4px;
     padding-right: 4px;
     margin-right: 0px;
-    color: @main-fg;
+    color: @lavender;
     animation: ws_normal 20s ease-in-out 1;
 }
 
 #workspaces button.active {
     background: @wb-act-bg;
-    color: @wb-act-fg;
+    color: @sky;
     margin-left: 4px;
     padding-left: 12px;
     padding-right: 12px;
@@ -48,14 +48,14 @@ tooltip {
 
 #workspaces button:hover {
     background: @wb-hvr-bg;
-    color: @wb-hvr-fg;
+    color: @sapphire;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #taskbar button {
     box-shadow: none;
-	text-shadow: none;
+    text-shadow: none;
     padding: 0px;
     border-radius: 12px;
     margin-top: 4px;
@@ -94,6 +94,7 @@ tooltip {
     min-height: 10px
 }
 
+#custom-timer,
 #backlight,
 #battery,
 #bluetooth,
