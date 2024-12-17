@@ -37,12 +37,8 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
       fi
       return 127
   }
-  # Detect AUR wrapper
-  if pacman -Qi yay &>/dev/null; then
-    aurhelper="yay"
-  elif pacman -Qi paru &>/dev/null; then
-    aurhelper="paru"
-  fi
+
+  aurhelper="paru"
   function in {
       local -a inPkg=("$@")
       local -a arch=()
