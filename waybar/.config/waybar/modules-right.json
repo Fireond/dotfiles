@@ -54,7 +54,7 @@
         "tooltip": true,
         "format-wifi": " ",
         "rotate": 0,
-        "format-ethernet": "󰈀 ",
+        "format-ethernet": "󰀂 {ifname}",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰖪 ",
@@ -64,12 +64,9 @@
     },
 
     "bluetooth": {
-        "format": "",
-        "format-disabled": "",
+        "format": " {status}",
         "format-connected": " {num_connections}",
-        //"format-connected-battery": "{icon} {num_connections}",
-        //"format-connected-battery": "{icon} {device_alias}-{device_battery_percentage}%",
-        //"format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
+        "format-connected-battery": " {device_alias}-{device_battery_percentage}%",
         //// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device If this config option is not defined or none of the devices in the list are connected, it will fall back to showing the last connected device.
         "tooltip-format": "{controller_alias}\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
