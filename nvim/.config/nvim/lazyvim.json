@@ -5,7 +5,6 @@
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.editor.fzf",
     "lazyvim.plugins.extras.editor.inc-rename",
-    "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.tex",
