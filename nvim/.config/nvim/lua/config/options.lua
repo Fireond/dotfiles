@@ -1,3 +1,4 @@
+vim.lsp.set_log_level("debug")
 vim.opt.timeoutlen = 150
 vim.opt.spell = true
 vim.opt.spelllang = { "en", "cjk" }
@@ -22,6 +23,3 @@ vim.g.knap_settings = {
 
 vim.g.jukit_mappings = 0
 vim.spell = false
-
--- prettier Config
-vim.g.lazyvim_prettier_needs_config = true

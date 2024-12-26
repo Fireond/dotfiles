@@ -14,7 +14,7 @@ edit = [
 ]
 pdf = [
   { run = 'sioyek "$@" &', desc = "pdf", block = true, for = "macos"},
-  { run = 'zathura "$@"', desc = "pdf", block = true, for = "linux"}
+  { run = 'zathura "$@" &', desc = "pdf", block = true, for = "linux"}
 ]
 
 [open]

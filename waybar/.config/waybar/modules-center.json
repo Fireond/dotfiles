@@ -52,4 +52,13 @@
     "on-click-middle": "waybar-timer stop",
     "interval": 1
   },
+
+  "custom/todoist": {
+  "exec": "python -u ~/Documents/Codes/waybar-todoist/waybar-todoist.py",
+  "exec-on-even": false,
+  "return-type": "json",
+  "interval": 20,
+  "on-click": "gtk-launch todoist-web",
+  "tooltip": false
+  },
 }

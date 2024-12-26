@@ -1,4 +1,7 @@
 set selection-clipboard clipboard
-
+set selection-notification false
 map D set "first-page-column 1:1"
 map <C-d> set "first-page-column 1:2"
+
+# catppuccin theme
+include catppuccin-mocha
