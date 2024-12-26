@@ -92,7 +92,7 @@ return {
     { condition = line_begin }
   ),
   s(
-    { trig = "bpf", snippetType = "autosnippet" },
+    { trig = "bff", snippetType = "autosnippet" },
     fmta(
       [[
       \begin{proof}

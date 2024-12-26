@@ -7,6 +7,8 @@ prepend_keymap=[
 	{ on = [ "g", "q" ], run = "cd ~/Documents/Courses/c31/量子计算交叉应用/homework/" },
 	{ on = [ "g", "a" ], run = "cd ~/Documents/Courses/c31/高等原子物理学/homework/" },
 	{ on = [ "g", "p" ], run = "cd ~/Documents/pdfs/" },
+	{ on = [ "g", "/" ], run = "cd /" },
+	{ on = [ "g", "T" ], run = "cd /home/fireond/.local/share/Trash/" },
 	{ on = [ "g", "C" ], run = "cd ~/Documents/Codes/" },
 	{ on = [ "g", "r" ], run = '''
 	shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm

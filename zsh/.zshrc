@@ -1,3 +1,4 @@
+################################################################################################
 if  [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH=$HOME/.bin:$PATH
   export NVM_DIR="$HOME/.nvm"
@@ -17,7 +18,9 @@ if  [[ "$OSTYPE" == "darwin"* ]]; then
   fi
   unset __conda_setup
   # <<< conda initialize <<<
+################################################################################################
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  export TEXMFDIST="/usr/share/texmf-dist"
   # In case a command is not found, try to find the package that has it
   function command_not_found_handler {
       local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
@@ -75,12 +78,22 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   unset __conda_setup
   # <<< conda initialize <<<
 fi
+################################################################################################
+
+
+# save history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 
 ### --- Plugins --- ###
 export ZSH=$HOME/.zsh
-source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+autoload -U compinit; compinit
+source $ZSH/plugins/fzf-tab/fzf-tab.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
 
@@ -137,6 +150,9 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias ecrash='sudo systemctl start shellcrash'
   alias rcrash='sudo systemctl restart shellcrash'
   alias scrash='sudo systemctl stop shellcrash'
+
+  alias getbright='ddcutil getvcp 10'
+  alias setbright='ddcutil setvcp 10'
 fi
 
 alias c='clear'
@@ -173,10 +189,15 @@ alias ca='ipython --profile=calculate'
 
 # conda alias
 alias ai='conda activate ai'
+alias condab='conda activate base'
 alias qcx='conda activate QCX'
+alias qtp='conda activate qutip-env'
 alias condal='conda env list'
 
-
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-
+# Check that the function `starship_zle-keymap-select()` is defined.
+# xref: https://github.com/starship/starship/issues/3418
+type starship_zle-keymap-select >/dev/null || \
+  {
+    eval "$(starship init zsh)"
+  }

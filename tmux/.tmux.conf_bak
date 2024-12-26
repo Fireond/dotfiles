@@ -1,0 +1,179 @@
+# remap prefix from 'C-b' to 'C-a'
+set-option -g prefix 'C-\'
+unbind-key C-b
+bind-key 'C-\' send-prefix
+
+# disable the repeat
+set-option -g repeat-time 0
+
+# start window numbers at 1 to match keyboard order with tmux window order
+set-option -g base-index 1
+set-window-option -g pane-base-index 1
+
+# renumber windows sequentially after closing any of them
+set-option -g renumber-windows on
+
+# auto window rename
+set-option -g automatic-rename on
+
+# enable activity alerts
+set-window-option -g monitor-activity on
+set-option -g visual-activity off
+
+# increase scrollback lines
+set-option -g history-limit 50000
+
+# enable clipboard
+set-option -g set-clipboard on
+
+# mouse behavior
+set-option -g mouse on
+
+# disable escape delay
+set-option -sg escape-time 0
+
+# truecolor support
+set-option -ga terminal-overrides ",xterm-256color:Tc"
+
+# default terminal is 256 colors
+set-option -g default-terminal "xterm-256color"
+
+# aggressive resize
+set-window-option -g aggressive-resize off
+
+# moving between panes.
+bind-key -r h select-pane -L
+bind-key -r j select-pane -D
+bind-key -r k select-pane -U
+bind-key -r l select-pane -R
+
+# resize panes with vim movement keys
+bind-key -r H resize-pane -L 5
+bind-key -r J resize-pane -D 5
+bind-key -r K resize-pane -U 5
+bind-key -r L resize-pane -R 5
+
+# remove confirmation questions when closing windows/panes
+bind-key x kill-pane
+bind-key & kill-window
+
+# go to last window
+bind-key ^ last-window
+
+# splitting panes with current path
+bind-key c new-window -c "#{pane_current_path}"
+bind-key '-' split-window -h -c "#{pane_current_path}"
+bind-key '|' split-window -v -c "#{pane_current_path}"
+
+# move panes to another window
+bind-key M-1 join-pane -t :1
+bind-key M-2 join-pane -t :2
+bind-key M-3 join-pane -t :3
+bind-key M-4 join-pane -t :4
+bind-key M-5 join-pane -t :5
+bind-key M-6 join-pane -t :6
+bind-key M-7 join-pane -t :7
+bind-key M-8 join-pane -t :8
+bind-key M-9 join-pane -t :9
+
+# Use vim keybindings in copy mode
+set-window-option -g mode-keys vi
+
+# Update default binding of `Enter` and `Space to also use copy-pipe
+unbind-key -T copy-mode-vi Enter
+unbind-key -T copy-mode-vi Space
+
+bind-key -T edit-mode-vi Up send-keys -X history-up
+bind-key -T edit-mode-vi Down send-keys -X history-down
+
+# begin selection as in Vim
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi C-v send -X rectangle-toggle
+
+# copy text in copy mode
+bind-key -T copy-mode-vi y send -X copy-selection-and-cancel
+
+# popup window for finding command to run
+bind-key R display-popup -E "tmux-commands | xargs -I{} tmux send-keys '{}' enter"
+bind-key C display-popup -E "tmux-commands | xargs tmux new-window -c '#{pane_current_path}'"
+bind-key | display-popup -E "tmux-commands | xargs tmux split-window -v -c '#{pane_current_path}'"
+bind-key - display-popup -E "tmux-commands | xargs tmux split-window -h -c '#{pane_current_path}'"
+
+# popup window for finding session to switch
+bind-key S display-popup -E "tmux-sessions | xargs tmux switch-client -t"
+bind-key P if-shell -F '#{==:#{session_name},popup}' {
+  detach-client
+} {
+  if-shell -F '#{e|==:#{N/s:popup},0}' {
+    new-session -d -s 'popup' 'tmux source-file ~/.dotfiles/tmux/sessions/popup.tmux.conf'
+  }
+  display-popup -w 80% -h 80% -E "tmux attach-session -t popup"
+}
+
+# shortcut for synchronize-panes toggle
+bind-key I set-window-option synchronize-panes
+
+# set fish as default shell if available
+# install by linux package manager
+if-shell 'test -e /usr/bin/fish' {
+  set-option -g default-shell /usr/bin/fish
+}
+
+# install by homebrew
+if-shell 'test -e /usr/local/bin/fish' {
+  set-option -g default-shell /usr/local/bin/fish
+}
+
+# install by macports
+if-shell 'test -e /opt/local/bin/fish' {
+  set-option -g default-shell /opt/local/bin/fish
+}
+
+# status bar
+set-option -g status on
+set-option -g status-interval 1
+set-option -g status-position top
+set-option -g status-justify left
+set-option -g status-style none,fg=#a89984,bg=#3c3836
+
+# status variables format
+if-shell 'test "$(uname)" = "Darwin"' {
+  set-option -g @OS ""
+  set-option -g @IM "  #(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurrentKeyboardLayoutInputSourceID | awk -F. '{print $4}' | sed s/PinyinKeyboard/中/)"
+} {
+  set-option -g @OS ""
+  set-option -g @IM " #(whoami)#{?SSH_CLIENT,@#h,}"
+}
+%hidden GIT_BRANCH="#(git -C #{pane_current_path} rev-parse --abbrev-ref HEAD)"
+
+# status bar left
+set-option -g status-left-length 100
+set-option -g status-left-style none
+set-option -g status-left "#[fg=#282828,bg=#a89984,nobold] #{E:@OS} #S ﬿ #[fg=#a89984,bg=#3c3836,nobold]"
+
+# status bar right
+set-option -g status-right-length 150
+set-option -g status-right-style none
+set-option -g status-right "#[fg=#504945,bg=#3c3836]#[fg=#a89984,bg=#504945]  %a %b %d #[fg=#3c3836] #[fg=#a89984,bg=#504945] %H:%M %p #[fg=#3c3836,bg=#504945]#[fg=#a89984,bg=#3c3836]#[fg=#282828,bg=#a89984] #{?$GIT_BRANCH, $GIT_BRANCH #[fg=#3c3836] ,}#[fg=#282828,bg=#a89984]#{E:@IM} "
+
+# window bar style
+set-option -g window-status-style "fg=#3c3836,bg=#504945"
+set-option -g window-status-current-style "fg=#ebdbb2,bg=#49556a"
+set-option -g window-status-activity-style "fg=#3c3836,bg=#504945"
+
+set-option -g window-status-format '#[fg=#3c3836,nobold]#[fg=#a89984] #I: #W #{?window_last_flag, ,}#{?window_activity_flag,#[fg=#d79921] ,}#[fg=#504945,bg=#3c3836,nobold]'
+set-option -g window-status-current-format '#[fg=#3c3836,nobold]#[fg=#ebdbb2] #I: #W #[fg=#689d6a]#{?window_zoomed_flag,,} #[fg=#49556a,bg=#3c3836,nobold]'
+set-option -g window-status-separator ''
+
+# pane border style
+set-option -g pane-active-border-style fg='#fe8019'
+set-option -g pane-border-style fg='#3c3836'
+
+# message style
+set-option -g message-style none,fg='#fe8010',bg='#504945'
+set-option -g message-command-style none,fg='#fe8010',bg='#504945'
+
+# local config
+if-shell 'test -e ~/.tmux.conf.local' {
+  source-file ~/.tmux.conf.local
+}

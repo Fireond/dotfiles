@@ -404,4 +404,14 @@ return {
   s({ trig = "ab", snippetType = "autosnippet" }, {
     t("\\ab"),
   }, { condition = tex.in_mathzone }),
+  s(
+    { trig = "ub", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\underbrace{<>}", { i(1) }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "ob", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\overbrace{<>}", { i(1) }),
+    { condition = tex.in_mathzone }
+  ),
 }
