@@ -4,4 +4,29 @@ macos_option_as_alt yes
 macos_quit_when_last_window_closed yes
 hide_window_decorations titlebar-only
 
+# tmux mappings
+# command
+map cmd+: send_key ctrl+b :
+# copy-mode
+map cmd+f send_key ctrl+b [
+# rename session
+map cmd+r send_key ctrl+b $
+# rename window
+map cmd+shift+r send_key ctrl+b ,
+# list all sessions and windows
+map cmd+s send_key ctrl+b w
+# kill window
+map cmd+w send_key ctrl+b &
+# new window
+map cmd+t send_key ctrl+b c
+# switch to window 1
+map cmd+1 send_key ctrl+b 1
+map cmd+2 send_key ctrl+b 2
+map cmd+3 send_key ctrl+b 3
+map cmd+4 send_key ctrl+b 4
+map cmd+5 send_key ctrl+b 5
+# split vertically and horizontally
+map cmd+shift+\ send_key ctrl+b %
+# kill pane
+map cmd+x send_key ctrl+b x
 
