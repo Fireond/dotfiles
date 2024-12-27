@@ -19,3 +19,9 @@
 [submodule "zsh/.zsh/plugins/fzf-tab"]
 	path = zsh/.zsh/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule "tmux/.tmux/plugins/tmux-sensible"]
+	path = tmux/.tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule "tmux/.tmux/plugins/catppuccin"]
+	path = tmux/.tmux/plugins/catppuccin
+	url = https://github.com/catppuccin/tmux.git
