@@ -29,4 +29,6 @@ map cmd+5 send_key ctrl+b 5
 map cmd+shift+\ send_key ctrl+b %
 # kill pane
 map cmd+x send_key ctrl+b x
+# detach
+map cmd+d send_key ctrl+b d
 
