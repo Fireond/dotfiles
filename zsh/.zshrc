@@ -157,6 +157,7 @@ fi
 
 alias c='clear'
 alias v='nvim'
+alias t='tmux'
 alias vi='nvim'
 alias vf='nvim $(fzf)'
 
@@ -186,6 +187,8 @@ alias cbash='nvim ~/.bashrc'
 alias sbash='source ~/.bashrc'
 
 alias ca='ipython --profile=calculate'
+alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'zathura \"{}\" &'"
+
 
 # conda alias
 alias ai='conda activate ai'

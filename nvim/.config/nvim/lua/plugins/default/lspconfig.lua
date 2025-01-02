@@ -10,9 +10,12 @@ return {
       end
       opts.servers = {
         texlab = {
-          mason = false,
           settings = {
             texlab = {
+              inlayHints = {
+                labelDefinitions = false,
+                labelReferences = false,
+              },
               diagnostics = { ignoredPatterns = { "^Overfull", "^Underfull" } },
               latexFormatter = "latexindent",
               latexindent = {

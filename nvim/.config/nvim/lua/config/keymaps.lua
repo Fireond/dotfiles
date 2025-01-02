@@ -38,10 +38,10 @@ map("n", "<", "v<g")
 map("n", ">", "v>g")
 
 -- buffers
-map({ "n", "i" }, "<A-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-map({ "n", "i" }, "<A-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map({ "n", "i" }, "<M-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+-- map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+map({ "n", "i" }, "<M-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+-- map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
 
 -- windows resize
@@ -55,7 +55,7 @@ map("n", "<leader>go", "<cmd>e ~/.config/nvim/lua/config/options.lua<cr>", { des
 map("n", "<leader>gk", "<cmd>e ~/.config/nvim/lua/config/keymaps.lua<cr>", { desc = "Go to keymaps config" })
 map("n", "<leader>ga", "<cmd>e ~/.config/nvim/lua/config/autocmds.lua<cr>", { desc = "Go to autocmds config" })
 map("n", "<leader>gu", "<cmd>e ~/.config/nvim/lua/util/latex.lua<cr>", { desc = "Go to util config" })
-map("n", "<leader>gl", "<cmd>e ~/Documents/Latex/Package_elegantbook.tex<cr>", { desc = "Go to latex.nvim config" })
+map("n", "<leader>gl", "<cmd>e ~/Documents/Latex/preamble.tex<cr>", { desc = "Go to latex.nvim config" })
 map("n", "<leader>gt", "<cmd>e ~/Documents/Latex/note_template.tex<cr>", { desc = "Go to latex template" })
 map("n", "<leader>gi", "<cmd>e ~/Documents/Latex/latexindent.yaml<cr>", { desc = "Go to latexindent" })
 map("n", "<leader>gs", function()
@@ -121,23 +121,20 @@ map("n", "<leader>z", "zt", { desc = "Top this line" })
 --   require("telescope").extensions.neoclip.default()
 -- end, { desc = "Find clips" })
 
--- ============= --
--- Vimtex Keymaps --
--- ============= --
--- map({ "o", "x" }, "am", "<Plug>(vimtex-a$)", { desc = "Use `am` for the inline math text object" })
--- map({ "o", "x" }, "im", "<Plug>(vimtex-i$)", { desc = "Use `im` for the inline math text object" })
--- map({ "o", "x" }, "ai", "<Plug>(vimtex-am)", { desc = "Use `ai` for the item text text object" })
--- map({ "o", "x" }, "ii", "<Plug>(vimtex-im)", { desc = "Use `ii` for the item text text object" })
-
--- map({ "i", "n", "v" }, "<C-b>", function()
---   require("knap").toggle_autopreviewing()
--- end)
--- map({ "i", "n", "v" }, "<C-x>", function()
---   require("knap").forward_jump()
--- end)
--- map({ "n", "v" }, "<leader>K", function()
---   require("knap").process_once()
--- end)
+-- note
+map("n", "<leader>n", "", { desc = "+note" })
+map("n", "<leader>na", function()
+  require("util.note").add_note()
+end, { desc = "add note" })
+map("n", "<leader>nf", function()
+  require("util.note").find_note()
+end, { desc = "find note" })
+map("n", "<leader>ns", function()
+  require("util.note").add_section()
+end, { desc = "add section" })
+map("n", "<leader>N", function()
+  Snacks.notifier.show_history()
+end, { desc = "Notification History" })
 
 -- Disable default keymaps
 local del = vim.keymap.del

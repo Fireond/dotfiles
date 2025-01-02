@@ -10,30 +10,6 @@ local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
-  -- s(
-  --   { trig = "(%d)(%w)i", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-  --   fmta("\\({}^{<>}\\)<>", {
-  --     f(function(_, snip)
-  --       return snip.captures[1]
-  --     end),
-  --     f(function(_, snip)
-  --       return snip.captures[2]
-  --     end),
-  --   }),
-  --   { condition = tex.in_text }
-  -- ),
-  -- s(
-  --   { trig = "(%d)(%w)i", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-  --   fmta("{}^{<>}\\text{<>}", {
-  --     f(function(_, snip)
-  --       return snip.captures[1]
-  --     end),
-  --     f(function(_, snip)
-  --       return snip.captures[2]
-  --     end),
-  --   }),
-  --   { condition = tex.in_mathzone }
-  -- ),
   s(
     { trig = "DeclareMathOperator" },
     fmta("\\DeclareMathOperator{\\<>}{<>}", {
@@ -86,12 +62,6 @@ return {
     fmta("\\section*{Problem <>}", { i(1) }),
     { condition = tex.in_text }
   ),
-
-  -- s({ trig = "label", snippetType = "autosnippet" }, {
-  --   t("\\label{"),
-  --   i(0),
-  --   t("}"),
-  -- }, { condition = tex.in_text, show_condition = tex.in_text }),
   s(
     { trig = "zref", snippetType = "autosnippet" },
     fmta("\\href{run:../../../../Zotero/storage/<>}{file}", {
@@ -132,6 +102,9 @@ return {
   s({ trig = "deff", snippetType = "autosnippet" }, {
     t("definition"),
   }, { condition = tex.in_text }),
+  s({ trig = "Deff", snippetType = "autosnippet" }, {
+    t("Definition"),
+  }, { condition = tex.in_text }),
   s({ trig = "exaa", snippetType = "autosnippet" }, {
     t("example"),
   }, { condition = tex.in_text }),
@@ -150,140 +123,41 @@ return {
   s({ trig = "iso" }, {
     t("isomorphism"),
   }, { condition = tex.in_text }),
+  s({ trig = "homeo" }, {
+    t("homeomorphism"),
+  }, { condition = tex.in_text }),
+  s({ trig = "homeo" }, {
+    t("homeomorphic"),
+  }, { condition = tex.in_text }),
   s({ trig = "homo" }, {
     t("homomorphism"),
   }, { condition = tex.in_text }),
   s({ trig = "homo" }, {
     t("homomorphic"),
   }, { condition = tex.in_text }),
-  -- s({ trig = "psp", snippetType = "autosnippet" }, {
-  --   t("\\(p\\)-subgroup"),
-  -- }, { condition = tex.in_text }),
-  -- s({ trig = "pgp", snippetType = "autosnippet" }, {
-  --   t("\\(p\\)-subgroup"),
-  -- }, { condition = tex.in_text }),
-  -- s({ trig = "spsp", snippetType = "autosnippet" }, {
-  --   t("Sylow \\(p\\)-subgroup"),
-  -- }, { condition = tex.in_text }),
+  s({ trig = "si ", snippetType = "autosnippet" }, {
+    t("is "),
+  }, { condition = tex.in_text }),
   s({ trig = "=>", snippetType = "autosnippet" }, {
     t("\\(\\implies\\)"),
   }, { condition = tex.in_text }),
+  s({ trig = "<=", snippetType = "autosnippet" }, {
+    t("\\(\\impliedby\\)"),
+  }, { condition = tex.in_text }),
   s(
-    { trig = "homework" },
-    fmta(
-      [[
-    \documentclass{article}
-    \newcommand{\Class}{<>}
-    \newcommand{\Title}{Homework <>}
-    \author{Hanyu Yan}
-    \input{~/Documents/Latex/Package_elegantbook.tex}
-    \input{~/Documents/Latex/Sample_Homework.tex}
-    \begin{document}
-    \maketitle \thispagestyle{empty}
-      
-    <>
-      
-    \end{document}
-    ]],
-      {
-        c(1, {
-          t("Quantum Computation + X"),
-          t("Advanced Atomic Physics"),
-          t("Electronics for Experimental Physics"),
-        }),
-        i(2, "number"),
-        i(0),
-      }
-    ),
-    { condition = tex.in_text * line_begin }
+    { trig = "reff", snippetType = "autosnippet" },
+    fmta("\\ref{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_text }
   ),
   s(
-    { trig = "note" },
-    fmta(
-      [[
-    \documentclass[letterpaper, 12pt]{article}
-    \input{~/Documents/Latex/note_template.tex}
-    \begin{document}
-    \title{<> \\[1em]
-    \normalsize <>}
-    \author{\normalsize Fireond}
-    \date{\normalsize\vspace{-1ex} Last updated: \today}
-    \maketitle
-    \tableofcontents\label{sec:contents}
-
-    <>
-      
-    \end{document}
-    ]],
-      {
-        i(1, "title"),
-        i(2, "subtitle"),
-        i(0),
-      }
-    ),
-    { condition = tex.in_text * line_begin }
-  ),
-  s(
-    { trig = "algo" },
-    fmta(
-      [[
-    \documentclass[utf8]{article}
-    \usepackage{amsmath,amssymb}
-    \usepackage{graphicx}
-    \usepackage{fullpage}
-    \usepackage{setspace}
-    \usepackage{verbatim}
-    \usepackage{algorithm}
-    \usepackage{algpseudocodex}
-    \algrenewcommand\algorithmicrequire{\textbf{Input:}}
-    \algrenewcommand\algorithmicensure{\textbf{Output:}}
-    \input{~/Documents/Latex/Package_elegantbook.tex}
-
-    \onehalfspacing
-
-    \title{\bf\huge Algorithm Design - Assignment <>}
-    \author{Hanyu Yan\\2022010860\\Class 23}
-    \date{\today}
-
-    \begin{document}
-    \maketitle
-
-    <>
-
-    \end{document}
-    ]],
-      { i(1), i(0) }
-    ),
-    { condition = tex.in_text * line_begin }
-  ),
-  s(
-    { trig = "report" },
-    fmta(
-      [[
-    %! TeX program = xelatex
-    \documentclass{article}
-    \newcommand{\Class}{<>}
-    \newcommand{\Title}{<>}
-    \author{严涵宇}
-    \usepackage[UTF8]{ctex}
-    \input{~/Documents/Latex/Package_elegantbook.tex}
-    \input{~/Documents/Latex/Sample_Homework.tex}
-    \renewcommand{\arraystretch}{1.3}
-    \begin{document}
-    \maketitle \thispagestyle{empty}
-      
-    <>
-      
-    \end{document}
-    ]],
-      {
-        c(1, {
-          t("量子信息实验报告"),
-        }),
-        i(2),
-        i(0),
-      }
-    ),
-    { condition = tex.in_text * line_begin }
+    { trig = "(%a)ii", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\(<>\\)", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+    }),
+    { condition = tex.in_text }
   ),
 }
