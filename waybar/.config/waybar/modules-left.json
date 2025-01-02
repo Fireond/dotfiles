@@ -24,6 +24,8 @@
           "class<org.inkscape.Inkscape>": "",
           "class<org.inkscape.Inkscape>": "",
           "class<Spotify>": "󰓇",
+          "class<QQ>": "󰘅",
+          "class<qqmusic>": "",
         },
         "disable-scroll": true,
         "rotate": 0,

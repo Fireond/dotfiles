@@ -414,4 +414,9 @@ return {
     fmta("\\overbrace{<>}", { i(1) }),
     { condition = tex.in_mathzone }
   ),
+  s(
+    { trig = "ring", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\mathring{<>}", { i(1) }),
+    { condition = tex.in_mathzone }
+  ),
 }

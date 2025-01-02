@@ -21,13 +21,6 @@ return {
       i(1, "module"),
     })
   ),
-  s(
-    { trig = "add", snippetType = "autosnippet" },
-    fmta('["<>"] = "<>",', {
-      i(1),
-      i(2),
-    })
-  ),
   ls.parser.parse_snippet("lm", "local M = {}\n\n$1 \n\nreturn M"),
   s(
     { trig = "csnip", snippetType = "autosnippet" },

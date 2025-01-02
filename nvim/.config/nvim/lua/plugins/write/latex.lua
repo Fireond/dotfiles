@@ -47,7 +47,7 @@ return {
     init = function()
       vim.keymap.set("n", "<localleader>lt", ":call vimtex#fzf#run()<cr>")
 
-      vim.g.vimtex_syntax_conceal_disable = 1
+      vim.g.vimtex_syntax_conceal_disable = 0
       vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
       vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
       vim.g.vimtex_compiler_silent = 1
@@ -77,10 +77,13 @@ return {
       elseif vim.loop.os_uname().sysname == "Linux" then
         vim.g.vimtex_view_method = "zathura"
       end
+
+      vim.keymap.set({ "x", "o" }, "it", "<plug>(vimtex-i$)", { desc = "vimtex-i$" })
+      vim.keymap.set({ "x", "o" }, "at", "<plug>(vimtex-a$)", { desc = "vimtex-a$" })
     end,
   },
   {
-    "fireond/illustrate.nvim",
+    "rpapallas/illustrate.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
@@ -90,6 +93,11 @@ return {
       local illustrate_finder = require("illustrate.finder")
 
       return {
+        {
+          "<leader>i",
+          "",
+          desc = "+illustrate",
+        },
         {
           "<leader>is",
           function()
