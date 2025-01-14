@@ -156,6 +156,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 alias c='clear'
+alias b='btop'
 alias v='nvim'
 alias t='tmux'
 alias vi='nvim'

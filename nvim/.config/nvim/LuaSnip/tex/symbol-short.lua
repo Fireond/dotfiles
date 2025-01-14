@@ -234,6 +234,9 @@ return {
   s({ trig = "nabla", snippetType = "autosnippet" }, {
     t("\\nabla"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "cong", snippetType = "autosnippet" }, {
+    t("\\cong"),
+  }, { condition = tex.in_mathzone }),
   s(
     { trig = "b|", wordTrig = false, snippetType = "autosnippet" },
     fmta(

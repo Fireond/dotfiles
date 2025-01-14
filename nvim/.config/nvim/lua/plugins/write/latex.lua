@@ -47,7 +47,7 @@ return {
     init = function()
       vim.keymap.set("n", "<localleader>lt", ":call vimtex#fzf#run()<cr>")
 
-      vim.g.vimtex_syntax_conceal_disable = 0
+      vim.g.vimtex_syntax_conceal_disable = 1
       vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
       vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
       vim.g.vimtex_compiler_silent = 1

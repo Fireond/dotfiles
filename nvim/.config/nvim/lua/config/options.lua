@@ -1,4 +1,4 @@
-vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("off")
 vim.opt.timeoutlen = 150
 vim.opt.spell = true
 vim.opt.spelllang = { "en", "cjk" }
@@ -12,14 +12,3 @@ local indent = 2
 vim.opt.softtabstop = indent -- Number of spaces that a <Tab> counts for while performing editing operations
 vim.opt.tabstop = indent -- Number of spaces tabs count for
 vim.opt.shiftwidth = indent -- Size of an indent
-
--- Knap Config
-
-vim.g.knap_settings = {
-  delay = 500,
-}
-
--- jukit Config
-
-vim.g.jukit_mappings = 0
-vim.spell = false

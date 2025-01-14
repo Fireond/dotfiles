@@ -251,20 +251,6 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "pt", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\int <> \\d P", {
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "mt", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\int <> d\\mu", {
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\int_{<>}^{<>} <> \\d <>", {
       i(1),
