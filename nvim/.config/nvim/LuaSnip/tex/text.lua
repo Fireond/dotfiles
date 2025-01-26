@@ -25,7 +25,7 @@ return {
     t("\\text{\\ if\\ }"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "stt", snippetType = "autosnippet" }, {
-    t("\\quad\\text{s.t.}\\quad"),
+    t("\\text{ s.t. }"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "as", snippetType = "autosnippet" }, {
     t("\\text{\\ as\\ }"),
@@ -93,7 +93,7 @@ return {
   s({ trig = "##", snippetType = "autosnippet" }, {
     t("\\#"),
   }, { condition = tex.in_text }),
-  s({ trig = "thm", snippetType = "autosnippet" }, {
+  s({ trig = "thmm", snippetType = "autosnippet" }, {
     t("theorem"),
   }, { condition = tex.in_text }),
   s({ trig = "propp", snippetType = "autosnippet" }, {

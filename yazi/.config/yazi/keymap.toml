@@ -27,4 +27,5 @@ prepend_keymap=[
   # { on = [ "y" ], run = [ '''
   # shell 'echo "$@" | pbcopy' --confirm
   # ''', "yank" ] },
+  { on = [ "<C-y>" ], run = "plugin wl-clipboard" },
 ]

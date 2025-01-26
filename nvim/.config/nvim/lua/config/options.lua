@@ -12,3 +12,7 @@ local indent = 2
 vim.opt.softtabstop = indent -- Number of spaces that a <Tab> counts for while performing editing operations
 vim.opt.tabstop = indent -- Number of spaces tabs count for
 vim.opt.shiftwidth = indent -- Size of an indent
+
+if vim.g.neovide then
+  require("config.neovide")
+end

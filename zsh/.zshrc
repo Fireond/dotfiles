@@ -65,17 +65,17 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   }
   # >>> conda initialize >>>
   # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('/home/fireond/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "/home/fireond/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "/home/fireond/miniconda3/etc/profile.d/conda.sh"
-      else
-          export PATH="/home/fireond/miniconda3/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
+  # __conda_setup="$('/home/fireond/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  # if [ $? -eq 0 ]; then
+  #     eval "$__conda_setup"
+  # else
+  #     if [ -f "/home/fireond/miniconda3/etc/profile.d/conda.sh" ]; then
+  #         . "/home/fireond/miniconda3/etc/profile.d/conda.sh"
+  #     else
+  #         export PATH="/home/fireond/miniconda3/bin:$PATH"
+  #     fi
+  # fi
+  # unset __conda_setup
   # <<< conda initialize <<<
 fi
 ################################################################################################
@@ -130,6 +130,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias ckitty='nvim ~/.config/kitty/kitty.conf'
   alias cwez='nvim ~/.config/wezterm/wezterm.lua'
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  alias op='xdg-open'
   alias l='eza -lh --icons=auto' # long list
   alias ls='eza -1 --icons=auto' # short list
   alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
@@ -189,6 +190,7 @@ alias sbash='source ~/.bashrc'
 
 alias ca='ipython --profile=calculate'
 alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'zathura \"{}\" &'"
+alias spdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'sioyek \"{}\" &'"
 
 
 # conda alias

@@ -261,6 +261,16 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "oint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\oint_{<>}^{<>} <> \\d <>", {
+      i(1),
+      i(2),
+      i(3),
+      i(4),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "2int", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("\\int_{<>}^{<>}\\int_{<>}^{<>} <> \\d <>\\d <>", {
       i(1),

@@ -127,4 +127,25 @@ return {
     ),
     { condition = tex.in_text * line_begin }
   ),
+  s(
+    { trig = "cpho" },
+    fmta(
+      [[
+%! TEX program = xelatex
+\documentclass[10pt]{article}
+\input{~/Documents/Latex/preamble.tex}
+\usepackage{ctex}
+\begin{document}
+
+<>
+\begin{enumerate}[1.]
+  \item
+\end{enumerate}
+
+\end{document}
+    ]],
+      { i(0) }
+    ),
+    { condition = tex.in_text * line_begin }
+  ),
 }

@@ -13,22 +13,6 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
--- learn
-local function shortenPath(originalPath)
-  local parts = {}
-  for part in originalPath:gmatch("[^/]+") do
-    table.insert(parts, part)
-  end
-  local shortenedPath = ""
-  if #parts >= 4 then
-    shortenedPath = parts[#parts - 3] .. "/" .. parts[#parts - 2] .. "/" .. parts[#parts - 1] .. "/" .. parts[#parts]
-  else
-    shortenedPath = originalPath
-  end
-  shortenedPath = string.gsub(shortenedPath, "\\ ", " ")
-  return shortenedPath
-end
-
 -- movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })
 map({ "n", "v", "o" }, "L", "$", { desc = "Use 'L' as '$'" })
@@ -62,12 +46,6 @@ map("n", "<leader>gs", function()
   require("luasnip.loaders").edit_snippet_files({})
 end, { desc = "Go to luasnip config" })
 
-map("n", "<leader>gp", function()
-  require("neo-tree.command").execute({ toggle = true, dir = vim.fn.expand("~/.config/nvim/lua/plugins") })
-end, { desc = "Go to plugins config" })
-map("n", "<leader>gd", function()
-  require("fzf-lua").files({ cwd = "~/.dotfiles/" })
-end, { desc = "Go to dotfiles" })
 map("n", "<leader>gF", function()
   require("neo-tree.command").execute({ toggle = true, dir = vim.fn.expand("~/.config/nvim/ftplugin") })
 end, { desc = "Go to plugins config" })

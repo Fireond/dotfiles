@@ -41,15 +41,38 @@ return {
   s({ trig = "\\psii", snippetType = "autosnippet", priority = 3000 }, {
     t("\\psi_i"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "mm", snippetType = "autosnippet", priority = 3000 }, {
-    t("m_{\\max}"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "FF", snippetType = "autosnippet", priority = 3000 }, {
-    t("\\mathcal{F}"),
+    t("\\mathscr{F}"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "SS", snippetType = "autosnippet", priority = 3000 }, {
-    t("\\mathcal{S}"),
-  }, { condition = tex.in_mathzone }),
+  s(
+    { trig = "pt", snippetType = "autosnippet" },
+    fmta("[<>pt]", {
+      i(1),
+    }),
+    { condition = tex.in_text }
+  ),
+  s(
+    { trig = "pt", snippetType = "autosnippet" },
+    fmta("\\quad\\text{[<>pt]}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "an", snippetType = "autosnippet" },
+    fmta("\\langle <> \\rangle", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "BB", snippetType = "autosnippet" },
+    fmta("\\mathring{B}_{<>}(<>)", {
+      i(1, "\\varepsilon"),
+      i(2),
+    }),
+    { condition = tex.in_mathzone }
+  ),
   s(
     { trig = "EE", snippetType = "autosnippet" },
     fmta("\\E_{\\sigma} \\ab[ <> ]", {
@@ -71,9 +94,6 @@ return {
   }, { condition = tex.in_mathzone }),
   s({ trig = "++", snippetType = "autosnippet" }, {
     t("^+"),
-  }, { condition = tex.in_mathzone }),
-  s({ trig = "ii", snippetType = "autosnippet" }, {
-    t("\\int"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "ed", snippetType = "autosnippet" }, {
     t("\\ed"),

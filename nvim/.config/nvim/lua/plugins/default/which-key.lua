@@ -10,7 +10,7 @@ return {
         { "<leader>c", group = "code" },
         { "<leader>f", group = "file/find" },
         { "<leader>g", group = "go to" },
-        { "<leader>l", group = "learn" },
+        { "<leader>l", group = "vimtex" },
         { "<leader>p", group = "preview" },
         { "<leader>q", group = "quit/session" },
         { "<leader>s", group = "search" },
