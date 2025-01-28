@@ -6,15 +6,15 @@ return {
     opts = {
       python_host = { "conda", "run", "--no-capture-output", "-n", "QCX", "python" },
       jupyter_command = { "conda", "run", "--no-capture-output", "-n", "QCX", "jupyter" },
-    },
-    shortsighted = true,
-    notify = {
-      ignore = {
-        "download_ipynb",
-        -- "error_download_ipynb",
-        -- "attach_and_init",
-        -- "error_close_main_page",
-        -- "notebook_closed",
+      shortsighted = true,
+      notify = {
+        ignore = {
+          "download_ipynb",
+          -- "error_download_ipynb",
+          -- "attach_and_init",
+          -- "error_close_main_page",
+          -- "notebook_closed",
+        },
       },
     },
     keys = {

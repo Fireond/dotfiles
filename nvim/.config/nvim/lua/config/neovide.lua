@@ -22,4 +22,4 @@ vim.o.guifont = "DejaVuSansM Nerd Font Mono:h12"
 -- ui
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
 
-vim.keymap.set("i", "<a-v>", "<esc>pa")
+vim.keymap.set({ "i", "t" }, "<a-v>", "<esc>pa")

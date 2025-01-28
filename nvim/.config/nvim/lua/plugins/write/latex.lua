@@ -44,7 +44,7 @@ return {
   },
   {
     "lervag/vimtex",
-    dependencies = { "echasnovski/mini.ai" }, -- 确保 mini.ai 先加载
+    -- dependencies = { "echasnovski/mini.ai" }, -- 确保 mini.ai 先加载
     init = function()
       function ConvertTexToDocx()
         -- 获取当前文件名
@@ -108,7 +108,9 @@ return {
     end,
   },
   {
-    "rpapallas/illustrate.nvim",
+    "fireond/illustrate.nvim",
+    lazy = true,
+    ft = "tex",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
