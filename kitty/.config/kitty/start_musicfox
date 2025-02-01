@@ -1,0 +1,1 @@
+launch sh -c "tmux new -A -s musicfox"

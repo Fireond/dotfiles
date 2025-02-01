@@ -154,14 +154,20 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   alias getbright='ddcutil getvcp 10'
   alias setbright='ddcutil setvcp 10'
+
+  alias openbg='alacritty --class "kitty-bg" -e "/home/fireond/.dotfiles/hyprland/.config/hypr/cavabg.sh"'
+  alias hyprcli='hyprctl clients'
+  alias hyprmon='hyprctl monitors'
 fi
 
 alias c='clear'
 alias b='btop'
 alias v='nvim'
+alias nv='nohup neovide &'
 alias t='tmux'
 alias vi='nvim'
 alias vf='nvim $(fzf)'
+alias m='musicfox'
 
 alias ..='cd ..'
 alias .2='cd ../..'
@@ -189,8 +195,8 @@ alias cbash='nvim ~/.bashrc'
 alias sbash='source ~/.bashrc'
 
 alias ca='ipython --profile=calculate'
-alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'zathura \"{}\" &'"
-alias spdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'sioyek \"{}\" &'"
+alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup zathura \"{}\" &> /dev/null &'"
+alias spdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup sioyek \"{}\" &> /dev/null &'"
 
 
 # conda alias

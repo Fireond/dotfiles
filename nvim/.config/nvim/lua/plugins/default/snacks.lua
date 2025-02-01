@@ -34,8 +34,6 @@ return {
       { "<c-/>", function() Snacks.terminal(nil, { cwd = vim.fn.expand("%:p:h") }) end, desc = "Toggle Terminal" },
       { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
       { "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
-      { "<leader>fd", function() Snacks.picker.files({ cwd = vim.fn.expand('~/.dotfiles'), hidden = true }) end, desc = "Find Dotfiles", mode = { "n", "t" } },
-      { "<leader>fp", function() Snacks.picker.files({ cwd = vim.fn.expand("~/.config/nvim/lua/plugins") }) end, desc = "Go to plugins config" },
     },
   },
 }

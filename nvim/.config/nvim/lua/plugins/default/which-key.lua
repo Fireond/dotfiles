@@ -16,7 +16,6 @@ return {
         { "<leader>s", group = "search" },
         { "<leader>sn", group = "noice" },
         { "<leader>t", group = "terminal" },
-        { "<leader>u", group = "ui" },
         { "<leader>x", group = "diagnostics/quickfix" },
         { "[", group = "prev" },
         { "]", group = "next" },

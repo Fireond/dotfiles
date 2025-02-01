@@ -28,6 +28,13 @@ return {
     "3rd/image.nvim",
     cond = not (vim.g.neovide or false),
     dependencies = { "luarocks.nvim" },
-    opts = {},
+    opts = {
+      integrations = {
+        markdown = {
+          only_render_image_at_cursor = false,
+        },
+      },
+      window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
+    },
   },
 }
