@@ -133,22 +133,17 @@ return {
     }),
     { condition = tex.in_mathzone_md }
   ),
-  s(
-    { trig = "\\%)(%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\) <>", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-    })
-  ),
-  s(
-    { trig = "\\](%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\] <>", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-    })
-  ),
+  -- s(
+  --   { trig = "$(.*)$(%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+  --   fmta("$<>$ <>", {
+  --     f(function(_, snip)
+  --       return snip.captures[1]
+  --     end),
+  --     f(function(_, snip)
+  --       return snip.captures[2]
+  --     end),
+  --   })
+  -- ),
   s(
     { trig = "lim", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\lim_{<>}", {

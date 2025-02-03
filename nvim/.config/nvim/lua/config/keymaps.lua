@@ -131,9 +131,9 @@ end, { desc = "add section" })
 map("n", "<leader>nO", function()
   local ft = vim.bo.filetype
   if ft == "markdown" then
-    local cur_file = vim.fn.expand("%:p")
-    require("util.obsidian").open_pdfs_from_frontmatter(cur_file)
+    require("util.obsidian").open_pdfs_from_frontmatter()
   else
+    vim.notify("Not a md file!", vim.log.levels.ERROR)
     return nil
   end
 end, { desc = "Open Sources" })

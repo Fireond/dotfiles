@@ -18,6 +18,21 @@ local get_visual = function(args, parent)
 end
 
 return {
+  s({ trig = ";b", snippetType = "autosnippet" }, fmta("**<>**", i(1)), { condition = tex.in_text_md }),
+  s({ trig = ";t", snippetType = "autosnippet" }, fmta("*<>*", i(1)), { condition = tex.in_text_md }),
+  s({ trig = ";h", snippetType = "autosnippet" }, fmta("- [ ] <>", i(0)), { condition = tex.in_text_md }),
+  s(
+    { trig = ";c", snippetType = "autosnippet" },
+    fmta(
+      [[
+      ```<>
+      <>
+      ```
+      ]],
+      { i(1), i(0) }
+    ),
+    { condition = tex.in_text_md }
+  ),
   s({ trig = "ii", snippetType = "autosnippet" }, fmta("$<>$", i(1)), { condition = tex.in_text_md }),
   s({ trig = "dd", snippetType = "autosnippet" }, fmta("$$\n<>\n$$", i(1)), { condition = tex.in_text_md }),
   s(

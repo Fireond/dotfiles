@@ -30,7 +30,12 @@ M.in_env = function(env)
 end
 
 M.in_mathzone = function()
-  return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1
+  local ft = vim.bo.filetype
+  if ft == "tex" then
+    return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1
+  elseif ft == "markdown" then
+    return M.in_mathzone_md()
+  end
 end
 
 M.in_text = function()

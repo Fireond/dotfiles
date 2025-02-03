@@ -27,5 +27,11 @@ map alt+4 send_key ctrl+b 4
 map alt+5 send_key ctrl+b 5
 # split vertically and horizontally
 map alt+shift+\ send_key ctrl+b %
+map alt+\ send_key ctrl+b "
+# resize pane
+map alt+right send_key ctrl+b alt+right
+map alt+left send_key ctrl+b alt+left
+map alt+up send_key ctrl+b alt+up
+map alt+down send_key ctrl+b alt+down
 # kill pane
 map alt+x send_key ctrl+b x

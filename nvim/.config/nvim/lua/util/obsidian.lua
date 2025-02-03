@@ -1,6 +1,6 @@
 local M = {}
 
-M.open_pdfs_from_frontmatter = function(filename)
+M.open_pdfs_from_frontmatter = function()
   local lines = vim.api.nvim_buf_get_lines(0, 0, 30, false)
 
   -- 提取frontmatter内容
@@ -43,8 +43,9 @@ M.open_pdfs_from_frontmatter = function(filename)
 
   for _, path in ipairs(sources) do
     path = vim.fn.expand(path)
-    local cmd = "sioyek" .. string.format(" %q", path) .. " &"
-    os.execute(cmd)
+    local cmd = "zathura" .. string.format(" %q", path) .. " &"
+    -- os.execute(cmd)
+    vim.api.nvim_call_function("system", { cmd })
   end
 end
 

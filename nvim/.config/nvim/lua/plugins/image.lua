@@ -14,10 +14,10 @@ return {
     opts = {
       integrations = {
         markdown = {
-          only_render_image_at_cursor = false,
+          only_render_image_at_cursor = true,
         },
       },
-      window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
+      window_overlap_clear_enabled = false, -- toggles images when windows are overlapped
     },
   },
   {
@@ -25,6 +25,8 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-    opts = {},
+    opts = {
+      hide_on_insert = false,
+    },
   },
 }
