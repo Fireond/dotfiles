@@ -144,9 +144,9 @@ return {
   s({ trig = "sub", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\subseteq"),
   }, { condition = tex.in_mathzone }),
-  -- s({ trig = "sup", wordTrig = false, snippetType = "autosnippet" }, {
-  --   t("\\supseteq"),
-  -- }, { condition = tex.in_mathzone }),
+  s({ trig = "suq", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\supseteq"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "oo", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\infty"),
   }, { condition = tex.in_mathzone }),
@@ -233,6 +233,15 @@ return {
   }, { condition = tex.in_mathzone }),
   s({ trig = "nabla", snippetType = "autosnippet" }, {
     t("\\nabla"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "cong", snippetType = "autosnippet" }, {
+    t("\\cong"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "ii", snippetType = "autosnippet" }, {
+    t("\\int"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "oii", snippetType = "autosnippet", priority = 2000 }, {
+    t("\\oint"),
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "b|", wordTrig = false, snippetType = "autosnippet" },

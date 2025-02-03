@@ -1,5 +1,17 @@
-[plugin]
-deps = [{ use = "yazi-rs/plugins:full-border", rev = "dc11879" }, { use = "yazi-rs/plugins:max-preview", rev = "dc11879" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "dc11879"
+hash = "bd250c4ad1345ee06b43b192f46b9196"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:max-preview"
+rev = "dc11879"
+hash = "ff23e3201e9dac7382992d7b5ddbcb14"
+
+[[plugin.deps]]
+use = "grappas/wl-clipboard"
+rev = "c4edc4f"
+hash = "51ff959c3c26cb3889589a0f8d394f14"
 
 [flavor]
 deps = []

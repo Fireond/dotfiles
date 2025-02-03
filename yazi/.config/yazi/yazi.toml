@@ -19,5 +19,6 @@ pdf = [
 
 [open]
 prepend_rules = [
-  { name = "*.pdf", use = ["pdf", "open"]}
+  { name = "*.pdf", use = "pdf"},
+  { name = "*.tex", use = "edit"}
 ]

@@ -14,7 +14,7 @@ map cmd+r send_key ctrl+b $
 # rename window
 map cmd+shift+r send_key ctrl+b ,
 # list all sessions and windows
-map cmd+s send_key ctrl+b w
+map cmd+s send_key ctrl+b s
 # kill window
 map cmd+w send_key ctrl+b &
 # new window

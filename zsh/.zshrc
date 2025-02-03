@@ -68,17 +68,17 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   }
   # >>> conda initialize >>>
   # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('/home/fireond/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "/home/fireond/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "/home/fireond/miniconda3/etc/profile.d/conda.sh"
-      else
-          export PATH="/home/fireond/miniconda3/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
+  # __conda_setup="$('/home/fireond/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  # if [ $? -eq 0 ]; then
+  #     eval "$__conda_setup"
+  # else
+  #     if [ -f "/home/fireond/miniconda3/etc/profile.d/conda.sh" ]; then
+  #         . "/home/fireond/miniconda3/etc/profile.d/conda.sh"
+  #     else
+  #         export PATH="/home/fireond/miniconda3/bin:$PATH"
+  #     fi
+  # fi
+  # unset __conda_setup
   # <<< conda initialize <<<
 fi
 ################################################################################################
@@ -131,7 +131,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias ckitty='nvim ~/.config/kitty/kitty.conf'
   alias cwez='nvim ~/.config/wezterm/wezterm.lua'
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  pdfviewer="zathura"
+  alias op='xdg-open'
   alias l='eza -lh --icons=auto' # long list
   alias ls='eza -1 --icons=auto' # short list
   alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
@@ -155,13 +155,20 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   alias getbright='ddcutil getvcp 10'
   alias setbright='ddcutil setvcp 10'
+
+  alias openbg='alacritty --class "kitty-bg" -e "/home/fireond/.dotfiles/hyprland/.config/hypr/cavabg.sh"'
+  alias hyprcli='hyprctl clients'
+  alias hyprmon='hyprctl monitors'
 fi
 
 alias c='clear'
+alias b='btop'
 alias v='nvim'
+alias nv='nohup neovide &'
 alias t='tmux'
 alias vi='nvim'
 alias vf='nvim $(fzf)'
+alias m='musicfox'
 
 alias ..='cd ..'
 alias .2='cd ../..'
@@ -189,7 +196,8 @@ alias cbash='nvim ~/.bashrc'
 alias sbash='source ~/.bashrc'
 
 alias ca='ipython --profile=calculate'
-alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c '$pdfviewer \"{}\" &'"
+alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup zathura \"{}\" &> /dev/null &'"
+alias spdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup sioyek \"{}\" &> /dev/null &'"
 
 
 # conda alias

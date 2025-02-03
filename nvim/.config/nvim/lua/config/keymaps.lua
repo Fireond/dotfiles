@@ -13,22 +13,6 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
--- learn
-local function shortenPath(originalPath)
-  local parts = {}
-  for part in originalPath:gmatch("[^/]+") do
-    table.insert(parts, part)
-  end
-  local shortenedPath = ""
-  if #parts >= 4 then
-    shortenedPath = parts[#parts - 3] .. "/" .. parts[#parts - 2] .. "/" .. parts[#parts - 1] .. "/" .. parts[#parts]
-  else
-    shortenedPath = originalPath
-  end
-  shortenedPath = string.gsub(shortenedPath, "\\ ", " ")
-  return shortenedPath
-end
-
 -- movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })
 map({ "n", "v", "o" }, "L", "$", { desc = "Use 'L' as '$'" })
@@ -43,6 +27,9 @@ map({ "n", "i" }, "<M-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer
 map({ "n", "i" }, "<M-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 -- map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
+map("n", "<leader>d", function()
+  Snacks.bufdelete()
+end, { desc = "Delete buffer" })
 
 -- windows resize
 map("n", "<Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
@@ -54,7 +41,7 @@ map("n", "<Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window wid
 map("n", "<leader>go", "<cmd>e ~/.config/nvim/lua/config/options.lua<cr>", { desc = "Go to options config" })
 map("n", "<leader>gk", "<cmd>e ~/.config/nvim/lua/config/keymaps.lua<cr>", { desc = "Go to keymaps config" })
 map("n", "<leader>ga", "<cmd>e ~/.config/nvim/lua/config/autocmds.lua<cr>", { desc = "Go to autocmds config" })
-map("n", "<leader>gu", "<cmd>e ~/.config/nvim/lua/util/latex.lua<cr>", { desc = "Go to util config" })
+-- map("n", "<leader>gu", "<cmd>e ~/.config/nvim/lua/util/latex.lua<cr>", { desc = "Go to util config" })
 map("n", "<leader>gl", "<cmd>e ~/Documents/Latex/preamble.tex<cr>", { desc = "Go to latex.nvim config" })
 map("n", "<leader>gt", "<cmd>e ~/Documents/Latex/note_template.tex<cr>", { desc = "Go to latex template" })
 map("n", "<leader>gi", "<cmd>e ~/Documents/Latex/latexindent.yaml<cr>", { desc = "Go to latexindent" })
@@ -62,39 +49,27 @@ map("n", "<leader>gs", function()
   require("luasnip.loaders").edit_snippet_files({})
 end, { desc = "Go to luasnip config" })
 
-if vim.loop.os_uname().sysname == "Darwin" then
-  map("n", "<leader>gp", function()
-    require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/nvim/lua/plugins" })
-  end, { desc = "Go to plugins config" })
-  map("n", "<leader>gF", function()
-    require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/nvim/ftplugin" })
-  end, { desc = "Go to plugins config" })
-  map("n", "<leader>gf", function()
-    require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/fvim/lua" })
-  end, { desc = "Go to fvim config" })
-  map("n", "<leader>gL", function()
-    require("neo-tree.command").execute({
-      toggle = true,
-      dir = "/Users/hanyu_yan/.local/share/nvim/lazy/LazyVim/lua/lazyvim/",
-    })
-  end, { desc = "Go to lazyvim config" })
-elseif vim.loop.os_uname().sysname == "Linux" then
-  map("n", "<leader>gp", function()
-    require("neo-tree.command").execute({ toggle = true, dir = "/home/fireond/.config/nvim/lua/plugins" })
-  end, { desc = "Go to plugins config" })
-  map("n", "<leader>gF", function()
-    require("neo-tree.command").execute({ toggle = true, dir = "/home/fireond/.config/nvim/ftplugin" })
-  end, { desc = "Go to plugins config" })
-  map("n", "<leader>gf", function()
-    require("neo-tree.command").execute({ toggle = true, dir = "/home/fireond/.config/fvim/lua" })
-  end, { desc = "Go to fvim config" })
-  map("n", "<leader>gL", function()
-    require("neo-tree.command").execute({
-      toggle = true,
-      dir = "/home/fireond/.local/share/nvim/lazy/LazyVim/lua/lazyvim/",
-    })
-  end, { desc = "Go to lazyvim config" })
-end
+map({ "n", "t" }, "<leader>fd", function()
+  Snacks.picker.files({ cwd = vim.fn.expand("~/.dotfiles"), hidden = true })
+end, { desc = "Find Dotfiles" })
+map({ "n" }, "<leader>fp", function()
+  Snacks.picker.files({ cwd = vim.fn.expand("~/.config/nvim/lua/plugins"), hidden = true })
+end, { desc = "Find plugins config" })
+map({ "n" }, "<leader>fu", function()
+  Snacks.picker.files({ cwd = vim.fn.expand("~/.dotfiles/nvim/.config/nvim/lua/util"), hidden = true })
+end, { desc = "Find util config" })
+-- map("n", "<leader>gF", function()
+--   require("neo-tree.command").execute({ toggle = true, dir = vim.fn.expand("~/.config/nvim/ftplugin") })
+-- end, { desc = "Go to plugins config" })
+-- map("n", "<leader>gf", function()
+--   require("neo-tree.command").execute({ toggle = true, dir = vim.fn.expand("~/.config/fvim/lua") })
+-- end, { desc = "Go to fvim config" })
+map("n", "<leader>gL", function()
+  require("mini.files").open(vim.fn.expand("~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/"), true)
+end, { desc = "Go to lazyvim config" })
+map("n", "<leader>gn", function()
+  require("mini.files").open(vim.fn.expand("~/Documents/Obsidian-Vault/"), true)
+end, { desc = "Go to Obsidian Vault" })
 
 -- Spell check
 map("i", "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check spell" })
@@ -122,16 +97,47 @@ map("n", "<leader>z", "zt", { desc = "Top this line" })
 -- end, { desc = "Find clips" })
 
 -- note
-map("n", "<leader>n", "", { desc = "+note" })
-map("n", "<leader>na", function()
-  require("util.note").add_note()
-end, { desc = "add note" })
+map("n", "<leader>n", "", { desc = "+note/obsidian" })
+map("n", "<leader>nn", function()
+  local ft = vim.bo.filetype
+  if ft == "tex" then
+    require("util.note").add_note()
+  elseif ft == "markdown" then
+    vim.cmd("ObsidianNew")
+  else
+    return nil
+  end
+end, { desc = "Add new note" })
 map("n", "<leader>nf", function()
-  require("util.note").find_note()
-end, { desc = "find note" })
+  local ft = vim.bo.filetype
+  if ft == "tex" then
+    require("util.note").find_note()
+  elseif ft == "markdown" then
+    vim.cmd("ObsidianQuickSwitch")
+  else
+    return nil
+  end
+end, { desc = "Find note" })
 map("n", "<leader>ns", function()
-  require("util.note").add_section()
+  local ft = vim.bo.filetype
+  if ft == "tex" then
+    require("util.note").add_section()
+  elseif ft == "markdown" then
+    vim.cmd("ObsidianSearch")
+  else
+    return nil
+  end
 end, { desc = "add section" })
+map("n", "<leader>nO", function()
+  local ft = vim.bo.filetype
+  if ft == "markdown" then
+    local cur_file = vim.fn.expand("%:p")
+    require("util.obsidian").open_pdfs_from_frontmatter(cur_file)
+  else
+    return nil
+  end
+end, { desc = "Open Sources" })
+
 map("n", "<leader>N", function()
   Snacks.notifier.show_history()
 end, { desc = "Notification History" })

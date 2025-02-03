@@ -15,6 +15,18 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
   s(
+    { trig = "function" },
+    fmta(
+      [[
+      function (<>)
+        <>
+      end
+      ]],
+      { i(1), i(0) }
+    ),
+    {}
+  ),
+  s(
     "localreq",
     fmt('local {} = require("{}")', {
       l(l._1:match("[^.]*$"):gsub("[^%a]+", "_"), 1),

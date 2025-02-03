@@ -429,15 +429,8 @@ return {
   ),
   s(
     { trig = "ssec", snippetType = "autosnippet" },
-    fmta(
-      [[
-        \subsection{<>}
-      ]],
-      {
-        i(1),
-      }
-    ),
-    { condition = line_begin }
+    c(1, { sn(nil, { t("\\subsection{"), i(1), t("}") }), sn(nil, { t("\\subsection*{"), i(1), t("}") }) }),
+    { condition = tex.in_text * line_begin }
   ),
   s(
     { trig = "sss", snippetType = "autosnippet" },

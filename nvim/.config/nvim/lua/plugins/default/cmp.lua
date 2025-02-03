@@ -41,9 +41,6 @@ return {
           cmp.abort()
           fallback()
         end,
-        -- ["<tab>"] = function(fallback)
-        --   return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
-        -- end,
       })
     end,
   },
