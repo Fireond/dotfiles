@@ -33,6 +33,8 @@
           "class<Zotero>": "󰰷",
           "class<Obsidian>": "󱞁",
           "class<alacritty-bg>": "",
+          "class<org.kde.dolphin>": "󱢴",
+          "class<mpv>": "",
         },
         "disable-scroll": true,
         "rotate": 0,

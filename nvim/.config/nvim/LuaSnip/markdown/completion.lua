@@ -170,14 +170,6 @@ return {
     }),
     { condition = tex.in_mathzone_md }
   ),
-  -- s(
-  --   { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-  --   fmta("\\sum\\limits_{<>}^{<>}", {
-  --     i(1),
-  --     i(1),
-  --   }),
-  --   { condition = tex.in_mathzone_md }
-  -- ),
   s(
     { trig = "sum", snippetType = "autosnippet" },
     c(1, {

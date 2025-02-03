@@ -1,12 +1,5 @@
 return {
   {
-    "MeanderingProgrammer/render-markdown.nvim",
-    enabled = false,
-    opts = function()
-      return {}
-    end,
-  },
-  {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
@@ -17,18 +10,49 @@ return {
     },
     opts = {
       workspaces = {
-        {
-          name = "Root",
-          path = "/home/fireond/Documents/Obsidian-Vault",
-        },
-        {
-          name = "Topology",
-          path = "/home/fireond/Documents/Obsidian-Vault/Topology",
-        },
+        { name = "Root", path = "/home/fireond/Documents/Obsidian-Vault" },
       },
-      completion = {
-        min_chars = 0,
+      daily_notes = {
+        folder = "01-dailies",
+        date_format = "%Y-%m-%d",
+        default_tags = { "daily-notes" },
+        template = "daily.md",
       },
+      completion = { min_chars = 0 },
+      new_notes_location = "current_dir",
+      note_id_func = function(title)
+        return title
+      end,
+      wiki_link_func = "prepend_note_path",
+      templates = {
+        folder = "templates",
+        date_format = "%Y-%m-%d",
+        time_format = "%H:%M",
+        -- A map for custom variables, the key should be the variable and the value a function
+        substitutions = {},
+      },
+
+      follow_url_func = function(url)
+        vim.ui.open(url) -- need Neovim 0.10.0+
+      end,
+
+      attachments = { img_folder = "assets/imgs" },
+
+      note_frontmatter_func = function(note)
+        -- Add the title of the note as an alias.
+        if note.title then
+          note:add_alias(note.title)
+        end
+        local out = { id = note.id, aliases = note.aliases, tags = note.tags, sources = {} }
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
+        end
+
+        return out
+      end,
+
       ui = {
         checkboxes = {
           [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
@@ -38,7 +62,8 @@ return {
     },
     keys = {
       { "<leader>no", "<cmd>ObsidianOpen<cr>", desc = "Open Obsidian" },
-      { "<leader>nt", "<cmd>ObsidianTags<cr>", desc = "Open Obsidian" },
+      { "<leader>nt", "<cmd>ObsidianTags<cr>", desc = "Open Obsidian tags" },
+      { "<leader>nd", "<cmd>ObsidianDailies<cr>", desc = "Open Obsidian dailies" },
     },
   },
   {
@@ -48,11 +73,6 @@ return {
     },
     opts = {
       sources = {
-        -- providers = {
-        --   obsidian = { name = "obsidian", module = "blink.compat.source" },
-        --   obsidian_new = { name = "obsidian_new", module = "blink.compat.source" },
-        --   obsidian_tags = { name = "obsidian_tags", module = "blink.compat.source" },
-        -- },
         compat = { "obsidian", "obsidian_new", "obsidian_tags" },
         providers = {
           obsidian = {
@@ -70,16 +90,6 @@ return {
           },
         },
       },
-    },
-    -- opts_extend = { "sources.default" },
-  },
-  {
-    "fireond/mdmath.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-    opts = {
-      -- hide_on_insert = false,
     },
   },
 }

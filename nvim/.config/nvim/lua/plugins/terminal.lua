@@ -1,4 +1,21 @@
 return {
+  { "fladson/vim-kitty", ft = "kitty" },
+  {
+    "mikesmithgh/kitty-scrollback.nvim",
+    enabled = true,
+    lazy = true,
+    cmd = {
+      "KittyScrollbackGenerateKittens",
+      "KittyScrollbackCheckHealth",
+      "KittyScrollbackGenerateCommandLineEditing",
+    },
+    event = { "User KittyScrollbackLaunch" },
+    -- version = '*', -- latest stable version, may have breaking changes if major version changed
+    -- version = '^6.0.0', -- pin major version, include fixes and features that do not have breaking changes
+    config = function()
+      require("kitty-scrollback").setup()
+    end,
+  },
   {
     "mikavilpas/yazi.nvim",
     event = "VeryLazy",
@@ -17,7 +34,7 @@ return {
       {
         -- NOTE: this requires a version of yazi that includes
         -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
-        "<c-up>",
+        "<c-j>",
         "<cmd>Yazi toggle<cr>",
         desc = "Resume the last yazi session",
       },
