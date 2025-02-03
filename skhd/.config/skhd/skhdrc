@@ -6,10 +6,12 @@ ctrl + alt + cmd - y : brew services restart sketchybar
 cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 
 # cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-cmd - return : open -na wezterm
-cmd - g : open -na "/Applications/ChatGPT.app"
-cmd + shift - return : open -na "Google Chrome"
+alt - return : open -na "kitty"
+alt - g : open "https://chatgpt.com/"
+alt + shift - return : open -na "Google Chrome"
 
+# close window
+alt - w : yabai -m window --close
 
 alt - 1 : yabai -m space --focus 1
 alt - 2 : yabai -m space --focus 2

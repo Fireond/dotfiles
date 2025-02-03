@@ -1,7 +1,10 @@
 ################################################################################################
 if  [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH=$HOME/.bin:$PATH
+  export PATH=/Library/TeX/texbin:$PATH
+  export PATH="/opt/X11/bin:$PATH"
   export NVM_DIR="$HOME/.nvm"
+  export DISPLAY=:0
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
   # >>> conda initialize >>>
@@ -109,15 +112,13 @@ function a() {
 
 ### --- Alias --- ###
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  pdfviewer="sioyek"
   alias ld='learn ddl'
   alias proxy='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
   alias unproxy='unset all_proxy'
   alias disablesleep='sudo pmset -a disablesleep 1'
   alias enablesleep='sudo pmset -a disablesleep 0'
   alias op='open .'
-  function pdf() {
-      sioyek "$1" &
-  }
   alias tt='toggle_alacritty_opacity'
   alias bs='brew search'
   alias bi='brew install'
