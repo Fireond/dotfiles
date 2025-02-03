@@ -112,15 +112,13 @@ function a() {
 
 ### --- Alias --- ###
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  pdfviewer="sioyek"
   alias ld='learn ddl'
   alias proxy='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
   alias unproxy='unset all_proxy'
   alias disablesleep='sudo pmset -a disablesleep 1'
   alias enablesleep='sudo pmset -a disablesleep 0'
   alias op='open .'
-  function pdf() {
-      sioyek "$1" &
-  }
   alias tt='toggle_alacritty_opacity'
   alias bs='brew search'
   alias bi='brew install'
@@ -133,6 +131,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias ckitty='nvim ~/.config/kitty/kitty.conf'
   alias cwez='nvim ~/.config/wezterm/wezterm.lua'
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  pdfviewer="zathura"
   alias l='eza -lh --icons=auto' # long list
   alias ls='eza -1 --icons=auto' # short list
   alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
@@ -190,7 +189,7 @@ alias cbash='nvim ~/.bashrc'
 alias sbash='source ~/.bashrc'
 
 alias ca='ipython --profile=calculate'
-alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'zathura \"{}\" &'"
+alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c '$pdfviewer \"{}\" &'"
 
 
 # conda alias
