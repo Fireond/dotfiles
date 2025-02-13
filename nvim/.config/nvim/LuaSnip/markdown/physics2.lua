@@ -89,12 +89,12 @@ return {
   ),
   s(
     { trig = "vab", wordTrig = false, snippetType = "autosnippet" },
-    c(1, { sn(nil, { t("\\ab|"), i(1), t("|") }), sn(nil, { t("\\ab*|"), i(1), t("|") }) }),
+    c(1, { sn(nil, { t("\\left|"), i(1), t("\\right|") }), sn(nil, { t("\\ab*|"), i(1), t("|") }) }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "Vab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab\\| <> \\|", {
+    fmta("\\left\\| <> \\right\\|", {
       i(1),
     }),
     { condition = tex.in_mathzone }

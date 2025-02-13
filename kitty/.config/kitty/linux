@@ -1,37 +1,37 @@
 editor /usr/bin/nvim
-font_size 12
-map alt+c copy_to_clipboard
-map alt+v paste_from_clipboard
+font_size 13
+map option+c copy_to_clipboard
+map option+v paste_from_clipboard
 hide_window_decorations yes
 
-# tmux mappings
-# command
-map alt+: send_key ctrl+b :
-# copy-mode
-map alt+f send_key ctrl+b [
-# rename session
-map alt+r send_key ctrl+b $
-# rename window
-map alt+shift+r send_key ctrl+b ,
-# list all sessions and windows
-map alt+s send_key ctrl+b s
-# kill window
-map alt+w send_key ctrl+b &
-# new window
-map alt+t send_key ctrl+b c
-# switch to window 1
-map alt+1 send_key ctrl+b 1
-map alt+2 send_key ctrl+b 2
-map alt+3 send_key ctrl+b 3
-map alt+4 send_key ctrl+b 4
-map alt+5 send_key ctrl+b 5
-# split vertically and horizontally
-map alt+shift+\ send_key ctrl+b %
-map alt+\ send_key ctrl+b "
-# resize pane
-map alt+right send_key ctrl+b alt+right
-map alt+left send_key ctrl+b alt+left
-map alt+up send_key ctrl+b alt+up
-map alt+down send_key ctrl+b alt+down
-# kill pane
-map alt+x send_key ctrl+b x
+## tmux mappings
+## command
+#map option+: send_key ctrl+b :
+## copy-mode
+#map option+f send_key ctrl+b [
+## rename session
+#map option+r send_key ctrl+b $
+## rename window
+#map option+shift+r send_key ctrl+b ,
+## list all sessions and windows
+#map option+s send_key ctrl+b s
+## kill window
+#map option+w send_key ctrl+b &
+## new window
+#map option+t send_key ctrl+b c
+## switch to window 1
+#map option+1 send_key ctrl+b 1
+#map option+2 send_key ctrl+b 2
+#map option+3 send_key ctrl+b 3
+#map option+4 send_key ctrl+b 4
+#map option+5 send_key ctrl+b 5
+## split vertically and horizontally
+#map option+shift+\ send_key ctrl+b %
+#map option+\ send_key ctrl+b "
+## resize pane
+#map option+right send_key ctrl+b option+right
+#map option+left send_key ctrl+b option+left
+#map option+up send_key ctrl+b option+up
+#map option+down send_key ctrl+b option+down
+## kill pane
+#map option+x send_key ctrl+b x

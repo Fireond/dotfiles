@@ -115,7 +115,7 @@ return {
   }, { condition = tex.in_mathzone_md }),
   s({ trig = "cv", snippetType = "autosnippet" }, fmta("\\conv", {}), { condition = tex.in_mathzone_md }),
   s(
-    { trig = "br", snippetType = "autosnippet" },
+    { trig = "brr", snippetType = "autosnippet" },
     fmta("\\bar{<>}", {
       i(1),
     }),

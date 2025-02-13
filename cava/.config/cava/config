@@ -15,6 +15,12 @@ method = ncurses ; 输出方法
 integral = 5 ; 平滑值
 lookback = 10 ; 衰减值
 
+[bar]
+fall_speed = 2 ; 下降速度
+rise_speed = 1 ; 上升速度
+bar_width = 2 ; 频谱条宽度
+bar_gap = 1 ; 频谱条间距
+
 [color]
 gradient = 1 ; 使用渐变色
 
@@ -28,8 +34,12 @@ gradient_color_6 = '#f5bde6'
 gradient_color_7 = '#ee99a0'
 gradient_color_8 = '#ed8796'
 
-[bar]
-fall_speed = 2 ; 下降速度
-rise_speed = 1 ; 上升速度
-bar_width = 2 ; 频谱条宽度
-bar_gap = 1 ; 频谱条间距
+# matugen
+gradient_color_1 = '#FBB4A8'
+gradient_color_2 = '#F8B6A4'
+gradient_color_3 = '#F5B8A1'
+gradient_color_4 = '#F1BA9D'
+gradient_color_5 = '#EEBB9A'
+gradient_color_6 = '#EBBD96'
+gradient_color_7 = '#E7BF93'
+gradient_color_8 = '#E4C18F'

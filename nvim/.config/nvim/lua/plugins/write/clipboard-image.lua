@@ -42,7 +42,7 @@ return {
             local cur_file = vim.fn.expand("%:p")
             local obs_path = vim.fn.fnamemodify("~/Documents/Obsidian-Vault/", ":p")
             if cur_file:sub(1, #obs_path) == obs_path then
-              return obs_path .. "assets/imgs"
+              return vim.fn.expand("%:p:h") .. "/attachments"
             else
               return vim.fn.expand("%:p:h")
             end

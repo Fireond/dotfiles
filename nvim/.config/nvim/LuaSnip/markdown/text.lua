@@ -55,15 +55,6 @@ return {
   s({ trig = "Wlog", snippetType = "autosnippet" }, {
     t("Without loss of generality"),
   }, { condition = tex.in_text }),
-  s({ trig = "%%", snippetType = "autosnippet" }, {
-    t("\\%"),
-  }, { condition = tex.in_text }),
-  s({ trig = "&&", snippetType = "autosnippet" }, {
-    t("\\&"),
-  }, { condition = tex.in_text }),
-  s({ trig = "##", snippetType = "autosnippet" }, {
-    t("\\#"),
-  }, { condition = tex.in_text }),
   s({ trig = "thmm", snippetType = "autosnippet" }, {
     t("theorem"),
   }, { condition = tex.in_text }),
@@ -125,6 +116,22 @@ return {
         return snip.captures[1]
       end),
     }),
+    { condition = tex.in_text }
+  ),
+  s(
+    {
+      trig = "#(%d)",
+      regTrig = true,
+      wordTrig = false,
+      snippetType = "autosnippet",
+    },
+    fmta(
+      "<> ",
+      { f(function(_, snip)
+        local n = tonumber(snip.captures[1])
+        return string.rep("#", n)
+      end) }
+    ),
     { condition = tex.in_text }
   ),
 }

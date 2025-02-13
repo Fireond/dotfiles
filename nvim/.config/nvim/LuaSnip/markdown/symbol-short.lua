@@ -56,7 +56,7 @@ return {
   }, { condition = tex.in_mathzone_md }),
   s({ trig = "==", wordTrig = false, snippetType = "autosnippet" }, {
     t("&="),
-  }, { condition = tex.in_mathzone_md }),
+  }, { condition = line_begin }),
   s({ trig = "\\leq=", wordTrig = false, snippetType = "autosnippet" }, {
     t("&\\leq"),
   }, { condition = tex.in_mathzone_md }),

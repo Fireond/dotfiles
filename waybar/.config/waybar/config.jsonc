@@ -1,6 +1,8 @@
 {
   "layer": "top",
-  "output": [ "*" ],
+  "output": [
+    "*"
+  ],
   "position": "top",
   "mod": "dock",
   "height": 20,
@@ -9,18 +11,28 @@
   "gtk-layer-shell": true,
   "reload_style_on_change": true,
   "include": [
-    "~/.config/waybar/modules-pad.json",
     "~/.config/waybar/modules-left.json",
     "~/.config/waybar/modules-center.json",
-    "~/.config/waybar/modules-right.json",
+    "~/.config/waybar/modules-right.json"
   ],
-	"modules-left": [ "custom/padd",
-    "custom/l_end", "hyprland/workspaces", "custom/r_end",
-    "custom/padd"],
-	"modules-center": [ "custom/padd", "custom/l_end", "idle_inhibitor", "clock", "custom/timer", "custom/todoist", "custom/r_end", "custom/padd" ],
-	"modules-right": [ "custom/padd",
-    "custom/l_end", "pulseaudio", "pulseaudio#microphone", "network", "backlight", "bluetooth", "custom/r_end",
-    "custom/l_end", "tray", "custom/r_end",
-    "custom/l_end", "battery", "custom/power", "custom/r_end",
-    "custom/padd" ],
+  "modules-left": [
+    "custom/archicon",
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "custom/updates",
+    "clock",
+    "custom/wallpaper",
+    "custom/timer"
+  ],
+  "modules-right": [
+    "tray",
+    "wireplumber",
+    "network",
+    "bluetooth",
+    "memory",
+    "cpu",
+    "battery"
+  ]
 }

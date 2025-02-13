@@ -52,18 +52,15 @@ end, { desc = "Go to luasnip config" })
 map({ "n", "t" }, "<leader>fd", function()
   Snacks.picker.files({ cwd = vim.fn.expand("~/.dotfiles"), hidden = true })
 end, { desc = "Find Dotfiles" })
+map({ "n", "t" }, "<leader>fh", function()
+  Snacks.picker.files({ cwd = vim.fn.expand("~"), hidden = true })
+end, { desc = "Find home file" })
 map({ "n" }, "<leader>fp", function()
   Snacks.picker.files({ cwd = vim.fn.expand("~/.config/nvim/lua/plugins"), hidden = true })
 end, { desc = "Find plugins config" })
 map({ "n" }, "<leader>fu", function()
   Snacks.picker.files({ cwd = vim.fn.expand("~/.dotfiles/nvim/.config/nvim/lua/util"), hidden = true })
 end, { desc = "Find util config" })
--- map("n", "<leader>gF", function()
---   require("neo-tree.command").execute({ toggle = true, dir = vim.fn.expand("~/.config/nvim/ftplugin") })
--- end, { desc = "Go to plugins config" })
--- map("n", "<leader>gf", function()
---   require("neo-tree.command").execute({ toggle = true, dir = vim.fn.expand("~/.config/fvim/lua") })
--- end, { desc = "Go to fvim config" })
 map("n", "<leader>gL", function()
   require("mini.files").open(vim.fn.expand("~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/"), true)
 end, { desc = "Go to lazyvim config" })
@@ -83,15 +80,14 @@ else
   map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
 end
 map({ "n", "v", "t" }, "<leader>;", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
-map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle transparent" })
 -- map("n", "<leader>uc", Util.telescope("colorscheme", { enable_preview = true }), { desc = "Colorscheme with preview" })
-map("n", "<leader>uu", "b~ea", { desc = "Colorscheme with preview" })
+-- map("n", "<leader>uu", "b~ea", { desc = "Colorscheme with preview" })
 
 map({ "n", "v" }, "<leader>a", "ggVG", { desc = "Select all" })
 map("n", "<leader>+", "<C-a>", { desc = "Increase number" })
 map("n", "<leader>-", "<C-x>", { desc = "Decrease number" })
 -- map("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Toggle zen mode" })
-map("n", "<leader>z", "zt", { desc = "Top this line" })
+-- map("n", "<leader>z", "zt", { desc = "Top this line" })
 -- map("n", "<leader>fp", function()
 --   require("telescope").extensions.neoclip.default()
 -- end, { desc = "Find clips" })
@@ -114,8 +110,6 @@ map("n", "<leader>nf", function()
     require("util.note").find_note()
   elseif ft == "markdown" then
     vim.cmd("ObsidianQuickSwitch")
-  else
-    return nil
   end
 end, { desc = "Find note" })
 map("n", "<leader>ns", function()
@@ -131,7 +125,7 @@ end, { desc = "add section" })
 map("n", "<leader>nO", function()
   local ft = vim.bo.filetype
   if ft == "markdown" then
-    require("util.obsidian").open_pdfs_from_frontmatter()
+    require("util.obsidian").open_sources_from_frontmatter()
   else
     vim.notify("Not a md file!", vim.log.levels.ERROR)
     return nil

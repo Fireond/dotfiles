@@ -1,6 +1,8 @@
+local enable_image = false
 return {
   {
     "vhyrro/luarocks.nvim",
+    enabled = enable_image,
     cond = not (vim.g.neovide or false),
     priority = 1001, -- this plugin needs to run before anything else
     opts = {
@@ -9,6 +11,7 @@ return {
   },
   {
     "3rd/image.nvim",
+    enabled = enable_image,
     cond = not (vim.g.neovide or false),
     dependencies = { "luarocks.nvim" },
     opts = {
@@ -22,6 +25,7 @@ return {
   },
   {
     "fireond/mdmath.nvim",
+    enabled = enable_image,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },

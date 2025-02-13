@@ -41,6 +41,7 @@ return {
     name = "catppuccin",
     opts = {
       flavour = "Mocha",
+      transparent_background = true,
     },
   },
   {
@@ -66,4 +67,15 @@ return {
       }
     end,
   },
+  -- {
+  --   "folke/persistence.nvim",
+  --   keys = {
+  --     "<leader>qo",
+  --     function()
+  --       vim.cmd("cd ~/Documents/Obsidian-Vault/")
+  --       require("persistence").load()
+  --     end,
+  --     desc = "Cd to Obsidian-Vault and restore session",
+  --   },
+  -- },
 }
