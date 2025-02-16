@@ -1,87 +1,52 @@
-################################################################################################
-if  [[ "$OSTYPE" == "darwin"* ]]; then
-  export PATH=$HOME/.bin:$PATH
-  export PATH=/Library/TeX/texbin:$PATH
-  export PATH="/opt/X11/bin:$PATH"
-  export NVM_DIR="$HOME/.nvm"
-  export DISPLAY=:0
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-  # >>> conda initialize >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('/Users/hanyu_yan/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "/Users/hanyu_yan/anaconda3/etc/profile.d/conda.sh" ]; then
-          . "/Users/hanyu_yan/anaconda3/etc/profile.d/conda.sh"
-      else
-          export PATH="/Users/hanyu_yan/anaconda3/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
-  # <<< conda initialize <<<
-################################################################################################
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  export TEXMFDIST="/usr/share/texmf-dist"
-  # In case a command is not found, try to find the package that has it
-  function command_not_found_handler {
-      local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
-      printf 'zsh: command not found: %s\n' "$1"
-      local entries=( ${(f)"$(/usr/bin/pacman -F --machinereadable -- "/usr/bin/$1")"} )
-      if (( ${#entries[@]} )) ; then
-          printf "${bright}$1${reset} may be found in the following packages:\n"
-          local pkg
-          for entry in "${entries[@]}" ; do
-              local fields=( ${(0)entry} )
-              if [[ "$pkg" != "${fields[2]}" ]]; then
-                  printf "${purple}%s/${bright}%s ${green}%s${reset}\n" "${fields[1]}" "${fields[2]}" "${fields[3]}"
-              fi
-              printf '    /%s\n' "${fields[4]}"
-              pkg="${fields[2]}"
-          done
-      fi
-      return 127
-  }
-
-  aurhelper="paru"
-  function in {
-      local -a inPkg=("$@")
-      local -a arch=()
-      local -a aur=()
-
-      for pkg in "${inPkg[@]}"; do
-          if pacman -Si "${pkg}" &>/dev/null; then
-              arch+=("${pkg}")
-          else
-              aur+=("${pkg}")
-          fi
-      done
-
-      if [[ ${#arch[@]} -gt 0 ]]; then
-          sudo pacman -S "${arch[@]}"
-      fi
-
-      if [[ ${#aur[@]} -gt 0 ]]; then
-          ${aurhelper} -S "${aur[@]}"
-      fi
-  }
-  # >>> conda initialize >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  # __conda_setup="$('/home/fireond/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  # if [ $? -eq 0 ]; then
-  #     eval "$__conda_setup"
-  # else
-  #     if [ -f "/home/fireond/miniconda3/etc/profile.d/conda.sh" ]; then
-  #         . "/home/fireond/miniconda3/etc/profile.d/conda.sh"
-  #     else
-  #         export PATH="/home/fireond/miniconda3/bin:$PATH"
-  #     fi
-  # fi
-  # unset __conda_setup
-  # <<< conda initialize <<<
-fi
-################################################################################################
+# move to .zshenv
+# ################################################################################################
+# if  [[ "$OSTYPE" == "darwin"* ]]; then
+#   export PATH=$HOME/.bin:$PATH
+#   export PATH=/Library/TeX/texbin:$PATH
+#   export PATH="/opt/X11/bin:$PATH"
+#   export NVM_DIR="$HOME/.nvm"
+#   export DISPLAY=:0
+#   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+#   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+#   # >>> conda initialize >>>
+#   # !! Contents within this block are managed by 'conda init' !!
+#   __conda_setup="$('/Users/hanyu_yan/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#   if [ $? -eq 0 ]; then
+#       eval "$__conda_setup"
+#   else
+#       if [ -f "/Users/hanyu_yan/anaconda3/etc/profile.d/conda.sh" ]; then
+#           . "/Users/hanyu_yan/anaconda3/etc/profile.d/conda.sh"
+#       else
+#           export PATH="/Users/hanyu_yan/anaconda3/bin:$PATH"
+#       fi
+#   fi
+#   unset __conda_setup
+#   # <<< conda initialize <<<
+# ################################################################################################
+# elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#   export TEXMFDIST="/usr/share/texmf-dist"
+#   export OBSIDIAN_REST_API_KEY="f7a2d5985263aeb6cf8fa6ba2130ede5a41b61e80943639ca4c088826ead83c3"
+#   # Add .NET Core SDK tools
+#   export PATH="$PATH:/home/fireond/.dotnet/tools"
+#   export PULSE_SERVER=tcp:127.0.0.1:4712
+#   source ~/Documents/api_env
+#   aurhelper="paru"
+#   # >>> conda initialize >>>
+#   # !! Contents within this block are managed by 'conda init' !!
+#   # __conda_setup="$('/home/fireond/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#   # if [ $? -eq 0 ]; then
+#   #     eval "$__conda_setup"
+#   # else
+#   #     if [ -f "/home/fireond/miniconda3/etc/profile.d/conda.sh" ]; then
+#   #         . "/home/fireond/miniconda3/etc/profile.d/conda.sh"
+#   #     else
+#   #         export PATH="/home/fireond/miniconda3/bin:$PATH"
+#   #     fi
+#   # fi
+#   # unset __conda_setup
+#   # <<< conda initialize <<<
+# fi
+# ################################################################################################
 
 
 # save history
@@ -163,7 +128,8 @@ fi
 
 alias c='clear'
 alias b='btop'
-alias v='nvim'
+alias v='~/.local/share/bin/auto_padding_nvim.sh'
+alias nvim='~/.local/share/bin/auto_padding_nvim.sh'
 alias nv='nohup neovide &'
 alias t='tmux'
 alias vi='nvim'
@@ -214,3 +180,6 @@ type starship_zle-keymap-select >/dev/null || \
   {
     eval "$(starship init zsh)"
   }
+
+# Created by `pipx` on 2025-02-09 13:06:45
+export PATH="$PATH:/home/fireond/.local/bin"

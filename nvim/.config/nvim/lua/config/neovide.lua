@@ -21,5 +21,8 @@ vim.o.guifont = "DejaVuSansM Nerd Font Mono:h12"
 
 -- ui
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
+-- vim.g.neovide_transparency = 0
+vim.g.neovide_normal_opacity = 0.6
 
+-- keymaps
 vim.keymap.set({ "i", "t" }, "<a-v>", "<esc>pa")

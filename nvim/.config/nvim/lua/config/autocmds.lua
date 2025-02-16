@@ -49,12 +49,12 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- vim.api.nvim_create_autocmd({ "FileType", "InsertLeave" }, {
---   pattern = "tex",
---   callback = require("util.latex").format,
--- })
-
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = "*",
---   command = "normal! zz",
--- })
+-- reload colorscheme for matugen
+vim.api.nvim_create_autocmd("Signal", {
+  pattern = "SIGUSR1",
+  callback = function()
+    vim.cmd("Lazy reload catppuccin")
+    vim.cmd("Lazy reload lualine.nvim")
+    vim.cmd("Lazy reload bufferline.nvim")
+  end,
+})

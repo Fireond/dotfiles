@@ -10,55 +10,65 @@
     "format": "{icon}",
     "rotate": 0,
     "format-icons": {
-        "activated": "",
-        "deactivated": "󰛊"
+      "activated": "",
+      "deactivated": "󰛊"
     },
-    "tooltip-format-activated":"Caffeine Mode Active",
-    "tooltip-format-deactivated":"Caffeine Mode Inactive"
+    "tooltip-format-activated": "Caffeine Mode Active",
+    "tooltip-format-deactivated": "Caffeine Mode Inactive"
   },
-  
-
   "clock": {
-    "format": "{:%R 󰃭 %d·%m·%y}",
+    "format": "{:%R 󰃭 %a %m-%d}",
     "rotate": 0,
     "format-alt": "{:%I:%M %p}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
-        "mode": "month",
-        "mode-mon-col": 3,
-        "on-scroll": 1,
-        "on-click-right": "mode",
-        "format": {
-            "months": "<span color='#ffead3'><b>{}</b></span>",
-            "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-            "today": "<span color='#ff6699'><b>{}</b></span>"
-        }
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
     },
     "actions": {
-        "on-click-right": "mode",
-        "on-click-forward": "tz_up",
-        "on-click-backward": "tz_down",
-        "on-scroll-up": "shift_up",
-        "on-scroll-down": "shift_down"
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
     }
   },
-
   "custom/timer": {
-    "tooltip": true,
+    "exec": "~/.local/share/bin/waybar_timer hook",
+    "exec-on-event": false,
     "return-type": "json",
-    "exec": "waybar-timer check",
-    "on-click": "waybar-timer minute_dialog",
-    "on-click-right": "waybar-timer datetime_dialog",
-    "on-click-middle": "waybar-timer stop",
-    "interval": 1
+    "format": "{icon} {0}",
+    "format-icons": {
+      "standby": "󱎫",
+      "running": "󱫞",
+      "paused": "󱫠"
+    },
+    "on-click": "~/.local/share/bin/waybar_timer new 25 'notify-send \"Session finished\"'",
+    "on-click-middle": "~/.local/share/bin/waybar_timer cancel",
+    "on-click-right": "~/.local/share/bin/waybar_timer togglepause",
+    "on-scroll-up": "~/.local/share/bin/waybar_timer increase 60 || ~/.local/share/bin/waybar_timer new 1 'notify-send -u critical \"Timer expired\"'",
+    "on-scroll-down": "~/.local/share/bin/waybar_timer decrease 60"
   },
-
-  "custom/todoist": {
-  "exec": "python -u ~/Documents/Codes/waybar-todoist/waybar-todoist.py",
-  "exec-on-even": false,
-  "return-type": "json",
-  "interval": 20,
-  "on-click": "gtk-launch todoist-web",
-  "tooltip": false
+  "custom/updates": {
+    "format": "󱍷 {}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "󱍷",
+      "updated": "󰂪"
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 10 --network-interval-seconds 300"
   },
+  "custom/wallpaper": {
+    "format": "󰆊",
+    "tooltip-format": "random select wallpaper",
+    "on-click": "~/.local/share/bin/swwwrandom.sh"
+  }
 }

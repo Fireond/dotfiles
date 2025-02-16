@@ -2,6 +2,7 @@
 sort_by = "mtime"
 sort_reverse = true
 show_hidden = true
+linemode = "size_and_mtime"
 
 
 [preview]
@@ -13,12 +14,16 @@ edit = [
 	{ run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" },
 ]
 pdf = [
-  { run = 'sioyek "$@" &', desc = "pdf", block = true, for = "macos"},
-  { run = 'zathura "$@" &', desc = "pdf", block = true, for = "linux"}
+  { run = 'nohup sioyek "$@" > /dev/null 2>&1 &', desc = "pdf", block = true, for = "macos" },
+  { run = 'nohup zathura "$@" > /dev/null 2>&1 &', desc = "pdf", block = true, for = "linux" },
+]
+qimgv = [
+  { run = 'nohup qimgv "$@" > /dev/null 2>&1 &', desc = "qimgv", block = true, for = "linux" },
 ]
 
 [open]
 prepend_rules = [
+  { mime = "image/*", use = [ "open", "qimgv", "reveal" ] },
   { name = "*.pdf", use = "pdf"},
   { name = "*.tex", use = "edit"}
 ]

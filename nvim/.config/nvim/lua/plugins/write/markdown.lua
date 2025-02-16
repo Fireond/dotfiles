@@ -1,5 +1,15 @@
 return {
   {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+    opts = {
+      callout = {
+        theorem = { raw = "[!THEOREM]", rendered = " Theorem", highlight = "RenderMarkdownWarn" },
+        problem = { raw = "[!PROBLEM]", rendered = " Problem", highlight = "RenderMarkdownInfo" },
+      },
+    },
+  },
+  {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
@@ -29,7 +39,19 @@ return {
         date_format = "%Y-%m-%d",
         time_format = "%H:%M",
         -- A map for custom variables, the key should be the variable and the value a function
-        substitutions = {},
+        substitutions = {
+          -- yesterday = function()
+          --   return os.date("%Y-%m-%d", os.time() - 86400)
+          -- end,
+          unfinished_todos = function()
+            local todos = require("util.obsidian").get_unfinished_todos()
+            if todos == "" then
+              return "  - [ ]"
+            else
+              return todos
+            end
+          end,
+        },
       },
 
       follow_url_func = function(url)
@@ -54,6 +76,7 @@ return {
       end,
 
       ui = {
+        enable = false,
         checkboxes = {
           [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
           ["x"] = { char = "", hl_group = "ObsidianDone" },
@@ -91,5 +114,34 @@ return {
         },
       },
     },
+  },
+  {
+    "oflisback/obsidian-bridge.nvim",
+    lazy = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    event = {
+      "BufReadPre *.md",
+      "BufNewFile *.md",
+    },
+    opts = {
+      scroll_sync = true,
+      warnings = false,
+    },
+  },
+  {
+    "Noname672/markdown-preview.nvim",
+    enabled = fasle,
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    config = function()
+      vim.g.mkdp_browser = "firefox"
+      vim.g.mkdp_preview_options.katex_preamble = [[\newcommand{\d}{\,\mathrm{d}}]]
+      vim.g.mkdp_auto_close = 0
+    end,
   },
 }
