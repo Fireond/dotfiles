@@ -44,6 +44,7 @@ return {
   },
   {
     "pysan3/fcitx5.nvim",
+    cond = vim.loop.os_uname().sysname == "Linux",
     opts = {
       imname = {
         norm = "keyboard-us",
