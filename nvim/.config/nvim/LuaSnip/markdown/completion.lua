@@ -190,6 +190,14 @@ return {
     { condition = tex.in_mathzone_md }
   ),
   s(
+    { trig = "bop", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\bigoplus_{<>}^{<>}", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex.in_mathzone_md }
+  ),
+  s(
     { trig = "bcap", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("\\bigcap_{<>}^{<>}", {
       i(1),

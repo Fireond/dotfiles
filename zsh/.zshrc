@@ -161,17 +161,18 @@ alias czsh='nvim ~/.zshrc'
 alias cbash='nvim ~/.bashrc'
 alias sbash='source ~/.bashrc'
 
-alias ca='ipython --profile=calculate'
+alias ica='ipython --profile=calculate'
 alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup zathura \"{}\" &> /dev/null &'"
 alias spdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup sioyek \"{}\" &> /dev/null &'"
 
+alias todo1='habitipy todos add -p 0.1'
+alias todo2='habitipy todos add -p 1'
+alias todo3='habitipy todos add -p 1.5'
+alias todo4='habitipy todos add -p 2'
+
 
 # conda alias
-alias ai='conda activate ai'
-alias condab='conda activate base'
-alias qcx='conda activate QCX'
-alias qtp='conda activate qutip-env'
-alias condal='conda env list'
+alias ca='conda activate calculator'
 
 eval "$(zoxide init zsh)"
 # Check that the function `starship_zle-keymap-select()` is defined.

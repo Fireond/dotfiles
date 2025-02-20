@@ -58,9 +58,9 @@
       "portable": "",
       "car": "",
       "default": [
-        "",
-        "",
-        ""
+        "󰕿",
+        "󰖀",
+        "󰕾"
       ]
     }
   },
@@ -149,7 +149,7 @@
   "cpu": {
     "interval": 10,
     "format": " {usage:2}%",
-    "on-click": "pkill -x 'btop' || kitty --class=system_monitor \"btop\"",
+    "on-click": "pkill -x 'btop' || kitty --class=system_monitor -o window_padding_width=0 \"btop\"",
     "max-length": 10
   },
   "custom/cpuinfo": {
@@ -162,7 +162,7 @@
   },
   "memory": {
     "interval": 30,
-    "on-click": "pkill -x 'btop' || kitty --class=system_monitor \"btop\"",
+    "on-click": "pkill -x 'btop' || kitty --class=system_monitor -o window_padding_width=0 \"btop\"",
     "format": " {}%",
     "max-length": 10
   }

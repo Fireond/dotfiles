@@ -1,13 +1,17 @@
 [manager]
 prepend_keymap=[
   { on = [ "g", "d" ], run = "cd ~/Downloads" },
-  { on = [ "g", "D" ], run = "cd ~/.dotfiles" },
-	{ on = [ "g", "l" ], run = "cd ~/Documents/Latex/" },
-	{ on = [ "g", "c" ], run = "cd ~/Documents/Courses/c31/" },
-	{ on = [ "g", "q" ], run = "cd ~/Documents/Courses/c31/量子计算交叉应用/homework/" },
-	{ on = [ "g", "a" ], run = "cd ~/Documents/Courses/c31/高等原子物理学/homework/" },
-	{ on = [ "g", "p" ], run = "cd ~/Documents/pdfs/" },
+  { on = [ "g", "D" ], run = "cd ~/Documents/" },
+  { on = [ "g", "v" ], run = "cd ~/Videos/" },
+  { on = [ "g", "P" ], run = "cd ~/Pictures/" },
+  { on = [ "g", "." ], run = "cd ~/.dotfiles" },
+  { on = [ "g", "," ], run = "cd ~/.config" },
 	{ on = [ "g", "/" ], run = "cd /" },
+	{ on = [ "g", "l" ], run = "cd ~/Documents/Latex/" },
+	{ on = [ "g", "c" ], run = "cd ~/Documents/Courses/c32/" },
+	# { on = [ "g", "q" ], run = "cd ~/Documents/Courses/c31/量子计算交叉应用/homework/" },
+	# { on = [ "g", "a" ], run = "cd ~/Documents/Courses/c31/高等原子物理学/homework/" },
+	{ on = [ "g", "p" ], run = "cd ~/Documents/pdfs/" },
 	{ on = [ "g", "T" ], run = "cd /home/fireond/.local/share/Trash/" },
 	{ on = [ "g", "C" ], run = "cd ~/Documents/Codes/" },
 	{ on = [ "g", "r" ], run = '''

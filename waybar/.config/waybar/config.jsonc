@@ -28,7 +28,8 @@
   ],
   "modules-right": [
     "tray",
-    "wireplumber",
+    "pulseaudio",
+    // "wireplumber",
     "network",
     "bluetooth",
     "memory",

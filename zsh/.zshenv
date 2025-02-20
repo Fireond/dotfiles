@@ -23,7 +23,10 @@ if  [[ "$OSTYPE" == "darwin"* ]]; then
 ################################################################################################
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export TEXMFDIST="/usr/share/texmf-dist"
-  # export PULSE_SERVER=tcp:127.0.0.1:4712
+  ## miniconda3
+  export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+  [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+  ## miniconda3
   source ~/Documents/api_env
   aurhelper="paru"
   # >>> conda initialize >>>

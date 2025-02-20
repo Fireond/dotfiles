@@ -3,12 +3,11 @@
 # arguments = ["img", "--transition-type", "center"]
 # set = false
 
-
 [templates.waybar]
 input_path = '~/.dotfiles/matugen/.config/matugen/templates/color.css'
 output_path = '~/.config/waybar/matugen.css'
-post_hook = 'killall waybar; killall waybar_timer; nohup waybar_timer serve &> /dev/null &; nohup waybar &> /dev/null &'
-# post_hook = 'pkill -SIGUSR2 waybar; pkill -SIGUSR2 waybar_timer'
+post_hook = 'pkill -x "waybar"; toggle_waybar.sh'
+# post_hook = 'pkill -SIGUSR2 waybar'
 
 [templates.kitty]
 input_path = '~/.dotfiles/matugen/.config/matugen/templates/kitty-colors.conf'
@@ -18,7 +17,7 @@ post_hook = 'kill -SIGUSR1 $(pgrep kitty)'
 [templates.cava]
 input_path = '~/.dotfiles/matugen/.config/matugen/templates/cava-colors'
 output_path = '~/.config/cava/matugen'
-post_hook = 'gen_gradient_colors.py; pkill -SIGUSR1 cava'
+post_hook = '~/.local/share/bin/gen_gradient_colors.py; pkill -SIGUSR1 cava'
 
 [templates.nvim]
 input_path = '~/.dotfiles/matugen/.config/matugen/templates/nvim-colors.lua'
@@ -45,3 +44,20 @@ output_path = '~/.config/rofi/matugen.rasi'
 input_path = '~/.dotfiles/matugen/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/matugen.conf'
 post_hook = 'hyprctl reload'
+
+[templates.musicfox]
+input_path = '~/.config/matugen/templates/musicfox'
+output_path = '~/.config/matugen/scripts/musicfox'
+post_hook = 'sh ~/.config/matugen/scripts/musicfox'
+
+# [templates.btop]
+# input_path = '~/.config/matugen/templates/btop.theme'
+# output_path = '~/.config/btop/themes/matugen.theme'
+
+# [config.custom_colors]
+# red = "#f38ba8"
+# green = "#a6e3a1"
+# yellow = "#f9e2af"
+# blue = "#89b4fa"
+# orange = "#fab387"
+# purple = "#cba6f7"

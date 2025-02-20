@@ -1,5 +1,5 @@
 format = '''
-$directory$git_branch$rust$python
+$directory$git_branch$rust$python$conda
 $character'''
 
 palette = 'colors'
@@ -44,3 +44,6 @@ format = "[](fg:color8)[${symbol}${version}](bg:color8 fg:color5)[](fg:col
 symbol = '🐍'
 # pyenv_version_name = true
 pyenv_prefix = 'venv'
+
+[conda]
+format = "[](fg:color8)[$symbol](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $environment](fg:color3 bg:color4)[](fg:color4) "

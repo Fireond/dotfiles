@@ -2,17 +2,15 @@ import subprocess
 
 
 def git_update():
-    repo_path = '.'
+    repo_path = "."
     try:
         # Run 'git add --all' command
-        subprocess.run(['git', 'add', '--all'], cwd=repo_path, check=True)
+        subprocess.run(["git", "add", "--all"], cwd=repo_path, check=True)
 
         # Run 'git commit -m "update"' command
-        subprocess.run(['git', 'commit', '-m', 'update'],
-                       cwd=repo_path, check=True)
+        subprocess.run(["git", "commit", "-m", "update"], cwd=repo_path, check=True)
 
-        subprocess.run(['git', 'push'],
-                       cwd=repo_path, check=True)
+        subprocess.run(["git", "push"], cwd=repo_path, check=True)
 
         print("Git update successful!")
 
