@@ -2,6 +2,22 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      indent = {
+        chunk = {
+          enabled = true,
+          priority = 200,
+          hl = "SnacksIndentChunk", ---@type string|string[] hl group for chunk scopes
+          char = {
+            -- corner_top = "┌",
+            -- corner_bottom = "└",
+            corner_top = "╭",
+            corner_bottom = "╰",
+            horizontal = "─",
+            vertical = "│",
+            arrow = ">",
+          },
+        },
+      },
       dashboard = {
         preset = {
           -- stylua: ignore

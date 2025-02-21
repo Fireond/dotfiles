@@ -112,13 +112,38 @@ return {
       image = {
         enabled = true,
         doc = {
-          enabled = true,
           inline = false,
-          convert = {
-            notify = false, -- show a notification on error
-            math = {
-              packages = { "amsmath", "amssymb", "mathtools", "physics2" },
+          max_width = 180,
+          max_height = 40,
+        },
+        convert = {
+          notify = true, -- show a notification on error
+        },
+        math = {
+          enabled = true,
+          latex = {
+            font_size = "large", -- see https://www.sascha-frank.com/latex-font-size.html
+            packages = {
+              "amsmath",
+              "amssymb",
+              "amsthm",
+              "bbm",
+              "fixdif",
+              "mathtools",
+              "mathrsfs",
+              "physics2",
             },
+            tpl = [[
+            \documentclass[preview,border=2pt,varwidth,12pt]{standalone}
+            \usepackage{${packages}}
+            \usephysicsmodule{ab,braket,op.legacy,diagmat}
+            \input{/home/fireond/Documents/Latex/commands.tex}
+            \begin{document}
+            ${header}
+            { \${font_size} \selectfont
+              \color[HTML]{${color}}
+            ${content}}
+            \end{document}]],
           },
         },
       },
