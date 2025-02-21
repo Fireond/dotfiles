@@ -20,7 +20,7 @@ return {
     },
     opts = {
       workspaces = {
-        { name = "Root", path = "/home/fireond/Documents/Obsidian-Vault" },
+        { name = "Root", path = vim.fn.expand("~/Documents/Obsidian-Vault") },
       },
       daily_notes = {
         folder = "01-dailies",
