@@ -1,50 +1,6 @@
 return {
   {
-    "ryleelyman/latex.nvim",
-    enabled = false,
-    opts = {
-      conceals = {
-        add = {
-          ["colon"] = ":",
-          ["coloneqq"] = "≔",
-          ["pdv"] = "∂",
-          ["odv"] = "d",
-          ["sqrt"] = "√",
-          ["|"] = "⫴",
-          ["{"] = "{",
-          ["}"] = "}",
-          ["nmid"] = "∤",
-          ["implies"] = "⇨",
-
-          -- hide
-          [","] = "",
-          [" "] = "",
-          ["vb"] = "",
-          ["va"] = "",
-          ["qq"] = "",
-          ["mathrm"] = "",
-          ["displaystyle"] = "",
-          ["limits"] = "",
-          ["ab"] = "",
-          ["ab*"] = "",
-          -- ["bra"] = "",
-          -- ["ket"] = "",
-          -- ["braket"] = "",
-          -- ["ketbra"] = "",
-        },
-      },
-      imaps = {
-        enabled = false,
-        -- add = { ["\\emptyset"] = "1", ["\\Alpha"] = "A" },
-        -- default_leader = ";",
-      },
-      surrounds = { enabled = false },
-    },
-    ft = { "tex", "markdown" },
-  },
-  {
     "lervag/vimtex",
-    -- dependencies = { "echasnovski/mini.ai" }, -- 确保 mini.ai 先加载
     init = function()
       function ConvertTexToDocx()
         -- 获取当前文件名
