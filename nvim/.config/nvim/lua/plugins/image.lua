@@ -119,7 +119,7 @@ return {
         enabled = true,
         doc = {
           inline = false,
-          max_width = 180,
+          max_width = 280,
           max_height = 40,
         },
         convert = {
@@ -128,7 +128,7 @@ return {
         math = {
           enabled = true,
           latex = {
-            font_size = "large", -- see https://www.sascha-frank.com/latex-font-size.html
+            font_size = "normalsize", -- see https://www.sascha-frank.com/latex-font-size.html
             packages = {
               "amsmath",
               "amssymb",
