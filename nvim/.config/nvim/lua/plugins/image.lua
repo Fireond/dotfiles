@@ -110,10 +110,10 @@ return {
     "folke/snacks.nvim",
     opts = {
       styles = {
-        snacks_image = {
-          relative = "editor",
-          col = -1,
-        },
+        -- snacks_image = {
+        --   relative = "editor",
+        --   col = -1,
+        -- },
       },
       image = {
         enabled = true,
