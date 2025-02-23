@@ -107,7 +107,7 @@ return {
     },
   },
   {
-    "folke/snacks.nvim",
+    "fireond/snacks.nvim",
     opts = {
       styles = {
         -- snacks_image = {
