@@ -1,28 +1,4 @@
-local enable_image = false
 return {
-  {
-    "vhyrro/luarocks.nvim",
-    enabled = enable_image,
-    cond = not (vim.g.neovide or false),
-    priority = 1001, -- this plugin needs to run before anything else
-    opts = {
-      rocks = { "magick" },
-    },
-  },
-  {
-    "3rd/image.nvim",
-    enabled = enable_image,
-    cond = not (vim.g.neovide or false),
-    dependencies = { "luarocks.nvim" },
-    opts = {
-      integrations = {
-        markdown = {
-          only_render_image_at_cursor = true,
-        },
-      },
-      window_overlap_clear_enabled = false, -- toggles images when windows are overlapped
-    },
-  },
   {
     "fireond/illustrate.nvim",
     lazy = true,
@@ -107,7 +83,7 @@ return {
     },
   },
   {
-    "fireond/snacks.nvim",
+    "folke/snacks.nvim",
     opts = {
       styles = {
         -- snacks_image = {
@@ -119,6 +95,7 @@ return {
         enabled = true,
         doc = {
           inline = false,
+          conceal = true,
           max_width = 280,
           max_height = 40,
         },
