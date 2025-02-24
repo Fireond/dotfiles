@@ -96,8 +96,8 @@ return {
         doc = {
           inline = false,
           conceal = true,
-          max_width = 280,
-          max_height = 40,
+          -- max_width = 280,
+          -- max_height = 40,
         },
         convert = {
           notify = false, -- show a notification on error
