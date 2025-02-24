@@ -85,19 +85,11 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
-      styles = {
-        -- snacks_image = {
-        --   relative = "editor",
-        --   col = -1,
-        -- },
-      },
       image = {
         enabled = true,
         doc = {
           inline = false,
           conceal = true,
-          -- max_width = 280,
-          -- max_height = 40,
         },
         convert = {
           notify = false, -- show a notification on error
