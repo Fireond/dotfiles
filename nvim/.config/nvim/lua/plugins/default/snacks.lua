@@ -35,18 +35,20 @@ return {
             { icon = " ", key = "q", desc = "Quit", action = ":qa" },
           },
         },
-        -- formats = {
-        --   key = function(item)
-        --     return { { "[", hl = "special" }, { item.key, hl = "key" }, { "]", hl = "special" } }
-        --   end,
-        -- },
         sections = {
           { section = "terminal", cmd = "fortune -s | cowsay", hl = "header", padding = 1, indent = 8 },
           { title = "Projects", padding = 1 },
           { section = "projects", padding = 1, gap = 1 },
-          -- { title = "Bookmarks", padding = 1 },
           { title = "Options", padding = 1 },
           { section = "keys", gap = 1 },
+        },
+      },
+      picker = {
+        matcher = {
+          frecency = true,
+        },
+        debug = {
+          scores = true,
         },
       },
     },
