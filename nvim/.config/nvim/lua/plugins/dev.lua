@@ -9,7 +9,7 @@ return {
         local target_path = vim.fn.expand("~/Documents/Obsidian-Vault")
         local math_path = vim.fn.expand("~/Documents/Obsidian-Vault/02-math")
         if cur_path:sub(1, #math_path) == math_path then
-          return false
+          return true
         elseif cur_path:sub(1, #target_path) == target_path then
           return true
         else
