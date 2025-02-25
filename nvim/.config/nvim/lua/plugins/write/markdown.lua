@@ -8,6 +8,11 @@ return {
         theorem = { raw = "[!THEOREM]", rendered = " Theorem", highlight = "RenderMarkdownWarn" },
         problem = { raw = "[!PROBLEM]", rendered = " Problem", highlight = "RenderMarkdownInfo" },
       },
+      html = {
+        comment = {
+          conceal = false,
+        },
+      },
     },
   },
   {
