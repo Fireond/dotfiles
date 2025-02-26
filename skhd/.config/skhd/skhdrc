@@ -8,7 +8,8 @@ cmd + shift - s : osascript -e 'tell application "System Events" to sleep'
 # cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 alt - return : open -na "kitty"
 alt - g : open "https://chatgpt.com/"
-alt + shift - return : open -na "Google Chrome"
+# alt + shift - return : open -na "Google Chrome"
+alt + shift - return : open -na "Zen browser"
 
 # close window
 alt - w : yabai -m window --close

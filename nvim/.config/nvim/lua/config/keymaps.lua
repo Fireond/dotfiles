@@ -23,9 +23,9 @@ map("n", ">", "v>g")
 
 -- buffers
 map({ "n", "i" }, "<M-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
--- map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 map({ "n", "i" }, "<M-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
--- map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
 map("n", "<leader>d", function()
   Snacks.bufdelete()

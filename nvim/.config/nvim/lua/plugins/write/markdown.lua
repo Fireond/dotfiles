@@ -13,6 +13,9 @@ return {
           conceal = false,
         },
       },
+      latex = {
+        enabled = false,
+      },
     },
   },
   {

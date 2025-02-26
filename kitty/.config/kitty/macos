@@ -1,34 +1,46 @@
 editor /opt/homebrew/bin/nvim
-font_size 20
+font_size 19
 macos_option_as_alt yes
 macos_quit_when_last_window_closed yes
 hide_window_decorations titlebar-only
 
-# tmux mappings
-# command
-map cmd+: send_key ctrl+b :
-# copy-mode
-map cmd+f send_key ctrl+b [
-# rename session
-map cmd+r send_key ctrl+b $
-# rename window
-map cmd+shift+r send_key ctrl+b ,
-# list all sessions and windows
-map cmd+s send_key ctrl+b s
-# kill window
-map cmd+w send_key ctrl+b &
-# new window
-map cmd+t send_key ctrl+b c
-# switch to window 1
-map cmd+1 send_key ctrl+b 1
-map cmd+2 send_key ctrl+b 2
-map cmd+3 send_key ctrl+b 3
-map cmd+4 send_key ctrl+b 4
-map cmd+5 send_key ctrl+b 5
-# split vertically and horizontally
-map cmd+shift+\ send_key ctrl+b %
-# kill pane
-map cmd+x send_key ctrl+b x
-# detach
-map cmd+d send_key ctrl+b d
+## tmux mappings
+## command
+#map cmd+: send_key ctrl+b :
+## copy-mode
+#map cmd+f send_key ctrl+b [
+## rename session
+#map cmd+r send_key ctrl+b $
+## rename window
+#map cmd+shift+r send_key ctrl+b ,
+## list all sessions and windows
+#map cmd+s send_key ctrl+b s
+## kill window
+#map cmd+w send_key ctrl+b &
+## new window
+#map cmd+t send_key ctrl+b c
+## switch to window 1
+#map cmd+1 send_key ctrl+b 1
+#map cmd+2 send_key ctrl+b 2
+#map cmd+3 send_key ctrl+b 3
+#map cmd+4 send_key ctrl+b 4
+#map cmd+5 send_key ctrl+b 5
+## split vertically and horizontally
+#map cmd+shift+\ send_key ctrl+b %
+## kill pane
+#map cmd+x send_key ctrl+b x
+## detach
+#map cmd+d send_key ctrl+b d
 
+# tab maps
+map cmd+t new_tab
+map cmd+w close_tab
+map cmd+r set_tab_title
+map cmd+enter new_window
+map cmd+x close_window
+map cmd+1 goto_tab 1
+map cmd+2 goto_tab 2
+map cmd+3 goto_tab 3
+map cmd+4 goto_tab 4
+map cmd+5 goto_tab 5
+map cmd+6 goto_tab 6
