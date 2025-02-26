@@ -27,7 +27,6 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
   [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
   ## miniconda3
-  source ~/Documents/api_env
   aurhelper="paru"
   # >>> conda initialize >>>
   # !! Contents within this block are managed by 'conda init' !!
@@ -46,3 +45,4 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 ################################################################################################
 export EDITOR="nvim"
+source ~/Documents/api_env

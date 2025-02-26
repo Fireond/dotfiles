@@ -92,7 +92,7 @@ return {
           conceal = true,
         },
         convert = {
-          notify = false, -- show a notification on error
+          notify = true, -- show a notification on error
         },
         math = {
           enabled = true,
@@ -112,7 +112,7 @@ return {
             \documentclass[preview,border=2pt,varwidth,12pt]{standalone}
             \usepackage{${packages}}
             \usephysicsmodule{ab,braket,op.legacy,diagmat}
-            \input{/home/fireond/Documents/Latex/commands.tex}
+            \input{~/Documents/Latex/commands.tex}
             \begin{document}
             ${header}
             { \${font_size} \selectfont
