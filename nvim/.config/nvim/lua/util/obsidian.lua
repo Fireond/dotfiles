@@ -76,8 +76,8 @@ M.get_unfinished_todos = function()
   local y_lines = {}
   local y_file = io.open(yesterday_file, "r")
   if not y_file then
-    vim.notify("❌ 昨天的笔记不存在: " .. yesterday_file, vim.log.levels.ERROR)
-    return
+    vim.notify("❌ 昨天的笔记不存在: " .. yesterday_file, vim.log.levels.WARN)
+    return ""
   end
   for line in y_file:lines() do
     table.insert(y_lines, line)
