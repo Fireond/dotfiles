@@ -20,9 +20,9 @@ return {
       },
       completion = { min_chars = 0 },
       new_notes_location = "current_dir",
-      note_id_func = function(title)
-        return title
-      end,
+      -- note_id_func = function(title)
+      --   return title
+      -- end,
       wiki_link_func = "prepend_note_path",
       templates = {
         folder = "templates",
