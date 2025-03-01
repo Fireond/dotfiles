@@ -84,7 +84,7 @@ M.get_unfinished_todos = function()
   local in_todo_section = false
 
   for _, line in ipairs(y_lines) do
-    if line:match("^## TODO") then
+    if line:match("^##%s*%d*%s*TODO") then
       in_todo_section = true
     elseif in_todo_section then
       if line:match("^#+ ") then -- 遇到新标题时退出
