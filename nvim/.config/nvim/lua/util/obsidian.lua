@@ -1,15 +1,19 @@
 local M = {}
 
 M.open_source = function(source)
-  local path = vim.fn.expand(source)
-  local open = ""
-  if vim.loop.os_uname().sysname == "Darwin" then
-    open = "open"
-  elseif vim.loop.os_uname().sysname == "Linux" then
-    open = "xdg-open"
+  local expanded_source = source
+  if source:sub(1, 1) == "~" then
+    expanded_source = os.getenv("HOME") .. source:sub(2)
   end
-  local cmd = open .. string.format(" %q", path) .. " &"
-  vim.api.nvim_call_function("system", { cmd })
+  local escaped_path = vim.fn.shellescape(expanded_source)
+  local open_cmd
+  if vim.loop.os_uname().sysname == "Darwin" then
+    open_cmd = "open"
+  else
+    open_cmd = "xdg-open"
+  end
+  local cmd = table.concat({ open_cmd, escaped_path, "&" }, " ")
+  vim.fn.jobstart(cmd, { detach = true })
 end
 
 M.open_sources_from_frontmatter = function()
