@@ -115,36 +115,18 @@ local function is_in_vault(file_path)
   return full_path:sub(1, #docs_dir) == docs_dir
 end
 
-M.commit_vault_backup = function()
+M.vault_commit_push = function()
   local file_path = vim.api.nvim_buf_get_name(0)
   if not is_in_vault(file_path) then
     vim.notify("Not in Obsidiaon Vault!", vim.log.levels.ERROR)
     return
   end
 
-  local docs_dir = vim.fn.expand("~/Documents/Obsidian-Vault/")
-  local original_dir = vim.fn.getcwd()
-  vim.cmd("silent lcd " .. vim.fn.fnameescape(docs_dir))
-
-  -- 执行 Git 操作（带错误处理）
-  local timestamp = os.date("%Y-%m-%d %H:%M:%S")
-  local messages = { "Git operations:" }
-
-  local add = io.popen("git add . 2>&1")
-  messages[#messages + 1] = "- Add: " .. (add:read("*a") or ""):gsub("\n", "")
-  add:close()
-
-  local commit = io.popen(string.format('git commit -m "vault-backup: %s" 2>&1', timestamp))
-  local commit_output = (commit:read("*a") or ""):gsub("\n", "")
-  messages[#messages + 1] = "- Commit: " .. commit_output
-  commit:close()
-
-  -- 恢复原始目录并显示结果
-  vim.cmd("silent lcd " .. vim.fn.fnameescape(original_dir))
-  print(table.concat(messages, "\n"))
+  local cmd = "git-vault.sh commit_push"
+  vim.fn.jobstart(cmd, { detach = true })
 end
 
-M.pull_no_edit = function()
+M.vault_pull = function()
   local file_path = vim.api.nvim_buf_get_name(0)
   if not is_in_vault(file_path) then
     vim.notify("Not in Obsidiaon Vault!", vim.log.levels.ERROR)
