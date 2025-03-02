@@ -133,16 +133,8 @@ M.vault_pull = function()
     return
   end
 
-  local docs_dir = vim.fn.expand("~/Documents/Obsidian-Vault/")
-  local original_dir = vim.fn.getcwd()
-  vim.cmd("silent lcd " .. vim.fn.fnameescape(docs_dir))
-
-  -- 使用 vim.fn.systemlist 获取实时输出
-  print("Pulling changes...")
-  local output = vim.fn.systemlist({ "git", "pull", "--no-edit" })
-
-  vim.cmd("silent lcd " .. vim.fn.fnameescape(original_dir))
-  print(table.concat(output, "\n"))
+  local cmd = "git-vault.sh pull"
+  vim.fn.jobstart(cmd, { detach = true })
 end
 
 return M

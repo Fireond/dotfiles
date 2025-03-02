@@ -131,6 +131,24 @@ map("n", "<leader>nO", function()
     return nil
   end
 end, { desc = "Open Sources" })
+map("n", "<leader>nc", function()
+  local ft = vim.bo.filetype
+  if ft == "markdown" then
+    require("util.obsidian").vault_commit_push()
+  else
+    vim.notify("Not a md file!", vim.log.levels.ERROR)
+    return nil
+  end
+end, { desc = "Vault commit push" })
+map("n", "<leader>np", function()
+  local ft = vim.bo.filetype
+  if ft == "markdown" then
+    require("util.obsidian").vault_pull()
+  else
+    vim.notify("Not a md file!", vim.log.levels.ERROR)
+    return nil
+  end
+end, { desc = "Vault pull" })
 
 map("n", "<leader>N", function()
   Snacks.notifier.show_history()
