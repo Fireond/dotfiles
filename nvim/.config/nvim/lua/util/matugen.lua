@@ -1,6 +1,0 @@
-vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = "#bdc2ff" })
-vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = "#bdc2ff" })
-vim.api.nvim_set_hl(0, "SnacksDashboardTitle", { fg = "#bdc2ff" })
-vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = "#e7b9d6" })
-vim.api.nvim_set_hl(0, "SnacksDashboardKey", { fg = "#ffb4ab" })
-vim.api.nvim_set_hl(0, "SnacksDashboardFile", { fg = "#c4c4dd" })

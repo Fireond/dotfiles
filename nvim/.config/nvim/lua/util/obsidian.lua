@@ -101,4 +101,66 @@ M.get_unfinished_todos = function()
   return table.concat(todos, "\n")
 end
 
+local function is_in_vault(file_path)
+  if file_path == "" then
+    return false
+  end
+
+  local docs_dir = vim.fn.expand("~/Documents/Obsidian-Vault/")
+  local full_path = vim.fn.fnamemodify(file_path, ":p")
+
+  docs_dir = vim.fn.substitute(docs_dir, [[\/\+$]], "/", "")
+  full_path = vim.fn.substitute(full_path, [[\/\+]], "/", "g")
+
+  return full_path:sub(1, #docs_dir) == docs_dir
+end
+
+M.commit_vault_backup = function()
+  local file_path = vim.api.nvim_buf_get_name(0)
+  if not is_in_vault(file_path) then
+    vim.notify("Not in Obsidiaon Vault!", vim.log.levels.ERROR)
+    return
+  end
+
+  local docs_dir = vim.fn.expand("~/Documents/Obsidian-Vault/")
+  local original_dir = vim.fn.getcwd()
+  vim.cmd("silent lcd " .. vim.fn.fnameescape(docs_dir))
+
+  -- 执行 Git 操作（带错误处理）
+  local timestamp = os.date("%Y-%m-%d %H:%M:%S")
+  local messages = { "Git operations:" }
+
+  local add = io.popen("git add . 2>&1")
+  messages[#messages + 1] = "- Add: " .. (add:read("*a") or ""):gsub("\n", "")
+  add:close()
+
+  local commit = io.popen(string.format('git commit -m "vault-backup: %s" 2>&1', timestamp))
+  local commit_output = (commit:read("*a") or ""):gsub("\n", "")
+  messages[#messages + 1] = "- Commit: " .. commit_output
+  commit:close()
+
+  -- 恢复原始目录并显示结果
+  vim.cmd("silent lcd " .. vim.fn.fnameescape(original_dir))
+  print(table.concat(messages, "\n"))
+end
+
+M.pull_no_edit = function()
+  local file_path = vim.api.nvim_buf_get_name(0)
+  if not is_in_vault(file_path) then
+    vim.notify("Not in Obsidiaon Vault!", vim.log.levels.ERROR)
+    return
+  end
+
+  local docs_dir = vim.fn.expand("~/Documents/Obsidian-Vault/")
+  local original_dir = vim.fn.getcwd()
+  vim.cmd("silent lcd " .. vim.fn.fnameescape(docs_dir))
+
+  -- 使用 vim.fn.systemlist 获取实时输出
+  print("Pulling changes...")
+  local output = vim.fn.systemlist({ "git", "pull", "--no-edit" })
+
+  vim.cmd("silent lcd " .. vim.fn.fnameescape(original_dir))
+  print(table.concat(output, "\n"))
+end
+
 return M
