@@ -11,7 +11,7 @@ prepend_keymap=[
 	{ on = [ "g", "c" ], run = "cd ~/Documents/Courses/c32/" },
 	# { on = [ "g", "q" ], run = "cd ~/Documents/Courses/c31/量子计算交叉应用/homework/" },
 	# { on = [ "g", "a" ], run = "cd ~/Documents/Courses/c31/高等原子物理学/homework/" },
-	{ on = [ "g", "p" ], run = "cd ~/Documents/pdfs/" },
+	{ on = [ "g", "p" ], run = "cd ~/Documents/Latex/pdfs/" },
 	{ on = [ "g", "T" ], run = "cd /home/fireond/.local/share/Trash/" },
 	{ on = [ "g", "C" ], run = "cd ~/Documents/Codes/" },
 	{ on = [ "g", "r" ], run = '''
