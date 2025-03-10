@@ -11,7 +11,7 @@ max_height = 2000
 
 [opener]
 edit = [
-	{ run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" },
+	{ run = 'auto_padding_nvim.sh "$@"', desc = "nvim", block = true, for = "unix" },
 ]
 sioyek = [
   { run = 'nohup sioyek "$@" > /dev/null 2>&1 &', desc = "sioyek", orphan = true, for = "unix" },
