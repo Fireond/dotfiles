@@ -4,28 +4,6 @@
 
 Reference Configurations: https://github.com/ColaMint/config/tree/main/sketchybar, https://github.com/FelixKratz/dotfiles/tree/e6288b3f4220ca1ac64a68e60fced2d4c3e3e20b
 
-**one-click installation script**
-```bash
-#!/bin/bash
-
-# install sketchybar
-brew tap FelixKratz/formulae
-brew install sketchybar
-
-# install dependencies
-brew install --cask sf-symbols
-brew install jq
-brew install switchaudio-osx
-curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
-brew install cava
-brew install --cask background-music
-
-# clone config
-svn export https://github.com/Fireond/dotfiles.git/trunk/sketchybar/.config/sketchybar ~/.config/sketchybar
-
-# start sketchybar
-brew services start sketchybar
-```
 Use `sf-symbols`, `jq`, `switchaudio-osx`(for audio device switching context menu), `cava`, `background-music`, [sketchybar-app-font](https://github.com/kvndrsslr/sketchybar-app-font)
 
 (Optional) If you use yabai (if not just remove `yabai` item from `ìtems/front_app.sh`), add yabai events:
