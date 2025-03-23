@@ -8,8 +8,9 @@ return {
         local cur_path = vim.fn.expand("%:p")
         local target_path = vim.fn.expand("~/Documents/Obsidian-Vault")
         local math_path = vim.fn.expand("~/Documents/Obsidian-Vault/02-math")
-        if cur_path:sub(1, #math_path) == math_path then
-          return true
+        local disable_path = vim.fn.expand("~/Documents/Obsidian-Vault/02-math/group-nutshell/")
+        if cur_path:sub(1, #disable_path) == disable_path then
+          return false
         elseif cur_path:sub(1, #target_path) == target_path then
           return true
         else
