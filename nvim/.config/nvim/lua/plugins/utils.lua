@@ -72,5 +72,8 @@ return {
       },
     },
     cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+    keys = {
+      { "<leader>uv", "<cmd>CsvViewToggle<cr>", desc = "Toggle CsvView" },
+    },
   },
 }
