@@ -95,10 +95,10 @@ function M.convert()
   local content = table.concat(filtered_lines, "\n")
 
   -- 2. 处理行间公式 (需要优先处理)
-  content = content:gsub("\\$\\$(.-)\\$\\$", function(formula)
+  content = content:gsub("%$%$(.-)%$%$", function(formula)
     -- 清理首尾空白并保留中间换行
     formula = formula:gsub("^%s*\n", ""):gsub("\n%s*$", "")
-    return "\n\n$$\n" .. formula .. "\n$$\n\n"
+    return "\n\n$\n" .. formula .. "\n$\n\n"
   end)
 
   -- 3. 处理行内公式

@@ -131,6 +131,15 @@ map("n", "<leader>nO", function()
     return nil
   end
 end, { desc = "Open Sources" })
+map("n", "<leader>nz", function()
+  local ft = vim.bo.filetype
+  if ft == "markdown" then
+    require("util.zhihu").convert()
+  else
+    vim.notify("Not a md file!", vim.log.levels.ERROR)
+    return nil
+  end
+end, { desc = "Convert To Zhihu" })
 map("n", "<leader>nc", function()
   local ft = vim.bo.filetype
   if ft == "markdown" then
@@ -153,11 +162,6 @@ end, { desc = "Vault pull" })
 map("n", "<leader>N", function()
   Snacks.notifier.show_history()
 end, { desc = "Notification History" })
-
--- 创建命令
-vim.api.nvim_create_user_command("ZhihuMarkdown", function()
-  require("util.zhihu").ConvertToZhihuMarkdown()
-end, {})
 
 -- Disable default keymaps
 local del = vim.keymap.del

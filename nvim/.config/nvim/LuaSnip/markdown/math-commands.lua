@@ -431,4 +431,9 @@ return {
     fmta("\\mathring{<>}", { i(1) }),
     { condition = tex.in_mathzone_md }
   ),
+  s(
+    { trig = "\\oplusn", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\operatorname{<>}", { i(1) }),
+    { condition = tex.in_mathzone_md }
+  ),
 }
