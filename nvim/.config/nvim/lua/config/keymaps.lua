@@ -154,6 +154,11 @@ map("n", "<leader>N", function()
   Snacks.notifier.show_history()
 end, { desc = "Notification History" })
 
+-- 创建命令
+vim.api.nvim_create_user_command("ZhihuMarkdown", function()
+  require("util.zhihu").ConvertToZhihuMarkdown()
+end, {})
+
 -- Disable default keymaps
 local del = vim.keymap.del
 del("n", "<leader>bb")
