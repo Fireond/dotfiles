@@ -1,67 +1,4 @@
 local M = {}
-M.ConvertToZhihuMarkdown = function()
-  -- 获取当前buffer内容
-  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-  local new_lines = {}
-
-  -- 1. 移除YAML头部
-  local header_processed = {}
-  local in_header = false
-  for _, line in ipairs(lines) do
-    if line:match("^%-%-%-$") then
-      in_header = not in_header
-    else
-      if not in_header then
-        table.insert(header_processed, line)
-      end
-    end
-  end
-
-  -- 2. 处理行间公式
-  local math_processed = {}
-  local in_math = false
-  local math_content = {}
-
-  for _, line in ipairs(header_processed) do
-    -- 检测行间公式的开始/结束标记
-    local is_start = line:match("^%s*%$%$")
-    local is_end = line:match("%$%$%s*$")
-
-    if is_start and not in_math then
-      in_math = true
-      table.insert(math_content, line:gsub("^%s*%$%$", ""):gsub("%$%$%s*$", ""))
-    elseif is_end and in_math then
-      in_math = false
-      table.insert(math_content, line:gsub("^%s*%$%$", ""):gsub("%$%$%s*$", ""))
-
-      -- 插入处理后的公式块
-      table.insert(math_processed, "")
-      table.insert(math_processed, "$$")
-      for _, l in ipairs(math_content) do
-        if l ~= "" then -- 跳过空行
-          table.insert(math_processed, l)
-        end
-      end
-      table.insert(math_processed, "$$")
-      table.insert(math_processed, "")
-      math_content = {}
-    elseif in_math then
-      table.insert(math_content, line)
-    else
-      table.insert(math_processed, line)
-    end
-  end
-
-  -- 3. 处理行内公式
-  for i, line in ipairs(math_processed) do
-    -- 替换单$公式为双$，同时避免转义字符
-    math_processed[i] = line:gsub("%$([^$]-)%$", "$$%1$$")
-  end
-
-  -- 更新buffer内容
-  vim.api.nvim_buf_set_lines(0, 0, -1, false, math_processed)
-  vim.notify("知乎格式转换完成！", vim.log.levels.INFO)
-end
 
 function M.convert()
   -- 获取当前 buffer 内容
@@ -111,8 +48,9 @@ function M.convert()
   local processed_lines = vim.split(content, "\n")
 
   -- 生成新文件名
-  local current_file = vim.fn.expand("%:p")
-  local new_file = current_file:gsub("%.md$", "_zhihu.md")
+  local current_file_name = vim.fn.expand("%:t")
+  local new_file_name = current_file_name:gsub("%.md$", "_zhihu.md")
+  local new_file = vim.fn.expand("~/Documents/Obsidian-Vault/04-tech/zhihu/") + current_file_name
 
   -- 写入新文件
   local file = io.open(new_file, "w")
