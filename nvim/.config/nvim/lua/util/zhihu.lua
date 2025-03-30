@@ -50,7 +50,7 @@ function M.convert()
   -- 生成新文件名
   local current_file_name = vim.fn.expand("%:t")
   local new_file_name = current_file_name:gsub("%.md$", "_zhihu.md")
-  local new_file = vim.fn.expand("~/Documents/Obsidian-Vault/04-tech/zhihu/") + current_file_name
+  local new_file = vim.fn.expand("~/Documents/Obsidian-Vault/04-tech/zhihu/") .. new_file_name
 
   -- 写入新文件
   local file = io.open(new_file, "w")
