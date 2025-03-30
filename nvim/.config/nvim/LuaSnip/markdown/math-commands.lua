@@ -254,12 +254,20 @@ return {
   -- s({ trig = "rr", snippetType = "autosnippet" }, fmta("\\ran", {}), { condition = tex.in_mathzone_md }),
   -- s({ trig = "kk", snippetType = "autosnippet" }, fmta("\\ker", {}), { condition = tex.in_mathzone_md }),
   s({ trig = "tr", snippetType = "autosnippet" }, fmta("\\operatorname{tr}", {}), { condition = tex.in_mathzone_md }),
-  s({ trig = "span", snippetType = "autosnippet" }, fmta("\\span", {}), { condition = tex.in_mathzone_md }),
+  s(
+    { trig = "span", snippetType = "autosnippet" },
+    fmta("\\operatorname{span}", {}),
+    { condition = tex.in_mathzone_md }
+  ),
   s({ trig = "aut", snippetType = "autosnippet" }, fmta("\\Aut", {}), { condition = tex.in_mathzone_md }),
   s({ trig = "gal", snippetType = "autosnippet" }, fmta("\\Gal", {}), { condition = tex.in_mathzone_md }),
-  s({ trig = "rank", snippetType = "autosnippet" }, fmta("\\rank", {}), { condition = tex.in_mathzone_md }),
-  s({ trig = "dim", snippetType = "autosnippet" }, fmta("\\dim", {}), { condition = tex.in_mathzone_md }),
-  s({ trig = "det", snippetType = "autosnippet" }, fmta("\\det", {}), { condition = tex.in_mathzone_md }),
+  s(
+    { trig = "rank", snippetType = "autosnippet" },
+    fmta("\\operatorname{rank}", {}),
+    { condition = tex.in_mathzone_md }
+  ),
+  s({ trig = "dim", snippetType = "autosnippet" }, fmta("\\operatorname{dim}", {}), { condition = tex.in_mathzone_md }),
+  s({ trig = "det", snippetType = "autosnippet" }, fmta("\\operatorname{det}", {}), { condition = tex.in_mathzone_md }),
   s({ trig = "vol", snippetType = "autosnippet" }, fmta("\\Vol", {}), { condition = tex.in_mathzone_md }),
   s(
     { trig = "->", snippetType = "autosnippet" },
