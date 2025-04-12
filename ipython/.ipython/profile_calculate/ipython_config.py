@@ -12,6 +12,7 @@ c.InteractiveShellApp.exec_lines = [
     "l2l=latex2latex",
     "import pyperclip as pc",
     "cp=pc.copy",
+    "cpl=lambda x:pc.copy(latex(x))",
     "from scipy.constants import e, h, hbar, c, physical_constants, m_p, m_e, m_n, alpha, mu_0, epsilon_0",
     "print('R is Rational, cp(*) is copy, l2s/l2l is latex2sympy/latex')",
     "print('e,h,hbar,c,m_p,m_e,m_n,alpha,mu_0,epsilon_0 are constants')",
