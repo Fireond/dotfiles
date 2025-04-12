@@ -1,5 +1,8 @@
 # max-preview.yazi
 
+> [!WARNING]
+> This plugin has been deprecated. Please use the new [toggle-pane.yazi](../toggle-pane.yazi) instead.
+
 Maximize or restore the preview pane.
 
 https://github.com/yazi-rs/plugins/assets/17523360/8976308e-ebfe-4e9e-babe-153eb1f87d61
@@ -17,7 +20,7 @@ Add this to your `~/.config/yazi/keymap.toml`:
 ```toml
 [[manager.prepend_keymap]]
 on   = "T"
-run  = "plugin --sync max-preview"
+run  = "plugin max-preview"
 desc = "Maximize or restore preview"
 ```
 

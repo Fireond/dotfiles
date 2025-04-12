@@ -1,6 +1,14 @@
+--- @since 25.2.7
 --- @sync entry
 
 local function entry(st)
+	ya.notify {
+		title = "Deprecated plugin",
+		content = "The `max-preview` plugin is deprecated, please use the new `toggle-pane` plugin instead: https://github.com/yazi-rs/plugins/tree/main/toggle-pane.yazi",
+		timeout = 10,
+		level = "warn",
+	}
+
 	if st.old then
 		Tab.layout, st.old = st.old, nil
 	else
