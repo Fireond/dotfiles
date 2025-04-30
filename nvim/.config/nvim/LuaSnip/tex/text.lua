@@ -117,6 +117,9 @@ return {
   s({ trig = "iff", snippetType = "autosnippet" }, {
     t("if and only if"),
   }, { condition = tex.in_text }),
+  s({ trig = "wrt", snippetType = "autosnippet" }, {
+    t("with respect to"),
+  }, { condition = tex.in_text }),
   s({ trig = "iso" }, {
     t("isomorphic"),
   }, { condition = tex.in_text }),
