@@ -23,18 +23,32 @@ end
 return {
   s(
     { trig = "bra", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\bra{<>}", {
+    fmta("\\langle <>|", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "ket", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ket{<>}", {
+    fmta("|<>\\rangle", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
+  -- s(
+  --   { trig = "bra", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
+  --   fmta("\\bra{<>}", {
+  --     i(1),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
+  -- s(
+  --   { trig = "ket", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
+  --   fmta("\\ket{<>}", {
+  --     i(1),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
   s(
     { trig = "bk", snippetType = "autosnippet" },
     c(1, {
