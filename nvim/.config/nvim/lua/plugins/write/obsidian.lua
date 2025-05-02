@@ -76,7 +76,7 @@ return {
       end,
 
       ui = {
-        enable = false,
+        enable = true,
         checkboxes = {
           [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
           ["x"] = { char = "", hl_group = "ObsidianDone" },
@@ -117,6 +117,7 @@ return {
   },
   {
     "oflisback/obsidian-bridge.nvim",
+    commit = "079f788",
     lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -127,7 +128,7 @@ return {
     },
     opts = {
       scroll_sync = true,
-      warnings = false,
+      warnings = true,
     },
   },
 }
