@@ -28,7 +28,7 @@ inkscape = [
 
 [open]
 prepend_rules = [
-  { name = "*.pdf", use = ["sioyek", "zathura"] },
+  { name = "*.pdf", use = ["zathura"] },
   { name = "*.tex", use = "edit" },
   { name = "*.svg", use = "inkscape" },
   { mime = "image/*", use = ["open", "qimgv", "reveal"] },
