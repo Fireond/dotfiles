@@ -101,6 +101,9 @@ return {
   s({ trig = "bbe", snippetType = "autosnippet" }, {
     t("\\mathbb{E}"),
   }, { condition = tex.in_mathzone_md }),
+  s({ trig = "EE", snippetType = "autosnippet" }, {
+    t("\\mathbb{E}"),
+  }, { condition = tex.in_mathzone_md }),
   s(
     { trig = "bb(%w)", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\mathbb{<>}", {

@@ -73,13 +73,6 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  s(
-    { trig = "EE", snippetType = "autosnippet" },
-    fmta("\\E_{\\sigma} \\ab[ <> ]", {
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
   s({ trig = "\\varphii", snippetType = "autosnippet", priority = 3000 }, {
     t("\\varphi_i"),
   }, { condition = tex.in_mathzone }),
