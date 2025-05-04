@@ -48,7 +48,7 @@ end
 M.in_mathzone_typ = function()
   local node = ts_utils.get_node_at_cursor()
   while node do
-    if MATH_NODES[node:type()] then
+    if node:type() == "math" then
       return true
     end
     node = node:parent()
@@ -62,6 +62,8 @@ M.in_mathzone = function()
     return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1
   elseif ft == "markdown" then
     return M.in_mathzone_md()
+  elseif ft == "typst" then
+    return M.in_mathzone_typ()
   end
 end
 

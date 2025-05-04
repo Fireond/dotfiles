@@ -45,21 +45,6 @@ return {
     { condition = tex.in_text }
   ),
   s(
-    { trig = "bad", snippetType = "autosnippet" },
-    fmta(
-      [[
-      \begin{adjustbox}{width=0.<>\textwidth}
-        <>
-      \end{adjustbox}
-      ]],
-      {
-        i(1, "8"),
-        i(0),
-      }
-    ),
-    { condition = line_begin }
-  ),
-  s(
     { trig = "(%d+)bp", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta(
       [[
