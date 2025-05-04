@@ -7,7 +7,7 @@ return {
       dependencies_bin = {
         ["tinymist"] = "tinymist",
       },
-      open_cmd = "zen %s -P typst-preview --class typst-preview",
+      open_cmd = "firefox %s --class typst-preview",
     },
     keys = {
       { "<localleader>lp", "<cmd>TypstPreview<cr>", desc = "Open Typst Preview" },

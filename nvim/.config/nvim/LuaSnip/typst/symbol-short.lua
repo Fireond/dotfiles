@@ -48,11 +48,11 @@ return {
   s({ trig = "==", wordTrig = false, snippetType = "autosnippet" }, {
     t("&="),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "leq=", wordTrig = false, snippetType = "autosnippet" }, {
-    t("&leq"),
+  s({ trig = "<==", wordTrig = false, snippetType = "autosnippet" }, {
+    t("&<="),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "geq=", wordTrig = false, snippetType = "autosnippet" }, {
-    t("&geq"),
+  s({ trig = ">==", wordTrig = false, snippetType = "autosnippet" }, {
+    t("&>="),
   }, { condition = tex.in_mathzone }),
   s({ trig = "~=", wordTrig = false, snippetType = "autosnippet" }, {
     t("approx"),
@@ -77,9 +77,6 @@ return {
   }, { condition = tex.in_mathzone }),
   s({ trig = "mto", wordTrig = false, snippetType = "autosnippet", priority = 1001 }, {
     t("mapsto"),
-  }, { condition = tex.in_mathzone }),
-  s({ trig = "", wordTrig = false, snippetType = "autosnippet" }, {
-    t("setminus"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "||", wordTrig = false, snippetType = "autosnippet" }, {
     t("mid"),
@@ -121,19 +118,16 @@ return {
     t("mathrm{L.H.S}"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "cap", wordTrig = false, snippetType = "autosnippet" }, {
-    t("cap"),
+    t("inter"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "cup", wordTrig = false, snippetType = "autosnippet" }, {
-    t("cup"),
+    t("union"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "sub", wordTrig = false, snippetType = "autosnippet" }, {
-    t("subseteq"),
+    t("subset.eq"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "suq", wordTrig = false, snippetType = "autosnippet" }, {
-    t("supseteq"),
-  }, { condition = tex.in_mathzone }),
-  s({ trig = "oo", wordTrig = false, snippetType = "autosnippet" }, {
-    t("infty"),
+    t("supset.eq"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "tp", wordTrig = false, snippetType = "autosnippet" }, {
     t("^top"),

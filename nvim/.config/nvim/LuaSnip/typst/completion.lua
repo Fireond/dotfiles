@@ -22,7 +22,7 @@ end
 return {
   -- s(
   --   { trig = "(%a);", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-  --   fmta("\\hat{<>}", {
+  --   fmta("hat(<>)", {
   --     f(function(_, snip)
   --       return snip.captures[1]
   --     end),
@@ -85,7 +85,7 @@ return {
   ),
   s(
     { trig = "(%d+)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
-    fmta("\\frac{<>}{<>}", {
+    fmta("frac(<>)(<>)", {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -95,7 +95,7 @@ return {
   ),
   s(
     { trig = "(%a)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
-    fmta("\\frac{<>}{<>}", {
+    fmta("frac(<>)(<>)", {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -105,7 +105,7 @@ return {
   ),
   s(
     { trig = "%((.+)%)/", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\frac{<>}{<>}", {
+    fmta("frac(<>)(<>)", {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -114,8 +114,8 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "(\\%a+)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\frac{<>}{<>}", {
+    { trig = "(%a+)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("frac(<>)(<>)", {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -124,8 +124,8 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "(\\%a+%{%a+%})/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 3000 },
-    fmta("\\frac{<>}{<>}", {
+    { trig = "(%a+%{%a+%})/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 3000 },
+    fmta("frac(<>)(<>)", {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -134,16 +134,16 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "\\%)(%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\) <>", {
+    { trig = "%)(%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta(") <>", {
       f(function(_, snip)
         return snip.captures[1]
       end),
     })
   ),
   s(
-    { trig = "\\](%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\] <>", {
+    { trig = "](%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("] <>", {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -151,28 +151,28 @@ return {
   ),
   s(
     { trig = "lim", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\lim_{<>}", {
+    fmta("lim_(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "lsup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\limsup_{<>}", {
+    fmta("limsup_(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "linf", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\liminf_{<>}", {
+    fmta("liminf_(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   -- s(
   --   { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-  --   fmta("\\sum\\limits_{<>}^{<>}", {
+  --   fmta("sumlimits_(<>)^(<>)", {
   --     i(1),
   --     i(1),
   --   }),
@@ -181,22 +181,22 @@ return {
   s(
     { trig = "sum", snippetType = "autosnippet" },
     c(1, {
-      sn(nil, { t("\\sum_{"), i(1), t("} ") }),
-      sn(nil, { t("\\sum_{"), i(1), t("}^{"), i(2), t("} ") }),
+      sn(nil, { t("sum_{"), i(1), t("} ") }),
+      sn(nil, { t("sum_{"), i(1), t("}^{"), i(2), t("} ") }),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "pd", snippetType = "autosnippet" },
     c(1, {
-      sn(nil, { t("\\prod_{"), i(1), t("} ") }),
-      sn(nil, { t("\\prod_{"), i(1), t("}^{"), i(2), t("} ") }),
+      sn(nil, { t("prod_{"), i(1), t("} ") }),
+      sn(nil, { t("prod_{"), i(1), t("}^{"), i(2), t("} ") }),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "bot", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigotimes_{<>}^{<>}", {
+    fmta("times.big.circle(<>)^(<>)", {
       i(1),
       i(2),
     }),
@@ -204,7 +204,7 @@ return {
   ),
   s(
     { trig = "bcap", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigcap_{<>}^{<>}", {
+    fmta("inter.big_(<>)^(<>)", {
       i(1),
       i(2),
     }),
@@ -212,7 +212,7 @@ return {
   ),
   s(
     { trig = "bcup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigcup_{<>}^{<>}", {
+    fmta("union.big_(<>)^(<>)", {
       i(1),
       i(2),
     }),
@@ -220,7 +220,7 @@ return {
   ),
   s(
     { trig = "blor", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigvee_{<>}^{<>}", {
+    fmta("bigvee_(<>)^(<>)", {
       i(1),
       i(2),
     }),
@@ -228,7 +228,7 @@ return {
   ),
   s(
     { trig = "band", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigwedge_{<>}^{<>}", {
+    fmta("bigwedge_(<>)^(<>)", {
       i(1),
       i(2),
     }),
@@ -236,7 +236,7 @@ return {
   ),
   s(
     { trig = "bscap", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigsqcap_{<>}^{<>}", {
+    fmta("bigsqcap_(<>)^(<>)", {
       i(1),
       i(2),
     }),
@@ -244,7 +244,7 @@ return {
   ),
   s(
     { trig = "bscup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\bigsqcup_{<>}^{<>}", {
+    fmta("bigsqcup_(<>)^(<>)", {
       i(1),
       i(2),
     }),
@@ -252,7 +252,7 @@ return {
   ),
   s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\int_{<>}^{<>} <> \\d <>", {
+    fmta("integral_(<>)^(<>) <> dif <>", {
       i(1),
       i(2),
       i(3),
@@ -262,7 +262,7 @@ return {
   ),
   s(
     { trig = "oint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\oint_{<>}^{<>} <> \\d <>", {
+    fmta("ointegral_(<>)^(<>) <> dif <>", {
       i(1),
       i(2),
       i(3),
@@ -272,7 +272,7 @@ return {
   ),
   s(
     { trig = "2int", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\int_{<>}^{<>}\\int_{<>}^{<>} <> \\d <>\\d <>", {
+    fmta("integral_(<>)^(<>)integral_(<>)^(<>) <> dif <>dif <>", {
       i(1),
       i(2),
       i(3),
@@ -285,9 +285,9 @@ return {
   ),
   s(
     { trig = "iint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\iint_{<>}^{<>} <> \\d <>", {
-      i(1, "-\\infty"),
-      i(2, "\\infty"),
+    fmta("iintegral_(<>)^(<>) <> dif <>", {
+      i(1, "-infty"),
+      i(2, "infty"),
       i(3),
       i(4),
     }),
@@ -295,8 +295,8 @@ return {
   ),
   s(
     { trig = "lint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\int_{<>} <> \\d <>", {
-      i(1, "\\infty"),
+    fmta("integral_(<>) <> dif <>", {
+      i(1, "infty"),
       i(2),
       i(3),
     }),

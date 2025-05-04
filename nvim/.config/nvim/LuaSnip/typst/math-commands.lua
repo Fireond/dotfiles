@@ -23,20 +23,11 @@ return {
   s({ trig = "atan", snippetType = "autosnippet" }, {
     t("arctan"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "cot", snippetType = "autosnippet" }, {
-    t("cot"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "acot", snippetType = "autosnippet" }, {
     t("arccot"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "csc", snippetType = "autosnippet" }, {
-    t("csc"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "acsc", snippetType = "autosnippet" }, {
     t("arccsc"),
-  }, { condition = tex.in_mathzone }),
-  s({ trig = "sec", snippetType = "autosnippet" }, {
-    t("sec"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "asec", snippetType = "autosnippet" }, {
     t("arcsec"),
@@ -74,19 +65,9 @@ return {
   ),
   s(
     { trig = "doo", snippetType = "autosnippet", priority = 2000 },
-    fmta("ddot(<>)", {
+    fmta("dot.double(<>)", {
       i(1),
     }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "vb", snippetType = "autosnippet" },
-    c(1, { sn(nil, { t("vb{"), i(1), t("}") }), sn(nil, { t("vb*{"), i(1), t("}") }) }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "vu", snippetType = "autosnippet" },
-    c(1, { sn(nil, { t("vu{"), i(1), t("}") }), sn(nil, { t("vu*{"), i(1), t("}") }) }),
     { condition = tex.in_mathzone }
   ),
   s(
@@ -247,14 +228,6 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "cqty", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("complexqty(<>)(<>)", {
-      i(1),
-      i(2),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
     { trig = "gcd", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("gcd", {}),
     { condition = tex.in_mathzone }
@@ -265,17 +238,11 @@ return {
     { condition = tex.in_mathzone }
   ),
   s({ trig = "pr", wordTrig = false, snippetType = "autosnippet" }, fmta("Pr", {}), { condition = tex.in_mathzone }),
-  s({ trig = "sch", snippetType = "autosnippet" }, {
-    t("Sch"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "Pii", snippetType = "autosnippet", priority = 2000 }, {
     t("P_i"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "bv", snippetType = "autosnippet", priority = 2000 }, {
     t("biggvert"),
-  }, { condition = tex.in_mathzone }),
-  s({ trig = "ab", snippetType = "autosnippet" }, {
-    t("ab"),
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "ub", snippetType = "autosnippet", priority = 2000 },
