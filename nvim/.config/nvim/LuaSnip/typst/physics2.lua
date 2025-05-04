@@ -23,18 +23,24 @@ end
 return {
   s(
     { trig = "bra", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\bra{<>}", {
+    fmta("|<> angle.r", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "ket", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ket{<>}", {
+    fmta("angle.r <>|", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
+  s({ trig = "ar", snippetType = "autosnippet" }, {
+    t("angle.r"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "al", snippetType = "autosnippet" }, {
+    t("angle.l"),
+  }, { condition = tex.in_mathzone }),
   s(
     { trig = "bk", snippetType = "autosnippet" },
     c(1, {
@@ -58,47 +64,4 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  s(
-    { trig = "pab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab( <> )", {
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "Bab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab\\{ <> \\}", {
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "bab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab[ <> ]", {
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "\\forallb", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab<< <> >>", {
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "vab", wordTrig = false, snippetType = "autosnippet" },
-    c(1, { sn(nil, { t("\\ab|"), i(1), t("|") }), sn(nil, { t("\\ab*|"), i(1), t("|") }) }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "Vab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab\\| <> \\|", {
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s({ trig = "\\tof", snippetType = "autosnippet" }, {
-    t("\\Tof"),
-  }, { condition = tex.in_mathzone }),
 }

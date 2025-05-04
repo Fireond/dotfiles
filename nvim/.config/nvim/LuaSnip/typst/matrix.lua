@@ -24,9 +24,7 @@ return {
     { trig = "bmat", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{bmatrix}
-        <>
-      \end{bmatrix}
+      mat(delim: "[", <>)
       ]],
       {
         i(0),
@@ -38,9 +36,7 @@ return {
     { trig = "Bmat", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{Bmatrix}
-        <>
-      \end{Bmatrix}
+      mat(delim: "{", <>)
       ]],
       {
         i(0),
@@ -52,9 +48,7 @@ return {
     { trig = "pmat", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{pmatrix}
-        <>
-      \end{pmatrix}
+      mat(<>)
       ]],
       {
         i(0),
@@ -66,83 +60,23 @@ return {
     { trig = "Vmat", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{Vmatrix}
-        <>
-      \end{Vmatrix}
+      mat(delim: "|", <>)
       ]],
       {
         i(0),
       }
     ),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "Bmat", snippetType = "autosnippet" },
-    fmta(
-      [[
-      \Bmat{<>}
-      ]],
-      {
-        i(0),
-      }
-    ),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "dmat", snippetType = "autosnippet" },
-    fmta(
-      [[
-      \bdiagmat{<>}
-      ]],
-      {
-        i(0),
-      }
-    ),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "vmat", snippetType = "autosnippet" },
-    fmta(
-      [[
-      \vmat{<>}
-      ]],
-      {
-        i(0),
-      }
-    ),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "Vmat", snippetType = "autosnippet" },
-    fmta(
-      [[
-      \Vmat{<>}
-      ]],
-      {
-        i(0),
-      }
-    ),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "pma(%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\pmat<>{<>}", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-      i(0),
-    }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "II3", snippetType = "autosnippet", priority = 2000 },
     fmta(
       [[
-      \begin{bmatrix}
-        1 & & \\
-        & 1 & \\
-        & & 1 \\
-      \end{bmatrix}
+      mat(
+        1,,;
+        ,1,;
+        ,,1;
+      )
       ]],
       {}
     ),

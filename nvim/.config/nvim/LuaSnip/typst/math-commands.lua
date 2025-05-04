@@ -74,7 +74,7 @@ return {
   ),
   s(
     { trig = "doo", snippetType = "autosnippet", priority = 2000 },
-    fmta("ddot{<>}", {
+    fmta("ddot(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
@@ -91,35 +91,35 @@ return {
   ),
   s(
     { trig = "hat", snippetType = "autosnippet", priority = 2000 },
-    fmta("hat{<>}", {
+    fmta("hat(<>)", {
       d(1, get_visual),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "hat", snippetType = "autosnippet" },
-    fmta("hat{<>}", {
+    fmta("hat(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "vec", snippetType = "autosnippet", priority = 2000 },
-    fmta("vec{<>}", {
+    fmta("vec(<>)", {
       d(1, get_visual),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = ";v", snippetType = "autosnippet" },
-    fmta("vec{<>}", {
+    fmta("vec(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "vec", snippetType = "autosnippet" },
-    fmta("vec{<>}", {
+    fmta("vec(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
@@ -136,14 +136,14 @@ return {
   s({ trig = "vol", snippetType = "autosnippet" }, fmta("Vol", {}), { condition = tex.in_mathzone }),
   s(
     { trig = "->", snippetType = "autosnippet" },
-    fmta("xlongrightarrow{<>}", {
+    fmta("xlongrightarrow(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "<-", snippetType = "autosnippet" },
-    fmta("xlongleftarrow{<>}", {
+    fmta("xlongleftarrow(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
@@ -151,7 +151,7 @@ return {
   s({ trig = "--", snippetType = "autosnippet" }, fmta("longleftrightarrow", {}), { condition = tex.in_mathzone }),
   s(
     { trig = "gt", snippetType = "autosnippet" },
-    fmta("gt{<>}", {
+    fmta("gt(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
@@ -160,14 +160,14 @@ return {
   s({ trig = "max", snippetType = "autosnippet" }, fmta("max", {}), { condition = tex.in_mathzone }),
   s(
     { trig = "amin", snippetType = "autosnippet" },
-    fmta("argmin_{<>}", {
+    fmta("argmin_(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "amax", snippetType = "autosnippet" },
-    fmta("argmax_{<>}", {
+    fmta("argmax_(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
@@ -176,7 +176,7 @@ return {
   s({ trig = "inf", snippetType = "autosnippet", priority = 2000 }, fmta("inf", {}), { condition = tex.in_mathzone }),
   s(
     { trig = ";r", wordTrig = false, snippetType = "autosnippet" },
-    fmta("frac{<>}{<>}", {
+    fmta("frac(<>)(<>)", {
       i(1),
       i(2),
     }),
@@ -184,7 +184,7 @@ return {
   ),
   s(
     { trig = ";r", snippetType = "autosnippet", priority = 2000 },
-    fmta("frac{<>}{<>}", {
+    fmta("frac(<>)(<>)", {
       d(1, get_visual),
       i(2),
     }),
@@ -192,36 +192,36 @@ return {
   ),
   s(
     { trig = "binom", snippetType = "autosnippet" },
-    fmta("binom{<>}{<>}", {
+    fmta("binom(<>)(<>)", {
       i(1),
       i(2),
     }),
     { condition = tex.in_mathzone }
   ),
-  s({ trig = "dd", snippetType = "autosnippet" }, fmta("d ", {}), { condition = tex.in_mathzone }),
+  s({ trig = "dd", snippetType = "autosnippet" }, fmta("dif ", {}), { condition = tex.in_mathzone }),
   s({ trig = "poly", snippetType = "autosnippet" }, fmta("poly", {}), { condition = tex.in_mathzone }),
   s(
     { trig = "sq", wordTrig = false, snippetType = "autosnippet" },
-    c(1, { sn(nil, { t("sqrt{"), i(1), t("}") }), sn(nil, { t("sqrt["), i(1), t("]{"), i(2), t("}") }) }),
+    fmta("sqrt(<>)", { i(1) }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "mod", wordTrig = false, snippetType = "autosnippet" },
-    fmta("mod{<>}", {
+    fmta("mod(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "nmod", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("nmod{<>}", {
+    fmta("nmod(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "pmod", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("pmod{<>}", {
+    fmta("pmod(<>)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
@@ -233,7 +233,7 @@ return {
   ),
   s(
     { trig = "SI", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("SI{<>}{<>}", {
+    fmta("SI(<>)(<>)", {
       i(1),
       i(2),
     }),
@@ -248,7 +248,7 @@ return {
   ),
   s(
     { trig = "cqty", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("complexqty{<>}{<>}", {
+    fmta("complexqty(<>)(<>)", {
       i(1),
       i(2),
     }),
@@ -279,17 +279,17 @@ return {
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "ub", snippetType = "autosnippet", priority = 2000 },
-    fmta("underbrace{<>}", { i(1) }),
+    fmta("underbrace(<>)", { i(1) }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "ob", snippetType = "autosnippet", priority = 2000 },
-    fmta("overbrace{<>}", { i(1) }),
+    fmta("overbrace(<>)", { i(1) }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "ring", snippetType = "autosnippet", priority = 2000 },
-    fmta("mathring{<>}", { i(1) }),
+    fmta("mathring(<>)", { i(1) }),
     { condition = tex.in_mathzone }
   ),
 }
