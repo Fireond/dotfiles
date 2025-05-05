@@ -1,5 +1,94 @@
 local M = {}
 
+M.vault_path = "~/Documents/Obsidian-Vault/"
+M.math_path = "~/Documents/Obsidian-Vault/02-math/"
+M.math_template = [[
+---
+id: %s
+aliases:
+  - %s
+  - %s
+tags:
+  - math
+  - topology
+sources: []
+---
+
+# %s
+
+]]
+
+local function process_names(name)
+  local words = {}
+  for word in string.gmatch(name, "%S+") do
+    table.insert(words, word)
+  end
+
+  -- 生成 s1：单词全小写，空格替换为 "-"
+  local filename = table.concat({}, "-")
+  if #words > 0 then
+    local s1_words = {}
+    for _, word in ipairs(words) do
+      table.insert(s1_words, string.lower(word))
+    end
+    filename = table.concat(s1_words, "-")
+  end
+
+  -- 生成 s2：首单词首字母大写，其余小写，保留空格
+  local title = ""
+  if #words > 0 then
+    local s2_words = {}
+    for i, word in ipairs(words) do
+      if i == 1 then
+        local first = string.sub(word, 1, 1)
+        local rest = string.sub(word, 2)
+        s2_words[i] = string.upper(first) .. string.lower(rest)
+      else
+        s2_words[i] = string.lower(word)
+      end
+    end
+    title = table.concat(s2_words, " ")
+  end
+
+  -- 生成 s3：所有单词全小写，保留空格
+  local alias = table.concat({}, " ")
+  if #words > 0 then
+    local s3_words = {}
+    for _, word in ipairs(words) do
+      table.insert(s3_words, string.lower(word))
+    end
+    alias = table.concat(s3_words, " ")
+  end
+
+  return filename, title, alias
+end
+
+M.add_math = function()
+  local name = vim.fn.input("Enter note name: ")
+  if name == "" then
+    vim.notify("Note name cannot be empty!", vim.log.levels.ERROR)
+    return
+  end
+  local path = vim.fn.expand(M.math_path .. name .. ".md")
+
+  local filename, title, alias = process_names(name)
+  local template = string.format(M.math_template, filename, title, alias, title)
+
+  if vim.fn.filereadable(path) == 0 then
+    local file = io.open(path, "w")
+    if file then
+      file:write(template)
+      file:close()
+      vim.notify("Note created at: " .. path, vim.log.levels.INFO)
+      vim.cmd("edit " .. path)
+    else
+      vim.notify("Error creating file: " .. path, vim.log.levels.ERROR)
+    end
+  else
+    vim.notify("Note already exists: " .. path, vim.log.levels.INFO)
+  end
+end
+
 M.open_source = function(source)
   local expanded_source = source
   if source:sub(1, 1) == "~" then

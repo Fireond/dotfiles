@@ -99,7 +99,7 @@ map("n", "<leader>nn", function()
   if ft == "tex" then
     require("util.note").add_note()
   elseif ft == "markdown" then
-    vim.cmd("ObsidianNew")
+    require("util.obsidian").add_math()
   else
     return nil
   end
