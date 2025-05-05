@@ -12,7 +12,7 @@ return {
         if cur_path:sub(1, #disable_path) == disable_path then
           return false
         elseif cur_path:sub(1, #target_path) == target_path then
-          return true
+          return false
         else
           return false
         end
