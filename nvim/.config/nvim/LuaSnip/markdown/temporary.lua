@@ -41,9 +41,6 @@ return {
   s({ trig = "\\psii", snippetType = "autosnippet", priority = 3000 }, {
     t("\\psi_i"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "FF", snippetType = "autosnippet", priority = 3000 }, {
-    t("\\mathscr{F}"),
-  }, { condition = tex.in_mathzone }),
   s(
     { trig = "pt", snippetType = "autosnippet" },
     fmta("[<>pt]", {
@@ -55,21 +52,6 @@ return {
     { trig = "pt", snippetType = "autosnippet" },
     fmta("\\quad\\text{[<>pt]}", {
       i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "an", snippetType = "autosnippet" },
-    fmta("\\langle <> \\rangle", {
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "BB", snippetType = "autosnippet" },
-    fmta("\\mathring{B}_{<>}(<>)", {
-      i(1, "\\varepsilon"),
-      i(2),
     }),
     { condition = tex.in_mathzone }
   ),
