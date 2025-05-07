@@ -69,9 +69,9 @@ M.add_math = function()
     vim.notify("Note name cannot be empty!", vim.log.levels.ERROR)
     return
   end
-  local path = vim.fn.expand(M.math_path .. name .. ".md")
 
   local filename, title, alias = process_names(name)
+  local path = vim.fn.expand(M.math_path .. filename .. ".md")
   local template = string.format(M.math_template, filename, title, alias, title)
 
   if vim.fn.filereadable(path) == 0 then
