@@ -82,7 +82,7 @@ $\square$
     { trig = "beg", snippetType = "autosnippet" },
     fmta(
       [[
->>[!<>] <>
+[!<>] <>
 <>
       ]],
       {

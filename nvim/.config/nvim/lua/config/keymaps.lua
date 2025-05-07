@@ -163,6 +163,43 @@ map("n", "<leader>N", function()
   Snacks.notifier.show_history()
 end, { desc = "Notification History" })
 
+function _G.toggle_callout()
+  -- 获取选区的开始和结束行
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  -- 确保 start_line <= end_line
+  if start_line > end_line then
+    start_line, end_line = end_line, start_line
+  end
+
+  for lnum = start_line, end_line do
+    -- 转换为 0-based
+    local row = lnum - 1
+    -- 获取行内容
+    local lines = vim.api.nvim_buf_get_lines(0, row, row + 1, false)
+    if #lines == 0 then
+      goto continue
+    end
+    local line = lines[1]
+
+    -- 判断行首是否为 '>'
+    local new_line
+    if line:sub(1, 1) == ">" then
+      new_line = line:sub(2)
+    else
+      new_line = ">" .. line
+    end
+
+    -- 更新行内容
+    vim.api.nvim_buf_set_lines(0, row, row + 1, false, { new_line })
+    ::continue::
+  end
+  -- -- 退出可视模式（可选）
+  -- vim.cmd([[normal! gv]])
+end
+
+map("x", "<leader>e", ":<C-U>lua _G.toggle_callout()<CR><esc>", { desc = "Toggle Callout" })
+
 -- Disable default keymaps
 local del = vim.keymap.del
 del("n", "<leader>bb")
