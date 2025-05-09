@@ -63,6 +63,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias ekeyd='sudo systemctl start keyd'
   alias rkeyd='sudo systemctl restart keyd'
   alias skeyd='sudo systemctl stop keyd'
+  alias e='sudo systemctl start shellcrash'
   alias ecrash='sudo systemctl start shellcrash'
   alias rcrash='sudo systemctl restart shellcrash'
   alias scrash='sudo systemctl stop shellcrash'
@@ -115,14 +116,18 @@ alias ica='ipython --profile=calculate'
 alias pdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup zathura \"{}\" &> /dev/null &'"
 alias spdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup sioyek \"{}\" &> /dev/null &'"
 
-alias todo1='habitipy todos add -p 0.1'
-alias todo2='habitipy todos add -p 1'
-alias todo3='habitipy todos add -p 1.5'
-alias todo4='habitipy todos add -p 2'
+# pyenv
+alias cal='source ~/pyenv/calculator/bin/activate'
+alias base='source ~/pyenv/base/bin/activate'
+
+# alias todo1='habitipy todos add -p 0.1'
+# alias todo2='habitipy todos add -p 1'
+# alias todo3='habitipy todos add -p 1.5'
+# alias todo4='habitipy todos add -p 2'
 
 
 # conda alias
-alias ca='conda activate calculator'
+# alias ca='conda activate calculator'
 
 eval "$(zoxide init zsh)"
 # Check that the function `starship_zle-keymap-select()` is defined.
