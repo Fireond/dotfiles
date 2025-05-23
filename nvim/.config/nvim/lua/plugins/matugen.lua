@@ -6,7 +6,7 @@ return {
 				all = {
 					rosewater = "#f5e0dc",
 					flamingo = "#f2cdcd",
-					pink = "#e1c38c",
+					pink = "#e7b9d5",
 					mauve = "#cba6f7",
 					red = "#f38ba8",
 					maroon = "#eba0ac",
@@ -16,7 +16,7 @@ return {
 					teal = "#94e2d5",
 					sky = "#89dceb",
 					sapphire = "#74c7ec",
-					blue = "#ffb3ac",
+					blue = "#bdc2ff",
 					lavender = "#b4befe",
 					text = "#cdd6f4",
 					subtext1 = "#bac2de",

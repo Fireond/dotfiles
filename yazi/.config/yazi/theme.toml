@@ -2,17 +2,17 @@
 cwd = { fg = "#94e2d5" }
 
 # Hovered
-hovered         = { fg = "#1e1e2e", bg = "#ffb3ac" }
+hovered         = { fg = "#1e1e2e", bg = "#bdc2ff" }
 preview_hovered = { fg = "#1e1e2e", bg = "#cdd6f4" }
 
 # Find
 find_keyword  = { fg = "#f9e2af", italic = true }
-find_position = { fg = "#ffb3ac", bg = "reset", italic = true }
+find_position = { fg = "#bdc2ff", bg = "reset", italic = true }
 
 # Marker
 marker_copied   = { fg = "#a6e3a1", bg = "#a6e3a1" }
 marker_cut      = { fg = "#f38ba8", bg = "#f38ba8" }
-marker_selected = { fg = "#ffb3ac", bg = "#ffb3ac" }
+marker_selected = { fg = "#bdc2ff", bg = "#bdc2ff" }
 
 # Tab
 tab_active   = { fg = "#1e1e2e", bg = "#cdd6f4" }
@@ -22,7 +22,7 @@ tab_width    = 1
 # Count
 count_copied   = { fg = "#1e1e2e", bg = "#a6e3a1" }
 count_cut      = { fg = "#1e1e2e", bg = "#f38ba8" }
-count_selected = { fg = "#1e1e2e", bg = "#ffb3ac" }
+count_selected = { fg = "#1e1e2e", bg = "#bdc2ff" }
 
 # Border
 border_symbol = "│"
@@ -37,7 +37,7 @@ separator_close = ""
 separator_style = { fg = "#45475a", bg = "#45475a" }
 
 # Mode
-mode_normal = { fg = "#1e1e2e", bg = "#ffb3ac", bold = true }
+mode_normal = { fg = "#1e1e2e", bg = "#bdc2ff", bold = true }
 mode_select = { fg = "#1e1e2e", bg = "#a6e3a1", bold = true }
 mode_unset  = { fg = "#1e1e2e", bg = "#f2cdcd", bold = true }
 
@@ -54,18 +54,18 @@ permissions_x = { fg = "#a6e3a1" }
 permissions_s = { fg = "#7f849c" }
 
 [input]
-border   = { fg = "#ffb3ac" }
+border   = { fg = "#bdc2ff" }
 title    = {}
 value    = {}
 selected = { reversed = true }
 
 [select]
-border   = { fg = "#ffb3ac" }
-active   = { fg = "#ffb3ac" }
+border   = { fg = "#bdc2ff" }
+active   = { fg = "#bdc2ff" }
 inactive = {}
 
 [tasks]
-border  = { fg = "#ffb3ac" }
+border  = { fg = "#bdc2ff" }
 title   = {}
 hovered = { underline = true }
 
@@ -73,12 +73,12 @@ hovered = { underline = true }
 mask            = { bg = "#313244" }
 cand            = { fg = "#94e2d5" }
 rest            = { fg = "#9399b2" }
-desc            = { fg = "#ffb3ac" }
+desc            = { fg = "#bdc2ff" }
 separator       = "  "
 separator_style = { fg = "#585b70" }
 
 [help]
-on      = { fg = "#ffb3ac" }
+on      = { fg = "#bdc2ff" }
 exec    = { fg = "#94e2d5" }
 desc    = { fg = "#9399b2" }
 hovered = { bg = "#585b70", bold = true }
@@ -92,12 +92,12 @@ rules = [
 	{ mime = "{audio,video}/*", fg = "#f9e2af" },
 
 	# Archives
-  { mime = "application/{,g}zip", fg = "#ffb3ac" },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#ffb3ac" },
+  { mime = "application/{,g}zip", fg = "#bdc2ff" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#bdc2ff" },
 
 	# Fallback
 	{ name = "*", fg = "#cdd6f4" },
-	{ name = "*/", fg = "#ffb3ac" }
+	{ name = "*/", fg = "#bdc2ff" }
 ]
 
 [icon]
@@ -157,7 +157,7 @@ files = [
   { name = "gradle-wrapper.properties", text = "", fg_dark = "#585b70", fg_light = "#585b70" },
   { name = "ionic.config.json", text = "", fg_dark = "#89b4fa", fg_light = "#89b4fa" },
   { name = "cantorrc", text = "", fg_dark = "#89b4fa", fg_light = "#89b4fa" },
-  { name = ".gleam", text = "", fg_dark = "#ffb3ac", fg_light = "#ffb3ac" },
+  { name = ".gleam", text = "", fg_dark = "#bdc2ff", fg_light = "#bdc2ff" },
   { name = "package-lock.json", text = "", fg_dark = "#313244", fg_light = "#313244" },
   { name = "package.json", text = "", fg_dark = "#f38ba8", fg_light = "#f38ba8" },
   { name = "hyprland.conf", text = "", fg_dark = "#74c7ec", fg_light = "#74c7ec" },
