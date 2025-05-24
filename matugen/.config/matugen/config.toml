@@ -20,7 +20,7 @@ set = true
 [templates.waybar]
 input_path = '~/.dotfiles/matugen/.config/matugen/templates/color.css'
 output_path = '~/.config/waybar/matugen.css'
-post_hook = 'pkill -x "waybar"; toggle_waybar.sh'
+post_hook = 'toggle_waybar.sh; toggle_waybar.sh'
 # post_hook = 'pkill -SIGUSR2 waybar'
 
 [templates.kitty]

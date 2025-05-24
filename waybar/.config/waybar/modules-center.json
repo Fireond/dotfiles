@@ -68,7 +68,7 @@
   },
   "custom/wallpaper": {
     "format": "󰆊",
-    "tooltip-format": "random select wallpaper",
-    "on-click": "~/.local/share/bin/swwwrandom.sh"
+    "tooltip-format": "waypaper",
+    "on-click": "waypaper"
   }
 }
