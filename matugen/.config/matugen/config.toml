@@ -1,7 +1,21 @@
-[config]
+# [config]
 # command = "swww"
 # arguments = ["img", "--transition-type", "center"]
 # set = false
+[config.wallpaper]
+command = "swww"
+arguments = [
+  "img",
+  "--transition-type",
+  "center",
+  "--transition-step",
+  "90",
+  "--transition-duration",
+  "2",
+  "--transition-fps",
+  "90",
+]
+set = true
 
 [templates.waybar]
 input_path = '~/.dotfiles/matugen/.config/matugen/templates/color.css'
@@ -17,7 +31,7 @@ post_hook = 'kill -SIGUSR1 $(pgrep kitty)'
 [templates.cava]
 input_path = '~/.dotfiles/matugen/.config/matugen/templates/cava-colors'
 output_path = '~/.config/cava/matugen'
-post_hook = '~/.local/share/bin/gen_gradient_colors.py; pkill -SIGUSR1 cava'
+post_hook = '~/.local/share/bin/gen_gradient_colors.py; pkill -USR2 cava'
 
 [templates.nvim]
 input_path = '~/.dotfiles/matugen/.config/matugen/templates/nvim-colors.lua'
