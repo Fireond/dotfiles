@@ -252,7 +252,7 @@ return {
   ),
   s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\int_{<>}^{<>} <> \\d <>", {
+    fmta("\\int_{<>}^{<>} <> d <>", {
       i(1),
       i(2),
       i(3),
