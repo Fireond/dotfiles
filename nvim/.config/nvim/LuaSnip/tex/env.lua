@@ -80,7 +80,7 @@ return {
     { trig = "bp", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{homeworkProblem}[Problem <>.]
+      \begin{homeworkProblem}[Problem <>]
         <>
       \end{homeworkProblem}
       ]],
