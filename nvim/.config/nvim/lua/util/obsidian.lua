@@ -1,8 +1,12 @@
 local M = {}
 
-M.vault_path = "~/Documents/Obsidian-Vault/"
-M.math_path = "~/Documents/Obsidian-Vault/02-math/"
-M.math_template = [[
+M.path = {
+  vault = "~/Documents/Obsidian-Vault/",
+  math = "~/Documents/Obsidian-Vault/02-math/",
+  quantum = "~/Documents/Obsidian-Vault/03-quantum/",
+}
+M.template = {
+  math = [[
 ---
 id: %s
 aliases:
@@ -16,7 +20,22 @@ sources: []
 
 # %s
 
-]]
+]],
+  quantum = [[
+---
+id: %s
+aliases:
+  - %s
+  - %s
+tags:
+  - quantum
+sources: []
+---
+
+# %s
+
+]],
+}
 
 local function process_names(name)
   local words = {}
@@ -63,7 +82,7 @@ local function process_names(name)
   return filename, title, alias
 end
 
-M.add_math = function()
+M.add_note = function(type)
   local name = vim.fn.input("Enter note name: ")
   if name == "" then
     vim.notify("Note name cannot be empty!", vim.log.levels.ERROR)
@@ -71,8 +90,8 @@ M.add_math = function()
   end
 
   local filename, title, alias = process_names(name)
-  local path = vim.fn.expand(M.math_path .. filename .. ".md")
-  local template = string.format(M.math_template, filename, title, alias, title)
+  local path = vim.fn.expand(M.path[type] .. filename .. ".md")
+  local template = string.format(M.template[type], filename, title, alias, title)
 
   if vim.fn.filereadable(path) == 0 then
     local file = io.open(path, "w")
