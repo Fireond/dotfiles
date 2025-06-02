@@ -82,6 +82,21 @@ local function process_names(name)
   return filename, title, alias
 end
 
+M.add_note_picker = function()
+  vim.ui.select({ "math", "quantum" }, {
+    prompt = "Select note type",
+    format_item = function(item)
+      return "I'd like to choose " .. item
+    end,
+  }, function(choice)
+    if choice == "spaces" then
+      vim.o.expandtab = true
+    else
+      vim.o.expandtab = false
+    end
+  end)
+end
+
 M.add_note = function(type)
   local name = vim.fn.input("Enter note name: ")
   if name == "" then

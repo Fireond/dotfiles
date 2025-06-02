@@ -99,7 +99,7 @@ map("n", "<leader>nn", function()
   if ft == "tex" then
     require("util.note").add_note()
   elseif ft == "markdown" then
-    require("util.obsidian").add_note("math")
+    require("util.obsidian").add_note_picker()
   else
     return nil
   end
