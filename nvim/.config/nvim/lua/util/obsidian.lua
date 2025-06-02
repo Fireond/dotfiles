@@ -85,15 +85,8 @@ end
 M.add_note_picker = function()
   vim.ui.select({ "math", "quantum" }, {
     prompt = "Select note type",
-    format_item = function(item)
-      return "I'd like to choose " .. item
-    end,
   }, function(choice)
-    if choice == "spaces" then
-      vim.o.expandtab = true
-    else
-      vim.o.expandtab = false
-    end
+    M.add_note(choice)
   end)
 end
 
