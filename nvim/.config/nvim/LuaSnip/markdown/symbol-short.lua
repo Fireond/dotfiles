@@ -246,6 +246,12 @@ return {
   s({ trig = "oii", snippetType = "autosnippet", priority = 2000 }, {
     t("\\oint"),
   }, { condition = tex.in_mathzone_md }),
+  s({ trig = "rr", snippetType = "autosnippet" }, {
+    t("\\rangle"),
+  }, { condition = tex.in_mathzone_md }),
+  s({ trig = "ll", snippetType = "autosnippet" }, {
+    t("\\langle"),
+  }, { condition = tex.in_mathzone_md }),
   s(
     { trig = "b|", wordTrig = false, snippetType = "autosnippet" },
     fmta(
