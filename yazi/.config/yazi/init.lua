@@ -1,6 +1,6 @@
-require("full-border"):setup()
+-- require("full-border"):setup()
 require("starship"):setup()
--- https://yazi-rs.github.io/docs/configuration/yazi
+-- -- https://yazi-rs.github.io/docs/configuration/yazi
 function Linemode:size_and_mtime()
 	local time = math.floor(self._file.cha.mtime or 0)
 	if time == 0 then
