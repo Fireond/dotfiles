@@ -1,4 +1,4 @@
-[mgr]
+[manager]
 sort_by = "mtime"
 sort_reverse = true
 show_hidden = true
