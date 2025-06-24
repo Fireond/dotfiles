@@ -340,6 +340,13 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "bmod", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\bmod{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "nmod", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("\\nmod{<>}", {
       i(1),
