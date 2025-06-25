@@ -22,6 +22,9 @@ if  [[ "$OSTYPE" == "darwin"* ]]; then
   # <<< conda initialize <<<
 ################################################################################################
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  # for using texprosso
+  export SDL_VIDEODRIVER="wayland"
+
   export TEXMFDIST="/usr/share/texmf-dist"
   ## miniconda3
   export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
