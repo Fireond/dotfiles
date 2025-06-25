@@ -62,4 +62,11 @@ return {
       vim.keymap.set("n", "<localleader>ld", ConvertTexToDocx, { desc = "convert to docx file" })
     end,
   },
+  {
+    "let-def/texpresso.vim",
+    lazy = false,
+    keys = {
+      { "<leader>lP", "<cmd>TeXpresso %<cr>", desc = "TeXpresso" },
+    },
+  },
 }

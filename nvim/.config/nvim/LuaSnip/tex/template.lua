@@ -18,8 +18,8 @@ return {
     \newcommand{\Class}{<>}
     \newcommand{\Title}{Homework <>}
     \author{Hanyu Yan}
-    \input{~/Documents/Latex/preamble.tex}
-    \input{~/Documents/Latex/Sample_Homework.tex}
+    \input{/home/fireond/Documents/Latex/preamble.tex}
+    \input{/home/fireond/Documents/Latex/Sample_Homework.tex}
     \begin{document}
     \maketitle \thispagestyle{empty}
       
@@ -44,7 +44,7 @@ return {
     fmta(
       [[
 \documentclass[12pt]{article}
-\input{~/Documents/Latex/preamble.tex}
+\input{/home/fireond/Documents/Latex/preamble.tex}
 \begin{document}
 \title{<>}
 \author{Fireond}
@@ -78,7 +78,7 @@ return {
     \usepackage{algpseudocodex}
     \algrenewcommand\algorithmicrequire{\textbf{Input:}}
     \algrenewcommand\algorithmicensure{\textbf{Output:}}
-    \input{~/Documents/Latex/Package_elegantbook.tex}
+    \input{/home/fireond/Documents/Latex/Package_elegantbook.tex}
 
     \onehalfspacing
 
@@ -107,8 +107,8 @@ return {
     \newcommand{\Title}{<>}
     \author{严涵宇}
     \usepackage[UTF8]{ctex}
-    \input{~/Documents/Latex/Package_elegantbook.tex}
-    \input{~/Documents/Latex/Sample_Homework.tex}
+    \input{/home/fireond/Documents/Latex/Package_elegantbook.tex}
+    \input{/home/fireond/Documents/Latex/Sample_Homework.tex}
     \renewcommand{\arraystretch}{1.3}
     \begin{document}
     \maketitle \thispagestyle{empty}
@@ -133,7 +133,7 @@ return {
       [[
 %! TEX program = xelatex
 \documentclass[10pt]{article}
-\input{~/Documents/Latex/preamble.tex}
+\input{/home/fireond/Documents/Latex/preamble.tex}
 \usepackage{ctex}
 \begin{document}
 
