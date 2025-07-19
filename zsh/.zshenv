@@ -24,6 +24,8 @@ if  [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # for using texprosso
   export SDL_VIDEODRIVER="wayland"
+  # clash-verge-rev
+  export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897
 
   export TEXMFDIST="/usr/share/texmf-dist"
   ## miniconda3
