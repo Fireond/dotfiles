@@ -1,11 +1,19 @@
+local python = vim.fn.exepath("python3")
 return {
   {
     "kiyoon/jupynium.nvim",
-    ft = "python",
-    build = "conda run --no-capture-output -n QCX pip install .",
+    -- ft = "python",
+    build = function()
+      -- 自动从当前环境找 python
+      if python == "" then
+        error("Python3 not found in PATH")
+      end
+      vim.fn.system({ python, "-m", "pip", "install", "." })
+    end,
     opts = {
-      python_host = { "conda", "run", "--no-capture-output", "-n", "QCX", "python" },
-      jupyter_command = { "conda", "run", "--no-capture-output", "-n", "QCX", "jupyter" },
+      -- python_host = { "conda", "run", "--no-capture-output", "-n", "QCX", "python" },
+      -- jupyter_command = { "conda", "run", "--no-capture-output", "-n", "QCX", "jupyter" },
+      jupyter_command = { python, "-m", "jupyter" },
       shortsighted = true,
       notify = {
         ignore = {
