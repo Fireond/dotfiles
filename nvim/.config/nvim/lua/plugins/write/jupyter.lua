@@ -11,8 +11,6 @@ return {
       vim.fn.system({ python, "-m", "pip", "install", "." })
     end,
     opts = {
-      -- python_host = { "conda", "run", "--no-capture-output", "-n", "QCX", "python" },
-      -- jupyter_command = { "conda", "run", "--no-capture-output", "-n", "QCX", "jupyter" },
       jupyter_command = { python, "-m", "jupyter" },
       shortsighted = true,
       firefox_profile_name = "default-release",
