@@ -118,6 +118,7 @@ alias spdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup 
 
 # pyenv
 alias cal='source ~/pyenv/calculator/bin/activate'
+alias qq='source ~/pyenv/qldpc/bin/activate'
 alias base='source ~/pyenv/base/bin/activate'
 
 # alias todo1='habitipy todos add -p 0.1'
