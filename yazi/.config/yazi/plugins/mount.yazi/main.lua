@@ -7,21 +7,25 @@ local toggle_ui = ya.sync(function(self)
 	else
 		self.children = Modal:children_add(self, 10)
 	end
-	ya.render()
+	ui.render()
 end)
 
 local subscribe = ya.sync(function(self)
 	ps.unsub("mount")
-	ps.sub("mount", function() ya.manager_emit("plugin", { self._id, "refresh" }) end)
+	ps.sub("mount", function()
+		ya.manager_emit("plugin", { self._id, "refresh" })
+	end)
 end)
 
 local update_partitions = ya.sync(function(self, partitions)
 	self.partitions = partitions
 	self.cursor = math.max(0, math.min(self.cursor or 0, #self.partitions - 1))
-	ya.render()
+	ui.render()
 end)
 
-local active_partition = ya.sync(function(self) return self.partitions[self.cursor + 1] end)
+local active_partition = ya.sync(function(self)
+	return self.partitions[self.cursor + 1]
+end)
 
 local update_cursor = ya.sync(function(self, cursor)
 	if #self.partitions == 0 then
@@ -29,7 +33,7 @@ local update_cursor = ya.sync(function(self, cursor)
 	else
 		self.cursor = ya.clamp(0, self.cursor + cursor, #self.partitions - 1)
 	end
-	ya.render()
+	ui.render()
 end)
 
 local M = {
@@ -89,7 +93,7 @@ function M:entry(job)
 	local tx2, rx2 = ya.chan("mpsc")
 	function producer()
 		while true do
-			local cand = self.keys[ya.which { cands = self.keys, silent = true }] or { run = {} }
+			local cand = self.keys[ya.which({ cands = self.keys, silent = true })] or { run = {} }
 			for _, r in ipairs(type(cand.run) == "table" and cand.run or { cand.run }) do
 				tx1:send(r)
 				if r == "quit" then
@@ -139,15 +143,17 @@ function M:entry(job)
 	ya.join(producer, consumer1, consumer2)
 end
 
-function M:reflow() return { self } end
+function M:reflow()
+	return { self }
+end
 
 function M:redraw()
 	local rows = {}
 	for _, p in ipairs(self.partitions or {}) do
 		if p.sub == "" then
-			rows[#rows + 1] = ui.Row { p.main }
+			rows[#rows + 1] = ui.Row({ p.main })
 		else
-			rows[#rows + 1] = ui.Row { p.sub, p.label or "", p.dist or "", p.fstype or "" }
+			rows[#rows + 1] = ui.Row({ p.sub, p.label or "", p.dist or "", p.fstype or "" })
 		end
 	end
 
@@ -163,12 +169,12 @@ function M:redraw()
 			:header(ui.Row({ "Src", "Label", "Dist", "FSType" }):style(ui.Style():bold()))
 			:row(self.cursor)
 			:row_style(ui.Style():fg("blue"):underline())
-			:widths {
+			:widths({
 				ui.Constraint.Length(20),
 				ui.Constraint.Length(20),
 				ui.Constraint.Percentage(70),
 				ui.Constraint.Length(10),
-			},
+			}),
 	}
 end
 
@@ -259,7 +265,9 @@ function M.operate(type)
 	end
 end
 
-function M.fail(s, ...) ya.notify { title = "Mount", content = string.format(s, ...), timeout = 10, level = "error" } end
+function M.fail(s, ...)
+	ya.notify({ title = "Mount", content = string.format(s, ...), timeout = 10, level = "error" })
+end
 
 function M:click() end
 
