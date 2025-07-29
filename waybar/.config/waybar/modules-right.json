@@ -21,7 +21,7 @@
   "pulseaudio": {
     "format": "{icon} {volume}",
     "rotate": 0,
-    "format-muted": "婢",
+    "format-muted": "",
     "on-click": "pavucontrol -t 3",
     "on-click-right": "volumecontrol.sh -s ''",
     "on-click-middle": "volumecontrol.sh -o m",
