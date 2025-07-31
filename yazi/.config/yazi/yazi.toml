@@ -10,6 +10,9 @@ max_width = 1000
 max_height = 2000
 
 [opener]
+play = [
+	{ run = 'mpv "$@"', orphan = true, for = "unix" },
+]
 edit = [
 	{ run = 'auto_padding_nvim.sh "$@"', desc = "nvim", block = true, for = "unix" },
 ]
