@@ -106,6 +106,7 @@ alias gitlog='git log --all --graph --pretty=format:"%Cred%h%Creset %C(bold blue
 alias gsi='git submodule init'
 alias gsu='git submodule update --recursive --remote'
 alias lg='lazygit'
+alias sd='ssh deng'
 
 alias szsh='source ~/.zshrc'
 alias czsh='nvim ~/.zshrc'
