@@ -2,6 +2,32 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
+      local uname = vim.loop.os_uname()
+      local is_ubuntu = uname.sysname == "Linux" and string.find(uname.release, "ubuntu")
+      local parsers = {
+        "typst",
+        "bash",
+        "c",
+        "cpp",
+        "html",
+        "json",
+        "lua",
+        "luap",
+        "markdown",
+        "make",
+        "markdown_inline",
+        "scala",
+        "python",
+        "query",
+        "toml",
+        "regex",
+        "vim",
+        "yaml",
+      }
+      -- 只有不是 Ubuntu 才加 latex
+      if not is_ubuntu then
+        table.insert(parsers, "latex")
+      end
       return {
         highlight = {
           enable = true,
@@ -11,27 +37,7 @@ return {
         -- ignore_install = { "latex" },
         indent = { enable = true, disable = { "python" } },
         context_commentstring = { enable = true, enable_autocmd = false },
-        ensure_installed = {
-          "latex",
-          "typst",
-          "bash",
-          "c",
-          "cpp",
-          "html",
-          "json",
-          "lua",
-          "luap",
-          "markdown",
-          "make",
-          "markdown_inline",
-          "scala",
-          "python",
-          "query",
-          "toml",
-          "regex",
-          "vim",
-          "yaml",
-        },
+        ensure_installed = parsers,
         incremental_selection = {
           enable = true,
           keymaps = {
