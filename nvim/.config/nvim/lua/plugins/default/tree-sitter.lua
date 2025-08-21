@@ -18,6 +18,7 @@ return {
         "markdown_inline",
         "scala",
         "python",
+        "latex",
         "query",
         "toml",
         "regex",
