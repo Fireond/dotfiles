@@ -1,5 +1,5 @@
 editor /usr/bin/nvim
-font_size 13
+font_size 10
 map option+c copy_to_clipboard
 map option+v paste_from_clipboard
 hide_window_decorations yes

@@ -1,4 +1,4 @@
-vim.lsp.set_log_level("off")
+vim.lsp.log.set_level(vim.log.levels.OFF)
 vim.opt.timeoutlen = 150
 vim.opt.spell = true
 vim.opt.spelllang = { "en", "cjk" }
