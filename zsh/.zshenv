@@ -50,4 +50,4 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 ################################################################################################
 export EDITOR="nvim"
-source ~/Documents/api_env
+source ~/Documents/sync/api_env
