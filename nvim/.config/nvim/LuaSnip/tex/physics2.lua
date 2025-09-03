@@ -81,7 +81,7 @@ return {
   ),
   s(
     { trig = "Bab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\{ <> \\}", {
+    fmta("\\left\\{ <> \\right\\}", {
       i(1),
     }),
     { condition = tex.in_mathzone }

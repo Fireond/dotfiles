@@ -181,8 +181,8 @@ return {
   s(
     { trig = "sum", snippetType = "autosnippet" },
     c(1, {
-      sn(nil, { t("\\sum_{"), i(1), t("} ") }),
-      sn(nil, { t("\\sum_{"), i(1), t("}^{"), i(2), t("} ") }),
+      -- sn(nil, { t("\\sum_{"), i(1, "i=1"), t("} ") }),
+      sn(nil, { t("\\sum_{"), i(1, "i=1"), t("}^{"), i(2, "m"), t("} ") }),
     }),
     { condition = tex.in_mathzone }
   ),
