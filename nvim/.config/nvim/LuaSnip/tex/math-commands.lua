@@ -258,7 +258,7 @@ return {
   s({ trig = "aut", snippetType = "autosnippet" }, fmta("\\Aut", {}), { condition = tex.in_mathzone }),
   s({ trig = "gal", snippetType = "autosnippet" }, fmta("\\Gal", {}), { condition = tex.in_mathzone }),
   s({ trig = "rank", snippetType = "autosnippet" }, fmta("\\rank", {}), { condition = tex.in_mathzone }),
-  s({ trig = "dim", snippetType = "autosnippet" }, fmta("\\mathrm{dim}", {}), { condition = tex.in_mathzone }),
+  s({ trig = "dim", snippetType = "autosnippet" }, fmta("\\operatorname{dim}", {}), { condition = tex.in_mathzone }),
   s({ trig = "det", snippetType = "autosnippet" }, fmta("\\det", {}), { condition = tex.in_mathzone }),
   s({ trig = "vol", snippetType = "autosnippet" }, fmta("\\Vol", {}), { condition = tex.in_mathzone }),
   s(
