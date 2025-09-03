@@ -156,7 +156,7 @@ return {
   ),
   s(
     { trig = "(%a)ii", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\(<>\\)", {
+    fmta("$<>$", {
       f(function(_, snip)
         return snip.captures[1]
       end),
