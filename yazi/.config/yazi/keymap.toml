@@ -19,6 +19,7 @@ prepend_keymap=[
 ''' },
 
   { on = [ "T" ], run = "plugin max-preview" },
+  { on = [ "C" ], run = "plugin ouch 7z", desc = "Compression with ouch" },
 
   { on = "o", run = "open --interactive" },
   { on = "O", run = '''
