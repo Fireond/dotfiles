@@ -74,7 +74,7 @@ return {
   ),
   s(
     { trig = "pab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab( <> )", {
+    fmta("\\left( <> \\right)", {
       i(1),
     }),
     { condition = tex.in_mathzone }
@@ -88,7 +88,14 @@ return {
   ),
   s(
     { trig = "bab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab[ <> ]", {
+    fmta("\\left[ <> \\right]", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "vab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
+    fmta("\\left| <> \\right|", {
       i(1),
     }),
     { condition = tex.in_mathzone }
@@ -100,11 +107,11 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  s(
-    { trig = "vab", wordTrig = false, snippetType = "autosnippet" },
-    c(1, { sn(nil, { t("\\ab|"), i(1), t("|") }), sn(nil, { t("\\ab*|"), i(1), t("|") }) }),
-    { condition = tex.in_mathzone }
-  ),
+  -- s(
+  --   { trig = "vab", wordTrig = false, snippetType = "autosnippet" },
+  --   c(1, { sn(nil, { t("\\ab|"), i(1), t("|") }), sn(nil, { t("\\ab*|"), i(1), t("|") }) }),
+  --   { condition = tex.in_mathzone }
+  -- ),
   s(
     { trig = "Vab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab\\| <> \\|", {
