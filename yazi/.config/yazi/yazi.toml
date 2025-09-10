@@ -28,11 +28,19 @@ qimgv = [
 inkscape = [
   { run = 'nohup inkscape "$@" > /dev/null 2>&1 &', desc = "inkscape", orphan = true, for = "linux" },
 ]
+# wps = [
+#   { run = 'env XMODIFIERS="@im=fcitx" QT_IM_MODULE="fcitx5" /usr/bin/wps "$@"', orphan = false, desc = "wps", for = "linux" },
+# ]
 wps = [
-  { run = 'env XMODIFIERS="@im=fcitx" QT_IM_MODULE="fcitx5" /usr/bin/wps "$@"', orphan = false, desc = "wps", for = "linux" },
-]
-wps-debug = [
-  { run = """bash -c 'set -x; echo OPEN "$@"; /usr/bin/wps "$@"' _ $@""", desc = "WPS (debug foreground)", orphan = false, block  = true, for    = "unix" }
+  { run = """bash -c '
+      set -e
+      for f in "$@"; do
+        d="$(dirname "$f")"
+        b="$(basename "$f")"
+        # 进到文件所在目录，用相对路径调用 wps（规避绝对路径 bug）
+        ( cd "$d" && exec env XMODIFIERS="@im=fcitx" QT_IM_MODULE="fcitx5" /usr/bin/wps "./$b" ) &
+      done
+    ' _ $@""", desc = "WPS (debug foreground)", orphan = false, block  = true, for    = "unix" }
 ]
 
 [open]
@@ -41,8 +49,9 @@ prepend_rules = [
   { name = "*.tex", use = "edit" },
   { name = "*.svg", use = "inkscape" },
   { name = "*.doc", use = "wps" },
-  { name = "*.docx", use = "wps-debug" },
-  { name = "*.xsl", use = "wps" },
+  { name = "*.docx", use = "wps" },
+  { name = "*.xls", use = "wps" },
+  { name = "*.xlsx", use = "wps" },
   { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = "wps" },
   { mime = "image/*", use = ["open", "qimgv", "reveal"] },
 ]
