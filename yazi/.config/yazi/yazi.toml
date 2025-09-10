@@ -28,11 +28,21 @@ qimgv = [
 inkscape = [
   { run = 'nohup inkscape "$@" > /dev/null 2>&1 &', desc = "inkscape", orphan = true, for = "linux" },
 ]
+wps = [
+  { run = 'env XMODIFIERS="@im=fcitx" QT_IM_MODULE="fcitx5" /usr/bin/wps "$@"', orphan = false, desc = "wps", for = "linux" },
+]
+wps-debug = [
+  { run = """bash -c 'set -x; echo OPEN "$@"; /usr/bin/wps "$@"' _ $@""", desc = "WPS (debug foreground)", orphan = false, block  = true, for    = "unix" }
+]
 
 [open]
 prepend_rules = [
   { name = "*.pdf", use = ["zathura"] },
   { name = "*.tex", use = "edit" },
   { name = "*.svg", use = "inkscape" },
+  { name = "*.doc", use = "wps" },
+  { name = "*.docx", use = "wps-debug" },
+  { name = "*.xsl", use = "wps" },
+  { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = "wps" },
   { mime = "image/*", use = ["open", "qimgv", "reveal"] },
 ]
