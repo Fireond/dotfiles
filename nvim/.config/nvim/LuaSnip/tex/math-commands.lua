@@ -259,7 +259,7 @@ return {
   s({ trig = "gal", snippetType = "autosnippet" }, fmta("\\Gal", {}), { condition = tex.in_mathzone }),
   s({ trig = "rank", snippetType = "autosnippet" }, fmta("\\rank", {}), { condition = tex.in_mathzone }),
   s({ trig = "dim", snippetType = "autosnippet" }, fmta("\\operatorname{dim}", {}), { condition = tex.in_mathzone }),
-  s({ trig = "det", snippetType = "autosnippet" }, fmta("\\det", {}), { condition = tex.in_mathzone }),
+  s({ trig = "det", snippetType = "autosnippet" }, fmta("\\operatorname{det}", {}), { condition = tex.in_mathzone }),
   s({ trig = "vol", snippetType = "autosnippet" }, fmta("\\Vol", {}), { condition = tex.in_mathzone }),
   s(
     { trig = "->", snippetType = "autosnippet" },
@@ -424,6 +424,11 @@ return {
   s(
     { trig = "ring", snippetType = "autosnippet", priority = 2000 },
     fmta("\\mathring{<>}", { i(1) }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "\\oplusn", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\operatorname{<>}", { i(1) }),
     { condition = tex.in_mathzone }
   ),
 }
