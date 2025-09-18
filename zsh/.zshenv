@@ -22,6 +22,7 @@ if  [[ "$OSTYPE" == "darwin"* ]]; then
   # <<< conda initialize <<<
 ################################################################################################
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  export PATH=$PATH:$HOME/.local/share/bin
   # for using texprosso
   export SDL_VIDEODRIVER="wayland"
   # clash-verge-rev
