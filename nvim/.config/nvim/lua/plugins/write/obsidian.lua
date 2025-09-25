@@ -2,6 +2,7 @@ return {
   {
     "obsidian-nvim/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
+    -- enabled = false,
     lazy = true,
     ft = "markdown",
     dependencies = {
@@ -117,6 +118,7 @@ return {
   },
   {
     "oflisback/obsidian-bridge.nvim",
+    enabled = false,
     commit = "079f788",
     lazy = true,
     dependencies = {
