@@ -24,7 +24,7 @@ return {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
-      "echasnovski/mini.icons",
+      "nvim/mini.icons",
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",

@@ -14,7 +14,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.surround",
+    "nvim/mini.surround",
     opts = {
       mappings = {
         add = "ma", -- Add surrounding in Normal and Visual modes
@@ -45,7 +45,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.ai",
+    "nvim/mini.ai",
     -- enabled = false,
     opts = function()
       local ai = require("mini.ai")

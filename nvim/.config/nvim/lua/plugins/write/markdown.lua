@@ -2,7 +2,7 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     enabled = false,
-    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim/mini.nvim" }, -- if you use the mini.nvim suite
     opts = {
       callout = {
         theorem = { raw = "[!THEOREM]", rendered = " Theorem", highlight = "RenderMarkdownWarn" },

@@ -21,7 +21,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.nvim",
+    "nvim/mini.nvim",
     -- opts = {
     --   options = {
     --     use_as_default_explorer = true,
