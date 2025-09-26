@@ -22,7 +22,7 @@ return {
     { trig = "ii", snippetType = "autosnippet" },
     fmta(
       [[
-      $<>$
+      \(<>\)
       ]],
       {
         i(1),

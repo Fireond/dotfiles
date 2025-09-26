@@ -21,7 +21,7 @@ return {
     },
   },
   {
-    "nvim/mini.nvim",
+    "nvim-mini/mini.nvim",
     -- opts = {
     --   options = {
     --     use_as_default_explorer = true,
