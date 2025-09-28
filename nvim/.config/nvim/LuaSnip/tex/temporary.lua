@@ -58,7 +58,7 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  s({ trig = "an", snippetType = "autosnippet" }, fmta("\\angle ", {}), { condition = tex.in_mathzone }),
+  s({ trig = "ang", snippetType = "autosnippet" }, fmta("\\angle ", {}), { condition = tex.in_mathzone }),
   s(
     { trig = "BB", snippetType = "autosnippet" },
     fmta("\\mathring{B}_{<>}(<>)", {
