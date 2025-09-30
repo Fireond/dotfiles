@@ -9,7 +9,7 @@ prepend_keymap=[
   { on = [ "g", "," ], run = "cd ~/.config" },
 	{ on = [ "g", "/" ], run = "cd /" },
 	{ on = [ "g", "l" ], run = "cd ~/Documents/Latex/" },
-	{ on = [ "g", "c" ], run = "cd ~/Documents/Courses/c33/" },
+	{ on = [ "g", "c" ], run = "cd ~/Documents/sync-server/c/" },
 	{ on = [ "g", "p" ], run = "cd ~/Documents/Latex/pdfs/" },
 	{ on = [ "g", "s" ], run = "cd ~/Documents/deng_server/" },
 	{ on = [ "g", "T" ], run = "cd /home/fireond/.local/share/Trash/" },
