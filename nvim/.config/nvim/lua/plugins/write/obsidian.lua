@@ -9,7 +9,7 @@ return {
     },
     opts = {
       workspaces = {
-        { name = "Root", path = vim.fn.expand("~/Documents/Obsidian-Vault") },
+        { name = "Root", path = vim.fn.expand("~/Documents/sync-server/Obsidian-Vault") },
       },
       daily_notes = {
         folder = "01-dailies",
@@ -117,6 +117,7 @@ return {
   },
   {
     "oflisback/obsidian-bridge.nvim",
+    enabled = false,
     commit = "079f788",
     lazy = true,
     dependencies = {
