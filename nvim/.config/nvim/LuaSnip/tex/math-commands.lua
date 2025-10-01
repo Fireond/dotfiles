@@ -432,4 +432,9 @@ return {
     fmta("\\operatorname{<>}", { i(1) }),
     { condition = tex.in_mathzone }
   ),
+  s(
+    { trig = "mp", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\mathop{<>}", { i(1) }),
+    { condition = tex.in_mathzone }
+  ),
 }

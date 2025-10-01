@@ -15,10 +15,10 @@ return {
     fmta(
       [[
     \documentclass{article}
-    \newcommand{\Class}{<>}
-    \newcommand{\Title}{Homework <>}
+    \newcommand{\Title}{<> Homework <>}
     \author{Hanyu Yan}
     \input{/home/fireond/Documents/Latex/preamble.tex}
+    \input{/home/fireond/Documents/Latex/commands.tex}
     \input{/home/fireond/Documents/Latex/Sample_Homework.tex}
     \begin{document}
     \maketitle \thispagestyle{empty}
@@ -29,9 +29,7 @@ return {
     ]],
       {
         c(1, {
-          t("Quantum Computation + X"),
-          t("Advanced Atomic Physics"),
-          t("Electronics for Experimental Physics"),
+          t("Basic Functional Analysis"),
         }),
         i(2, "number"),
         i(0),

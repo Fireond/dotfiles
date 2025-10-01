@@ -10,7 +10,7 @@ return {
     },
     opts = {
       workspaces = {
-        { name = "Root", path = vim.fn.expand("~/Documents/Obsidian-Vault") },
+        { name = "Root", path = vim.fn.expand("~/Documents/sync-server/Obsidian-Vault") },
       },
       daily_notes = {
         folder = "01-dailies",
@@ -77,11 +77,7 @@ return {
       end,
 
       ui = {
-        enable = true,
-        checkboxes = {
-          [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-          ["x"] = { char = "", hl_group = "ObsidianDone" },
-        },
+        enable = false,
       },
     },
     keys = {

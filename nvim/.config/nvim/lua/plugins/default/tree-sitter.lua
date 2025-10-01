@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",
     opts = function()
       local uname = vim.loop.os_uname()
       local is_ubuntu = uname.sysname == "Linux" and string.find(uname.release, "ubuntu")
@@ -35,7 +36,7 @@ return {
           disable = { "latex" },
           -- additional_vim_regex_highlighting = { "markdown" },
         },
-        -- ignore_install = { "latex" },
+        ignore_install = { "latex" },
         indent = { enable = true, disable = { "python" } },
         context_commentstring = { enable = true, enable_autocmd = false },
         ensure_installed = parsers,

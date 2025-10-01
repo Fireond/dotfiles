@@ -145,10 +145,10 @@ return {
     t("\\cup"),
   }, { condition = tex.in_mathzone_md }),
   s({ trig = "sub", wordTrig = false, snippetType = "autosnippet" }, {
-    t("\\subseteq"),
+    t("\\subset"),
   }, { condition = tex.in_mathzone_md }),
   s({ trig = "suq", wordTrig = false, snippetType = "autosnippet" }, {
-    t("\\supseteq"),
+    t("\\supset"),
   }, { condition = tex.in_mathzone_md }),
   s({ trig = "oo", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\infty"),
