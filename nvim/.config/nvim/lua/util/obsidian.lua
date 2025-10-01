@@ -20,6 +20,10 @@ sources: []
 
 # %s
 
+## Definition
+
+## Properties
+
 ]],
   quantum = [[
 ---

@@ -76,11 +76,7 @@ return {
       end,
 
       ui = {
-        enable = true,
-        checkboxes = {
-          [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-          ["x"] = { char = "", hl_group = "ObsidianDone" },
-        },
+        enable = false,
       },
     },
     keys = {
