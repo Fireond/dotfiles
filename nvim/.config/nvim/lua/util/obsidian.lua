@@ -1,9 +1,9 @@
 local M = {}
 
 M.path = {
-  vault = "~/Documents/Obsidian-Vault/",
-  math = "~/Documents/Obsidian-Vault/02-math/",
-  quantum = "~/Documents/Obsidian-Vault/03-quantum/",
+  vault = "~/Documents/sync-server/Obsidian-Vault/",
+  math = "~/Documents/sync-server/Obsidian-Vault/02-math/",
+  quantum = "~/Documents/sync-server/Obsidian-Vault/03-quantum/",
 }
 M.template = {
   math = [[
