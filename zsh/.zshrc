@@ -74,6 +74,8 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias openbg='alacritty --class "kitty-bg" -e "/home/fireond/.dotfiles/hyprland/.config/hypr/cavabg.sh"'
   alias hyprcli='hyprctl clients'
   alias hyprmon='hyprctl monitors'
+
+  alias ssh_server_reverse='ssh -fNR 1080:localhost:7897 deng'
 fi
 
 alias c='clear'
