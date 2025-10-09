@@ -86,7 +86,7 @@ return {
     "folke/snacks.nvim",
     opts = {
       image = {
-        enabled = true,
+        enabled = false,
         doc = {
           inline = true,
           conceal = false,
