@@ -86,32 +86,32 @@ return {
       { "<leader>nd", "<cmd>ObsidianDailies<cr>", desc = "Open Obsidian dailies" },
     },
   },
-  {
-    "saghen/blink.cmp",
-    dependencies = {
-      { "saghen/blink.compat", lazy = true, version = false },
-    },
-    opts = {
-      sources = {
-        compat = { "obsidian", "obsidian_new", "obsidian_tags" },
-        providers = {
-          obsidian = {
-            kind = "Obsidian",
-            score_offset = 30,
-          },
-          obsidian_new = {
-            kind = "Obsidian",
-            async = true,
-          },
-          obsidian_tags = {
-            kind = "Obsidian",
-            score_offset = 30,
-            async = true,
-          },
-        },
-      },
-    },
-  },
+  -- {
+  --   "saghen/blink.cmp",
+  --   dependencies = {
+  --     { "saghen/blink.compat", lazy = true, version = false },
+  --   },
+  --   opts = {
+  --     sources = {
+  --       compat = { "obsidian", "obsidian_new", "obsidian_tags" },
+  --       providers = {
+  --         obsidian = {
+  --           kind = "Obsidian",
+  --           score_offset = 30,
+  --         },
+  --         obsidian_new = {
+  --           kind = "Obsidian",
+  --           async = true,
+  --         },
+  --         obsidian_tags = {
+  --           kind = "Obsidian",
+  --           score_offset = 30,
+  --           async = true,
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "oflisback/obsidian-bridge.nvim",
     enabled = false,

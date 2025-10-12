@@ -6,17 +6,31 @@ local MATH_NODES = {
   math_environment = true,
 }
 
-local ts_utils = require("nvim-treesitter.ts_utils")
+-- 小工具：安全拿到当前节点（可能返回 nil）
+local function node_at_cursor()
+  -- Neovim 0.10+：直接用 get_node() 拿“光标处”节点
+  -- 若当前 buffer 没有 parser/没有启用 treesitter，可能返回 nil
+  local ok, node = pcall(vim.treesitter.get_node)
+  if ok then
+    return node
+  end
+  return nil
+end
 
 M.in_env_md = function(env)
-  local node = ts_utils.get_node_at_cursor()
+  local node = node_at_cursor()
   local bufnr = vim.api.nvim_get_current_buf()
   while node do
     if node:type() == "generic_environment" then
       local begin = node:child(0)
-      local name = begin:field("name")
-      if name[1] and vim.treesitter.get_node_text(name[1], bufnr, nil) == "{" .. env .. "}" then
-        return true
+      if begin then
+        local name = begin:field("name")
+        if name and name[1] then
+          local text = vim.treesitter.get_node_text(name[1], bufnr)
+          if text == "{" .. env .. "}" then
+            return true
+          end
+        end
       end
     end
     node = node:parent()
@@ -25,13 +39,14 @@ M.in_env_md = function(env)
 end
 
 M.in_env = function(env)
+  -- 仍保留你原来的 vimtex 检测
   local pos = vim.fn["vimtex#env#is_inside"](env)
   return pos[1] ~= 0 or pos[2] ~= 0
 end
 
 -- For markdown
 M.in_mathzone_md = function()
-  local node = ts_utils.get_node_at_cursor()
+  local node = node_at_cursor()
   while node do
     if MATH_NODES[node:type()] then
       return true
@@ -40,13 +55,14 @@ M.in_mathzone_md = function()
   end
   return false
 end
+
 M.in_text_md = function()
   return not M.in_mathzone_md()
 end
 
 -- For typst
 M.in_mathzone_typ = function()
-  local node = ts_utils.get_node_at_cursor()
+  local node = node_at_cursor()
   while node do
     if node:type() == "math" then
       return true

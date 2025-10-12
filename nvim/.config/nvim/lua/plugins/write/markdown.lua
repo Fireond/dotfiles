@@ -1,18 +1,7 @@
 return {
   {
-    "toppair/peek.nvim",
-    event = { "VeryLazy" },
-    build = "deno task --quiet build:fast",
-    config = function()
-      require("peek").setup()
-      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-      vim.api.nvim_create_user_command("PeekIsOpen", require("peek").is_open, {})
-      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-    end,
-  },
-  {
     "MeanderingProgrammer/render-markdown.nvim",
-    enabled = true,
+    enabled = false,
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
     opts = {
       callout = {
@@ -43,20 +32,20 @@ return {
       },
     },
   },
-  -- {
-  --   "Noname672/markdown-preview.nvim",
-  --   enabled = false,
-  --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  --   ft = { "markdown" },
-  --   build = function()
-  --     vim.fn["mkdp#util#install"]()
-  --   end,
-  --   config = function()
-  --     vim.g.mkdp_browser = "firefox"
-  --     vim.g.mkdp_preview_options.katex_preamble = [[\newcommand{\d}{\,\mathrm{d}}]]
-  --     vim.g.mkdp_auto_close = 0
-  --   end,
-  -- },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+      vim.g.mkdp_auto_start = 1
+      vim.g.mkdp_auto_close = 0
+      vim.g.mkdp_combine_preview = 1
+      vim.g.mkdp_browser = "firefox"
+    end,
+    ft = { "markdown" },
+  },
+
   -- {
   --   "fireond/number-markdown.nvim",
   --   ft = "markdown",
