@@ -1,5 +1,15 @@
 return {
   {
+    "toppair/peek.nvim",
+    event = { "VeryLazy" },
+    build = "deno task --quiet build:fast",
+    config = function()
+      require("peek").setup()
+      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+    end,
+  },
+  {
     "MeanderingProgrammer/render-markdown.nvim",
     enabled = true,
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
@@ -18,7 +28,7 @@ return {
         border = { "╭", "┬", "╮", "├", "┼", "┤", "╰", "┴", "╯", "│", "─" },
       },
       anti_conceal = {
-        disabled_modes = { "n" },
+        -- disabled_modes = { "n" },
         ignore = {
           bullet = true, -- render bullet in insert mode
           head_border = true,
@@ -29,9 +39,6 @@ return {
         comment = {
           conceal = false,
         },
-      },
-      latex = {
-        enabled = false,
       },
     },
   },
