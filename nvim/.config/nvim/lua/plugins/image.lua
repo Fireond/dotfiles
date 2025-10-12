@@ -86,7 +86,7 @@ return {
     "folke/snacks.nvim",
     opts = {
       image = {
-        enabled = true,
+        enabled = false,
         doc = {
           inline = true,
           conceal = false,
@@ -95,7 +95,7 @@ return {
           notify = true, -- show a notification on error
         },
         math = {
-          enabled = true,
+          enabled = false,
           latex = {
             font_size = "normalsize", -- see https://www.sascha-frank.com/latex-font-size.html
             packages = {
