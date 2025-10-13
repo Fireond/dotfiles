@@ -48,6 +48,7 @@ end
 M.in_mathzone_md = function()
   local node = node_at_cursor()
   while node do
+    print(node:type())
     if MATH_NODES[node:type()] then
       return true
     end

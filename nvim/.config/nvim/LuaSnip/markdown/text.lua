@@ -109,6 +109,9 @@ return {
   s({ trig = "<=", snippetType = "autosnippet" }, {
     t("$\\impliedby$"),
   }, { condition = tex.in_text }),
+  s({ trig = "mnf", snippetType = "autosnippet" }, {
+    t("manifold"),
+  }, { condition = tex.in_text }),
   s(
     { trig = "(%a)ii", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("$<>$", {
