@@ -6,11 +6,8 @@ local MATH_NODES = {
   math_environment = true,
 }
 
--- 小工具：安全拿到当前节点（可能返回 nil）
 local function node_at_cursor()
-  -- Neovim 0.10+：直接用 get_node() 拿“光标处”节点
-  -- 若当前 buffer 没有 parser/没有启用 treesitter，可能返回 nil
-  local ok, node = pcall(vim.treesitter.get_node)
+  local ok, node = pcall(vim.treesitter.get_node, { ignore_injections = false })
   if ok then
     return node
   end
@@ -39,16 +36,13 @@ M.in_env_md = function(env)
 end
 
 M.in_env = function(env)
-  -- 仍保留你原来的 vimtex 检测
   local pos = vim.fn["vimtex#env#is_inside"](env)
   return pos[1] ~= 0 or pos[2] ~= 0
 end
 
--- For markdown
 M.in_mathzone_md = function()
   local node = node_at_cursor()
   while node do
-    print(node:type())
     if MATH_NODES[node:type()] then
       return true
     end
@@ -61,7 +55,6 @@ M.in_text_md = function()
   return not M.in_mathzone_md()
 end
 
--- For typst
 M.in_mathzone_typ = function()
   local node = node_at_cursor()
   while node do

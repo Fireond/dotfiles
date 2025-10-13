@@ -35,6 +35,14 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
+  s(
+    { trig = "bk", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
+    fmta("\\langle <>|<>\\rangle", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex.in_mathzone }
+  ),
   -- s(
   --   { trig = "bra", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
   --   fmta("\\bra{<>}", {
@@ -49,14 +57,14 @@ return {
   --   }),
   --   { condition = tex.in_mathzone }
   -- ),
-  s(
-    { trig = "bk", snippetType = "autosnippet" },
-    c(1, {
-      sn(nil, { t("\\braket{"), i(1), t("}{"), i(2), t("}") }),
-      sn(nil, { t("\\braket[3]{"), i(1), t("}{"), i(2), t("}{"), i(3), t("}") }),
-    }),
-    { condition = tex.in_mathzone }
-  ),
+  -- s(
+  --   { trig = "bk", snippetType = "autosnippet" },
+  --   c(1, {
+  --     sn(nil, { t("\\braket{"), i(1), t("}{"), i(2), t("}") }),
+  --     sn(nil, { t("\\braket[3]{"), i(1), t("}{"), i(2), t("}{"), i(3), t("}") }),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
   s(
     { trig = "ev", snippetType = "autosnippet" },
     fmta("\\braket[1]{<>}", {
