@@ -43,6 +43,14 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
+  s(
+    { trig = "kb", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
+    fmta("|<>\\rangle\\langle <>|", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex.in_mathzone }
+  ),
   -- s(
   --   { trig = "bra", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
   --   fmta("\\bra{<>}", {
@@ -72,14 +80,14 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  s(
-    { trig = "kb", snippetType = "autosnippet" },
-    c(1, {
-      sn(nil, { t("\\ketbra{"), i(1), t("}{"), i(2), t("}") }),
-      sn(nil, { t("\\ketbra{"), i(1), t("}["), i(2), t("]{"), i(3), t("}") }),
-    }),
-    { condition = tex.in_mathzone }
-  ),
+  -- s(
+  --   { trig = "kb", snippetType = "autosnippet" },
+  --   c(1, {
+  --     sn(nil, { t("\\ketbra{"), i(1), t("}{"), i(2), t("}") }),
+  --     sn(nil, { t("\\ketbra{"), i(1), t("}["), i(2), t("]{"), i(3), t("}") }),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
   s(
     { trig = "pab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\left( <> \\right)", {
