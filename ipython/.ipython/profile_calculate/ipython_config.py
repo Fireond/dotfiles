@@ -9,6 +9,7 @@ c.InteractiveShellApp.exec_lines = [
     "import numpy as np",
     "from latex2sympy2 import latex2sympy, latex2latex",
     "R=Rational",
+    "SP=simplify",
     "TP=TensorProduct",
     "l2s=latex2sympy",
     "l2l=latex2latex",
