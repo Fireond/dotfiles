@@ -16,10 +16,6 @@ return {
         texlab = {
           settings = {
             texlab = {
-              -- inlayHints = {
-              --   labelDefinitions = false,
-              --   labelReferences = false,
-              -- },
               diagnostics = { ignoredPatterns = { "^Overfull", "^Underfull" } },
               latexFormatter = "latexindent",
               latexindent = {
