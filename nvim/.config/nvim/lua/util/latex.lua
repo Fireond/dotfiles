@@ -5,6 +5,9 @@ local MATH_NODES = {
   inline_formula = true,
   math_environment = true,
 }
+local TEXT_NODES = {
+  text_mode = true,
+}
 
 -- 小工具：安全拿到当前节点（可能返回 nil）
 local function node_at_cursor()
@@ -48,6 +51,9 @@ end
 M.in_mathzone_md = function()
   local node = node_at_cursor()
   while node do
+    if TEXT_NODES[node:type()] then
+      return false
+    end
     if MATH_NODES[node:type()] then
       return true
     end
