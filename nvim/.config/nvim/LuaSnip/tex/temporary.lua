@@ -92,9 +92,6 @@ return {
   s({ trig = "ed", snippetType = "autosnippet" }, {
     t("\\ed"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "cas", snippetType = "autosnippet", priority = 2000 }, {
-    t("\\cas"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "lr", snippetType = "autosnippet" }, {
     t("\\leftrightarrow"),
   }, { condition = tex.in_mathzone }),
