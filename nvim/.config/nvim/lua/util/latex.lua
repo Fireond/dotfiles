@@ -5,6 +5,9 @@ local MATH_NODES = {
   inline_formula = true,
   math_environment = true,
 }
+local TEXT_NODES = {
+  text_mode = true,
+}
 
 local function node_at_cursor()
   local ok, node = pcall(vim.treesitter.get_node, { ignore_injections = false })
@@ -43,6 +46,9 @@ end
 M.in_mathzone_md = function()
   local node = node_at_cursor()
   while node do
+    if TEXT_NODES[node:type()] then
+      return false
+    end
     if MATH_NODES[node:type()] then
       return true
     end
@@ -69,7 +75,8 @@ end
 M.in_mathzone = function()
   local ft = vim.bo.filetype
   if ft == "tex" then
-    return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1
+    return M.in_mathzone_md()
+    -- return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1
   elseif ft == "markdown" then
     return M.in_mathzone_md()
   elseif ft == "typst" then
