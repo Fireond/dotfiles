@@ -17,9 +17,9 @@ return {
     \documentclass{article}
     \newcommand{\Title}{<> Homework <>}
     \author{Hanyu Yan}
-    \input{/home/fireond/Documents/Latex/preamble.tex}
-    \input{/home/fireond/Documents/Latex/commands.tex}
-    \input{/home/fireond/Documents/Latex/Sample_Homework.tex}
+    \input{~/Documents/sync-server/Latex/preamble.tex}
+    \input{~/Documents/sync-server/Latex/commands.tex}
+    \input{~/Documents/sync-server/Latex/Sample_Homework.tex}
     \begin{document}
     \maketitle \thispagestyle{empty}
       
