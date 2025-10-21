@@ -30,6 +30,7 @@ return {
       {
         c(1, {
           t("Basic Functional Analysis"),
+          t("Quantum AI"),
         }),
         i(2, "number"),
         i(0),
