@@ -75,13 +75,8 @@ end
 M.in_mathzone = function()
   local ft = vim.bo.filetype
   if ft == "tex" then
-<<<<<<< HEAD
-    -- return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1
-    return M.in_mathzone_md()
-=======
     return M.in_mathzone_md()
     -- return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1
->>>>>>> cc98aaea0741a7ef2a27656edf15147e0c7c0393
   elseif ft == "markdown" then
     return M.in_mathzone_md()
   elseif ft == "typst" then
