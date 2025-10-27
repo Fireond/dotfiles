@@ -17,9 +17,9 @@ return {
     \documentclass{article}
     \newcommand{\Title}{<> Homework <>}
     \author{Hanyu Yan}
-    \input{/home/fireond/Documents/Latex/preamble.tex}
-    \input{/home/fireond/Documents/Latex/commands.tex}
-    \input{/home/fireond/Documents/Latex/Sample_Homework.tex}
+    \input{~/Documents/sync-server/Latex/preamble.tex}
+    \input{~/Documents/sync-server/Latex/commands.tex}
+    \input{~/Documents/sync-server/Latex/Sample_Homework.tex}
     \begin{document}
     \maketitle \thispagestyle{empty}
       
@@ -30,6 +30,7 @@ return {
       {
         c(1, {
           t("Basic Functional Analysis"),
+          t("Quantum AI"),
         }),
         i(2, "number"),
         i(0),
