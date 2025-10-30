@@ -92,6 +92,20 @@ return {
     { condition = line_begin }
   ),
   s(
+    { trig = "bfr", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{frame}
+        <>
+      \end{frame}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin * tex.in_text }
+  ),
+  s(
     { trig = "bff", snippetType = "autosnippet" },
     fmta(
       [[
