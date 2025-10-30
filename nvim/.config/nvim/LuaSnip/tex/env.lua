@@ -95,11 +95,12 @@ return {
     { trig = "bfr", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{frame}
+      \begin{frame}{<>}
         <>
       \end{frame}
       ]],
       {
+        i(1),
         i(0),
       }
     ),
