@@ -6,7 +6,7 @@ return {
       if vim.loop.os_uname().sysname == "Darwin" then
         latexindent_path = "/Users/hanyu_yan/Documents/Latex/latexindent.yaml"
       elseif vim.loop.os_uname().sysname == "Linux" then
-        latexindent_path = "/home/fireond/Documents/Latex/latexindent.yaml"
+        latexindent_path = "/home/fireond/Documents/sync-server/Latex/latexindent.yaml"
       end
       opts.inlay_hints = {
         enabled = true,
@@ -16,10 +16,6 @@ return {
         texlab = {
           settings = {
             texlab = {
-              -- inlayHints = {
-              --   labelDefinitions = false,
-              --   labelReferences = false,
-              -- },
               diagnostics = { ignoredPatterns = { "^Overfull", "^Underfull" } },
               latexFormatter = "latexindent",
               latexindent = {
