@@ -1,48 +1,54 @@
 // ==UserScript==
-// @name         QB Clickpad
-// @description  在页面右下角放一块不可见、可点击的区域；点击它或用快捷键触发同一动作
+// @name         qb-ghost-clicker
+// @namespace    qb
+// @version      1.0.0
+// @description  在每个页面创建一个不可见但可点击、随页面浮动的元素
 // @match        *://*/*
-// @run-at       document-end
+// @run-at       document-start
+// @grant        none
 // ==/UserScript==
 
 (function () {
-  // 1) 可改成你想要的区域位置/大小
-  const PAD_STYLE = {
-    position: 'fixed',
-    right: '0',            // 贴右下角
-    bottom: '0',
-    width: '28vw',         // 宽度（可改：如 '300px' 或 '20vw'）
-    height: '40vh',        // 高度
-    zIndex: '2147483647',
-    background: 'rgba(0,0,0,.05)', // 不可见
-    // 想调试时可临时改成 'rgba(0,0,0,.05)'
+  // 确保只创建一次
+  if (window.__qbGhostInstalled) return;
+  window.__qbGhostInstalled = true;
+
+  // DOM 就绪后插入（document-start 下有些页面此时还没可插入的 body）
+  const ready = fn => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn, { once: true });
+    } else {
+      fn();
+    }
   };
 
-  // 2) 触发动作（你要“点击空白处”做的事都写这里）
-  function onActivate(source = 'unknown') {
-    // 示例：优先后退；不行就滚到页首
-    if (history.length > 1) {
-      history.back();
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
+  ready(() => {
+    // 已存在就别重复
+    if (document.getElementById('qb-ghost')) return;
 
-  // 创建 clickpad
-  const pad = document.createElement('div');
-  pad.id = 'qb-clickpad';
-  Object.assign(pad.style, PAD_STYLE);
+    const ghost = document.createElement('button');
+    ghost.id = 'qb-ghost';
+    ghost.type = 'button';
+    ghost.textContent = '';                // 不显示文字
+    ghost.title = 'qb-ghost';              // 便于调试
+    Object.assign(ghost.style, {
+      position: 'fixed',
+      top: '0',
+      left: '0',
+      width: '1px',
+      height: '1px',
+      opacity: '0',                        // 完全不可见
+      pointerEvents: 'auto',               // 仍可点击
+      zIndex: '2147483647',                // 最高层
+      border: '0',
+      padding: '0',
+      margin: '0',
+      background: 'transparent',
+    });
 
-  // 点击这块区域 → 触发动作
-  pad.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    onActivate('clickpad');
-  }, true);
+    // 你可以在这里挂任何需要的点击逻辑
+    // 例如：ghost.addEventListener('click', () => console.log('ghost clicked'));
 
-  // 也支持“全局事件”触发（给快捷键用）
-  window.addEventListener('qb-clickpad-activate', () => onActivate('event'));
-
-  // 挂到文档上
-  (document.body || document.documentElement).appendChild(pad);
+    document.documentElement.appendChild(ghost);
+  });
 })();

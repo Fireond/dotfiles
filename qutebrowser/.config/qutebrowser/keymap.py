@@ -23,7 +23,7 @@ keybinds = {
     "<Space>D": "tab-close",
     "<Ctrl-f>": "hint all hover",
     "cs": "config-source",
-    "<Space><Space>": r'jseval --quiet "document.getElementById(\"qb-clickpad\")?.click()"',
+    "<Space><Space>": "click-element --force-event id qb-ghost",
 }
 
 for unbind in unbinds:
