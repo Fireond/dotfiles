@@ -32,6 +32,13 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "bs", snippetType = "autosnippet" },
+    fmta("\\boldsymbol{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "bf", snippetType = "autosnippet" },
     fmta("\\mathbf{<>}", {
       i(1),
