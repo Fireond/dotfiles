@@ -6,20 +6,5 @@
 
 config_version: 2
 settings:
-  auto_save.session:
-    global: true
-  content.javascript.clipboard:
-    https://chatgpt.com: access-paste
-  editor.command:
-    global:
-    - nvim
-    - -f
-    - '{file}'
-    - -c
-    - normal {line}G{column0}l
-  tabs.max_width:
-    global: -1
-  tabs.position:
-    global: top
   tabs.show:
     global: always
