@@ -41,6 +41,7 @@ return {
     c(1, { sn(nil, { t("\\ctrl{"), i(1), t("}") }), sn(nil, { t("\\ctrl["), i(1), t("]{"), i(2), t("}") }) }),
     { condition = tex.in_quantikz }
   ),
+  s({ trig = "con", snippetType = "autosnippet" }, t("\\control{}"), { condition = tex.in_quantikz }),
   s(
     { trig = "ocl", snippetType = "autosnippet", priority = 2000 },
     c(1, { sn(nil, { t("\\octrl{"), i(1), t("}") }), sn(nil, { t("\\octrl["), i(1), t("]{"), i(2), t("}") }) }),
