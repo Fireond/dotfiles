@@ -22,4 +22,4 @@ settings:
   tabs.position:
     global: top
   tabs.show:
-    global: never
+    global: always
