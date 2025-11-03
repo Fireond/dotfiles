@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+sudo rsync -aAXH --info=progress2 --delete --exclude='/dev/*' --exclude='/proc/*' --exclude='/sys/*' --exclude='/tmp/*' --exclude='/run/*' --exclude='/mnt/*' --exclude='/media/*' --exclude='/lost+found/' / /run/media/fireond/Backup/archlinux-backup
