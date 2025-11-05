@@ -144,7 +144,7 @@ return {
   s({ trig = "sub", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\subset"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "sup", wordTrig = false, snippetType = "autosnippet" }, {
+  s({ trig = "\\supp", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\supset"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "oo", wordTrig = false, snippetType = "autosnippet" }, {
