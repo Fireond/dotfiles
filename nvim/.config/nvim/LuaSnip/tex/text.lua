@@ -21,9 +21,6 @@ return {
   s({ trig = "dps", snippetType = "autosnippet" }, {
     t("\\displaystyle"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "if", snippetType = "autosnippet" }, {
-    t("\\text{\\ if\\ }"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "stt", snippetType = "autosnippet" }, {
     t("\\text{ s.t. }"),
   }, { condition = tex.in_mathzone }),
