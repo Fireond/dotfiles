@@ -29,9 +29,15 @@ return {
   -- s({ trig = "ss", snippetType = "autosnippet", priority = 4000 }, {
   --   t("\\ss"),
   -- }, { condition = tex.in_mathzone }),
-  -- s({ trig = "pp", snippetType = "autosnippet", priority = 3000 }, {
-  --   t("\\pp"),
-  -- }, { condition = tex.in_mathzone }),
+  s({ trig = "PP", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\mathcal{P}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "SS", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\mathcal{S}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "LL", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\mathcal{L}"),
+  }, { condition = tex.in_mathzone }),
   -- s({ trig = "dd", snippetType = "autosnippet", priority = 3000 }, {
   --   t("\\dd"),
   -- }, { condition = tex.in_mathzone }),
