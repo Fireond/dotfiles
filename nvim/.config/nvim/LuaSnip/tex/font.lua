@@ -132,6 +132,12 @@ return {
     })
   ),
   s(
+    { trig = "eph", snippetType = "autosnippet" },
+    fmta("\\emph{<>}", {
+      i(0),
+    })
+  ),
+  s(
     { trig = "qq", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\text{<>}", {
       i(1),
