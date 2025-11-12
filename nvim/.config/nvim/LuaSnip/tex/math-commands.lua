@@ -253,6 +253,7 @@ return {
   ),
   -- s({ trig = "rr", snippetType = "autosnippet" }, fmta("\\ran", {}), { condition = tex.in_mathzone }),
   s({ trig = "kk", snippetType = "autosnippet" }, fmta("\\operatorname{ker}", {}), { condition = tex.in_mathzone }),
+  s({ trig = "spp", snippetType = "autosnippet" }, fmta("\\operatorname{supp}", {}), { condition = tex.in_mathzone }),
   s({ trig = "imm", snippetType = "autosnippet" }, fmta("\\operatorname{im}", {}), { condition = tex.in_mathzone }),
   s({ trig = "tr", snippetType = "autosnippet" }, fmta("\\tr", {}), { condition = tex.in_mathzone }),
   s({ trig = "span", snippetType = "autosnippet" }, fmta("\\operatorname{span}", {}), { condition = tex.in_mathzone }),
