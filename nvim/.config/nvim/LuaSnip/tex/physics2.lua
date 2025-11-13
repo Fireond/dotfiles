@@ -109,16 +109,15 @@ return {
   ),
   s(
     { trig = "vab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\left| <> \\right|", {
-      i(1),
-    }),
+    c(1, { sn(nil, { t("|"), i(1), t("|") }), sn(nil, { t("\\left|"), i(1), t("\\right|") }) }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "\\forallb", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab<< <> >>", {
-      i(1),
-    }),
+    c(
+      1,
+      { sn(nil, { t("\\langle "), i(1), t("\\rangle") }), sn(nil, { t("\\left\\langle "), i(1), t("\\right\\rangle") }) }
+    ),
     { condition = tex.in_mathzone }
   ),
   -- s(
