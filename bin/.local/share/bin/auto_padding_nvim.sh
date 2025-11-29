@@ -9,7 +9,7 @@ if [ -n "$KITTY_SOCKET" ]; then
   kitten @ --to $KITTY_SOCKET set-spacing padding=0
 fi
 
-nvim $*
+nvim "$@"
 
 if [ -n "$KITTY_SOCKET" ]; then
   kitten @ --to $KITTY_SOCKET set-spacing padding=default
