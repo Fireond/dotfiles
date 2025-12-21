@@ -135,6 +135,27 @@ return {
     { condition = line_begin * tex.in_text }
   ),
   s(
+    { trig = "bco", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{columns}
+        \begin{column}{<>\textwidth}
+          <>
+        \end{column}
+        \begin{column}{<>\textwidth}
+
+        \end{column}
+      \end{columns}
+      ]],
+      {
+        i(1, "0.5"),
+        i(0),
+        i(2, "0.5"),
+      }
+    ),
+    { condition = line_begin * tex.in_text }
+  ),
+  s(
     { trig = "bep", snippetType = "autosnippet" },
     fmta(
       [[
