@@ -394,6 +394,15 @@ return {
     t("\\item"),
   }, { condition = tex.in_item * line_begin }),
   s(
+    { trig = "\\item(%d)", regTrig = true, snippetType = "autosnippet" },
+    fmta([[\item<<<>->>]], {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+    }),
+    { condition = tex.in_item * line_begin }
+  ),
+  s(
     { trig = "bcr", snippetType = "autosnippet" },
     fmta(
       [[
