@@ -253,6 +253,8 @@ return {
   ),
   -- s({ trig = "rr", snippetType = "autosnippet" }, fmta("\\ran", {}), { condition = tex.in_mathzone }),
   s({ trig = "kk", snippetType = "autosnippet" }, fmta("\\operatorname{ker}", {}), { condition = tex.in_mathzone }),
+  s({ trig = "deg", snippetType = "autosnippet" }, fmta("\\operatorname{deg}", {}), { condition = tex.in_mathzone }),
+  s({ trig = "spp", snippetType = "autosnippet" }, fmta("\\operatorname{supp}", {}), { condition = tex.in_mathzone }),
   s({ trig = "imm", snippetType = "autosnippet" }, fmta("\\operatorname{im}", {}), { condition = tex.in_mathzone }),
   s({ trig = "tr", snippetType = "autosnippet" }, fmta("\\tr", {}), { condition = tex.in_mathzone }),
   s({ trig = "span", snippetType = "autosnippet" }, fmta("\\operatorname{span}", {}), { condition = tex.in_mathzone }),
@@ -392,11 +394,6 @@ return {
   s(
     { trig = "gcd", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("\\gcd", {}),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "deg", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\degree", {}),
     { condition = tex.in_mathzone }
   ),
   s({ trig = "pr", wordTrig = false, snippetType = "autosnippet" }, fmta("\\Pr", {}), { condition = tex.in_mathzone }),

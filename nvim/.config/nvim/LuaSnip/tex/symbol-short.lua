@@ -27,6 +27,9 @@ return {
   s({ trig = "c.", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\cdot"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "o.", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\odot"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "\\cdot.", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\cdots"),
   }, { condition = tex.in_mathzone }),
@@ -144,7 +147,7 @@ return {
   s({ trig = "sub", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\subset"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "sup", wordTrig = false, snippetType = "autosnippet" }, {
+  s({ trig = "\\supp", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\supset"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "oo", wordTrig = false, snippetType = "autosnippet" }, {

@@ -175,4 +175,30 @@ return {
     ),
     { condition = tex.in_text }
   ),
+  s(
+    { trig = "tc", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \textcolor{<>}{<>}
+      ]],
+      {
+        i(1, "red"),
+        i(2),
+      }
+    ),
+    { condition = tex.in_text }
+  ),
+  s(
+    { trig = "tc", snippetType = "autosnippet", priority = 2000 },
+    fmta(
+      [[
+      \textcolor{<>}{<>}
+      ]],
+      {
+        i(1, "red"),
+        d(2, get_visual),
+      }
+    ),
+    { condition = tex.in_text }
+  ),
 }

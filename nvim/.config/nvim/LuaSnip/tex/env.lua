@@ -121,6 +121,20 @@ return {
     { condition = line_begin * tex.in_text }
   ),
   s(
+    { trig = "bsl", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{proof}[Solution]
+        <>
+      \end{proof}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin * tex.in_text }
+  ),
+  s(
     { trig = "bep", snippetType = "autosnippet" },
     fmta(
       [[

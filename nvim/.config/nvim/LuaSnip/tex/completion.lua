@@ -174,15 +174,15 @@ return {
   --   { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
   --   fmta("\\sum\\limits_{<>}^{<>}", {
   --     i(1),
-  --     i(1),
+  --     i(2),
   --   }),
   --   { condition = tex.in_mathzone }
   -- ),
   s(
     { trig = "sum", snippetType = "autosnippet" },
     c(1, {
-      -- sn(nil, { t("\\sum_{"), i(1, "i=1"), t("} ") }),
-      sn(nil, { t("\\sum_{"), i(1, "n=1"), t("}^{"), i(2, "\\infty"), t("} ") }),
+      sn(nil, { t("\\sum_{"), i(1, "i=1"), t("} ") }),
+      -- sn(nil, { t("\\sum_{"), i(1, "n=1"), t("}^{"), i(2, "\\infty"), t("} ") }),
     }),
     { condition = tex.in_mathzone }
   ),

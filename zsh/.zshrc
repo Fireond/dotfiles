@@ -56,7 +56,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias lt='eza --icons=auto --tree' # list folder as tree
 
   alias un='$aurhelper -Rns' # uninstall package
-  alias up='$aurhelper -Syu;auto_commit_push.sh /home/fireond/.dotfiles' # update system/package/aur
+  alias up='$aurhelper -Syu' # update system/package/aur
   alias pf='$aurhelper -Qs' # list installed package
   alias ps='$aurhelper -Ss' # search available package
   alias pi='$aurhelper -S' # install package
