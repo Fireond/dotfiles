@@ -144,5 +144,3 @@ type starship_zle-keymap-select >/dev/null || \
     eval "$(starship init zsh)"
   }
 
-# Created by `pipx` on 2025-02-09 13:06:45
-export PATH="$PATH:/home/fireond/.local/bin"
