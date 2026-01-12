@@ -39,4 +39,4 @@ trap cleanup EXIT
 
 # 打开 kitty，并在其中运行 nvim 编辑临时 tex 文件
 # --class 方便你在 Hyprland 里写 windowrulev2
-kitty --class "$CLASS" --title "$TITLE" ~/.local/share/bin/auto_padding_nvim.sh "$FILE"
+kitty --class "$CLASS" --title "$TITLE" ~/.local/share/bin/auto_padding_nvim.sh "$FILE" --cmd 'set autowriteall' --cmd 'augroup LatexScratchAutoSave | autocmd! | autocmd InsertLeave,TextChanged,TextChangedI,FocusLost,CursorHold,CursorHoldI * silent! update | autocmd VimLeavePre * silent! update | augroup END'
