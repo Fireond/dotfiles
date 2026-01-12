@@ -24,9 +24,9 @@ cleanup() {
       KEEP=1
     fi
 
-    if command -v notify-send >/dev/null 2>&1; then
-      notify-send "LaTeX scratch copied" "Copied contents to clipboard."
-    fi
+    # if command -v notify-send >/dev/null 2>&1; then
+    #   notify-send "LaTeX scratch copied" "Copied contents to clipboard."
+    # fi
 
     if [[ "$KEEP" != "1" ]]; then
       rm -f -- "$FILE"
