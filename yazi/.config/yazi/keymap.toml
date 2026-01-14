@@ -29,7 +29,6 @@ prepend_keymap=[
 ''' },
 
   # plugins
-	{ on = [ "l" ], run = "plugin smart-enter" },
 	{ on = [ "s" ], run = "plugin fzf" },
   { on = [ "<C-y>" ], run = "plugin wl-clipboard" },
   { on = [ "M" ], run = "plugin mount" },
