@@ -1,4 +1,4 @@
--- require("full-border"):setup()
+require("full-border"):setup()
 require("starship"):setup()
 -- -- https://yazi-rs.github.io/docs/configuration/yazi
 function Linemode:size_and_mtime()

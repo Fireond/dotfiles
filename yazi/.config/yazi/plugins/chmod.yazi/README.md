@@ -7,7 +7,7 @@ https://github.com/yazi-rs/plugins/assets/17523360/7aa3abc2-d057-498c-8473-a6282
 ## Installation
 
 ```sh
-ya pack -a yazi-rs/plugins:chmod
+ya pkg add yazi-rs/plugins:chmod
 ```
 
 ## Usage
@@ -15,13 +15,13 @@ ya pack -a yazi-rs/plugins:chmod
 Add this to your `~/.config/yazi/keymap.toml`:
 
 ```toml
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "c", "m" ]
 run  = "plugin chmod"
 desc = "Chmod on selected files"
 ```
 
-Make sure the <kbd>c</kbd> => <kbd>m</kbd> key is not used elsewhere.
+Note that, the keybindings above are just examples, please tune them up as needed to ensure they don't conflict with your other commands/plugins.
 
 ## License
 

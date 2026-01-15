@@ -6,13 +6,13 @@ Starship prompt plugin for [Yazi](https://github.com/sxyazi/yazi)
 
 ## Requirements
 
-- [Yazi](https://github.com/sxyazi/yazi)
+- [Yazi](https://github.com/sxyazi/yazi) (v25.4.8+)
 - [starship](https://github.com/starship/starship)
 
 ## Installation
 
 ```bash
-ya pack -a Rolv-Apneseth/starship
+ya pkg add Rolv-Apneseth/starship
 ```
 
 ### Manual
@@ -32,14 +32,31 @@ Add this to `~/.config/yazi/init.lua`:
 require("starship"):setup()
 ```
 
-If you wish to define a custom config file for `starship` to use, you can pass in a path
-to the setup function like this:
+Make sure you have [starship](https://github.com/starship/starship) installed and in your `PATH`.
+
+## Config
+
+Here is an example with all available config options:
 
 ```lua
-starship:setup({ config_file = "/home/rolv/.config/starship_secondary.toml" })
+require("starship"):setup({
+    -- Hide flags (such as filter, find and search). This can be beneficial for starship themes
+    -- which are intended to go across the entire width of the terminal.
+    hide_flags = false,
+    -- Whether to place flags after the starship prompt. False means the flags will be placed before the prompt.
+    flags_after_prompt = true,
+    -- Custom starship configuration file to use
+    config_file = "~/.config/starship_full.toml", -- Default: nil
+    -- Whether to enable support for starship's right prompt (i.e. `starship prompt --right`).
+    show_right_prompt = false,
+    -- Whether to hide the count widget, in case you want only your right prompt to show up. Only has
+    -- an effect when `show_right_prompt = true`
+    hide_count = false,
+    -- Separator to place between the right prompt and the count widget. Use `count_separator = ""`
+    -- to have no space between the widgets.
+    count_separator = " ",
+})
 ```
-
-Make sure you have [starship](https://github.com/starship/starship) installed and in your `PATH`.
 
 ## Extra
 
@@ -69,14 +86,13 @@ Tab.build = function(self, ...)
 
     local c = self._chunks
     self._chunks = {
-        c[1]:padding(ui.Padding.y(1)),
-        c[2]:padding(ui.Padding(c[1].w > 0 and 0 or 1, c[3].w > 0 and 0 or 1, 1, 1)),
-        c[3]:padding(ui.Padding.y(1)),
+        c[1]:pad(ui.Pad.y(1)),
+        c[2]:pad(ui.Pad(1, c[3].w > 0 and 0 or 1, 1, c[1].w > 0 and 0 or 1)),
+        c[3]:pad(ui.Pad.y(1)),
     }
 
-    local style = THEME.manager.border_style
+    local style = th.mgr.border_style
     self._base = ya.list_merge(self._base or {}, {
-        ui.Border(ui.Border.ALL):area(self._area):type(ui.Border.ROUNDED):style(style),
         ui.Bar(ui.Bar.RIGHT):area(self._chunks[1]):style(style),
         ui.Bar(ui.Bar.LEFT):area(self._chunks[1]):style(style),
 

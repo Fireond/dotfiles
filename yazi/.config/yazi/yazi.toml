@@ -55,3 +55,8 @@ prepend_rules = [
   { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = "wps" },
   { mime = "image/*", use = ["open", "qimgv", "reveal"] },
 ]
+
+[plugin]
+prepend_previewers = [
+  { name = "*.ipynb", run = "nbpreview" },
+]

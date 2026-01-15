@@ -20,8 +20,9 @@ prepend_keymap=[
 	shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm
 ''' },
 
-  { on = [ "T" ], run = "plugin max-preview" },
+  { on = [ "T" ], run = "plugin toggle-pane max-preview" },
   { on = [ "C" ], run = "plugin ouch 7z", desc = "Compression with ouch" },
+  { on = [ "l" ], run = "plugin smart-enter" },
 
   { on = "o", run = "open --interactive" },
   { on = "O", run = '''
