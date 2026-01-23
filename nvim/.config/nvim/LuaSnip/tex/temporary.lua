@@ -22,15 +22,14 @@ end
 
 return {
   -- s({ trig = "sp", snippetType = "autosnippet" }, fmta("\\hat{\\$}", {}), { condition = tex.in_mathzone }),
-  -- s({ trig = "T", snippetType = "autosnippet" }, fmta("\\mathcal{T}", {}), { condition = tex.in_mathzone }),
-  -- s({ trig = "tv", snippetType = "autosnippet" }, fmta("\\mathrm{TV}", {}), { condition = tex.in_mathzone }),
-  -- s({ trig = "ce", snippetType = "autosnippet" }, fmta("\\mathrm{couple}", {}), { condition = tex.in_mathzone }),
-  -- s({ trig = "mix", snippetType = "autosnippet" }, fmta("\\mathrm{mix}", {}), { condition = tex.in_mathzone }),
   -- s({ trig = "ss", snippetType = "autosnippet", priority = 4000 }, {
   --   t("\\ss"),
   -- }, { condition = tex.in_mathzone }),
   s({ trig = "PP", snippetType = "autosnippet", priority = 3000 }, {
     t("\\mathcal{P}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "FG", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\mathbb{F}_2[G]"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "SS", snippetType = "autosnippet", priority = 3000 }, {
     t("\\mathcal{S}"),
@@ -48,7 +47,7 @@ return {
     t("\\psi_i"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "FF", snippetType = "autosnippet", priority = 3000 }, {
-    t("\\mathscr{F}"),
+    t("\\mathbb{F}_2"),
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "pt", snippetType = "autosnippet" },
