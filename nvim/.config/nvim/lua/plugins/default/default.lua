@@ -69,6 +69,23 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
-    opts = function(_, opts) end,
+    opts = function(_, opts)
+      local ok, kernel = pcall(require, "ipynb.kernel")
+      if not ok then
+        return opts
+      end
+
+      opts.sections = opts.sections or {}
+      opts.sections.lualine_x = opts.sections.lualine_x or {}
+
+      -- 插到 lualine_x 最前面（想放最后就用 table.insert(opts.sections.lualine_x, { ... })）
+      table.insert(opts.sections.lualine_x, 1, {
+        kernel.statusline,
+        cond = kernel.statusline_visible,
+        color = kernel.statusline_color,
+      })
+
+      return opts
+    end,
   },
 }
