@@ -67,6 +67,8 @@ return {
       }
     end,
   },
-  -- { "mason-org/mason.nvim", version = "^1.0.0" },
-  -- { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts) end,
+  },
 }
