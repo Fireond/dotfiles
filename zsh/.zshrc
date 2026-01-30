@@ -126,15 +126,7 @@ alias spdf="fd --type f --extension pdf . ~ | fzf | xargs -r -I {} sh -c 'nohup 
 alias cal='source ~/pyenv/calculator/bin/activate'
 alias qq='source ~/pyenv/qldpc/bin/activate'
 alias base='source ~/pyenv/base/bin/activate'
-
-# alias todo1='habitipy todos add -p 0.1'
-# alias todo2='habitipy todos add -p 1'
-# alias todo3='habitipy todos add -p 1.5'
-# alias todo4='habitipy todos add -p 2'
-
-
-# conda alias
-# alias ca='conda activate calculator'
+alias zsz='conda activate zsz'
 
 eval "$(zoxide init zsh)"
 # Check that the function `starship_zle-keymap-select()` is defined.
