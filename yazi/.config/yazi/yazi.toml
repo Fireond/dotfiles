@@ -40,7 +40,7 @@ wps = [
         # 进到文件所在目录，用相对路径调用 wps（规避绝对路径 bug）
         ( cd "$d" && exec env XMODIFIERS="@im=fcitx" QT_IM_MODULE="fcitx5" /usr/bin/wps "./$b" ) &
       done
-    ' _ $@""", desc = "WPS (debug foreground)", orphan = false, block  = true, for    = "unix" }
+    ' _ $@""", desc = "WPS (debug foreground)", orphan = false, block  = true, for = "unix" }
 ]
 
 [open]
