@@ -31,6 +31,9 @@ return {
   s({ trig = "FG", snippetType = "autosnippet", priority = 3000 }, {
     t("\\mathbb{F}_2[G]"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "stab", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\text{Stab}_L(a)"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "SS", snippetType = "autosnippet", priority = 3000 }, {
     t("\\mathcal{S}"),
   }, { condition = tex.in_mathzone }),
