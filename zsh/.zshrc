@@ -46,7 +46,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias cwez='nvim ~/.config/wezterm/wezterm.lua'
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   if [ -z "$WAYLAND_DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-    exec Hyprland
+    exec start-hyprland 
   fi
   alias op='xdg-open'
   alias l='eza -lh --icons=auto' # long list
