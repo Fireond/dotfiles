@@ -48,5 +48,7 @@ use = "orhnk/system-clipboard"
 rev = "888026c"
 hash = "9f82a544335a53d79e87ea315746caaa"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-macchiato"
+rev = "9e053d0"
+hash = "2f60298d6c26b6d388c8091a9389fa8f"
