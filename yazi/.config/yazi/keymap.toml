@@ -16,6 +16,7 @@ prepend_keymap=[
 	{ on = [ "g", "S" ], run = "cd ~/Documents/sync-server/" },
 	{ on = [ "g", "T" ], run = "cd /home/fireond/.local/share/Trash/" },
 	{ on = [ "g", "C" ], run = "cd ~/Documents/Codes/" },
+	{ on = [ "g", "z" ], run = "cd ~/Documents/sync-server/zotero-files/" },
 	{ on = [ "g", "r" ], run = '''
 	shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm
 ''' },
