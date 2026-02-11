@@ -78,6 +78,8 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias hyprcli='hyprctl clients'
   alias hyprmon='hyprctl monitors'
 
+  alias mindustry='env SDL_VIDEODRIVER=x11 java -jar ~/Desktop/Mindustry-155_1.jar'
+
   alias ssh_server_reverse='ssh -fNR 1080:localhost:7897 deng'
 fi
 
