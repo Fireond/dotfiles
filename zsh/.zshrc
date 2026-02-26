@@ -79,6 +79,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias hyprmon='hyprctl monitors'
 
   alias mindustry='env SDL_VIDEODRIVER=x11 java -jar ~/Desktop/Mindustry-155_1.jar'
+  alias thussl='sudo openconnect --protocol=pulse https://sslvpn.tsinghua.edu.cn --useragent Pulse-Secure/9.1.11.6725 --user=2022010860 --passwd-on-stdin < ~/Documents/texts/thussl-pass.txt'
 
   alias ssh_server_reverse='ssh -fNR 1080:localhost:7897 deng'
 fi
