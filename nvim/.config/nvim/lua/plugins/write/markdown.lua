@@ -44,6 +44,9 @@ return {
       vim.g.mkdp_browser = "firefox"
     end,
     ft = { "markdown" },
+    keys = {
+      { "<leader>np", "<cmd>MarkdownPreviewToggle<cr>", desc = "MarkdownPreviewToggle" },
+    },
   },
 
   -- {
