@@ -106,22 +106,39 @@ return {
     ),
     { condition = line_begin * tex.in_text }
   ),
-  s(
-    { trig = "beq", snippetType = "autosnippet" },
+  s({ trig = "beq", snippetType = "autosnippet" }, {
     c(1, {
-      sn(nil, {
-        t("\\begin{equation}\n"),
-        i(0),
-        t("\n\\end{equation}"),
-      }),
-      sn(nil, {
-        t("\\begin{equaation}\n"),
-        i(0),
-        t("\n\\end{equation}"),
-      }),
+      sn(
+        nil,
+        fmta(
+          [[
+\begin{equation}
+<>
+\end{equation}
+      ]],
+          {
+            r(1, "eqbody", i(1)),
+          }
+        )
+      ),
+      sn(
+        nil,
+        fmta(
+          [[
+\begin{equation*}
+<>
+\end{equation*}
+      ]],
+          {
+            r(1, "eqbody", i(1)),
+          }
+        )
+      ),
+    }, {
+      restore_cursor = true,
     }),
-    { condition = line_begin * tex.in_text }
-  ),
+    i(0),
+  }),
   s(
     { trig = "bff", snippetType = "autosnippet" },
     fmta(
