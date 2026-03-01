@@ -107,6 +107,22 @@ return {
     { condition = line_begin * tex.in_text }
   ),
   s(
+    { trig = "beq", snippetType = "autosnippet" },
+    c(1, {
+      sn(nil, {
+        t("\\begin{equation}\n"),
+        i(0),
+        t("\n\\end{equation}"),
+      }),
+      sn(nil, {
+        t("\\begin{equaation}\n"),
+        i(0),
+        t("\n\\end{equation}"),
+      }),
+    }),
+    { condition = line_begin * tex.in_text }
+  ),
+  s(
     { trig = "bff", snippetType = "autosnippet" },
     fmta(
       [[
