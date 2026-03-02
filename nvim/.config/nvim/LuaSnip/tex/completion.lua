@@ -187,6 +187,13 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "bop", snippetType = "autosnippet", priority = 2000 },
+    c(1, {
+      sn(nil, { t("\\bigoplus_{"), i(1), t("}^{"), i(2), t("} ") }),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "pd", snippetType = "autosnippet" },
     c(1, {
       sn(nil, { t("\\prod_{"), i(1), t("} ") }),
