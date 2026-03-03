@@ -3,7 +3,7 @@ local s = ls.snippet
 local t = ls.text_node
 local tex = require("util.latex")
 
-return {
+return {}, {
   s({ trig = "alp", snippetType = "autosnippet", wordTrig = false }, {
     t("\\alpha"),
   }, { condition = tex.in_mathzone }),
