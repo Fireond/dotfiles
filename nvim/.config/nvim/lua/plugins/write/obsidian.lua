@@ -20,23 +20,30 @@ return {
       -- note_id_func = function(title)
       --   return title
       -- end,
-      -- note_id_func = function(title)
-      --   local suffix = ""
-      --   if title ~= nil then
-      --     suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-      --   else
-      --     for _ = 1, 4 do
-      --       suffix = suffix .. string.char(math.random(65, 90))
-      --     end
-      --   end
-      --   return tostring(os.time()) .. "-" .. suffix
-      -- end,
+      note_id_func = function(title)
+        local suffix = ""
+        if title ~= nil then
+          suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+        else
+          for _ = 1, 4 do
+            suffix = suffix .. string.char(math.random(65, 90))
+          end
+        end
+        return suffix
+      end,
       -- wiki_link_func = "prepend_note_path",
       templates = {
         folder = "templates",
         date_format = "%Y-%m-%d",
         time_format = "%H:%M",
-        -- A map for custom variables, the key should be the variable and the value a function
+        customizations = {
+          math = {
+            notes_subdir = "02-math/",
+          },
+          quantum = {
+            notes_subdir = "03-quantum/",
+          },
+        },
         substitutions = {
           -- yesterday = function()
           --   return os.date("%Y-%m-%d", os.time() - 86400)
@@ -78,9 +85,9 @@ return {
       },
     },
     keys = {
-      { "<leader>no", "<cmd>ObsidianOpen<cr>", desc = "Open Obsidian" },
-      { "<leader>nt", "<cmd>ObsidianTags<cr>", desc = "Open Obsidian tags" },
-      { "<leader>nd", "<cmd>ObsidianDailies<cr>", desc = "Open Obsidian dailies" },
+      { "<leader>no", "<cmd>Obsidian open<cr>", desc = "Open Obsidian" },
+      { "<leader>nt", "<cmd>Obsidian tags<cr>", desc = "Open Obsidian tags" },
+      { "<leader>nd", "<cmd>Obsidian dailies<cr>", desc = "Open Obsidian dailies" },
     },
   },
   {
