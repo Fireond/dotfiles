@@ -22,9 +22,6 @@ end
 
 return {
   -- s({ trig = "sp", snippetType = "autosnippet" }, fmta("\\hat{\\$}", {}), { condition = tex.in_mathzone }),
-  -- s({ trig = "ss", snippetType = "autosnippet", priority = 4000 }, {
-  --   t("\\ss"),
-  -- }, { condition = tex.in_mathzone }),
   s({ trig = "PP", snippetType = "autosnippet", priority = 3000 }, {
     t("\\mathcal{P}"),
   }, { condition = tex.in_mathzone }),
@@ -68,14 +65,6 @@ return {
   ),
   s({ trig = "ang", snippetType = "autosnippet" }, fmta("\\angle ", {}), { condition = tex.in_mathzone }),
   s(
-    { trig = "BB", snippetType = "autosnippet" },
-    fmta("\\mathring{B}_{<>}(<>)", {
-      i(1, "\\varepsilon"),
-      i(2),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
     { trig = "EE", snippetType = "autosnippet" },
     fmta("\\E_{\\sigma} \\ab[ <> ]", {
       i(1),
@@ -91,23 +80,11 @@ return {
   s({ trig = "--", snippetType = "autosnippet", priority = 2000 }, {
     t("^-"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "\\oplust", snippetType = "autosnippet", priority = 2000 }, {
-    t("\\OPT"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "++", snippetType = "autosnippet" }, {
     t("^+"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "ed", snippetType = "autosnippet" }, {
-    t("\\ed"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "lr", snippetType = "autosnippet" }, {
     t("\\leftrightarrow"),
-  }, { condition = tex.in_mathzone }),
-  s({ trig = "sa", snippetType = "autosnippet" }, {
-    t("s_A"),
-  }, { condition = tex.in_mathzone }),
-  s({ trig = "sb", snippetType = "autosnippet" }, {
-    t("s_B"),
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "(%a);", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -127,4 +104,20 @@ return {
   s({ trig = "IS", snippetType = "autosnippet", priority = 3000 }, {
     t("\\mathcal{IS}"),
   }, { condition = tex.in_mathzone }),
+  s(
+    { trig = "chn", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \cdots \to <>_{n+1} \xrightarrow{<>} <>_{n} \xrightarrow{<>} <>_{n-1} \to \cdots
+      ]],
+      {
+        i(1),
+        i(2),
+        rep(1),
+        rep(2),
+        rep(1),
+      }
+    ),
+    { condition = tex.in_mathzone }
+  ),
 }

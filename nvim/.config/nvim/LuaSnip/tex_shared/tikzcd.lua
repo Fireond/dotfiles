@@ -21,6 +21,20 @@ end
 
 return {
   s(
+    { trig = "bcd", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{tikzcd}
+      <>
+      \end{tikzcd}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin * tex.in_text }
+  ),
+  s(
     { trig = "arr", snippetType = "autosnippet" },
     fmta(
       [[
@@ -31,6 +45,23 @@ return {
         i(2),
       }
     ),
-    { condition = tex.in_mathzone }
+    { condition = tex.in_env("tikzcd") }
+  ),
+  s(
+    { trig = "chn", snippetType = "autosnippet", priority = 2000 },
+    fmta(
+      [[
+      \cdots \arrow[r] <>_{n+1} \arrow[r, "<>"] & <>_{n} \arrow[r, "<>"] & <>_{n-1} \arrow[d, "<>"] \\
+      ]],
+      {
+        i(1),
+        i(2),
+        rep(1),
+        rep(2),
+        rep(1),
+        rep(2),
+      }
+    ),
+    { condition = tex.in_env("tikzcd") }
   ),
 }
