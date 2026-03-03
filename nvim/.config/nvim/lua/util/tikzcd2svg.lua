@@ -197,10 +197,9 @@ function M.convert_visual()
   end
 
   local ok2, err2 = run({
-    "dvisvgm",
-    "--pdf",
-    "--output=" .. rel_svg,
+    "pdf2svg",
     pdffile,
+    rel_svg,
   }, file_dir)
 
   vim.fn.delete(tmpdir, "rf")
@@ -216,7 +215,7 @@ function M.convert_visual()
     indent = first_line:match("^%s*") or ""
   end
 
-  local markdown = indent .. "![" .. escape_md_alt(title) .. "](" .. rel_svg .. ")"
+  local markdown = indent .. '<img src="' .. rel_svg .. '">'
 
   -- vim.api.nvim_buf_set_text(bufnr, region.srow, region.scol, region.erow, region.ecol, { markdown })
   vim.api.nvim_buf_set_lines(bufnr, region.erow + 1, region.erow + 1, false, { "", markdown })
@@ -224,20 +223,18 @@ function M.convert_visual()
   notify("已生成 " .. rel_svg)
 end
 
-function M.setup(opts)
-  M.config = vim.tbl_deep_extend("force", M.config, opts or {})
-
-  vim.api.nvim_create_user_command("TikzcdToSvg", function()
-    require("tikzcd_svg").convert_visual()
-  end, {
-    desc = "Convert selected tikzcd to local SVG and replace with Markdown image",
-    range = true,
-  })
-
-  vim.keymap.set("x", "<leader>tg", [[:<C-u>TikzcdToSvg<CR>]], {
-    silent = true,
-    desc = "tikzcd -> svg",
-  })
-end
+-- function M.setup(opts)
+--   vim.api.nvim_create_user_command("TikzcdToSvg", function()
+--     require("util.tikz2svg").convert_visual()
+--   end, {
+--     desc = "Convert selected tikzcd to local SVG and replace with Markdown image",
+--     range = true,
+--   })
+--
+--   vim.keymap.set("x", "<leader>ng", [[:<C-u>TikzcdToSvg<CR>]], {
+--     silent = true,
+--     desc = "tikzcd -> svg",
+--   })
+-- end
 
 return M
