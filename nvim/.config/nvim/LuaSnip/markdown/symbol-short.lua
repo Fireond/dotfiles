@@ -93,6 +93,13 @@ return {
   s({ trig = "to", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\to"),
   }, { condition = tex.in_mathzone_md }),
+  s(
+    { trig = "->", snippetType = "autosnippet" },
+    fmta("\\xrightarrow{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone_md }
+  ),
   s({ trig = "mto", wordTrig = false, snippetType = "autosnippet", priority = 1001 }, {
     t("\\mapsto"),
   }, { condition = tex.in_mathzone_md }),

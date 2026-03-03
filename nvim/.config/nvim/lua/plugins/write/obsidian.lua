@@ -17,9 +17,6 @@ return {
       },
       completion = { min_chars = 0 },
       new_notes_location = "current_dir",
-      -- note_id_func = function(title)
-      --   return title
-      -- end,
       note_id_func = function(title)
         local suffix = ""
         if title ~= nil then
@@ -59,30 +56,32 @@ return {
         },
       },
 
-      follow_url_func = function(url)
-        vim.ui.open(url) -- need Neovim 0.10.0+
-      end,
-
-      attachments = { img_folder = "assets/imgs" },
-
-      note_frontmatter_func = function(note)
-        -- Add the title of the note as an alias.
-        if note.title then
-          note:add_alias(note.title)
-        end
-        local out = { id = note.id, aliases = note.aliases, tags = note.tags, sources = {} }
-        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-          for k, v in pairs(note.metadata) do
-            out[k] = v
-          end
-        end
-
-        return out
-      end,
-
-      ui = {
-        enable = false,
+      attachments = {
+        folder = "./assets",
+        img_text_func = function(path)
+          local name = vim.fs.basename(tostring(path))
+          local encoded_name = require("obsidian.util").urlencode(name)
+          return string.format("![%s](%s)", name, "./assets/" .. encoded_name)
+        end,
       },
+
+      frontmatter = {
+        func = function(note)
+          -- Add the title of the note as an alias.
+          if note.title then
+            note:add_alias(note.title)
+          end
+          local out = { id = note.id, aliases = note.aliases, tags = note.tags, sources = {} }
+          if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+            for k, v in pairs(note.metadata) do
+              out[k] = v
+            end
+          end
+          return out
+        end,
+      },
+
+      ui = {},
     },
     keys = {
       { "<leader>no", "<cmd>Obsidian open<cr>", desc = "Open Obsidian" },

@@ -93,7 +93,7 @@ return {
         --     return api.resolve_attachment_path(src)
         --   end
         -- end,
-        enabled = true,
+        enabled = false,
         doc = {
           inline = true,
           conceal = false,
