@@ -10,7 +10,7 @@ return {
       end
       opts.inlay_hints = {
         enabled = true,
-        exclude = { "vue", "tex" }, -- filetypes for which you don't want to enable inlay hints
+        exclude = { "vue", "tex", "lua" }, -- filetypes for which you don't want to enable inlay hints
       }
       opts.servers = {
         texlab = {

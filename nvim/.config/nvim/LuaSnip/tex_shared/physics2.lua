@@ -21,20 +21,6 @@ local get_visual = function(args, parent)
 end
 
 return {
-  -- s(
-  --   { trig = "bra", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-  --   fmta("\\bra{<>}", {
-  --     i(1),
-  --   }),
-  --   { condition = tex.in_mathzone }
-  -- ),
-  -- s(
-  --   { trig = "ket", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-  --   fmta("\\ket{<>}", {
-  --     i(1),
-  --   }),
-  --   { condition = tex.in_mathzone }
-  -- ),
   s(
     { trig = "bra", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\langle <>|", {
@@ -65,14 +51,6 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  -- s(
-  --   { trig = "bk", snippetType = "autosnippet" },
-  --   c(1, {
-  --     sn(nil, { t("\\braket{"), i(1), t("}{"), i(2), t("}") }),
-  --     sn(nil, { t("\\braket[3]{"), i(1), t("}{"), i(2), t("}{"), i(3), t("}") }),
-  --   }),
-  --   { condition = tex.in_mathzone }
-  -- ),
   s(
     { trig = "ev", snippetType = "autosnippet" },
     fmta("\\braket[1]{<>}", {
@@ -80,14 +58,6 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  -- s(
-  --   { trig = "kb", snippetType = "autosnippet" },
-  --   c(1, {
-  --     sn(nil, { t("\\ketbra{"), i(1), t("}{"), i(2), t("}") }),
-  --     sn(nil, { t("\\ketbra{"), i(1), t("}["), i(2), t("]{"), i(3), t("}") }),
-  --   }),
-  --   { condition = tex.in_mathzone }
-  -- ),
   s(
     { trig = "pab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\left( <> \\right)", {
@@ -114,23 +84,15 @@ return {
   ),
   s(
     { trig = "\\forallb", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
-    c(
-      1,
-      { sn(nil, { t("\\langle "), i(1), t("\\rangle") }), sn(nil, { t("\\left\\langle "), i(1), t("\\right\\rangle") }) }
-    ),
+    c(1, {
+      sn(nil, { t("\\langle "), i(1), t("\\rangle") }),
+      sn(nil, { t("\\left\\langle "), i(1), t("\\right\\rangle") }),
+    }),
     { condition = tex.in_mathzone }
   ),
-  -- s(
-  --   { trig = "vab", wordTrig = false, snippetType = "autosnippet" },
-  --   c(1, { sn(nil, { t("\\ab|"), i(1), t("|") }), sn(nil, { t("\\ab*|"), i(1), t("|") }) }),
-  --   { condition = tex.in_mathzone }
-  -- ),
   s(
     { trig = "Vab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     c(1, { sn(nil, { t("\\|"), i(1), t("\\|") }), sn(nil, { t("\\left\\|"), i(1), t("\\right\\|") }) }),
     { condition = tex.in_mathzone }
   ),
-  s({ trig = "\\tof", snippetType = "autosnippet" }, {
-    t("\\Tof"),
-  }, { condition = tex.in_mathzone }),
 }

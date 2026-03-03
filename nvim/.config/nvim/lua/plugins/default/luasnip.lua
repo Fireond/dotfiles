@@ -2,10 +2,19 @@ return {
   {
     "L3MON4D3/LuaSnip",
     config = function()
-      require("luasnip").config.set_config({
+      local ls = require("luasnip")
+      ls.config.set_config({
         enable_autosnippets = true,
         store_selection_keys = "`",
       })
+      ls.setup({
+        load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
+          tex = { "tex_shared" },
+          markdown = { "tex_shared" },
+        }),
+      })
+      require("luasnip").filetype_extend("tex", { "tex_shared" })
+      require("luasnip").filetype_extend("markdown", { "tex_shared" })
       require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip" })
       local auto_expand = require("luasnip").expand_auto
       require("luasnip").expand_auto = function(...)
