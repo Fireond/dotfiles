@@ -2,13 +2,10 @@ return {
   {
     "obsidian-nvim/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
-    -- enabled = false,
     lazy = true,
     ft = "markdown",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
     opts = {
+      legacy_commands = false,
       workspaces = {
         { name = "Root", path = vim.fn.expand("~/Documents/sync-server/Obsidian-Vault") },
       },
@@ -23,18 +20,18 @@ return {
       -- note_id_func = function(title)
       --   return title
       -- end,
-      note_id_func = function(title)
-        local suffix = ""
-        if title ~= nil then
-          suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-        else
-          for _ = 1, 4 do
-            suffix = suffix .. string.char(math.random(65, 90))
-          end
-        end
-        return tostring(os.time()) .. "-" .. suffix
-      end,
-      wiki_link_func = "prepend_note_path",
+      -- note_id_func = function(title)
+      --   local suffix = ""
+      --   if title ~= nil then
+      --     suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+      --   else
+      --     for _ = 1, 4 do
+      --       suffix = suffix .. string.char(math.random(65, 90))
+      --     end
+      --   end
+      --   return tostring(os.time()) .. "-" .. suffix
+      -- end,
+      -- wiki_link_func = "prepend_note_path",
       templates = {
         folder = "templates",
         date_format = "%Y-%m-%d",
@@ -86,32 +83,6 @@ return {
       { "<leader>nd", "<cmd>ObsidianDailies<cr>", desc = "Open Obsidian dailies" },
     },
   },
-  -- {
-  --   "saghen/blink.cmp",
-  --   dependencies = {
-  --     { "saghen/blink.compat", lazy = true, version = false },
-  --   },
-  --   opts = {
-  --     sources = {
-  --       compat = { "obsidian", "obsidian_new", "obsidian_tags" },
-  --       providers = {
-  --         obsidian = {
-  --           kind = "Obsidian",
-  --           score_offset = 30,
-  --         },
-  --         obsidian_new = {
-  --           kind = "Obsidian",
-  --           async = true,
-  --         },
-  --         obsidian_tags = {
-  --           kind = "Obsidian",
-  --           score_offset = 30,
-  --           async = true,
-  --         },
-  --       },
-  --     },
-  --   },
-  -- },
   {
     "oflisback/obsidian-bridge.nvim",
     enabled = false,
