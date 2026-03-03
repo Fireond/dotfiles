@@ -200,16 +200,12 @@ end
 
 map("x", "<leader>e", ":<C-U>lua _G.toggle_callout()<CR><esc>", { desc = "Toggle Callout" })
 
-vim.api.nvim_create_user_command("TikzcdToSvg", function()
+vim.keymap.set("x", "<leader>ng", function()
   require("util.tikzcd2svg").convert_visual()
-end, {
-  desc = "Convert selected tikzcd to local SVG and replace with Markdown image",
-  range = true,
-})
-vim.keymap.set("x", "<leader>ng", [[:<C-u>TikzcdToSvg<CR>]], {
-  silent = true,
-  desc = "tikzcd -> svg",
-})
+end, { silent = true, desc = "tikzcd -> svg" })
+vim.keymap.set("n", "<leader>ng", function()
+  require("util.tikzcd2svg").convert_clipboard()
+end, { silent = true, desc = "tikzcd clipboard -> svg" })
 
 -- Disable default keymaps
 local del = vim.keymap.del

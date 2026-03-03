@@ -5,6 +5,7 @@ M.config = {
   default_title_prefix = "tikzcd",
   tex_engine = "pdflatex",
   extra_preamble = "",
+  img_width = "300",
 }
 
 local function notify(msg, level)
@@ -54,10 +55,6 @@ local function unique_filename(dir, stem, ext)
   end
 
   return name, path
-end
-
-local function escape_md_alt(s)
-  return s:gsub("%[", "\\["):gsub("%]", "\\]")
 end
 
 local function run(cmd, cwd)
@@ -130,8 +127,8 @@ function M.convert_visual()
     return
   end
 
-  if vim.fn.executable("dvisvgm") ~= 1 then
-    notify("找不到 dvisvgm", vim.log.levels.ERROR)
+  if vim.fn.executable("pdf2svg") ~= 1 then
+    notify("找不到 pdf2svg", vim.log.levels.ERROR)
     return
   end
 
@@ -215,26 +212,136 @@ function M.convert_visual()
     indent = first_line:match("^%s*") or ""
   end
 
-  local markdown = indent .. '<img src="' .. rel_svg .. '">'
+  local block = {
+    indent .. '<p align="center">',
+    indent .. '  <img src="' .. rel_svg .. '" width="' .. M.config.img_width .. '" />',
+    indent .. "</p>",
+  }
 
-  -- vim.api.nvim_buf_set_text(bufnr, region.srow, region.scol, region.erow, region.ecol, { markdown })
-  vim.api.nvim_buf_set_lines(bufnr, region.erow + 1, region.erow + 1, false, { "", markdown })
+  vim.api.nvim_buf_set_lines(bufnr, region.erow + 1, region.erow + 1, false, vim.list_extend({ "" }, block))
 
   notify("已生成 " .. rel_svg)
 end
 
--- function M.setup(opts)
---   vim.api.nvim_create_user_command("TikzcdToSvg", function()
---     require("util.tikz2svg").convert_visual()
---   end, {
---     desc = "Convert selected tikzcd to local SVG and replace with Markdown image",
---     range = true,
---   })
---
---   vim.keymap.set("x", "<leader>ng", [[:<C-u>TikzcdToSvg<CR>]], {
---     silent = true,
---     desc = "tikzcd -> svg",
---   })
--- end
+function M.convert_clipboard()
+  local bufnr = 0
+  local bufname = vim.api.nvim_buf_get_name(bufnr)
+
+  if bufname == "" then
+    notify("请先保存当前 Markdown 文件，再生成相对路径 ./assets", vim.log.levels.ERROR)
+    return
+  end
+
+  if vim.fn.executable(M.config.tex_engine) ~= 1 then
+    notify("找不到 " .. M.config.tex_engine, vim.log.levels.ERROR)
+    return
+  end
+
+  if vim.fn.executable("pdf2svg") ~= 1 then
+    notify("找不到 pdf2svg", vim.log.levels.ERROR)
+    return
+  end
+
+  local raw = vim.fn.getreg("+")
+  if raw == nil or trim(raw) == "" then
+    raw = vim.fn.getreg('"')
+  end
+  if raw == nil or trim(raw) == "" then
+    notify("剪贴板为空", vim.log.levels.ERROR)
+    return
+  end
+
+  local tikz = strip_display_math_wrappers(raw)
+
+  if not tikz:match("\\begin%s*{tikzcd}") then
+    notify("剪贴板内容里没有检测到 \\begin{tikzcd} ... \\end{tikzcd}", vim.log.levels.ERROR)
+    return
+  end
+
+  local default_title = M.config.default_title_prefix .. "-" .. os.date("%Y%m%d-%H%M%S")
+  local title = vim.fn.input("Image title: ", default_title)
+  if title == nil or title == "" then
+    title = default_title
+  end
+
+  local stem = slugify(title)
+
+  local file_dir = vim.fn.fnamemodify(bufname, ":p:h")
+  local assets_dir = file_dir .. "/" .. M.config.assets_dir
+  vim.fn.mkdir(assets_dir, "p")
+
+  local filename, target_svg = unique_filename(assets_dir, stem, ".svg")
+  local rel_svg = "./" .. M.config.assets_dir .. "/" .. filename
+
+  local tmpdir = vim.fn.tempname()
+  vim.fn.mkdir(tmpdir, "p")
+
+  local texfile = tmpdir .. "/diagram.tex"
+  local pdffile = tmpdir .. "/diagram.pdf"
+
+  local tex_source = table.concat({
+    "\\documentclass[tikz,border=2pt]{standalone}",
+    "\\usepackage{tikz-cd}",
+    "\\usepackage{amsmath,amssymb}",
+    M.config.extra_preamble,
+    "\\begin{document}",
+    tikz,
+    "\\end{document}",
+    "",
+  }, "\n")
+
+  vim.fn.writefile(vim.split(tex_source, "\n", { plain = true }), texfile)
+
+  local ok1, err1 = run({
+    M.config.tex_engine,
+    "-interaction=nonstopmode",
+    "-halt-on-error",
+    "diagram.tex",
+  }, tmpdir)
+
+  if not ok1 then
+    vim.fn.delete(tmpdir, "rf")
+    notify("LaTeX 编译失败：\n" .. err1, vim.log.levels.ERROR)
+    return
+  end
+
+  local ok2, err2 = run({
+    "pdf2svg",
+    pdffile,
+    rel_svg,
+  }, file_dir)
+
+  vim.fn.delete(tmpdir, "rf")
+
+  if not ok2 then
+    notify("SVG 转换失败：\n" .. err2, vim.log.levels.ERROR)
+    return
+  end
+
+  local block = {
+    '<p align="center">',
+    '  <img src="' .. rel_svg .. '" width="' .. M.config.img_width .. '" />',
+    "</p>",
+  }
+
+  local row = vim.api.nvim_win_get_cursor(0)[1] -- 1-based
+  local insert_at = row -- set_lines 用 0-based，插到当前行下面就是 row
+
+  local next_line = vim.api.nvim_buf_get_lines(bufnr, insert_at, insert_at + 1, false)[1]
+
+  if next_line == nil then
+    local lines = { "" }
+    vim.list_extend(lines, block)
+    vim.api.nvim_buf_set_lines(bufnr, insert_at, insert_at, false, lines)
+  elseif trim(next_line) == "" then
+    vim.api.nvim_buf_set_lines(bufnr, insert_at + 1, insert_at + 1, false, block)
+  else
+    local lines = { "" }
+    vim.list_extend(lines, block)
+    vim.api.nvim_buf_set_lines(bufnr, insert_at, insert_at, false, lines)
+  end
+
+  notify("已生成 " .. rel_svg)
+end
 
 return M

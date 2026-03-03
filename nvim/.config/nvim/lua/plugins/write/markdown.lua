@@ -42,6 +42,7 @@ return {
       vim.g.mkdp_auto_close = 0
       vim.g.mkdp_combine_preview = 1
       vim.g.mkdp_browser = "firefox"
+      vim.g.mkdp_theme = "light"
     end,
     ft = { "markdown" },
     keys = {
