@@ -175,7 +175,9 @@ local function convert_svg(bufname, tikz)
 
   local ok3, err3 = run({
     "rsvg-convert",
-    "-z 1.5",
+    "-z=1.5",
+    "-u",
+    "-f=svg",
     svgfile,
     "-o",
     rel_svg,
@@ -232,9 +234,9 @@ function M.convert_visual()
   end
 
   local block = {
-    indent .. '<p align="center">',
-    indent .. '  <img src="' .. rel_svg .. '" width="' .. M.config.img_width .. '" />',
-    indent .. "</p>",
+    '<p align="center">',
+    '  <img src="' .. rel_svg .. '"/>',
+    "</p>",
   }
 
   vim.api.nvim_buf_set_lines(bufnr, region.erow + 1, region.erow + 1, false, vim.list_extend({ "" }, block))
@@ -272,11 +274,11 @@ function M.convert_clipboard()
 
   local tikz = strip_display_math_wrappers(raw)
 
-  convert_svg(bufname, tikz)
+  local rel_svg = convert_svg(bufname, tikz)
 
   local block = {
     '<p align="center">',
-    '  <img src="' .. rel_svg .. '" width="' .. M.config.img_width .. '" />',
+    '  <img src="' .. rel_svg .. '"/>',
     "</p>",
   }
 
