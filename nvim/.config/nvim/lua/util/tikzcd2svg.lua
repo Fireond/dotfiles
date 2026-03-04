@@ -197,6 +197,39 @@ local function convert_svg(bufname, tikz)
   return rel_svg
 end
 
+local function print_text(bufnr, tikz, rel_svg)
+  local comment_block = { "<!--" }
+  vim.list_extend(comment_block, vim.split(tikz, "\n", { plain = true }))
+  table.insert(comment_block, "-->")
+
+  local image_block = {
+    '<p align="center">',
+    '  <img src="' .. rel_svg .. '"/>',
+    "</p>",
+  }
+
+  local block = {}
+  vim.list_extend(block, comment_block)
+  vim.list_extend(block, image_block)
+
+  local row = vim.api.nvim_win_get_cursor(0)[1] -- 1-based
+  local insert_at = row -- set_lines 用 0-based，插到当前行下面就是 row
+
+  local next_line = vim.api.nvim_buf_get_lines(bufnr, insert_at, insert_at + 1, false)[1]
+
+  if next_line == nil then
+    local lines = { "" }
+    vim.list_extend(lines, block)
+    vim.api.nvim_buf_set_lines(bufnr, insert_at, insert_at, false, lines)
+  elseif trim(next_line) == "" then
+    vim.api.nvim_buf_set_lines(bufnr, insert_at + 1, insert_at + 1, false, block)
+  else
+    local lines = { "" }
+    vim.list_extend(lines, block)
+    vim.api.nvim_buf_set_lines(bufnr, insert_at, insert_at, false, lines)
+  end
+end
+
 function M.convert_visual()
   local bufnr = 0
   local bufname = vim.api.nvim_buf_get_name(bufnr)
@@ -224,23 +257,9 @@ function M.convert_visual()
 
   local raw = table.concat(region.lines, "\n")
   local tikz = strip_display_math_wrappers(raw)
-
   local rel_svg = convert_svg(bufname, tikz)
 
-  local indent = ""
-  if region.scol == 0 then
-    local first_line = region.lines[1] or ""
-    indent = first_line:match("^%s*") or ""
-  end
-
-  local block = {
-    '<p align="center">',
-    '  <img src="' .. rel_svg .. '"/>',
-    "</p>",
-  }
-
-  vim.api.nvim_buf_set_lines(bufnr, region.erow + 1, region.erow + 1, false, vim.list_extend({ "" }, block))
-
+  print_text(bufnr, tikz, rel_svg)
   notify("已生成 " .. rel_svg)
 end
 
@@ -273,32 +292,9 @@ function M.convert_clipboard()
   end
 
   local tikz = strip_display_math_wrappers(raw)
-
   local rel_svg = convert_svg(bufname, tikz)
 
-  local block = {
-    '<p align="center">',
-    '  <img src="' .. rel_svg .. '"/>',
-    "</p>",
-  }
-
-  local row = vim.api.nvim_win_get_cursor(0)[1] -- 1-based
-  local insert_at = row -- set_lines 用 0-based，插到当前行下面就是 row
-
-  local next_line = vim.api.nvim_buf_get_lines(bufnr, insert_at, insert_at + 1, false)[1]
-
-  if next_line == nil then
-    local lines = { "" }
-    vim.list_extend(lines, block)
-    vim.api.nvim_buf_set_lines(bufnr, insert_at, insert_at, false, lines)
-  elseif trim(next_line) == "" then
-    vim.api.nvim_buf_set_lines(bufnr, insert_at + 1, insert_at + 1, false, block)
-  else
-    local lines = { "" }
-    vim.list_extend(lines, block)
-    vim.api.nvim_buf_set_lines(bufnr, insert_at, insert_at, false, lines)
-  end
-
+  print_text(bufnr, tikz, rel_svg)
   notify("已生成 " .. rel_svg)
 end
 
