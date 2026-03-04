@@ -69,4 +69,20 @@ return {
       { "<leader>lP", "<cmd>TeXpresso %<cr>", desc = "TeXpresso" },
     },
   },
+  {
+    "pxwg/math-conceal.nvim",
+    event = "VeryLazy",
+    main = "math-conceal",
+    opts = {
+      conceal = {
+        "greek",
+        "script",
+        "math",
+        "font",
+        "delim",
+        "phy",
+      },
+      ft = { "plaintex", "tex", "context", "bibtex", "markdown", "typst" },
+    },
+  },
 }
