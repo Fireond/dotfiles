@@ -29,8 +29,8 @@ return {
     ]],
       {
         c(1, {
-          t("Basic Functional Analysis"),
-          t("Quantum AI"),
+          t("Quantum Error Correction Theory"),
+          t("Algebraic Topology"),
         }),
         i(2, "number"),
         i(0),
