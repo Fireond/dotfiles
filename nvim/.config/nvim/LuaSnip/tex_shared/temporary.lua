@@ -108,7 +108,7 @@ return {
     { trig = "chn", snippetType = "autosnippet" },
     fmta(
       [[
-      \cdots \to <>_{n+1} \xrightarrow{<>} <>_{n} \xrightarrow{<>} <>_{n-1} \to \cdots
+      \cdots \xrightarrow{} <>_{n+1} \xrightarrow{<>} <>_{n} \xrightarrow{<>} <>_{n-1} \xrightarrow{} \cdots
       ]],
       {
         i(1),
