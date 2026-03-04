@@ -113,34 +113,7 @@ local function get_visual_region(bufnr)
   }, nil
 end
 
-function M.convert_visual()
-  local bufnr = 0
-  local bufname = vim.api.nvim_buf_get_name(bufnr)
-
-  if bufname == "" then
-    notify("请先保存当前 Markdown 文件，再生成相对路径 ./assets", vim.log.levels.ERROR)
-    return
-  end
-
-  if vim.fn.executable(M.config.tex_engine) ~= 1 then
-    notify("找不到 " .. M.config.tex_engine, vim.log.levels.ERROR)
-    return
-  end
-
-  if vim.fn.executable("pdf2svg") ~= 1 then
-    notify("找不到 pdf2svg", vim.log.levels.ERROR)
-    return
-  end
-
-  local region, err = get_visual_region(bufnr)
-  if not region then
-    notify(err, vim.log.levels.ERROR)
-    return
-  end
-
-  local raw = table.concat(region.lines, "\n")
-  local tikz = strip_display_math_wrappers(raw)
-
+local function convert_svg(bufname, tikz)
   if not tikz:match("\\begin%s*{tikzcd}") then
     notify("选中的内容里没有检测到 \\begin{tikzcd} ... \\end{tikzcd}", vim.log.levels.ERROR)
     return
@@ -166,6 +139,7 @@ function M.convert_visual()
 
   local texfile = tmpdir .. "/diagram.tex"
   local pdffile = tmpdir .. "/diagram.pdf"
+  local svgfile = tmpdir .. "/diagram.svg"
 
   local tex_source = table.concat({
     "\\documentclass[tikz,border=2pt]{standalone}",
@@ -196,6 +170,14 @@ function M.convert_visual()
   local ok2, err2 = run({
     "pdf2svg",
     pdffile,
+    svgfile,
+  }, file_dir)
+
+  local ok3, err3 = run({
+    "rsvg-convert",
+    "-z 1.5",
+    svgfile,
+    "-o",
     rel_svg,
   }, file_dir)
 
@@ -205,6 +187,43 @@ function M.convert_visual()
     notify("SVG 转换失败：\n" .. err2, vim.log.levels.ERROR)
     return
   end
+  if not ok3 then
+    notify("SVG 缩放失败：\n" .. err3, vim.log.levels.ERROR)
+    return
+  end
+
+  return rel_svg
+end
+
+function M.convert_visual()
+  local bufnr = 0
+  local bufname = vim.api.nvim_buf_get_name(bufnr)
+
+  if bufname == "" then
+    notify("请先保存当前 Markdown 文件，再生成相对路径 ./assets", vim.log.levels.ERROR)
+    return
+  end
+
+  if vim.fn.executable(M.config.tex_engine) ~= 1 then
+    notify("找不到 " .. M.config.tex_engine, vim.log.levels.ERROR)
+    return
+  end
+
+  if vim.fn.executable("pdf2svg") ~= 1 then
+    notify("找不到 pdf2svg", vim.log.levels.ERROR)
+    return
+  end
+
+  local region, err = get_visual_region(bufnr)
+  if not region then
+    notify(err, vim.log.levels.ERROR)
+    return
+  end
+
+  local raw = table.concat(region.lines, "\n")
+  local tikz = strip_display_math_wrappers(raw)
+
+  local rel_svg = convert_svg(bufname, tikz)
 
   local indent = ""
   if region.scol == 0 then
@@ -253,70 +272,7 @@ function M.convert_clipboard()
 
   local tikz = strip_display_math_wrappers(raw)
 
-  if not tikz:match("\\begin%s*{tikzcd}") then
-    notify("剪贴板内容里没有检测到 \\begin{tikzcd} ... \\end{tikzcd}", vim.log.levels.ERROR)
-    return
-  end
-
-  local default_title = M.config.default_title_prefix .. "-" .. os.date("%Y%m%d-%H%M%S")
-  local title = vim.fn.input("Image title: ", default_title)
-  if title == nil or title == "" then
-    title = default_title
-  end
-
-  local stem = slugify(title)
-
-  local file_dir = vim.fn.fnamemodify(bufname, ":p:h")
-  local assets_dir = file_dir .. "/" .. M.config.assets_dir
-  vim.fn.mkdir(assets_dir, "p")
-
-  local filename, target_svg = unique_filename(assets_dir, stem, ".svg")
-  local rel_svg = "./" .. M.config.assets_dir .. "/" .. filename
-
-  local tmpdir = vim.fn.tempname()
-  vim.fn.mkdir(tmpdir, "p")
-
-  local texfile = tmpdir .. "/diagram.tex"
-  local pdffile = tmpdir .. "/diagram.pdf"
-
-  local tex_source = table.concat({
-    "\\documentclass[tikz,border=2pt]{standalone}",
-    "\\usepackage{tikz-cd}",
-    "\\usepackage{amsmath,amssymb}",
-    M.config.extra_preamble,
-    "\\begin{document}",
-    tikz,
-    "\\end{document}",
-    "",
-  }, "\n")
-
-  vim.fn.writefile(vim.split(tex_source, "\n", { plain = true }), texfile)
-
-  local ok1, err1 = run({
-    M.config.tex_engine,
-    "-interaction=nonstopmode",
-    "-halt-on-error",
-    "diagram.tex",
-  }, tmpdir)
-
-  if not ok1 then
-    vim.fn.delete(tmpdir, "rf")
-    notify("LaTeX 编译失败：\n" .. err1, vim.log.levels.ERROR)
-    return
-  end
-
-  local ok2, err2 = run({
-    "pdf2svg",
-    pdffile,
-    rel_svg,
-  }, file_dir)
-
-  vim.fn.delete(tmpdir, "rf")
-
-  if not ok2 then
-    notify("SVG 转换失败：\n" .. err2, vim.log.levels.ERROR)
-    return
-  end
+  convert_svg(bufname, tikz)
 
   local block = {
     '<p align="center">',
