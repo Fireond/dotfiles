@@ -25,3 +25,6 @@
 [submodule "tmux/.tmux/plugins/catppuccin"]
 	path = tmux/.tmux/plugins/catppuccin
 	url = https://github.com/catppuccin/tmux.git
+[submodule "qutebrowser/.config/qutebrowser/qutebrowser/.config/qutebrowser/catppuccin"]
+	path = qutebrowser/.config/qutebrowser/qutebrowser/.config/qutebrowser/catppuccin
+	url = https://github.com/catppuccin/qutebrowser.git
