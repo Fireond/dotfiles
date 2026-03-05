@@ -29,7 +29,6 @@
   "modules-right": [
     "tray",
     "pulseaudio",
-    // "wireplumber",
     "network",
     "bluetooth",
     "memory",

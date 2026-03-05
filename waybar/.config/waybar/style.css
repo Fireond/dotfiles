@@ -154,7 +154,7 @@
   font-size: 16px;
   color: @primary;
   border-radius: 0px 10px 10px 0px;
-  padding-left: 15px;
+  padding-left: 10px;
   padding-right: 15px;
   margin-right: 12px;
 }
@@ -162,7 +162,7 @@
   font-size: 16px;
   color: @on_background;
   border-radius: 10px 0px 0px 10px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 #cpu {
   font-size: 16px;
