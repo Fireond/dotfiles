@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 定义 monitors.conf 文件的路径
-MONITOR_CONF_PATH="$HOME/.config/hypr/monitors.conf"
+MONITOR_CONF_PATH="$HOME/.config/hypr/hosts/arch.conf"
 
 # 检查 monitors.conf 文件是否存在
 if [ ! -f "$MONITOR_CONF_PATH" ]; then
