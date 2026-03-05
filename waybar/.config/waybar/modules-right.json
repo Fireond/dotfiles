@@ -112,7 +112,8 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{}",
+    "format-alt": "⚡{power}W 󰔟 {time}",
+    "format-time": "{H}:{m}",
     "format-icons": [
       "󰂎",
       "󰁺",
@@ -125,11 +126,7 @@
       "󰂁",
       "󰂂",
       "󰁹"
-    ],
-    "on-click": "~/.local/share/bin/waybar-battery-toggle.sh",
-    "signal": 8,
-    "exec": "~/.local/share/bin/battery-power.sh",
-    "interval": 2
+    ]
   },
   "custom/cliphist": {
     "format": "{}",
