@@ -1,3 +1,4 @@
 *.sqlite
 *.log
 */cache/*
+yazi/.config/yazi/plugins/*
