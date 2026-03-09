@@ -203,9 +203,7 @@ local function print_text(bufnr, tikz, rel_svg)
   table.insert(comment_block, "-->")
 
   local image_block = {
-    '<p align="center">',
-    '  <img src="' .. rel_svg .. '"/>',
-    "</p>",
+    '<p align="center"> <img src="' .. rel_svg .. '"/> </p>',
   }
 
   local block = {}
