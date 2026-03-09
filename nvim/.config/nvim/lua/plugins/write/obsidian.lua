@@ -88,6 +88,7 @@ return {
       { "<leader>nt", "<cmd>Obsidian tags<cr>", desc = "Search tags" },
       { "<leader>nd", "<cmd>Obsidian dailies<cr>", desc = "Open recent dailies" },
       { "<leader>ni", "<cmd>Obsidian paste_img<cr>", desc = "Obsidian paste image" },
+      { "<leader>nT", "<cmd>Obsidian new_from_template<cr>", desc = "Obsidian new from template" },
     },
   },
   {

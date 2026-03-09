@@ -103,6 +103,9 @@ return {
   s({ trig = "=>", snippetType = "autosnippet" }, {
     t("$\\implies$"),
   }, { condition = tex.in_text }),
+  s({ trig = "impp", snippetType = "autosnippet" }, {
+    t("$\\implies$"),
+  }, { condition = tex.in_text }),
   s({ trig = "<=", snippetType = "autosnippet" }, {
     t("$\\impliedby$"),
   }, { condition = tex.in_text }),
