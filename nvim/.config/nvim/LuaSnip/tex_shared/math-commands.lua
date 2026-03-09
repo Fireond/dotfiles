@@ -264,6 +264,7 @@ return {
   s({ trig = "deg", snippetType = "autosnippet" }, fmta("\\operatorname{deg}", {}), { condition = tex.in_mathzone }),
   s({ trig = "spp", snippetType = "autosnippet" }, fmta("\\operatorname{supp}", {}), { condition = tex.in_mathzone }),
   s({ trig = "imm", snippetType = "autosnippet" }, fmta("\\operatorname{im}", {}), { condition = tex.in_mathzone }),
+  s({ trig = "idd", snippetType = "autosnippet" }, fmta("\\text{id}", {}), { condition = tex.in_mathzone }),
   s({ trig = "tr", snippetType = "autosnippet" }, fmta("\\tr", {}), { condition = tex.in_mathzone }),
   s({ trig = "span", snippetType = "autosnippet" }, fmta("\\operatorname{span}", {}), { condition = tex.in_mathzone }),
   s({ trig = "aut", snippetType = "autosnippet" }, fmta("\\Aut", {}), { condition = tex.in_mathzone }),
