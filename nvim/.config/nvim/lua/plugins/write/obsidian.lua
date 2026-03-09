@@ -28,7 +28,6 @@ return {
         end
         return suffix
       end,
-      -- wiki_link_func = "prepend_note_path",
       templates = {
         folder = "templates",
         date_format = "%Y-%m-%d",
