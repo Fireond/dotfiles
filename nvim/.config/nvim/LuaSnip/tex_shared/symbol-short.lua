@@ -98,6 +98,9 @@ return {
     i(1),
     t("}"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "\\toh", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\hookrightarrow"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "mto", wordTrig = false, snippetType = "autosnippet", priority = 1001 }, {
     t("\\mapsto"),
   }, { condition = tex.in_mathzone }),

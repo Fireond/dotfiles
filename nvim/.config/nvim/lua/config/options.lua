@@ -4,6 +4,7 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en", "cjk" }
 vim.opt.spelloptions = "camel"
 vim.opt.backup = false
+vim.o.mouse = ""
 vim.g.maplocalleader = " "
 vim.g.mapleader = " "
 

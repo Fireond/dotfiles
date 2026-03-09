@@ -71,6 +71,7 @@ return {
   },
   {
     "pxwg/math-conceal.nvim",
+    enabled = false,
     event = "VeryLazy",
     main = "math-conceal",
     opts = {

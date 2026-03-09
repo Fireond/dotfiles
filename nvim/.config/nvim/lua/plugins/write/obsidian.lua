@@ -85,8 +85,9 @@ return {
     },
     keys = {
       { "<leader>no", "<cmd>Obsidian open<cr>", desc = "Open Obsidian" },
-      { "<leader>nt", "<cmd>Obsidian tags<cr>", desc = "Open Obsidian tags" },
-      { "<leader>nd", "<cmd>Obsidian dailies<cr>", desc = "Open Obsidian dailies" },
+      { "<leader>nt", "<cmd>Obsidian tags<cr>", desc = "Search tags" },
+      { "<leader>nd", "<cmd>Obsidian dailies<cr>", desc = "Open recent dailies" },
+      { "<leader>ni", "<cmd>Obsidian paste_img<cr>", desc = "Obsidian paste image" },
     },
   },
   {

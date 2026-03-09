@@ -138,4 +138,4 @@ type starship_zle-keymap-select >/dev/null || \
   {
     eval "$(starship init zsh)"
   }
-
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"

@@ -24,21 +24,21 @@
     padding-right: 6px;
     margin-right: 0px;
     color: @on_background;
-    animation: ws_normal 20s ease-in-out 1;
+/*     animation: ws_normal 20s ease-in-out 1; */
 }
 
 #workspaces button.active {
     background: transparent;
     color: @primary;
-    animation: ws_active 20s ease-in-out 1;
-    transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
+/*     animation: ws_active 20s ease-in-out 1; */
+/*     transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #workspaces button:hover {
     background: transparent;
     color: @tertiary;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+/*     animation: ws_hover 20s ease-in-out 1; */
+/*     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #custom-archicon,

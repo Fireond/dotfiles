@@ -94,41 +94,40 @@ map("n", "<leader>-", "<C-x>", { desc = "Decrease number" })
 
 -- note
 map("n", "<leader>n", "", { desc = "+note/obsidian" })
-map("n", "<leader>nn", function()
-  local ft = vim.bo.filetype
-  if ft == "tex" then
-    require("util.note").add_note()
-  elseif ft == "markdown" then
-    require("util.obsidian").add_note_picker()
-  else
-    return nil
-  end
-end, { desc = "Add new note" })
-map("n", "<leader>nf", function()
-  local ft = vim.bo.filetype
-  if ft == "tex" then
-    require("util.note").find_note()
-  elseif ft == "markdown" then
-    vim.cmd("ObsidianQuickSwitch")
-  end
-end, { desc = "Find note" })
-map("n", "<leader>ns", function()
-  local ft = vim.bo.filetype
-  if ft == "tex" then
-    require("util.note").add_section()
-  elseif ft == "markdown" then
-    vim.cmd("ObsidianSearch")
-  else
-    return nil
-  end
-end, { desc = "add section" })
+-- map("n", "<leader>nn", function()
+--   local ft = vim.bo.filetype
+--   if ft == "tex" then
+--     require("util.note").add_note()
+--   elseif ft == "markdown" then
+--     require("util.obsidian").add_note_picker()
+--   else
+--     return nil
+--   end
+-- end, { desc = "Add new note" })
+-- map("n", "<leader>nf", function()
+--   local ft = vim.bo.filetype
+--   if ft == "tex" then
+--     require("util.note").find_note()
+--   elseif ft == "markdown" then
+--     vim.cmd("ObsidianQuickSwitch")
+--   end
+-- end, { desc = "Find note" })
+-- map("n", "<leader>ns", function()
+--   local ft = vim.bo.filetype
+--   if ft == "tex" then
+--     require("util.note").add_section()
+--   elseif ft == "markdown" then
+--     vim.cmd("ObsidianSearch")
+--   else
+--     return nil
+--   end
+-- end, { desc = "add section" })
 map("n", "<leader>nO", function()
   local ft = vim.bo.filetype
   if ft == "markdown" then
     require("util.obsidian").open_sources_from_frontmatter()
   else
     vim.notify("Not a md file!", vim.log.levels.ERROR)
-    return nil
   end
 end, { desc = "Open Sources" })
 map("n", "<leader>nz", function()
@@ -140,15 +139,15 @@ map("n", "<leader>nz", function()
     return nil
   end
 end, { desc = "Convert To Zhihu" })
-map("n", "<leader>nc", function()
-  local ft = vim.bo.filetype
-  if ft == "markdown" then
-    require("util.obsidian").vault_commit_push()
-  else
-    vim.notify("Not a md file!", vim.log.levels.ERROR)
-    return nil
-  end
-end, { desc = "Vault commit push" })
+-- map("n", "<leader>nc", function()
+--   local ft = vim.bo.filetype
+--   if ft == "markdown" then
+--     require("util.obsidian").vault_commit_push()
+--   else
+--     vim.notify("Not a md file!", vim.log.levels.ERROR)
+--     return nil
+--   end
+-- end, { desc = "Vault commit push" })
 -- map("n", "<leader>np", function()
 --   local ft = vim.bo.filetype
 --   if ft == "markdown" then
