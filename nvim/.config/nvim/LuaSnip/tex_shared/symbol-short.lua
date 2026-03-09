@@ -72,6 +72,9 @@ return {
   s({ trig = "~~", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\sim"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "\\sim~", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\simeq"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = ">=", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\geq"),
   }, { condition = tex.in_mathzone }),
