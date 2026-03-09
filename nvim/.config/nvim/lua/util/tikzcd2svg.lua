@@ -175,7 +175,7 @@ local function convert_svg(bufname, tikz)
 
   local ok3, err3 = run({
     "rsvg-convert",
-    "-z=1.5",
+    "-z=1.25",
     "-u",
     "-f=svg",
     svgfile,
