@@ -138,6 +138,14 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "oset", snippetType = "autosnippet" },
+    fmta("\\overset{<>}{<>}", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "ob", snippetType = "autosnippet" },
     fmta("\\overbrace{<>}^{<>}", {
       i(1),
