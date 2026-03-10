@@ -28,7 +28,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # clash-verge-rev
   export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897
 
-  export TEXMFDIST="/usr/share/texmf-dist"
+  # export TEXMFDIST="/usr/share/texmf-dist"
   ## miniconda3
   export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
   [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
