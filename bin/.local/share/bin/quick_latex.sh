@@ -3,7 +3,6 @@ set -euo pipefail
 
 CLASS="${KITTY_CLASS:-latex-scratch}"
 TITLE="${KITTY_TITLE:-LaTeX Scratch}"
-KEEP="${KEEP_FILE:-0}"
 
 TMPBASE="${XDG_RUNTIME_DIR:-/tmp}"
 WORKDIR="$(mktemp -d --tmpdir="$TMPBASE" latex-scratch-XXXXXX)"
@@ -53,15 +52,11 @@ cleanup() {
     copy_to_clipboard "$FILE" || true
   fi
 
-  if [[ "$KEEP" == "1" ]]; then
-    echo "Kept scratch dir: $WORKDIR" >&2
-  else
-    rm -rf -- "$WORKDIR"
-  fi
+  rm -rf -- "$WORKDIR"
 }
 trap cleanup EXIT
 
 write_template
 write_session
 
-exec kitty --class "$CLASS" --title "$TITLE" --session "$SESSION"
+kitty --class "$CLASS" --title "$TITLE" --session "$SESSION"
