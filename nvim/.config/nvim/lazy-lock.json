@@ -49,7 +49,7 @@
   "nvim-ts-autotag": { "branch": "main", "commit": "c4ca798ab95b316a768d51eaaaee48f64a4a46bc" },
   "nvim-ufo": { "branch": "main", "commit": "72d54c31079d38d8dfc5456131b1d0fb5c0264b0" },
   "obsidian-bridge.nvim": { "branch": "main", "commit": "079f788c7df99b3063935249ff9ff6ddadd2b85a" },
-  "obsidian.nvim": { "branch": "main", "commit": "6b2a22a74d1c883e797764c28f75aa6b532a1ae4" },
+  "obsidian.nvim": { "branch": "main", "commit": "929f34d41597f9a05d693c2b40de1e1bd6b331da" },
   "outline.nvim": { "branch": "main", "commit": "6b62f73a6bf317531d15a7ae1b724e85485d8148" },
   "persistence.nvim": { "branch": "main", "commit": "51eef57272742b773468949f6bd0503ec3f83874" },
   "plenary.nvim": { "branch": "master", "commit": "b9fd5226c2f76c951fc8ed5923d85e4de065e509" },
