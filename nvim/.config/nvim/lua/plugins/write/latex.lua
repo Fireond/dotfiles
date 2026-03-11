@@ -25,6 +25,7 @@ return {
           vim.notify("Convertion failed!", vim.log.levels.ERROR)
         end
       end
+      vim.g.vimtex_view_automatic = 0
       vim.g.vimtex_syntax_conceal_disable = 1
       vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
       vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
