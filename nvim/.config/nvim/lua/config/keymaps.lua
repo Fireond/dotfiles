@@ -79,49 +79,13 @@ if vim.g.vscode then
 else
   map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
 end
-map({ "n", "v", "t" }, "<leader>;", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
--- map("n", "<leader>uc", Util.telescope("colorscheme", { enable_preview = true }), { desc = "Colorscheme with preview" })
--- map("n", "<leader>uu", "b~ea", { desc = "Colorscheme with preview" })
 
 map({ "n", "v" }, "<leader>a", "ggVG", { desc = "Select all" })
 map("n", "<leader>+", "<C-a>", { desc = "Increase number" })
 map("n", "<leader>-", "<C-x>", { desc = "Decrease number" })
--- map("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Toggle zen mode" })
--- map("n", "<leader>z", "zt", { desc = "Top this line" })
--- map("n", "<leader>fp", function()
---   require("telescope").extensions.neoclip.default()
--- end, { desc = "Find clips" })
 
 -- note
 map("n", "<leader>n", "", { desc = "+note/obsidian" })
--- map("n", "<leader>nn", function()
---   local ft = vim.bo.filetype
---   if ft == "tex" then
---     require("util.note").add_note()
---   elseif ft == "markdown" then
---     require("util.obsidian").add_note_picker()
---   else
---     return nil
---   end
--- end, { desc = "Add new note" })
--- map("n", "<leader>nf", function()
---   local ft = vim.bo.filetype
---   if ft == "tex" then
---     require("util.note").find_note()
---   elseif ft == "markdown" then
---     vim.cmd("ObsidianQuickSwitch")
---   end
--- end, { desc = "Find note" })
--- map("n", "<leader>ns", function()
---   local ft = vim.bo.filetype
---   if ft == "tex" then
---     require("util.note").add_section()
---   elseif ft == "markdown" then
---     vim.cmd("ObsidianSearch")
---   else
---     return nil
---   end
--- end, { desc = "add section" })
 map("n", "<leader>nO", function()
   local ft = vim.bo.filetype
   if ft == "markdown" then
