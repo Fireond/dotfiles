@@ -55,7 +55,7 @@ return {
         vim.g.vimtex_view_method = "skim"
         vim.g.vimtex_view_skim_sync = 1
       elseif vim.loop.os_uname().sysname == "Linux" then
-        vim.g.vimtex_view_method = "zathura"
+        vim.g.vimtex_view_method = "zathura_simple"
       end
 
       vim.keymap.set({ "x", "o" }, "it", "<plug>(vimtex-i$)", { desc = "vimtex-i$" })
