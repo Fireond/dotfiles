@@ -58,6 +58,12 @@ return {
         vim.g.vimtex_view_method = "zathura_simple"
       end
 
+      vim.g.vimtex_env_toggle_math_map = {
+        ["\\["] = "equation",
+        ["equation"] = "\\[",
+      }
+      vim.keymap.set("n", "<leader>m", "<Plug>(vimtex-env-toggle-math)")
+
       vim.keymap.set({ "x", "o" }, "it", "<plug>(vimtex-i$)", { desc = "vimtex-i$" })
       vim.keymap.set({ "x", "o" }, "at", "<plug>(vimtex-a$)", { desc = "vimtex-a$" })
       vim.api.nvim_create_user_command("ConvertToDocx", ConvertTexToDocx, {})
