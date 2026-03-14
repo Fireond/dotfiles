@@ -7,6 +7,9 @@ return {}, {
   s({ trig = "alp", snippetType = "autosnippet", wordTrig = false }, {
     t("\\alpha"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "alp", snippetType = "autosnippet", wordTrig = false }, {
+    t("\\alpha"),
+  }, { condition = tex.in_text }),
   s({ trig = "Alp", snippetType = "autosnippet", wordTrig = false }, {
     t("\\Alpha"),
   }, { condition = tex.in_mathzone }),
