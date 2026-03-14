@@ -75,8 +75,8 @@ end
 M.in_mathzone = function()
   local ft = vim.bo.filetype
   if ft == "tex" then
-    return M.in_mathzone_md() or M.in_env("tikzcd")
-    -- return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1
+    -- return M.in_mathzone_md() or M.in_env("tikzcd")
+    return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1 or M.in_env("tikzcd")
   elseif ft == "markdown" then
     return M.in_mathzone_md()
   elseif ft == "typst" then
