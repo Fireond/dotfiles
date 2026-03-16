@@ -267,7 +267,7 @@ return {
   s({ trig = "idd", snippetType = "autosnippet" }, fmta("\\text{id}", {}), { condition = tex.in_mathzone }),
   s({ trig = "tr", snippetType = "autosnippet" }, fmta("\\tr", {}), { condition = tex.in_mathzone }),
   s({ trig = "span", snippetType = "autosnippet" }, fmta("\\operatorname{span}", {}), { condition = tex.in_mathzone }),
-  s({ trig = "aut", snippetType = "autosnippet" }, fmta("\\Aut", {}), { condition = tex.in_mathzone }),
+  s({ trig = "aut", snippetType = "autosnippet" }, fmta("\\operatorname{Aut}", {}), { condition = tex.in_mathzone }),
   s({ trig = "gal", snippetType = "autosnippet" }, fmta("\\Gal", {}), { condition = tex.in_mathzone }),
   s({ trig = "rank", snippetType = "autosnippet" }, fmta("\\rank", {}), { condition = tex.in_mathzone }),
   s({ trig = "dim", snippetType = "autosnippet" }, fmta("\\operatorname{dim}", {}), { condition = tex.in_mathzone }),
