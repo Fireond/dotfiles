@@ -22,6 +22,10 @@ end
 
 return {
   -- s({ trig = "sp", snippetType = "autosnippet" }, fmta("\\hat{\\$}", {}), { condition = tex.in_mathzone }),
+
+  s({ trig = "CC", snippetType = "autosnippet", priority = 3000 }, {
+    t("\\mathcal{C}_{\\text{2BGA}}(a,a^*)"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "PP", snippetType = "autosnippet", priority = 3000 }, {
     t("\\mathcal{P}"),
   }, { condition = tex.in_mathzone }),
