@@ -9,6 +9,7 @@ if [ -n "$KITTY_SOCKET" ]; then
   kitten @ --to "$KITTY_SOCKET" set-spacing padding=0
 fi
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 nvim "$@"
 
 if [ -n "$KITTY_SOCKET" ]; then
