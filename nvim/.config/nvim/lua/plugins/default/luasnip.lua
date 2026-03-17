@@ -7,6 +7,7 @@ return {
       ls.config.set_config({
         enable_autosnippets = true,
         store_selection_keys = "`",
+        update_events = { "TextChanged", "TextChangedI" },
       })
       ls.filetype_extend("tex", { "tex_shared" })
       ls.filetype_extend("markdown", { "tex_shared" })

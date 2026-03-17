@@ -155,6 +155,9 @@ return {
   s({ trig = "cup", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\cup"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "scup", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\sqcup"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "sub", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\subset"),
   }, { condition = tex.in_mathzone }),
@@ -179,7 +182,13 @@ return {
   s({ trig = "xx", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\times"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "rxx", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\rtimes"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "=>", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\implies"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "imp", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\implies"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "llr", wordTrig = false, snippetType = "autosnippet" }, {

@@ -35,14 +35,25 @@ return {
     { condition = line_begin * tex.in_text }
   ),
   s(
-    { trig = "arr", snippetType = "autosnippet" },
+    { trig = "ard", snippetType = "autosnippet" },
     fmta(
       [[
-      \arrow[<>, "<>"]
+      \arrow[d, "<>"]
       ]],
       {
         i(1),
-        i(2),
+      }
+    ),
+    { condition = tex.in_env("tikzcd") }
+  ),
+  s(
+    { trig = "arr", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \arrow[r, "<>"]
+      ]],
+      {
+        i(1),
       }
     ),
     { condition = tex.in_env("tikzcd") }

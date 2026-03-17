@@ -68,8 +68,7 @@ return {
     { trig = "bff", snippetType = "autosnippet" },
     fmta(
       [[
-*Proof.*
-<>
+*Proof.* <>
 $\square$
       ]],
       {

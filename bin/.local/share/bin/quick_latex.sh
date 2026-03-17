@@ -1,42 +1,64 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# 你可以用环境变量覆盖这些值：
-#   KITTY_CLASS=latex-scratch KITTY_TITLE="LaTeX Scratch" KEEP_FILE=1 latex-scratch
 CLASS="${KITTY_CLASS:-latex-scratch}"
 TITLE="${KITTY_TITLE:-LaTeX Scratch}"
-KEEP="${KEEP_FILE:-0}"
 
-# 临时文件放在运行时目录更干净（Hyprland/Wayland 常有 XDG_RUNTIME_DIR）
-TMPDIR="${XDG_RUNTIME_DIR:-/tmp}"
-FILE="$(mktemp --tmpdir="$TMPDIR" latex-scratch-XXXXXX.tex)"
+TMPBASE="${XDG_RUNTIME_DIR:-/tmp}"
+WORKDIR="$(mktemp -d --tmpdir="$TMPBASE" latex-scratch-XXXXXX)"
+FILE="$WORKDIR/main.tex"
+PDF="$WORKDIR/main.pdf"
+SESSION="$WORKDIR/session.kitty"
+
+copy_to_clipboard() {
+  local f="$1"
+  if command -v wl-copy >/dev/null 2>&1; then
+    wl-copy <"$f"
+  elif command -v xclip >/dev/null 2>&1; then
+    xclip -selection clipboard <"$f"
+  elif command -v pbcopy >/dev/null 2>&1; then
+    pbcopy <"$f"
+  else
+    return 1
+  fi
+}
+
+write_template() {
+  cat >"$FILE" <<'EOF'
+\documentclass{article}
+\usepackage[paperwidth=20cm,paperheight=5cm,margin=0cm]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{tikz-cd}
+\pagestyle{empty}
+\begin{document}
+
+
+
+\null
+\end{document}
+EOF
+}
+
+write_session() {
+  cat >"$SESSION" <<EOF
+layout splits
+launch --title "latex-edit" /bin/bash -lc 'exec ~/.local/share/bin/auto_padding_nvim.sh "$FILE" \
+  -c "augroup LatexScratchAuto | autocmd! | autocmd InsertLeave,TextChanged,TextChangedI,FocusLost,CursorHold,CursorHoldI *.tex silent! update | autocmd VimLeavePre * silent! update | augroup END" \
+  -c "call cursor(8, 999)" -c "startinsert!" -c "silent! VimtexCompile"'
+launch --location=hsplit --bias 50 --title "latex-preview" /bin/bash -lc 'sleep 2; exec tdf -f $PDF'
+EOF
+}
 
 cleanup() {
-  if [[ -f "$FILE" ]]; then
-    if command -v wl-copy >/dev/null 2>&1; then
-      wl-copy <"$FILE"
-    elif command -v xclip >/dev/null 2>&1; then
-      xclip -selection clipboard <"$FILE"
-    elif command -v pbcopy >/dev/null 2>&1; then
-      pbcopy <"$FILE"
-    else
-      echo "No clipboard tool found (wl-copy/xclip/pbcopy). Keeping file: $FILE" >&2
-      KEEP=1
-    fi
+  # if [[ -f "$FILE" ]]; then
+  #   copy_to_clipboard "$FILE" || true
+  # fi
 
-    # if command -v notify-send >/dev/null 2>&1; then
-    #   notify-send "LaTeX scratch copied" "Copied contents to clipboard."
-    # fi
-
-    if [[ "$KEEP" != "1" ]]; then
-      rm -f -- "$FILE"
-    else
-      echo "Kept file: $FILE" >&2
-    fi
-  fi
+  rm -rf -- "$WORKDIR"
 }
 trap cleanup EXIT
 
-# 打开 kitty，并在其中运行 nvim 编辑临时 tex 文件
-# --class 方便你在 Hyprland 里写 windowrulev2
-kitty --class "$CLASS" --title "$TITLE" ~/.local/share/bin/auto_padding_nvim.sh "$FILE" --cmd 'set autowriteall' --cmd 'augroup LatexScratchAutoSave | autocmd! | autocmd InsertLeave,TextChanged,TextChangedI,FocusLost,CursorHold,CursorHoldI * silent! update | autocmd VimLeavePre * silent! update | augroup END'
+write_template
+write_session
+
+kitty --class "$CLASS" --title "$TITLE" --session "$SESSION"

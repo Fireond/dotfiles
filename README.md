@@ -21,3 +21,15 @@ shift + alt - n : yabai -m space --create; sketchybar --trigger window_focus
 shift + alt - d : yabai -m space --destroy; sketchybar --trigger window_focus
 shift + alt - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces
 ```
+
+## License
+
+This repository is multi-licensed.
+
+- Unless otherwise noted, files written by me are licensed under the MIT License.
+- Some files are derived from GPL-3.0-licensed dotfiles/projects and remain licensed under the GNU General Public License v3.0.
+
+GPL-covered files/directories:
+- sketchybar/.config/sketchybar (inherited from [repo](https://github.com/FelixKratz/dotfiles))
+
+See LICENSE-GPL-3.0 for the full GNU GPL v3 text.

@@ -58,3 +58,11 @@ vim.api.nvim_create_autocmd("Signal", {
     vim.cmd("Lazy reload bufferline.nvim")
   end,
 })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local opts = { buffer = args.buf, silent = true }
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+  end,
+})

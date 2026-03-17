@@ -32,7 +32,7 @@ prepend_keymap=[
 
   # plugins
 	{ on = [ "s" ], run = "plugin fzf" },
-  { on = [ "<C-y>" ], run = "plugin system-clipboard" },
+  { on = [ "<C-y>" ], run = "plugin wl-clipboard" },
   { on = [ "M" ], run = "plugin mount" },
   { on   = [ "c", "m" ], run  = "plugin chmod", desc = "Chmod on selected files" }
 ]

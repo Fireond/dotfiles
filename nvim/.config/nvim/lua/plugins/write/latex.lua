@@ -25,6 +25,7 @@ return {
           vim.notify("Convertion failed!", vim.log.levels.ERROR)
         end
       end
+      vim.g.vimtex_view_automatic = 0
       vim.g.vimtex_syntax_conceal_disable = 1
       vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
       vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
@@ -46,6 +47,7 @@ return {
         },
       }
 
+      vim.g.vimtex_quickfix_mode = 0
       vim.g.vimtex_quickfix_ignore_filters = { "^Overfull", "^Underfull" }
       vim.g.vimtex_quickfix_open_on_warning = 0
 
@@ -53,8 +55,14 @@ return {
         vim.g.vimtex_view_method = "skim"
         vim.g.vimtex_view_skim_sync = 1
       elseif vim.loop.os_uname().sysname == "Linux" then
-        vim.g.vimtex_view_method = "zathura"
+        vim.g.vimtex_view_method = "zathura_simple"
       end
+
+      vim.g.vimtex_env_toggle_math_map = {
+        ["\\["] = "equation",
+        ["equation"] = "\\[",
+      }
+      vim.keymap.set("n", "<leader>m", "<Plug>(vimtex-env-toggle-math)")
 
       vim.keymap.set({ "x", "o" }, "it", "<plug>(vimtex-i$)", { desc = "vimtex-i$" })
       vim.keymap.set({ "x", "o" }, "at", "<plug>(vimtex-a$)", { desc = "vimtex-a$" })

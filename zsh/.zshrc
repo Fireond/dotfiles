@@ -4,6 +4,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+# disable beep
+unsetopt BEEP
 
 ### --- Plugins --- ###
 export ZSH=$HOME/.zsh
@@ -45,9 +47,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias ckitty='nvim ~/.config/kitty/kitty.conf'
   alias cwez='nvim ~/.config/wezterm/wezterm.lua'
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  if [ -z "$WAYLAND_DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-    exec start-hyprland 
-  fi
   alias op='xdg-open'
   alias l='eza -lh --icons=auto' # long list
   alias ls='eza -1 --icons=auto' # short list
