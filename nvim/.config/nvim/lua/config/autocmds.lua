@@ -66,3 +66,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
   end,
 })
+
+-- auto save for md files
+vim.api.nvim_create_autocmd({ "InsertLeave", "BufLeave", "FocusLost" }, {
+  pattern = "*.md",
+  callback = function(args)
+    local buf = args.buf
+    if vim.bo[buf].buftype == "" and vim.bo[buf].modified then
+      vim.cmd("silent noautocmd write")
+    end
+  end,
+})
