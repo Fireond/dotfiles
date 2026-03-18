@@ -541,4 +541,18 @@ return {
     ),
     { condition = line_begin * line_begin }
   ),
+  s(
+    { trig = "bcd", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{tikzcd}
+      <>
+      \end{tikzcd}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin * tex.in_text }
+  ),
 }

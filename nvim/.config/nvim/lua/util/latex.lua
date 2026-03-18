@@ -39,8 +39,13 @@ M.in_env_md = function(env)
 end
 
 M.in_env = function(env)
-  local pos = vim.fn["vimtex#env#is_inside"](env)
-  return pos[1] ~= 0 or pos[2] ~= 0
+  local ft = vim.bo.filetype
+  if ft == "tex" then
+    local pos = vim.fn["vimtex#env#is_inside"](env)
+    return pos[1] ~= 0 or pos[2] ~= 0
+  elseif ft == "markdown" then
+    return M.in_env_md(env)
+  end
 end
 
 M.in_mathzone_md = function()
@@ -78,7 +83,7 @@ M.in_mathzone = function()
     -- return M.in_mathzone_md() or M.in_env("tikzcd")
     return vim.api.nvim_eval("vimtex#syntax#in_mathzone()") == 1 or M.in_env("tikzcd")
   elseif ft == "markdown" then
-    return M.in_mathzone_md()
+    return M.in_mathzone_md() or M.in_env("tikzcd")
   elseif ft == "typst" then
     return M.in_mathzone_typ()
   end
@@ -102,6 +107,9 @@ M.in_quantikz = function()
 end
 M.in_algo = function()
   return M.in_env("algorithmic")
+end
+M.in_tikzcd = function()
+  return M.in_env("tikzcd")
 end
 
 -- M.clean = function()

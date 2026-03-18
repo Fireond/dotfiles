@@ -18,14 +18,14 @@ local get_visual = function(args, parent)
 end
 
 return {
-  s({ trig = ";b", snippetType = "autosnippet" }, fmta("**<>**", i(1)), { condition = tex.in_text_md }),
-  s({ trig = "；b", snippetType = "autosnippet" }, fmta("**<>**", i(1)), { condition = tex.in_text_md }),
-  s({ trig = ";t", snippetType = "autosnippet" }, fmta("*<>*", i(1)), { condition = tex.in_text_md }),
-  s({ trig = "；t", snippetType = "autosnippet" }, fmta("*<>*", i(1)), { condition = tex.in_text_md }),
-  s({ trig = ";h", snippetType = "autosnippet" }, fmta("- [ ] <>", i(0)), { condition = tex.in_text_md }),
-  s({ trig = "；h", snippetType = "autosnippet" }, fmta("- [ ] <>", i(0)), { condition = tex.in_text_md }),
-  s({ trig = ";H", snippetType = "autosnippet" }, fmta("- [x] <>", i(0)), { condition = tex.in_text_md }),
-  s({ trig = "；H", snippetType = "autosnippet" }, fmta("- [x] <>", i(0)), { condition = tex.in_text_md }),
+  s({ trig = ";b", snippetType = "autosnippet" }, fmta("**<>**", i(1)), { condition = tex.in_text }),
+  s({ trig = "；b", snippetType = "autosnippet" }, fmta("**<>**", i(1)), { condition = tex.in_text }),
+  s({ trig = ";t", snippetType = "autosnippet" }, fmta("*<>*", i(1)), { condition = tex.in_text }),
+  s({ trig = "；t", snippetType = "autosnippet" }, fmta("*<>*", i(1)), { condition = tex.in_text }),
+  s({ trig = ";h", snippetType = "autosnippet" }, fmta("- [ ] <>", i(0)), { condition = tex.in_text }),
+  s({ trig = "；h", snippetType = "autosnippet" }, fmta("- [ ] <>", i(0)), { condition = tex.in_text }),
+  s({ trig = ";H", snippetType = "autosnippet" }, fmta("- [x] <>", i(0)), { condition = tex.in_text }),
+  s({ trig = "；H", snippetType = "autosnippet" }, fmta("- [x] <>", i(0)), { condition = tex.in_text }),
   s(
     { trig = ";c", snippetType = "autosnippet" },
     fmta(

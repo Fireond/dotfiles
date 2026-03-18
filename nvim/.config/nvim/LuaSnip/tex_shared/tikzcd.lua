@@ -21,21 +21,7 @@ end
 
 return {
   s(
-    { trig = "bcd", snippetType = "autosnippet" },
-    fmta(
-      [[
-      \begin{tikzcd}
-      <>
-      \end{tikzcd}
-      ]],
-      {
-        i(0),
-      }
-    ),
-    { condition = line_begin * tex.in_text }
-  ),
-  s(
-    { trig = "ard", snippetType = "autosnippet" },
+    { trig = "ad", snippetType = "autosnippet" },
     fmta(
       [[
       \arrow[d, "<>"]
@@ -44,7 +30,7 @@ return {
         i(1),
       }
     ),
-    { condition = tex.in_env("tikzcd") }
+    { condition = tex.in_tikzcd }
   ),
   s(
     { trig = "arr", snippetType = "autosnippet" },
@@ -56,8 +42,33 @@ return {
         i(1),
       }
     ),
-    { condition = tex.in_env("tikzcd") }
+    { condition = tex.in_tikzcd }
   ),
+  s(
+    { trig = "au", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \arrow[u, "<>"]
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = tex.in_tikzcd }
+  ),
+  s(
+    { trig = "ard", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \arrow[rd, "<>"]
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = tex.in_tikzcd }
+  ),
+
   s(
     { trig = "chn", snippetType = "autosnippet", priority = 2000 },
     fmta(
