@@ -93,6 +93,25 @@ $\square$
     { condition = line_begin }
   ),
   s(
+    { trig = "bcd", snippetType = "autosnippet" },
+    fmta(
+      [[
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+  \begin{tikzcd}
+  <>
+  \end{tikzcd}
+\end{document}
+```
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "case", snippetType = "autosnippet" },
     fmta(
       [[
