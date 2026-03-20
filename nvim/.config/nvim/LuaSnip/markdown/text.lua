@@ -137,4 +137,10 @@ return {
     ),
     { condition = tex.in_text }
   ),
+  s({ trig = "SES", snippetType = "autosnippet" }, {
+    t("short exact sequence"),
+  }, { condition = tex.in_text }),
+  s({ trig = "LES", snippetType = "autosnippet" }, {
+    t("long exact sequence"),
+  }, { condition = tex.in_text }),
 }
