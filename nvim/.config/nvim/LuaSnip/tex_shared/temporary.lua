@@ -59,6 +59,9 @@ return {
   s({ trig = "FF", snippetType = "autosnippet", priority = 3000 }, {
     t("\\mathbb{F}_2"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "TT", snippetType = "autosnippet", priority = 3000 }, {
+    t("T^4_{\\Lambda}"),
+  }, { condition = tex.in_mathzone }),
   s(
     { trig = "pt", snippetType = "autosnippet" },
     fmta("[<>pt]", {
