@@ -150,6 +150,9 @@ return {
   s({ trig = "SES", snippetType = "autosnippet" }, {
     t("short exact sequence"),
   }, { condition = tex.in_text }),
+  s({ trig = "otw", snippetType = "autosnippet" }, {
+    t("\\text{otherwise}"),
+  }, { condition = tex.in_math }),
   s(
     { trig = "reff", snippetType = "autosnippet" },
     fmta("\\ref{<>}", {
