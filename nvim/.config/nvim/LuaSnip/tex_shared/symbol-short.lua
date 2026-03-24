@@ -279,6 +279,26 @@ return {
     t("\\oint"),
   }, { condition = tex.in_mathzone }),
   s(
+    { trig = "ceil", wordTrig = false, snippetType = "autosnippet" },
+    fmta(
+      [[
+\left\lceil{<>}\right\rceil
+    ]],
+      { i(1) }
+    ),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "flr", wordTrig = false, snippetType = "autosnippet" },
+    fmta(
+      [[
+\left\lfloor{<>}\right\rfloor
+    ]],
+      { i(1) }
+    ),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "b|", wordTrig = false, snippetType = "autosnippet" },
     fmta(
       [[
