@@ -80,7 +80,13 @@ return {
   s({ trig = "bbr", snippetType = "autosnippet" }, {
     t("\\mathbb{R}"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "RR", snippetType = "autosnippet" }, {
+    t("\\mathbb{R}"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "bbq", snippetType = "autosnippet" }, {
+    t("\\mathbb{Q}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "QQ", snippetType = "autosnippet" }, {
     t("\\mathbb{Q}"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "bbh", snippetType = "autosnippet" }, {
