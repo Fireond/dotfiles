@@ -169,6 +169,13 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "wtd", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\widetilde{<>}", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "td", snippetType = "autosnippet" },
     fmta("\\ttlde{<>}", {
       i(1),

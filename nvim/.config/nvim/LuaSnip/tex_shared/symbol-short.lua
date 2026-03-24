@@ -125,6 +125,15 @@ return {
   s({ trig = "cb", wordTrig = false, snippetType = "autosnippet" }, {
     t("^3"),
   }, { condition = tex.in_mathzone }),
+  s(
+    { trig = "ex(%d)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("^<>", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+    }),
+    { condition = tex.in_mathzone }
+  ),
   s({ trig = "inv", wordTrig = false, snippetType = "autosnippet" }, {
     t("^{-1}"),
   }, { condition = tex.in_mathzone }),
