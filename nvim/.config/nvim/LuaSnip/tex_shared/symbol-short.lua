@@ -27,6 +27,9 @@ return {
   s({ trig = "c.", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\cdot"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "b.", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\bullet"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "o.", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\odot"),
   }, { condition = tex.in_mathzone }),
