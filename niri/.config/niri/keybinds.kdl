@@ -17,7 +17,7 @@ binds {
     // -----------------------------
     // System
     // -----------------------------
-    Mod+BackSpace { spawn-sh "~/.dotfiles/bin/.local/share/bin/logoutlaunch.sh"; }
+    Mod+BackSpace { spawn-sh "wlogout"; }
 
     // -----------------------------
     // Application shortcuts
