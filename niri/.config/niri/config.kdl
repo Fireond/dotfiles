@@ -113,7 +113,7 @@ output "eDP-1" {
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 12
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -268,16 +268,16 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-spawn-at-startup "waybar_timer serve; waybar -c ~/.config/waybar/config-niri.jsonc"
-spawn-at-startup "udiskie --no-automount --smart-tray"
-spawn-at-startup "nm-applet --indicator"
-spawn-at-startup "dunst"
-spawn-at-startup "fcitx5 --replace -d"
-spawn-at-startup "awww-daemon &"
-spawn-at-startup "server.sh on"
-spawn-at-startup "clash-verge"
-spawn-at-startup "~/.local/share/bin/pull_dotfiles.sh"
-spawn-at-startup "/usr/bin/kanshi"
+spawn-sh-at-startup "waybar_timer serve; waybar -c ~/.config/waybar/config-niri.jsonc"
+spawn-sh-at-startup "udiskie --no-automount --smart-tray"
+spawn-sh-at-startup "nm-applet --indicator"
+spawn-sh-at-startup "dunst"
+spawn-sh-at-startup "fcitx5 --replace -d"
+spawn-sh-at-startup "awww-daemon &"
+spawn-sh-at-startup "server.sh on"
+spawn-sh-at-startup "clash-verge"
+spawn-sh-at-startup "~/.local/share/bin/pull_dotfiles.sh"
+spawn-sh-at-startup "/usr/bin/kanshi"
 
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:

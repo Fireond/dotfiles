@@ -1,68 +1,68 @@
 {
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "active": "",
-      "default": "",
-      "empty": "",
-      "1": "󰖟",
-      "2": "",
-      "3": "󱞁",
-      "9": "󰎆",
-      "10": ""
-    },
-    "format-window-separator": " ",
-    "window-rewrite-default": "",
-    "window-rewrite": {
-      "title<.*youtube.*>": "",
-      "class<firefox>": "",
-      "class<zen-browser>": "",
-      "class<neovide>": "",
-      "class<google-chrome>": "",
-      "class<chat-gpt>": "G",
-      "class<firefox> title<.*github.*>": "",
-      "kitty": "",
-      "class<code-oss>": "󰨞",
-      "class<org.pwmt.zathura>": "",
-      "class<sioyek>": "",
-      "class<org.inkscape.Inkscape>": "",
-      "class<Spotify>": "󰓇",
-      "class<QQ>": "󰘅",
-      "class<wechat>": "",
-      "class<qqmusic>": "",
-      "class<musicfox>": "",
-      "class<Zotero>": "󰰷",
-      "class<Obsidian>": "󱞁",
-      "class<write>": "",
-      "class<alacritty-bg>": "",
-      "class<org.kde.dolphin>": "󱢴",
-      "class<mpv>": "",
-      "class<org.kde.kdenlive>": "",
-      "class<system_monitor>": "󰨇"
-    },
-    "disable-scroll": false,
-    "all-outputs": true,
-    "active-only": false,
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace -1",
-    "on-scroll-down": "hyprctl dispatch workspace +1",
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "9": []
-    }
-  },
-  "hyprland/window": {
-    "format": " {class}",
-    "separate-outputs": true,
-    "max-length": 50
-  },
-  "custom/archicon": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "logoutlaunch.sh 1"
-  },
+  // "hyprland/workspaces": {
+  //   "format": "{icon}",
+  //   "format-icons": {
+  //     "active": "",
+  //     "default": "",
+  //     "empty": "",
+  //     "1": "󰖟",
+  //     "2": "",
+  //     "3": "󱞁",
+  //     "9": "󰎆",
+  //     "10": ""
+  //   },
+  //   "format-window-separator": " ",
+  //   "window-rewrite-default": "",
+  //   "window-rewrite": {
+  //     "title<.*youtube.*>": "",
+  //     "class<firefox>": "",
+  //     "class<zen-browser>": "",
+  //     "class<neovide>": "",
+  //     "class<google-chrome>": "",
+  //     "class<chat-gpt>": "G",
+  //     "class<firefox> title<.*github.*>": "",
+  //     "kitty": "",
+  //     "class<code-oss>": "󰨞",
+  //     "class<org.pwmt.zathura>": "",
+  //     "class<sioyek>": "",
+  //     "class<org.inkscape.Inkscape>": "",
+  //     "class<Spotify>": "󰓇",
+  //     "class<QQ>": "󰘅",
+  //     "class<wechat>": "",
+  //     "class<qqmusic>": "",
+  //     "class<musicfox>": "",
+  //     "class<Zotero>": "󰰷",
+  //     "class<Obsidian>": "󱞁",
+  //     "class<write>": "",
+  //     "class<alacritty-bg>": "",
+  //     "class<org.kde.dolphin>": "󱢴",
+  //     "class<mpv>": "",
+  //     "class<org.kde.kdenlive>": "",
+  //     "class<system_monitor>": "󰨇"
+  //   },
+  //   "disable-scroll": false,
+  //   "all-outputs": true,
+  //   "active-only": false,
+  //   "on-click": "activate",
+  //   "on-scroll-up": "hyprctl dispatch workspace -1",
+  //   "on-scroll-down": "hyprctl dispatch workspace +1",
+  //   "persistent-workspaces": {
+  //     "1": [],
+  //     "2": [],
+  //     "3": [],
+  //     "9": []
+  //   }
+  // },
+  // "hyprland/window": {
+  //   "format": " {class}",
+  //   "separate-outputs": true,
+  //   "max-length": 50
+  // },
+  // "custom/archicon": {
+  //   "format": "",
+  //   "tooltip": false,
+  //   "on-click": "logoutlaunch.sh 1"
+  // },
   "niri/workspaces": {
     "format": "{icon}",
     "format-icons": {

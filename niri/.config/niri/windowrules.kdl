@@ -83,3 +83,12 @@ window-rule {
     open-on-workspace "browser"
     open-maximized true
 }
+
+window-rule {
+    match app-id="^zen-browser$"
+    clip-to-geometry true
+}
+window-rule {
+    match app-id="^Zotero$"
+    clip-to-geometry true
+}
