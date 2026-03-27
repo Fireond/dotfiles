@@ -3,6 +3,10 @@ window-rule {
     open-floating true
 }
 window-rule {
+    match app-id="^__main__.py$"
+    open-floating true
+}
+window-rule {
     match app-id="^waypaper$"
     open-floating true
 }
