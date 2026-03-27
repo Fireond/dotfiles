@@ -100,9 +100,9 @@ binds {
         spawn-sh "pkill -x rofi || exec ~/.dotfiles/bin/.local/share/bin/cliphist.sh";
     }
 
-    Mod+Ctrl+Alt+T allow-when-locked=true {
-        spawn-sh "~/.dotfiles/bin/.local/share/bin/toggle_monitor.sh";
-    }
+    // Mod+Ctrl+Alt+T allow-when-locked=true {
+    //     spawn-sh "~/.dotfiles/bin/.local/share/bin/toggle_monitor.sh";
+    // }
 
     Mod+Space {
         spawn-sh "pkill -x rofi || exec rofi -show drun -theme $HOME/.config/rofi/config.rasi";

@@ -1,10 +1,7 @@
-// ----- float on -----
-
 window-rule {
     match app-id="^wechat$"
     open-floating true
 }
-
 window-rule {
     match app-id="^waypaper$"
     open-floating true
