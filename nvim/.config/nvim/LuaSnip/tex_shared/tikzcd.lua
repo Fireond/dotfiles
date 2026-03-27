@@ -21,6 +21,36 @@ end
 
 return {
   s(
+    { trig = "da", snippetType = "autosnippet" },
+    fmta(
+      [[
+      dashed,
+      ]],
+      {}
+    ),
+    { condition = tex.in_tikzcd }
+  ),
+  s(
+    { trig = "sl", snippetType = "autosnippet" },
+    fmta(
+      [[
+      shift left,
+      ]],
+      {}
+    ),
+    { condition = tex.in_tikzcd }
+  ),
+  s(
+    { trig = "sr", snippetType = "autosnippet" },
+    fmta(
+      [[
+      shift right,
+      ]],
+      {}
+    ),
+    { condition = tex.in_tikzcd }
+  ),
+  s(
     { trig = "ad", snippetType = "autosnippet" },
     fmta(
       [[
@@ -37,6 +67,18 @@ return {
     fmta(
       [[
       \arrow[r, "<>"]
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = tex.in_tikzcd }
+  ),
+  s(
+    { trig = "al", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \arrow[l, "<>"]
       ]],
       {
         i(1),

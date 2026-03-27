@@ -48,7 +48,7 @@ binds {
         spawn-sh "pkill -x nvtop || exec kitty --class=system_monitor -o window_padding_width=0 nvtop";
     }
 
-    Mod+Ctrl+W { spawn-sh "$SCR_PATH/toggle_waybar.sh"; }
+    Mod+Ctrl+W { spawn-sh "~/.dotfiles/bin/.local/share/bin/toggle_waybar.sh"; }
 
     Mod+Z { spawn-sh "zotero"; }
     Mod+G { spawn "xdg-open" "https://chatgpt.com"; }
