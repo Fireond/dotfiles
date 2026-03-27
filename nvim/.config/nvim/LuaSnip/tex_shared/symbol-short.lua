@@ -104,6 +104,11 @@ return {
     i(1),
     t("}"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "\\tol", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\xleftarrow{"),
+    i(1),
+    t("}"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "\\toh", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\hookrightarrow"),
   }, { condition = tex.in_mathzone }),
