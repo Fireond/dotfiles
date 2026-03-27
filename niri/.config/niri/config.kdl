@@ -364,7 +364,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -627,8 +627,5 @@ binds {
     // Mod+Shift+P { power-off-monitors; }
 }
 
-environment {
-    SCR_PATH "~/.dotfiles/bin/.local/share/bin"
-}
-
 include "keybinds.kdl"
+include "windowrules.kdl"

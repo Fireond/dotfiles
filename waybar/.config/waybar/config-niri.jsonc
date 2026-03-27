@@ -1,0 +1,38 @@
+{
+  "layer": "top",
+  "output": [
+    "*"
+  ],
+  "position": "top",
+  "mod": "dock",
+  "height": 20,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  "include": [
+    "~/.config/waybar/modules-left.json",
+    "~/.config/waybar/modules-center.json",
+    "~/.config/waybar/modules-right.json"
+  ],
+  "modules-left": [
+    "custom/archicon",
+    "niri/workspaces",
+    "niri/window"
+  ],
+  "modules-center": [
+    "custom/updates",
+    "clock",
+    "custom/wallpaper",
+    "custom/timer"
+  ],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "network",
+    "bluetooth",
+    "memory",
+    "cpu",
+    "battery"
+  ]
+}

@@ -20,8 +20,8 @@
     padding: 0px;
     border-radius: 12px;
     margin-left: 0px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 0px;
+    padding-right: 0px;
     margin-right: 0px;
     color: @on_background;
 /*     animation: ws_normal 20s ease-in-out 1; */

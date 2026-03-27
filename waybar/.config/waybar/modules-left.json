@@ -62,5 +62,29 @@
     "format": "",
     "tooltip": false,
     "on-click": "logoutlaunch.sh 1"
+  },
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "focused": "",
+      "active": "",
+      "default": "",
+      "empty": "",
+      "1": "󰖟",
+      "2": "",
+      "3": "󱞁",
+      "9": "󰎆",
+      "10": ""
+    },
+    "all-outputs": true,
+    "current-only": false,
+    "disable-click": false
+  },
+  "niri/window": {
+    "format": " {app_id}",
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 14,
+    "max-length": 50
   }
 }

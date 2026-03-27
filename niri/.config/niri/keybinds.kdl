@@ -17,12 +17,7 @@ binds {
     // -----------------------------
     // System
     // -----------------------------
-    Mod+BackSpace { spawn-sh "$SCR_PATH/logoutlaunch.sh"; }
-
-    // -----------------------------
-    // Debug
-    // -----------------------------
-    Mod+Ctrl+Alt+D { spawn-sh "$SCR_PATH/print_hyprcli.sh"; }
+    Mod+BackSpace { spawn-sh "~/.dotfiles/bin/.local/share/bin/logoutlaunch.sh"; }
 
     // -----------------------------
     // Application shortcuts
@@ -32,7 +27,7 @@ binds {
 
     // Edit this session path if needed.
     Mod+U {
-        spawn-sh "kitty -e ~/.local/share/bin/auto_padding_nvim.sh -S \"$HOME/.local/state/nvim/sessions/%home%fireond%Documents%sync-server%Obsidian-Vault.vim\"";
+        spawn-sh "~/.dotfiles/bin/.local/share/bin/open-obsidian-nvim.sh";
     }
 
     Mod+O { spawn "obsidian"; }
@@ -52,30 +47,30 @@ binds {
 
     Mod+Z { spawn-sh "zotero"; }
     Mod+G { spawn "xdg-open" "https://chatgpt.com"; }
-    // Mod+Q { spawn-sh "$SCR_PATH/toggle_kitty.sh musicfox"; }
-    Mod+I { spawn-sh "$SCR_PATH/quick_latex.sh"; }
+    // Mod+Q { spawn-sh "~/.dotfiles/bin/.local/share/bin/toggle_kitty.sh musicfox"; }
+    Mod+I { spawn-sh "~/.dotfiles/bin/.local/share/bin/quick_latex.sh"; }
 
     // -----------------------------
     // Screenshot / recording
     // -----------------------------
     F1 { spawn-sh "grimblast copy area \"$HOME/Pictures/Screenshots/$(date +'%F-%T.png')\""; }
     F2 { spawn-sh "grimblast copysave area \"$HOME/Pictures/Screenshots/$(date +'%F-%T.png')\""; }
-    F3 { spawn-sh "$SCR_PATH/wf-recorder-toggle.sh"; }
-    F4 { spawn-sh "$SCR_PATH/clip2float.sh"; }
+    F3 { spawn-sh "~/.dotfiles/bin/.local/share/bin/wf-recorder-toggle.sh"; }
+    F4 { spawn-sh "~/.dotfiles/bin/.local/share/bin/clip2float.sh"; }
 
     // -----------------------------
     // Audio
     // -----------------------------
-    F10 allow-when-locked=true { spawn-sh "$SCR_PATH/volumecontrol-pipewire.sh -o m"; }
-    F11 allow-when-locked=true { spawn-sh "$SCR_PATH/volumecontrol-pipewire.sh -o d"; }
-    F12 allow-when-locked=true { spawn-sh "$SCR_PATH/volumecontrol-pipewire.sh -o i"; }
+    F10 allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/volumecontrol-pipewire.sh -o m"; }
+    F11 allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/volumecontrol-pipewire.sh -o d"; }
+    F12 allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/volumecontrol-pipewire.sh -o i"; }
 
-    XF86AudioMute allow-when-locked=true { spawn-sh "$SCR_PATH/volumecontrol-pipewire.sh -o m"; }
-    XF86AudioMicMute allow-when-locked=true { spawn-sh "$SCR_PATH/volumecontrol-pipewire.sh -i m"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "$SCR_PATH/volumecontrol-pipewire.sh -o d 2"; }
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "$SCR_PATH/volumecontrol-pipewire.sh -o i 2"; }
+    XF86AudioMute allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/volumecontrol-pipewire.sh -o m"; }
+    XF86AudioMicMute allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/volumecontrol-pipewire.sh -i m"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/volumecontrol-pipewire.sh -o d 2"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/volumecontrol-pipewire.sh -o i 2"; }
 
-    F9 allow-when-locked=true { spawn-sh "$SCR_PATH/volumecontrol.sh -s ''"; }
+    F9 allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/volumecontrol.sh -s ''"; }
 
     // -----------------------------
     // Media
@@ -92,21 +87,21 @@ binds {
     // -----------------------------
     // Brightness
     // -----------------------------
-    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "$SCR_PATH/brightnesscontrol.sh i"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "$SCR_PATH/brightnesscontrol.sh d"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/brightnesscontrol.sh i"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "~/.dotfiles/bin/.local/share/bin/brightnesscontrol.sh d"; }
 
     // -----------------------------
     // Custom scripts
     // -----------------------------
-    Mod+Alt+G { spawn-sh "$SCR_PATH/gamemode.sh"; }
+    Mod+Alt+G { spawn-sh "~/.dotfiles/bin/.local/share/bin/gamemode.sh"; }
     Mod+Shift+W { spawn "waypaper"; }
 
     Mod+Shift+C {
-        spawn-sh "pkill -x rofi || exec $SCR_PATH/cliphist.sh";
+        spawn-sh "pkill -x rofi || exec ~/.dotfiles/bin/.local/share/bin/cliphist.sh";
     }
 
     Mod+Ctrl+Alt+T allow-when-locked=true {
-        spawn-sh "$SCR_PATH/toggle_monitor.sh";
+        spawn-sh "~/.dotfiles/bin/.local/share/bin/toggle_monitor.sh";
     }
 
     Mod+Space {

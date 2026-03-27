@@ -1,0 +1,95 @@
+// ----- float on -----
+
+window-rule {
+    match app-id="^wechat$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^waypaper$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^Zotero$" title="Plugins"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^Zotero$" title="Progress"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^Zotero$" title="^Trash - Zotero$"
+    open-floating true
+}
+
+window-rule {
+    match title="Extension"
+    open-floating true
+}
+
+window-rule {
+    match title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^clash-verge$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^QQ$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^system_monitor$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^musicfox$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^qimgv$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^latex-scratch$"
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 500; }
+    default-floating-position x=800 y=100 relative-to="top-left"
+}
+
+// ----- centered 70% x 80% -----
+// In niri, floating windows open centered by default,
+// so 70% width + 80% height already gives the same
+// visual result as move 15% 10% + size 70% 80%.
+
+window-rule {
+    match app-id="^QQ$"
+    open-floating true
+    default-column-width { proportion 0.7; }
+    default-window-height { proportion 0.8; }
+}
+
+window-rule {
+    match app-id="^system_monitor$"
+    open-floating true
+    default-column-width { proportion 0.7; }
+    default-window-height { proportion 0.8; }
+}
+
+window-rule {
+    match app-id="^musicfox$"
+    open-floating true
+    default-column-width { proportion 0.7; }
+    default-window-height { proportion 0.8; }
+}
