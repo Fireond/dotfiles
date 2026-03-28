@@ -105,7 +105,7 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    position x=1920 y=0
+    // position x=1920 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -278,6 +278,8 @@ spawn-sh-at-startup "server.sh on"
 spawn-sh-at-startup "clash-verge"
 spawn-sh-at-startup "~/.local/share/bin/pull_dotfiles.sh"
 spawn-sh-at-startup "/usr/bin/kanshi"
+spawn-at-startup "zen"
+spawn-at-startup "zotero"
 
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
