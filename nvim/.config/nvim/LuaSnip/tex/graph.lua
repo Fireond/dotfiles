@@ -84,6 +84,26 @@ return {
     { condition = tex.in_tikz }
   ),
   s(
+    { trig = "ru", snippetType = "autosnippet", dscr = "Right down annotate" },
+    fmta(
+      [[
+      \path (<>.north) ++ (0,1em) node[anchor=south west,color=<>!67] (<>_node){<>};
+      \draw [color=<>!57](<>.north) |- ([xshift=-0.3ex,color=<>]<>_node.south east);
+      ]],
+      {
+        i(1, "markname"),
+        i(2, "color"),
+        rep(1),
+        i(3, "text"),
+        rep(2),
+        rep(1),
+        rep(2),
+        rep(1),
+      }
+    ),
+    { condition = tex.in_tikz }
+  ),
+  s(
     { trig = "rd", snippetType = "autosnippet", dscr = "Right down annotate" },
     fmta(
       [[
