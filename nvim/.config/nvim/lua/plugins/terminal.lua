@@ -31,6 +31,7 @@ return {
         "<cmd>Yazi cwd<cr>",
         desc = "Open the file manager in nvim's working directory",
       },
+      { "<c-y>" },
       {
         -- NOTE: this requires a version of yazi that includes
         -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
