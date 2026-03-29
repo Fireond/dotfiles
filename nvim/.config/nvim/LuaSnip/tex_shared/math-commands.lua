@@ -287,7 +287,7 @@ return {
   s({ trig = "rank", snippetType = "autosnippet" }, fmta("\\operatorname{rank}", {}), { condition = tex.in_mathzone }),
   s({ trig = "dim", snippetType = "autosnippet" }, fmta("\\operatorname{dim}", {}), { condition = tex.in_mathzone }),
   s({ trig = "det", snippetType = "autosnippet" }, fmta("\\operatorname{det}", {}), { condition = tex.in_mathzone }),
-  s({ trig = "vol", snippetType = "autosnippet" }, fmta("\\Vol", {}), { condition = tex.in_mathzone }),
+  s({ trig = "vol", snippetType = "autosnippet" }, fmta("\\operatorname{Vol}", {}), { condition = tex.in_mathzone }),
   s(
     { trig = "->", snippetType = "autosnippet" },
     fmta("\\xlongrightarrow{<>}", {
