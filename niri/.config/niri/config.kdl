@@ -80,6 +80,10 @@ input {
 output "HDMI-A-1" {
   scale 2.0
 }
+output "DP-1" {
+  scale 2.0
+  mode "3840x2160@160"
+}
 
 output "eDP-1" {
     // Resolution and, optionally, refresh rate of the output.
