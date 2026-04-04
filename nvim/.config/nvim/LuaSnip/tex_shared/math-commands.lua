@@ -95,7 +95,7 @@ return {
   s({ trig = "bbc", snippetType = "autosnippet" }, {
     t("\\mathbb{C}"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "bbz", snippetType = "autosnippet" }, {
+  s({ trig = "ZZ", snippetType = "autosnippet" }, {
     t("\\mathbb{Z}"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "bbn", snippetType = "autosnippet" }, {
