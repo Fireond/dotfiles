@@ -274,6 +274,11 @@ return {
   ),
   -- s({ trig = "rr", snippetType = "autosnippet" }, fmta("\\ran", {}), { condition = tex.in_mathzone }),
   s({ trig = "kk", snippetType = "autosnippet" }, fmta("\\operatorname{ker}", {}), { condition = tex.in_mathzone }),
+  s(
+    { trig = "ckk", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\operatorname{coker}", {}),
+    { condition = tex.in_mathzone }
+  ),
   s({ trig = "hom", snippetType = "autosnippet" }, fmta("\\operatorname{Hom}", {}), { condition = tex.in_mathzone }),
   s({ trig = "deg", snippetType = "autosnippet" }, fmta("\\operatorname{deg}", {}), { condition = tex.in_mathzone }),
   s({ trig = "spp", snippetType = "autosnippet" }, fmta("\\operatorname{supp}", {}), { condition = tex.in_mathzone }),
