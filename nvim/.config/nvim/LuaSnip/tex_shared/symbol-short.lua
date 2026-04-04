@@ -172,6 +172,9 @@ return {
   s({ trig = "cup", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\cup"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "smi", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\smile"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "scup", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
     t("\\sqcup"),
   }, { condition = tex.in_mathzone }),
