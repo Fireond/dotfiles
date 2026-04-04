@@ -53,8 +53,8 @@ binds {
     // -----------------------------
     // Screenshot / recording
     // -----------------------------
-    F1 { spawn-sh "grimblast copy area \"$HOME/Pictures/Screenshots/$(date +'%F-%T.png')\""; }
-    F2 { spawn-sh "grimblast copysave area \"$HOME/Pictures/Screenshots/$(date +'%F-%T.png')\""; }
+    // F1 { spawn-sh "grimblast copy area \"$HOME/Pictures/Screenshots/$(date +'%F-%T.png')\""; }
+    // F2 { spawn-sh "grimblast copysave area \"$HOME/Pictures/Screenshots/$(date +'%F-%T.png')\""; }
     F3 { spawn-sh "~/.dotfiles/bin/.local/share/bin/wf-recorder-toggle.sh"; }
     F4 { spawn-sh "~/.dotfiles/bin/.local/share/bin/clip2float.sh"; }
 
