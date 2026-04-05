@@ -7,6 +7,6 @@ profile {
     output eDP-1 disable
 }
 profile { 
-    output DP-1 enable scale 2.0 position 0,0
+    output DP-1 enable scale 2.0 position 0,0 mode "3840x2160@160"
     output eDP-1 disable
 }
