@@ -272,7 +272,7 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-spawn-sh-at-startup "waybar_timer serve; waybar -c ~/.config/waybar/config-niri.jsonc"
+// spawn-sh-at-startup "waybar_timer serve; systemctl --user restart waybar.service"
 spawn-sh-at-startup "udiskie --no-automount --smart-tray"
 spawn-sh-at-startup "nm-applet --indicator"
 spawn-sh-at-startup "dunst"
