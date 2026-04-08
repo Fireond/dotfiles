@@ -56,13 +56,13 @@ window-rule {
     default-window-height { proportion 0.8; }
 }
 window-rule {
-    match app-id="^system_monitor$"
+    match app-id="^musicfox$"
     open-floating true
     default-column-width { proportion 0.7; }
     default-window-height { proportion 0.8; }
 }
 window-rule {
-    match app-id="^musicfox$"
+    match app-id="^temp_kitty$"
     open-floating true
     default-column-width { proportion 0.7; }
     default-window-height { proportion 0.8; }

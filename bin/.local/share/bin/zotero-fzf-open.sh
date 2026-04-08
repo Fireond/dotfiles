@@ -2,6 +2,7 @@
 set -euo pipefail
 
 RPC_URL="http://localhost:23119/better-bibtex/json-rpc"
+OPEN_SCRIPT="${HOME}/.local/share/bin/zotero-open-by-citekey.sh"
 
 need() {
   command -v "$1" >/dev/null 2>&1 || {
@@ -13,7 +14,11 @@ need() {
 need curl
 need jq
 need fzf
-need wl-copy
+
+[ -x "$OPEN_SCRIPT" ] || {
+  echo "open script not found or not executable: $OPEN_SCRIPT" >&2
+  exit 1
+}
 
 rpc() {
   local method="$1"
@@ -55,7 +60,7 @@ selection="$(
   ' "$tmp_json" |
     fzf --delimiter=$'\t' \
       --with-nth=2,3,4 \
-      --prompt='Zotero title> ' \
+      --prompt='Open Zotero paper> ' \
       --height=80% \
       --layout=reverse \
       --border
@@ -65,5 +70,6 @@ selection="$(
 
 citekey="${selection%%$'\t'*}"
 
-printf '%s' "$citekey" | wl-copy
-echo "Copied citekey: $citekey"
+"$OPEN_SCRIPT" "$citekey"
+
+sleep 1

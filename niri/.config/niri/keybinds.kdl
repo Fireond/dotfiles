@@ -4,15 +4,7 @@ binds {
     // -----------------------------
     Mod+W repeat=false { close-window; }
 
-    // Hyprland had togglefloating + centerwindow on Mod+F.
-    // Niri has no single exact equivalent, so this just toggles floating.
     Mod+F { toggle-window-floating; }
-
-    // Mod+Alt+M { maximize-window-to-edges; }
-    // Mod+M { fullscreen-window; }
-
-    // No native sticky/pin toggle in niri yet.
-    // Mod+P { ... }
 
     // -----------------------------
     // System
@@ -24,30 +16,21 @@ binds {
     // -----------------------------
     Mod+Return { spawn "kitty" "-1"; }
     Mod+E { spawn "nautilus"; }
-
-    // Edit this session path if needed.
-    Mod+U {
-        spawn-sh "~/.dotfiles/bin/.local/share/bin/open-obsidian-nvim.sh";
-    }
-
+    Mod+U { spawn-sh "~/.dotfiles/bin/.local/share/bin/open-obsidian-nvim.sh"; }
     Mod+O { spawn "obsidian"; }
     Mod+V { spawn "zathura"; }
-    Mod+Shift+V { spawn-sh "kitty zsh -lc 'search_pdf.sh'"; }
+    Mod+Shift+V { spawn-sh "kitty --class=temp_kitty zsh -lc 'search_pdf.sh'"; }
+    Mod+Shift+Z { spawn-sh "kitty --class=temp_kitty zsh -lc 'zotero-fzf-copy-citekey.sh'"; }
+    Mod+Ctrl+Z { spawn-sh "kitty --class=temp_kitty zsh -lc 'zotero-fzf-open.sh'"; }
     Mod+Shift+Return { spawn "zen"; }
 
-    Mod+B {
-        spawn-sh "pkill -x btop || exec kitty --class=system_monitor -o window_padding_width=0 btop";
-    }
-
-    Mod+Shift+B {
-        spawn-sh "pkill -x nvtop || exec kitty --class=system_monitor -o window_padding_width=0 nvtop";
-    }
+    Mod+B { spawn-sh "pkill -x btop || exec kitty --class=temp_kitty -o window_padding_width=0 btop"; }
+    Mod+Shift+B { spawn-sh "pkill -x nvtop || exec kitty --class=temp_kitty -o window_padding_width=0 nvtop"; }
 
     Mod+Ctrl+W { spawn-sh "~/.dotfiles/bin/.local/share/bin/toggle_waybar.sh"; }
 
     Mod+Z { spawn-sh "zotero"; }
     Mod+G { spawn "xdg-open" "https://chatgpt.com"; }
-    // Mod+Q { spawn-sh "~/.dotfiles/bin/.local/share/bin/toggle_kitty.sh musicfox"; }
     Mod+I { spawn-sh "~/.dotfiles/bin/.local/share/bin/quick_latex.sh"; }
 
     // -----------------------------
@@ -94,7 +77,7 @@ binds {
     // Custom scripts
     // -----------------------------
     // Mod+Alt+G { spawn-sh "~/.dotfiles/bin/.local/share/bin/gamemode.sh"; }
-    Mod+Shift+W { spawn "waypaper"; }
+    // Mod+Shift+W { spawn "waypaper"; }
 
     Mod+Space {
         spawn-sh "pkill -x rofi || exec rofi -show drun -theme $HOME/.config/rofi/config.rasi";
