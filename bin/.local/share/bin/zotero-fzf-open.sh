@@ -72,4 +72,4 @@ citekey="${selection%%$'\t'*}"
 
 "$OPEN_SCRIPT" "$citekey"
 
-sleep 1
+sleep 0.2

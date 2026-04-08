@@ -43,11 +43,12 @@ write_session() {
   cat >"$SESSION" <<EOF
 layout splits
 launch --title "latex-edit" /bin/bash -lc 'exec ~/.local/share/bin/auto_padding_nvim.sh "$FILE" \
-  -c "augroup LatexScratchAuto | autocmd! | autocmd InsertLeave,TextChanged,TextChangedI,FocusLost,CursorHold,CursorHoldI *.tex silent! update | autocmd VimLeavePre * silent! update | augroup END" \
   -c "call cursor(8, 999)" -c "startinsert!" -c "silent! VimtexCompile"'
 launch --location=hsplit --bias 50 --title "latex-preview" /bin/bash -lc 'sleep 2; exec tdf -f $PDF'
 EOF
 }
+
+# -c "augroup LatexScratchAuto | autocmd! | autocmd InsertLeave,TextChanged,TextChangedI,FocusLost,CursorHold,CursorHoldI *.tex silent! update | autocmd VimLeavePre * silent! update | augroup END" \
 
 cleanup() {
   # if [[ -f "$FILE" ]]; then
