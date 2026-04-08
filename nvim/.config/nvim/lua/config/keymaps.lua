@@ -94,7 +94,10 @@ map("n", "<leader>nO", function()
     vim.notify("Not a md file!", vim.log.levels.ERROR)
   end
 end, { desc = "Open Sources" })
-map("n", "<leader>nz", function()
+map("x", "<leader>nz", function()
+  require("util.zotero").open_zotero_pdf_from_visual()
+end, { desc = "Open Zotero PDF from selected citekey" })
+map("n", "<leader>nZ", function()
   local ft = vim.bo.filetype
   if ft == "markdown" then
     require("util.zhihu").convert()

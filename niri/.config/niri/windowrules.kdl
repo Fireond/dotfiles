@@ -11,18 +11,7 @@ window-rule {
     open-floating true
 }
 window-rule {
-    match app-id=r#"^Zotero$"# title="Plugins Manager"
-    open-floating true
-    default-column-width { fixed 900; }
-    default-window-height { fixed 700; }
-    default-floating-position x=0 y=40 relative-to="top"
-}
-window-rule {
     match app-id="^Zotero$"
-    open-floating true
-}
-window-rule {
-    match app-id="^Zotero$" title="^Trash - Zotero$"
     open-floating true
 }
 window-rule {
