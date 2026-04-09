@@ -72,6 +72,9 @@ return {
   s({ trig = "~=", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\approx"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = ":=", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\coloneqq"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "~~", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\sim"),
   }, { condition = tex.in_mathzone }),
