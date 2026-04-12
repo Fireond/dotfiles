@@ -83,6 +83,15 @@ return {
   s({ trig = "RR", snippetType = "autosnippet" }, {
     t("\\mathbb{R}"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "RPn", snippetType = "autosnippet" }, {
+    t("\\mathbb{R}\\mathrm{P}^{n}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "RPi", snippetType = "autosnippet" }, {
+    t("\\mathbb{R}\\mathrm{P}^{i}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "RPj", snippetType = "autosnippet" }, {
+    t("\\mathbb{R}\\mathrm{P}^{j}"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "bbq", snippetType = "autosnippet" }, {
     t("\\mathbb{Q}"),
   }, { condition = tex.in_mathzone }),
