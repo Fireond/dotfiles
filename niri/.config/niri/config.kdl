@@ -282,8 +282,8 @@ spawn-sh-at-startup "server.sh on"
 spawn-sh-at-startup "clash-verge"
 spawn-sh-at-startup "~/.local/share/bin/pull_dotfiles.sh"
 spawn-sh-at-startup "/usr/bin/kanshi"
-spawn-at-startup "zen"
-spawn-at-startup "zotero"
+spawn-sh-at-startup "zen"
+spawn-sh-at-startup "zotero"
 
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
