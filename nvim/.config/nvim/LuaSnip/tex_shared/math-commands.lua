@@ -86,6 +86,9 @@ return {
   s({ trig = "RPn", snippetType = "autosnippet" }, {
     t("\\mathbb{R}\\mathrm{P}^{n}"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "CPn", snippetType = "autosnippet" }, {
+    t("\\mathbb{C}\\mathrm{P}^{n}"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "RPi", snippetType = "autosnippet" }, {
     t("\\mathbb{R}\\mathrm{P}^{i}"),
   }, { condition = tex.in_mathzone }),
