@@ -277,17 +277,12 @@ spawn-sh-at-startup "udiskie --no-automount --smart-tray"
 spawn-sh-at-startup "nm-applet --indicator"
 spawn-sh-at-startup "dunst"
 spawn-sh-at-startup "fcitx5 --replace -d"
-// spawn-sh-at-startup "awww-daemon &"
 spawn-sh-at-startup "server.sh on"
 spawn-sh-at-startup "clash-verge"
-spawn-sh-at-startup "~/.local/share/bin/pull_dotfiles.sh"
-spawn-sh-at-startup "/usr/bin/kanshi"
 spawn-sh-at-startup "zen"
 spawn-sh-at-startup "zotero"
-
-
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+spawn-sh-at-startup "~/.local/share/bin/pull_dotfiles.sh"
+spawn-sh-at-startup "/usr/bin/kanshi"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
