@@ -22,6 +22,7 @@ binds {
     Mod+Shift+V { spawn-sh "kitty --class=temp_kitty zsh -lc 'search_pdf.sh'"; }
     Mod+Shift+Z { spawn-sh "kitty --class=temp_kitty zsh -lc 'zotero-fzf-copy-citekey.sh'"; }
     Mod+Ctrl+Z { spawn-sh "kitty --class=temp_kitty zsh -lc 'zotero-fzf-open.sh'"; }
+    Mod+T { spawn-sh "kitty --class=temp_kitty zsh -lc 'auto_padding_nvim.sh ~/Documents/sync-server/Obsidian-Vault/others/todos.md'"; }
     Mod+Shift+Return { spawn "zen"; }
 
     Mod+B { spawn-sh "pkill -x btop || exec kitty --class=temp_kitty -o window_padding_width=0 btop"; }
