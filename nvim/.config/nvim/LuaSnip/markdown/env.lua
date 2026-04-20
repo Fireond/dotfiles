@@ -97,7 +97,7 @@ $\square$
     fmta(
       [[
 ```tikz
-\usepackage{tikz-cd,amssymb}
+\usepackage{tikz-cd,amssymb,amsmath}
 \begin{document}
   \begin{tikzcd}
   <>
