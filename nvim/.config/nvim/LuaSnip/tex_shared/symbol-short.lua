@@ -102,6 +102,9 @@ return {
   s({ trig = "to", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\to"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "lto", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\leadsto"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "\\too", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
     t("\\xrightarrow{"),
     i(1),
