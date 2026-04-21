@@ -83,6 +83,7 @@ output "HDMI-A-1" {
 output "DP-1" {
   scale 2.0
   mode "3840x2160@160"
+  position x=2560 y=0
 }
 
 output "eDP-1" {
@@ -94,6 +95,7 @@ output "eDP-1" {
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
+    position x=0 y=0
     scale 2.0
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
