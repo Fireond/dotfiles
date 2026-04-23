@@ -1,11 +1,6 @@
 #!/bin/bash
 
-# 配置信息
-REMOTE_USER="hanyu_yan"
-REMOTE_HOST="101.6.96.188"
-REMOTE_PORT="2222"
-REMOTE_DIR="/home/hanyu_yan"
-LOCAL_DIR="$HOME/Documents/deng_server"
+source ~/.dotfiles/bin/.local/share/bin/bin.local.sh
 
 is_mounted() {
   mountpoint -q "$LOCAL_DIR"
@@ -18,7 +13,7 @@ on)
     echo "⚠️ 已经挂载在 $LOCAL_DIR"
   else
     echo "📡 挂载 $REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR 到 $LOCAL_DIR ..."
-    sshfs -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR" "$LOCAL_DIR"
+    sshfs -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR" "$LOCAL_DIR" -o reconnect -o ServerAliveInterval=15 -o ServerAliveCountMax=3
     if [ $? -eq 0 ]; then
       echo "✅ 挂载成功！"
     else
