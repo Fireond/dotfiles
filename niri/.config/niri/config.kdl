@@ -79,6 +79,8 @@ input {
 // Remember to uncomment the node by removing "/-"!
 output "HDMI-A-1" {
   scale 2.0
+  mode "3840x2160@60"
+  position x=-2560 y=0
 }
 output "DP-1" {
   scale 2.0
