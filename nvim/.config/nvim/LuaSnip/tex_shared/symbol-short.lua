@@ -187,6 +187,9 @@ return {
   s({ trig = "fro", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\frown"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "vlim", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\varinjlim"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "scup", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
     t("\\sqcup"),
   }, { condition = tex.in_mathzone }),
