@@ -76,4 +76,8 @@ return {
       { "<leader>uv", "<cmd>CsvViewToggle<cr>", desc = "Toggle CsvView" },
     },
   },
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
+  },
 }
