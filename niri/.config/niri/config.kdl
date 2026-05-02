@@ -97,6 +97,7 @@ output "eDP-1" {
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
+    off
     position x=0 y=0
     scale 2.0
 
