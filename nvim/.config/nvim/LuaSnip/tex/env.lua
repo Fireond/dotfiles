@@ -255,7 +255,7 @@ return {
       [[
       \begin{figure}[htbp]
         \centering
-        \includegraphics[width=0.8\textwidth]{<>}
+        \includegraphics[width=\textwidth]{<>}
         \caption{<>}
         \label{fig:<>}
       \end{figure}
