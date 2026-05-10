@@ -209,6 +209,19 @@ return {
     { condition = tex.in_text }
   ),
   s(
+    { trig = "cr", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \color{<>}{<>}
+      ]],
+      {
+        i(1, "red"),
+        i(2),
+      }
+    ),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "tc", snippetType = "autosnippet", priority = 2000 },
     fmta(
       [[
