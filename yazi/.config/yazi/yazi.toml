@@ -45,18 +45,18 @@ wps = [
 
 [open]
 prepend_rules = [
-  { name = "*.pdf", use = ["zathura"] },
-  { name = "*.tex", use = "edit" },
-  { name = "*.svg", use = "inkscape" },
-  { name = "*.doc", use = "wps" },
-  { name = "*.docx", use = "wps" },
-  { name = "*.xls", use = "wps" },
-  { name = "*.xlsx", use = "wps" },
+  { url = "*.pdf", use = "zathura" },
+  { url = "*.tex", use = "edit" },
+  { url = "*.svg", use = "inkscape" },
+  { url = "*.doc", use = "wps" },
+  { url = "*.docx", use = "wps" },
+  { url = "*.xls", use = "wps" },
+  { url = "*.xlsx", use = "wps" },
   { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = "wps" },
   { mime = "image/*", use = ["open", "qimgv", "reveal"] },
 ]
 
 [plugin]
 prepend_previewers = [
-  { name = "*.ipynb", run = "nbpreview" },
+  { url = "*.ipynb", run = "nbpreview" },
 ]
