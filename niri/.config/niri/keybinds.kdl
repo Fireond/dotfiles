@@ -32,6 +32,7 @@ binds {
 
     Mod+Z { spawn-sh "zotero"; }
     Mod+G { spawn "xdg-open" "https://chatgpt.com"; }
+    Mod+Shift+G { spawn "xdg-open" "http://localhost:8081/"; }
     Mod+I { spawn-sh "~/.dotfiles/bin/.local/share/bin/quick_latex.sh"; }
 
     // -----------------------------

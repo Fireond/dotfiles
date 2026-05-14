@@ -81,6 +81,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias thussl='sudo openconnect --protocol=pulse https://sslvpn.tsinghua.edu.cn --useragent Pulse-Secure/9.1.11.6725 --user=2022010860 --passwd-on-stdin < ~/Documents/texts/thussl-pass.txt'
 
   alias ssh_server_reverse='ssh -fNR 1080:localhost:7897 deng'
+  alias ssh_server_chat='ssh -fNL 8081:localhost:8081 deng'
 fi
 
 alias c='clear'
