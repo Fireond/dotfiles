@@ -88,3 +88,10 @@ window-rule {
     match app-id="^Zotero$"
     clip-to-geometry true
 }
+
+window-rule {
+    match app-id="^termfilechooser-yazi$"
+    open-floating true
+    default-column-width { proportion 0.70; }
+    default-window-height { proportion 0.75; }
+}
