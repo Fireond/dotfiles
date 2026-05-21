@@ -82,6 +82,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   alias ssh_server_reverse='ssh -fNR 1080:localhost:7897 deng'
   alias ssh_server_chat='ssh -fNL 8081:localhost:8081 -L 4000:localhost:4000 deng'
+  alias chat_info='curl --noproxy "*" -s http://localhost:4000/key/info -H "Authorization: Bearer sk-bWGHv6wXl2p6ZtI8j-d8kw"'
 fi
 
 alias c='clear'
