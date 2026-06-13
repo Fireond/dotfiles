@@ -83,11 +83,11 @@ return {
     build = "cargo build --release --manifest-path service/Cargo.toml",
     main = "math-conceal",
     opts = {
-      conceal = {},
-      -- conceal = { "greek", "script", "math", "font", "delim", "phy" },
+      -- conceal = {},
+      conceal = { "greek", "script", "math", "font", "delim", "phy" },
       ft = { "plaintex", "tex", "context", "bibtex", "markdown", "typst" },
       image = {
-        enabled = true,
+        enabled = false,
         filetypes = { "typst", "markdown" },
       },
     },
