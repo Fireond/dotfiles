@@ -87,7 +87,7 @@ return {
       -- conceal = { "greek", "script", "math", "font", "delim", "phy" },
       ft = { "plaintex", "tex", "context", "bibtex", "markdown", "typst" },
       image = {
-        enabled = false,
+        enabled = true,
         filetypes = { "typst", "markdown" },
       },
     },
