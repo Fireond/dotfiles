@@ -79,19 +79,17 @@ return {
   },
   {
     "pxwg/math-conceal.nvim",
-    enabled = false,
-    event = "VeryLazy",
+    branch = "preview",
+    build = "cargo build --release --manifest-path service/Cargo.toml",
     main = "math-conceal",
     opts = {
-      conceal = {
-        "greek",
-        "script",
-        "math",
-        "font",
-        "delim",
-        "phy",
-      },
+      conceal = {},
+      -- conceal = { "greek", "script", "math", "font", "delim", "phy" },
       ft = { "plaintex", "tex", "context", "bibtex", "markdown", "typst" },
+      image = {
+        enabled = false,
+        filetypes = { "typst", "markdown" },
+      },
     },
   },
 }
