@@ -79,6 +79,7 @@ return {
   },
   {
     "pxwg/math-conceal.nvim",
+    enabled = false,
     branch = "preview",
     build = "cargo build --release --manifest-path service/Cargo.toml",
     main = "math-conceal",
