@@ -23,7 +23,7 @@ window-rule {
     open-floating true
 }
 window-rule {
-    match app-id="^clash-verge$"
+    match app-id="^Clash-verge$"
     open-floating true
 }
 window-rule {
