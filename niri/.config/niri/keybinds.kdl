@@ -10,13 +10,15 @@ binds {
     // System
     // -----------------------------
     Mod+BackSpace { spawn-sh "wlogout"; }
+    Mod+Shift+P { power-off-monitors; }
 
     // -----------------------------
     // Application shortcuts
     // -----------------------------
     Mod+Return { spawn "kitty" "-1"; }
     Mod+E { spawn "nautilus"; }
-    Mod+U { spawn-sh "~/.dotfiles/bin/.local/share/bin/open-obsidian-nvim.sh"; }
+    // Mod+U { spawn-sh "~/.dotfiles/bin/.local/share/bin/open-obsidian-nvim.sh"; }
+    Mod+U { spawn-sh "/home/fireond/Documents/Codes/zennotes/dist/linux-unpacked/ZenNotes ~/Documents/sync-server/Obsidian-Vault"; }
     Mod+O { spawn "obsidian"; }
     Mod+V { spawn "zathura"; }
     Mod+Shift+V { spawn-sh "kitty --class=temp_kitty zsh -lc 'search_pdf.sh'"; }
@@ -31,8 +33,9 @@ binds {
     Mod+Ctrl+W { spawn-sh "~/.dotfiles/bin/.local/share/bin/toggle_waybar.sh"; }
 
     Mod+Z { spawn-sh "zotero"; }
-    Mod+G { spawn "xdg-open" "https://chatgpt.com"; }
-    Mod+Shift+G { spawn "xdg-open" "http://localhost:8081/"; }
+    // Mod+Shift+G { spawn "xdg-open" "http://localhost:8081/"; }
+    Mod+Shift+G { spawn "xdg-open" "https://chatgpt.com"; }
+    Mod+G { spawn "focus-or-launch.sh" "chatgpt" "chatgpt"; }
     Mod+I { spawn-sh "~/.dotfiles/bin/.local/share/bin/quick_latex.sh"; }
 
     // -----------------------------
@@ -40,7 +43,7 @@ binds {
     // -----------------------------
     // F1 { spawn-sh "grimblast copy area \"$HOME/Pictures/Screenshots/$(date +'%F-%T.png')\""; }
     // F2 { spawn-sh "grimblast copysave area \"$HOME/Pictures/Screenshots/$(date +'%F-%T.png')\""; }
-    F3 { spawn-sh "~/.dotfiles/bin/.local/share/bin/wf-recorder-toggle.sh"; }
+    // F3 { spawn-sh "~/.dotfiles/bin/.local/share/bin/wf-recorder-toggle.sh"; }
     F4 { spawn-sh "~/.dotfiles/bin/.local/share/bin/clip2float.sh"; }
 
     // -----------------------------

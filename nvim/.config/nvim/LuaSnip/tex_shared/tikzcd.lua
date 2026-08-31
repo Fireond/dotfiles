@@ -126,6 +126,6 @@ return {
         rep(2),
       }
     ),
-    { condition = tex.in_env("tikzcd") }
+    { condition = tex.in_tikzcd }
   ),
 }

@@ -11,25 +11,25 @@ max_height = 2000
 
 [opener]
 play = [
-	{ run = 'mpv "$@"', orphan = true, for = "unix" },
+	{ run = 'mpv %s', orphan = true, for = "unix" },
 ]
 edit = [
-	{ run = 'auto_padding_nvim.sh "$@"', desc = "nvim", block = true, for = "unix" },
+	{ run = 'auto_padding_nvim.sh %s', desc = "nvim", block = true, for = "unix" },
 ]
 sioyek = [
-  { run = 'nohup sioyek "$@" > /dev/null 2>&1 &', desc = "sioyek", orphan = true, for = "unix" },
+  { run = 'nohup sioyek %s > /dev/null 2>&1 &', desc = "sioyek", orphan = true, for = "unix" },
 ]
 zathura = [
-  { run = 'nohup zathura "$@" > /dev/null 2>&1 &', desc = "zathura", orphan = true, for = "linux" },
+  { run = 'nohup zathura %s > /dev/null 2>&1 &', desc = "zathura", orphan = true, for = "linux" },
 ]
 qimgv = [
-  { run = 'nohup qimgv "$@" > /dev/null 2>&1 &', desc = "qimgv", orphan = true, for = "linux" },
+  { run = 'nohup qimgv %s > /dev/null 2>&1 &', desc = "qimgv", orphan = true, for = "linux" },
 ]
 inkscape = [
-  { run = 'nohup inkscape "$@" > /dev/null 2>&1 &', desc = "inkscape", orphan = true, for = "linux" },
+  { run = 'nohup inkscape %s > /dev/null 2>&1 &', desc = "inkscape", orphan = true, for = "linux" },
 ]
 # wps = [
-#   { run = 'env XMODIFIERS="@im=fcitx" QT_IM_MODULE="fcitx5" /usr/bin/wps "$@"', orphan = false, desc = "wps", for = "linux" },
+#   { run = 'env XMODIFIERS="@im=fcitx" QT_IM_MODULE="fcitx5" /usr/bin/wps %s', orphan = false, desc = "wps", for = "linux" },
 # ]
 wps = [
   { run = """bash -c '
@@ -40,7 +40,7 @@ wps = [
         # 进到文件所在目录，用相对路径调用 wps（规避绝对路径 bug）
         ( cd "$d" && exec env XMODIFIERS="@im=fcitx" QT_IM_MODULE="fcitx5" /usr/bin/wps "./$b" ) &
       done
-    ' _ $@""", desc = "WPS (debug foreground)", orphan = false, block  = true, for = "unix" }
+    ' _ %s""", desc = "WPS (debug foreground)", orphan = false, block  = true, for = "unix" }
 ]
 
 [open]

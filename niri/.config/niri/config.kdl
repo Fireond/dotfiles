@@ -87,7 +87,7 @@ output "HDMI-A-1" {
 output "DP-1" {
   scale 2.0
   mode "3840x2160@160"
-  position x=2560 y=0
+  position x=0 y=0
 }
 
 output "eDP-1" {
@@ -288,7 +288,7 @@ spawn-sh-at-startup "clash-verge"
 spawn-sh-at-startup "zen"
 spawn-sh-at-startup "zotero"
 spawn-sh-at-startup "~/.local/share/bin/pull_dotfiles.sh"
-spawn-sh-at-startup "/usr/bin/kanshi"
+// spawn-sh-at-startup "/usr/bin/kanshi"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.

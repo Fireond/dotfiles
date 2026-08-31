@@ -3,5 +3,8 @@ set selection-notification false
 map D set "first-page-column 1:1"
 map <C-d> set "first-page-column 1:2"
 
+map <Button4> jumplist backward
+map <Button5> jumplist forward
+
 # catppuccin theme
 # include catppuccin-latte

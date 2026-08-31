@@ -27,7 +27,7 @@ prepend_keymap=[
 
   { on = "o", run = "open --interactive" },
   { on = "O", run = '''
-  shell 'qlmanage -p "$@"' --confirm
+  shell 'qlmanage -p %s' --confirm
 ''' },
 
   # plugins
