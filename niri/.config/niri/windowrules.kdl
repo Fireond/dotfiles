@@ -71,12 +71,12 @@ window-rule {
 
 window-rule {
     match app-id="^Zotero$"
-    open-on-workspace "read"
+    open-on-workspace "2"
     open-maximized true
 }
 window-rule {
     match app-id="^zen-browser$" at-startup=true
-    open-on-workspace "browser"
+    open-on-workspace "1"
     open-maximized true
 }
 

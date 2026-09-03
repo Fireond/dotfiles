@@ -73,11 +73,10 @@
       "1": "󰖟",
       "2": "",
       "3": "󱞁",
-      "9": "󰎆",
-      "10": ""
+      // "9": "󰎆",
+      // "10": ""
     },
-    "all-outputs": true,
-    "current-only": false,
+    "all-outputs": false,
     "disable-click": false
   },
   "niri/window": {
