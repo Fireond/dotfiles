@@ -1,6 +1,8 @@
 [mgr]
 prepend_keymap=[
   { on = [ "g", "d" ], run = "cd ~/Downloads" },
+  { on = [ "g", "O" ], run = "cd ~/Documents/Others/" },
+  { on = [ "g", "b" ], run = "cd ~/Documents/Others/baoxiao/" },
   { on = [ "g", "D" ], run = "cd ~/Documents/" },
   { on = [ "g", "v" ], run = "cd ~/Videos/" },
   { on = [ "g", "m" ], run = "cd ~/Music/" },
