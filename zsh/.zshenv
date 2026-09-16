@@ -2,6 +2,7 @@ if  [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH=$HOME/.bin:$PATH
   export PATH=/Library/TeX/texbin:$PATH
   export PATH="/opt/X11/bin:$PATH"
+  export PATH="/Users/hanyu_yan/.local/share/bin:$PATH"
   export NVM_DIR="$HOME/.nvm"
   export DISPLAY=:0
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
