@@ -1,0 +1,1177 @@
+"monitorDwindleOverrides" = []
+"monitorGapOverrides" = []
+"monitorNiriOverrides" = []
+"monitorOrientationOverrides" = []
+"schemaVersion" = 3
+
+[["monitorBarOverrides"]]
+"id" = "0C70B69E-6675-5826-97B3-50B009161B8C"
+"monitorName" = "Built-in Retina Display"
+"monitorDisplayUUID" = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+"monitorDisplayId" = 1
+"position" = "overlappingMenuBar"
+"reserveLayoutSpace" = false
+"notchMode" = "off"
+"xOffset" = -735.0
+"yOffset" = 0.0
+
+[["monitorBarOverrides"]]
+"id" = "F1E7AFBB-F38B-5171-BD1E-D3C062312D2B"
+"monitorName" = "P275MV PLUS"
+"monitorDisplayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"monitorDisplayId" = 2
+"xOffset" = 0.0
+"position" = "overlappingMenuBar"
+"reserveLayoutSpace" = false
+"notchMode" = "off"
+"yOffset" = 0.0
+
+[["monitorBarOverrides"]]
+"id" = "0A163AF3-0888-566E-A4EF-F922D5AD35F8"
+"monitorName" = "Unknown Display"
+"monitorDisplayUUID" = "BA98D49D-C72D-4DE0-B9B6-45C023316C04"
+"monitorDisplayId" = 55
+"xOffset" = 0.0
+"position" = "overlappingMenuBar"
+"reserveLayoutSpace" = false
+"notchMode" = "off"
+"yOffset" = 0.0
+
+[["monitorBarOverrides"]]
+"id" = "C74BFE40-ADA0-5F02-929E-978615BD0BF0"
+"monitorName" = "Unknown Display"
+"monitorDisplayUUID" = "FA35FBFB-DE58-423D-AF98-F6A8D3C33141"
+"monitorDisplayId" = 4
+"xOffset" = 0.0
+"position" = "overlappingMenuBar"
+"reserveLayoutSpace" = false
+"notchMode" = "off"
+"yOffset" = 0.0
+
+["appearance"]
+"mode" = "automatic"
+
+["borders"]
+"enabled" = true
+"width" = 4.0
+
+["borders"."color"]
+"red" = 0.4980392156862745
+"green" = 0.7843137254901961
+"blue" = 1.0
+"alpha" = 1.0
+
+["clipboard"]
+"historyEnabled" = false
+"maxItemBytes" = 8388608
+"maxItems" = 200
+"maxTotalBytes" = 67108864
+
+["dwindle"]
+"defaultSplitRatio" = 1.0
+"moveToRootStable" = true
+"singleWindowFit" = "fill"
+"smartSplit" = false
+"splitWidthMultiplier" = 1.0
+"useGlobalGaps" = true
+
+["focus"]
+"crossesMonitorAtEdge" = false
+"followsMouse" = false
+"followsWindowToMonitor" = true
+"lockModifier" = "off"
+"moveCrossesMonitorAtEdge" = false
+"moveMouseToFocusedWindow" = false
+"raiseOnMouseFocus" = false
+
+["gaps"]
+"fullscreenUsesOuterGaps" = false
+"size" = 10.0
+
+["gaps"."outer"]
+"left" = 10.0
+"right" = 10.0
+"top" = 10.0
+"bottom" = 10.0
+
+["general"]
+"animationsEnabled" = true
+"defaultLayoutType" = "niri"
+"hotkeysEnabled" = true
+"hyperKeyModifiers" = "Control+Option+Shift+Command"
+"ipcEnabled" = true
+"preventSleepEnabled" = false
+"systemHyperTrigger" = "None"
+"updateChecksEnabled" = true
+
+["gestures"]
+"fingerCount" = 3
+"invertDirection" = false
+"mouseMoveModifierKey" = "option"
+"mouseResizeModifierKey" = "option"
+"scrollEnabled" = false
+"scrollModifierKey" = "optionShift"
+"scrollSensitivity" = 5.0
+"trackpadScrollStyle" = "snap"
+"workspaceSwipeAxis" = "vertical"
+"workspaceSwipeEnabled" = false
+"workspaceSwipeFingerCount" = 3
+
+["hiddenBar"]
+"enabled" = false
+"hiddenBundleIDs" = []
+"rehideIntervalSeconds" = 5.0
+
+["mouseWarp"]
+"constrainToArrangement" = false
+"enabled" = true
+"margin" = 1
+
+["niri"]
+"alwaysCenterSingleColumn" = false
+"centerFocusedColumn" = "never"
+"containerPrimarySpanPresets" = [0.3, 0.5, 0.7]
+"infiniteLoop" = false
+"singleWindowFit" = "container_primary_span"
+"visibleContainerCount" = 2
+"defaultContainerPrimarySpan" = 0.5
+
+["overview"]
+"zoom" = 1.0
+
+["overview"."backdrop"]
+"alpha" = 1.0
+"blue" = 0.08
+"green" = 0.05
+"red" = 0.05
+
+["overview"."windowBorders"]
+
+["overview"."windowBorders"."hovered"]
+"alpha" = 1.0
+"blue" = 1.0
+"green" = 0.6
+"red" = 0.4
+
+["overview"."windowBorders"."normal"]
+"alpha" = 0.5
+"blue" = 0.35
+"green" = 0.3
+"red" = 0.3
+
+["overview"."windowBorders"."selected"]
+"alpha" = 1.0
+"blue" = 0.4
+"green" = 0.8
+"red" = 0.3
+
+["quakeTerminal"]
+"animationDuration" = 0.2
+"autoHide" = false
+"backgroundBlurRadius" = 0
+"backgroundEffect" = "standardBlur"
+"enabled" = false
+"heightPercent" = 50.0
+"monitorMode" = "focusedWindow"
+"opacity" = 1.0
+"position" = "center"
+"widthPercent" = 50.0
+
+["routing"]
+"mode" = "custom"
+
+[["routing"."arrangements"]]
+"id" = "33394F32-9116-571B-8786-AB1B93B42051"
+
+[["routing"."arrangements"."monitors"]]
+"monitorName" = "Built-in Retina Display"
+"monitorDisplayUUID" = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+"monitorDisplayId" = 1
+"gridColumn" = 0
+"gridRow" = 0
+
+[["routing"."arrangements"."monitors"]]
+"monitorName" = "P275MV PLUS"
+"monitorDisplayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"monitorDisplayId" = 2
+"gridColumn" = 1
+"gridRow" = 0
+
+["scratchpads"]
+
+["scratchpads"."labels"]
+
+["statusBar"]
+"showAppNames" = false
+"showWorkspaceName" = false
+"useWorkspaceId" = false
+
+["workspaceBar"]
+"backgroundOpacity" = 0.85
+"deduplicateAppIcons" = false
+"enabled" = true
+"excludedBundleIDs" = []
+"height" = 28.0
+"hideEmptyWorkspaces" = false
+"hideInNativeFullscreen" = true
+"notchActiveZoneWidth" = 180.0
+"notchMode" = "moveBelowMenuBar"
+"position" = "belowMenuBar"
+"reserveLayoutSpace" = true
+"revealHoldMilliseconds" = 200.0
+"revealModifier" = "off"
+"showFloatingWindows" = true
+"showLabels" = true
+"systemStatsButton" = true
+"windowLevel" = "popup"
+"xOffset" = 0.0
+"yOffset" = 0.0
+
+["workspaceBar"."iconOverrides"]
+
+[["appRules"]]
+"id" = "0A8064DD-5099-50E9-96E7-EB329EA41480"
+"bundleId" = "app.zen-browser.zen"
+"assignToWorkspace" = "1"
+"initialContainerPrimarySpan" = 1.0
+
+[["appRules"]]
+"id" = "6CC759E2-E906-55A7-9102-88C657209124"
+"bundleId" = "org.zotero.zotero"
+"assignToWorkspace" = "2"
+"layout" = "float"
+
+[["appRules"]]
+"id" = "285BC25F-37CD-592D-ADC7-1A0C25D5F38A"
+"bundleId" = "net.kovidgoyal.kitty"
+"titleRegex" = "^niri-mac:(PDF|Zotero Citekey|Zotero Open|TODO|Monitor)$"
+"layout" = "float"
+
+[["appRules"]]
+"id" = "3DA3EDE2-9CB3-5E3D-A47A-72286AFCAC62"
+"bundleId" = "net.kovidgoyal.kitty"
+"titleRegex" = "^niri-mac:LaTeX$"
+"layout" = "float"
+
+[["appRules"]]
+"id" = "22451C36-14F3-5CC2-8482-B4E94F49F54A"
+"bundleId" = ""
+"titleRegex" = "^(Picture-in-Picture|画中画)$"
+"layout" = "float"
+
+[["appRules"]]
+"id" = "F4B59106-284C-59B5-B3F0-EA5A0D0BEB28"
+"bundleId" = "com.tencent.xinWeChat"
+"layout" = "float"
+
+[["appRules"]]
+"id" = "E7525DF3-9465-51DC-954B-1052F3E33AE1"
+"bundleId" = "com.tencent.qq"
+"layout" = "float"
+
+[["appRules"]]
+"id" = "112B2852-836A-5245-B7C7-4C023D63898A"
+"bundleId" = "io.github.clash-verge-rev.clash-verge-rev"
+"layout" = "float"
+
+[["appRules"]]
+"id" = "41641415-2387-5305-9A22-ECCAC367A325"
+"bundleId" = "com.apple.Preview"
+"titleRegex" = "^niri-mac-clipboard-.*"
+"layout" = "float"
+
+[["appRules"]]
+"id" = "6AA90758-CF14-53CC-B32F-FCEABB3D2DBD"
+"bundleId" = "com.openai.codex"
+"minWidth" = 800.0
+"minHeight" = 600.0
+
+[["appRules"]]
+"id" = "CACE55E7-B904-598F-91A1-DC766E7E7C52"
+"bundleId" = "com.google.Chrome"
+"minWidth" = 500.0
+"minHeight" = 375.0
+
+[["appRules"]]
+"id" = "B8C21FBB-F50B-5C47-A9D2-B5AC79E0B266"
+"bundleId" = "org.mozilla.firefox"
+"minWidth" = 500.0
+"minHeight" = 120.0
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.1"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.10"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.2"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.3"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.4"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.5"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.6"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.7"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.8"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "assignFocusedWindowToScratchpad.9"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "balanceSizes"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "centerColumn"
+"binding" = "Control+Command+C"
+
+[["hotkeys"]]
+"id" = "centerVisibleColumns"
+"binding" = "Control+Option+Command+C"
+
+[["hotkeys"]]
+"id" = "closeFocusedWindow"
+"binding" = "Control+Command+W"
+
+[["hotkeys"]]
+"id" = "consumeWindowIntoColumn"
+"binding" = "Control+Command+,"
+
+[["hotkeys"]]
+"id" = "cycleSizeBackward"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "cycleSizeForward"
+"binding" = "Control+Command+R"
+
+[["hotkeys"]]
+"id" = "cycleWindowPrimarySpanBackward"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "cycleWindowPrimarySpanForward"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "cycleWindowSecondarySpanBackward"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "cycleWindowSecondarySpanForward"
+"binding" = "Control+Shift+Command+R"
+
+[["hotkeys"]]
+"id" = "expandContainerToAvailablePrimarySpan"
+"binding" = "Control+Option+Command+F"
+
+[["hotkeys"]]
+"id" = "expelWindowFromColumn"
+"binding" = "Control+Command+."
+
+[["hotkeys"]]
+"id" = "focus.down"
+"binding" = "Control+Command+Down Arrow"
+
+[["hotkeys"]]
+"id" = "focus.left"
+"binding" = "Control+Command+H"
+
+[["hotkeys"]]
+"id" = "focus.right"
+"binding" = "Control+Command+L"
+
+[["hotkeys"]]
+"id" = "focus.up"
+"binding" = "Control+Command+Up Arrow"
+
+[["hotkeys"]]
+"id" = "focusColumn.0"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusColumn.1"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusColumn.2"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusColumn.3"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusColumn.4"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusColumn.5"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusColumn.6"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusColumn.7"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusColumn.8"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusColumnFirst"
+"binding" = "Control+Command+Home"
+
+[["hotkeys"]]
+"id" = "focusColumnLast"
+"binding" = "Control+Command+End"
+
+[["hotkeys"]]
+"id" = "focusDownOrLeft"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusMonitorLast"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusMonitorNext"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusMonitorPrevious"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusPrevious"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusUpOrRight"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowBottom"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowDownOrTop"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowInColumn.1"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowInColumn.2"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowInColumn.3"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowInColumn.4"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowInColumn.5"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowInColumn.6"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowInColumn.7"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowInColumn.8"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowInColumn.9"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowOrWorkspaceDown"
+"binding" = "Control+Command+J"
+
+[["hotkeys"]]
+"id" = "focusWindowOrWorkspaceUp"
+"binding" = "Control+Command+K"
+
+[["hotkeys"]]
+"id" = "focusWindowTop"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "focusWindowUpOrBottom"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "move.down"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "move.left"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "move.right"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "move.up"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumn.down"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumn.left"
+"binding" = "Control+Option+Command+H"
+
+[["hotkeys"]]
+"id" = "moveColumn.right"
+"binding" = "Control+Option+Command+L"
+
+[["hotkeys"]]
+"id" = "moveColumn.up"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToFirst"
+"binding" = "Control+Option+Command+Home"
+
+[["hotkeys"]]
+"id" = "moveColumnToIndex.1"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToIndex.2"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToIndex.3"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToIndex.4"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToIndex.5"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToIndex.6"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToIndex.7"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToIndex.8"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToIndex.9"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToLast"
+"binding" = "Control+Option+Command+End"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspace.0"
+"binding" = "Control+Option+Command+1"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspace.1"
+"binding" = "Control+Option+Command+2"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspace.2"
+"binding" = "Control+Option+Command+3"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspace.3"
+"binding" = "Control+Option+Command+4"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspace.4"
+"binding" = "Control+Option+Command+5"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspace.5"
+"binding" = "Control+Option+Command+6"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspace.6"
+"binding" = "Control+Option+Command+7"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspace.7"
+"binding" = "Control+Option+Command+8"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspace.8"
+"binding" = "Control+Option+Command+9"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspaceDown"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveColumnToWorkspaceUp"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToRoot"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspace.0"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspace.1"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspace.2"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspace.3"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspace.4"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspace.5"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspace.6"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspace.7"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspace.8"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspaceSlot.1"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspaceSlot.2"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspaceSlot.3"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspaceSlot.4"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspaceSlot.5"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspaceSlot.6"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspaceSlot.7"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspaceSlot.8"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveToWorkspaceSlot.9"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWindowDown"
+"binding" = "Control+Option+Command+Down Arrow"
+
+[["hotkeys"]]
+"id" = "moveWindowDownOrToWorkspaceDown"
+"binding" = "Control+Option+Command+J"
+
+[["hotkeys"]]
+"id" = "moveWindowToMonitor.down"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWindowToMonitor.left"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWindowToMonitor.right"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWindowToMonitor.up"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWindowToWorkspaceDown"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWindowToWorkspaceUp"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWindowUp"
+"binding" = "Control+Option+Command+Up Arrow"
+
+[["hotkeys"]]
+"id" = "moveWindowUpOrToWorkspaceUp"
+"binding" = "Control+Option+Command+K"
+
+[["hotkeys"]]
+"id" = "moveWorkspaceToMonitor.down"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWorkspaceToMonitor.left"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWorkspaceToMonitor.right"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "moveWorkspaceToMonitor.up"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "openCommandPalette"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "openMenuAnywhere"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "preselect.down"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "preselect.left"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "preselect.right"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "preselect.up"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "preselectClear"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "raiseAllFloatingWindows"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "rescueOffscreenWindows"
+"binding" = "Control+Option+Command+Escape"
+
+[["hotkeys"]]
+"id" = "resetWindowSecondarySpan"
+"binding" = "Control+Option+Command+R"
+
+[["hotkeys"]]
+"id" = "resizeFocusedWindow.grow"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "resizeFocusedWindow.shrink"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "resizeGrow.horizontal"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "resizeGrow.vertical"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "resizeShrink.horizontal"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "resizeShrink.vertical"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "setContainerPrimarySpan.decrease10Percent"
+"binding" = "Control+Command+-"
+
+[["hotkeys"]]
+"id" = "setContainerPrimarySpan.increase10Percent"
+"binding" = "Control+Command+="
+
+[["hotkeys"]]
+"id" = "setWindowPrimarySpan.decrease10Percent"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "setWindowPrimarySpan.increase10Percent"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "setWindowSecondarySpan.decrease10Percent"
+"binding" = "Control+Shift+Command+-"
+
+[["hotkeys"]]
+"id" = "setWindowSecondarySpan.increase10Percent"
+"binding" = "Control+Shift+Command+="
+
+[["hotkeys"]]
+"id" = "swapSplit"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.0"
+"binding" = "Control+Command+1"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.1"
+"binding" = "Control+Command+2"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.2"
+"binding" = "Control+Command+3"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.3"
+"binding" = "Control+Command+4"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.4"
+"binding" = "Control+Command+5"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.5"
+"binding" = "Control+Command+6"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.6"
+"binding" = "Control+Command+7"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.7"
+"binding" = "Control+Command+8"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.8"
+"binding" = "Control+Command+9"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.next"
+"binding" = "Control+Command+PageDown"
+
+[["hotkeys"]]
+"id" = "switchWorkspace.previous"
+"binding" = "Control+Command+PageUp"
+
+[["hotkeys"]]
+"id" = "switchWorkspaceSlot.1"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "switchWorkspaceSlot.2"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "switchWorkspaceSlot.3"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "switchWorkspaceSlot.4"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "switchWorkspaceSlot.5"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "switchWorkspaceSlot.6"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "switchWorkspaceSlot.7"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "switchWorkspaceSlot.8"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "switchWorkspaceSlot.9"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleColumnTabbed"
+"binding" = "Control+Command+F13"
+
+[["hotkeys"]]
+"id" = "toggleContainerFullPrimarySpan"
+"binding" = "Control+Command+M"
+
+[["hotkeys"]]
+"id" = "toggleFocusedWindowFloating"
+"binding" = "Control+Command+F17"
+
+[["hotkeys"]]
+"id" = "toggleFullscreen"
+"binding" = "Control+Shift+Command+M"
+
+[["hotkeys"]]
+"id" = "toggleHiddenBarPanel"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleNativeFullscreen"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleOverview"
+"binding" = "Control+Command+Y"
+
+[["hotkeys"]]
+"id" = "toggleQuakeTerminal"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.1"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.10"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.2"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.3"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.4"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.5"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.6"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.7"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.8"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleScratchpad.9"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleSplit"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "toggleSystemStats"
+"binding" = "Control+Shift+Command+B"
+
+[["hotkeys"]]
+"id" = "toggleWorkspaceBarVisibility"
+"binding" = "Control+Option+Command+W"
+
+[["hotkeys"]]
+"id" = "toggleWorkspaceLayout"
+"binding" = "Unassigned"
+
+[["hotkeys"]]
+"id" = "workspaceBackAndForth"
+"binding" = "Control+Command+Tab"
+
+[["workspaces"]]
+"id" = "63D51A9A-8CB0-5C6E-9F28-087C30CD9ED7"
+"name" = "1"
+"displayName" = "1"
+"layoutType" = "niri"
+
+["workspaces"."monitorAssignment"]
+"type" = "specificDisplay"
+
+["workspaces"."monitorAssignment"."output"]
+"name" = "P275MV PLUS"
+"displayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"displayId" = 2
+
+[["workspaces"]]
+"id" = "B94EE1B8-8E58-5EF1-85AE-5DBA40D1386E"
+"name" = "2"
+"displayName" = "2"
+"layoutType" = "niri"
+
+["workspaces"."monitorAssignment"]
+"type" = "specificDisplay"
+
+["workspaces"."monitorAssignment"."output"]
+"name" = "P275MV PLUS"
+"displayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"displayId" = 2
+
+[["workspaces"]]
+"id" = "B1CE0DEB-8372-5DD1-8ACC-CB0F8FCCE11F"
+"name" = "3"
+"displayName" = "3"
+"layoutType" = "niri"
+
+["workspaces"."monitorAssignment"]
+"type" = "specificDisplay"
+
+["workspaces"."monitorAssignment"."output"]
+"name" = "P275MV PLUS"
+"displayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"displayId" = 2
+
+[["workspaces"]]
+"id" = "444AFE09-ACA2-5BA9-A77F-A803B9D967F1"
+"name" = "4"
+"displayName" = "4"
+"layoutType" = "niri"
+
+["workspaces"."monitorAssignment"]
+"type" = "specificDisplay"
+
+["workspaces"."monitorAssignment"."output"]
+"name" = "P275MV PLUS"
+"displayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"displayId" = 2
+
+[["workspaces"]]
+"id" = "1BFBBCA1-93A9-5BCA-9C28-46A909F25C5C"
+"name" = "5"
+"displayName" = "5"
+"layoutType" = "niri"
+
+["workspaces"."monitorAssignment"]
+"type" = "specificDisplay"
+
+["workspaces"."monitorAssignment"."output"]
+"name" = "P275MV PLUS"
+"displayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"displayId" = 2
+
+[["workspaces"]]
+"id" = "B7394681-0196-503D-B183-BD5B19B1A76F"
+"name" = "6"
+"displayName" = "6"
+"layoutType" = "niri"
+
+["workspaces"."monitorAssignment"]
+"type" = "specificDisplay"
+
+["workspaces"."monitorAssignment"."output"]
+"name" = "P275MV PLUS"
+"displayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"displayId" = 2
+
+[["workspaces"]]
+"id" = "F2359C69-7E8F-514C-BA1C-D4942CD63A5E"
+"name" = "7"
+"displayName" = "7"
+"layoutType" = "niri"
+
+["workspaces"."monitorAssignment"]
+"type" = "specificDisplay"
+
+["workspaces"."monitorAssignment"."output"]
+"name" = "P275MV PLUS"
+"displayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"displayId" = 2
+
+[["workspaces"]]
+"id" = "1FE16B85-13A3-548D-BFA2-4F29DE2EC454"
+"name" = "8"
+"displayName" = "8"
+"layoutType" = "niri"
+
+["workspaces"."monitorAssignment"]
+"type" = "specificDisplay"
+
+["workspaces"."monitorAssignment"."output"]
+"name" = "Built-in Retina Display"
+"displayUUID" = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+"displayId" = 1
+
+[["workspaces"]]
+"id" = "4AF9C906-232C-592E-9F24-1838DA33FFA0"
+"name" = "9"
+"displayName" = "9"
+"layoutType" = "niri"
+
+["workspaces"."monitorAssignment"]
+"type" = "specificDisplay"
+
+["workspaces"."monitorAssignment"."output"]
+"name" = "Built-in Retina Display"
+"displayUUID" = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+"displayId" = 1

@@ -1,0 +1,195 @@
+{
+  "key_audit": {
+    "total": 109,
+    "native": 59,
+    "hammerspoon": 50,
+    "conflicts": [],
+    "all_action_ids": 188
+  },
+  "window_operations": [
+    {
+      "check": "regular terminals tiled",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "only tagged temp terminal floats",
+      "pass": true,
+      "evidence": {
+        "height": 864,
+        "width": 1344,
+        "x": 1919,
+        "y": 108
+      }
+    },
+    {
+      "check": "width cycle 50/70/30/50",
+      "pass": true,
+      "evidence": [
+        935,
+        1313,
+        557,
+        935
+      ]
+    },
+    {
+      "check": "consume right window into column",
+      "pass": true,
+      "evidence": [
+        {
+          "height": 501,
+          "width": 935,
+          "x": 20,
+          "y": 531
+        },
+        {
+          "height": 501,
+          "width": 935,
+          "x": 20,
+          "y": 20
+        }
+      ]
+    },
+    {
+      "check": "height cycle changes stacked ratio",
+      "pass": true,
+      "evidence": [
+        671,
+        331
+      ]
+    },
+    {
+      "check": "J navigates within column",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "J at bottom switches workspace",
+      "pass": true,
+      "evidence": "8"
+    },
+    {
+      "check": "Ctrl+J at bottom moves only window",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "whole column moves to workspace",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "expel bottom creates separate column",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "bracket merge left",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "bracket expel left",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "float toggle",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "tabbed column action accepted",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "maximize column wider than 50%",
+      "pass": true,
+      "evidence": {
+        "height": 1012,
+        "width": 1880,
+        "x": 20,
+        "y": 20
+      }
+    },
+    {
+      "check": "managed fullscreen fills screen",
+      "pass": true,
+      "evidence": {
+        "height": 1052,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "check": "workspace back and forth",
+      "pass": true,
+      "evidence": "1",
+      "note": "Initial check used two reads; evidence was changed by focus. Use final_window_checks.workspace_back_and_forth for the fresh single-read result."
+    }
+  ],
+  "final_window_checks": {
+    "workspace_bar_toggle": {
+      "before": true,
+      "during": false,
+      "after": true,
+      "pass": true
+    },
+    "workspace_back_and_forth": {
+      "actual": "7",
+      "pass": true
+    }
+  },
+  "latex_sessions": [
+    {
+      "directory": "/var/folders/dw/6z0m1pbj0g7d5vvm6nvtx85w0000gn/T/niri-mac-latex.gS9gg2",
+      "layout": "splits",
+      "panes": 1,
+      "pdf_exists": true,
+      "preview_exists": false
+    },
+    {
+      "directory": "/var/folders/dw/6z0m1pbj0g7d5vvm6nvtx85w0000gn/T/niri-mac-latex.ipbE9o",
+      "layout": "splits",
+      "panes": 2,
+      "pdf_exists": true,
+      "preview_exists": true
+    }
+  ],
+  "hammerspoon": {
+    "scroll": true,
+    "secureInput": false,
+    "enabled": true,
+    "failedBindings": [],
+    "accessibility": true,
+    "hotkeyCount": 47,
+    "functionKeys": true,
+    "login": false
+  },
+  "pending": [
+    "physical keyboard and input method",
+    "mouse wheel",
+    "GUI clicks on Workspace Bar",
+    "Overview thumbnail permission",
+    "Zen first launch",
+    "BBT citekey decision and restart",
+    "Zotero copy/open end-to-end",
+    "multi-monitor / sleep / wake",
+    "full login restart",
+    "clipboard Preview GUI and screenshot"
+  ],
+  "clipboard_image": {
+    "decoded_and_saved": true,
+    "prior_clipboard_restored": true,
+    "preview_window_observed": false,
+    "reason": "Mac locked; Preview process running but no managed window returned"
+  },
+  "routing_simulation": {
+    "macos_right": true,
+    "custom_up": true,
+    "absent_neighbor_noop": true,
+    "hardware_verified": false
+  }
+}

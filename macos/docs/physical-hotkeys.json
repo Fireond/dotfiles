@@ -1,0 +1,1096 @@
+[
+  {
+    "physical": "Win+,",
+    "action": "consumeWindowIntoColumn",
+    "owner": "OmniWM",
+    "key": ",",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+-",
+    "action": "setContainerPrimarySpan.decrease10Percent",
+    "owner": "OmniWM",
+    "key": "-",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+.",
+    "action": "expelWindowFromColumn",
+    "owner": "OmniWM",
+    "key": ".",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+1",
+    "action": "switchWorkspace.0",
+    "owner": "OmniWM",
+    "key": "1",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+2",
+    "action": "switchWorkspace.1",
+    "owner": "OmniWM",
+    "key": "2",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+3",
+    "action": "switchWorkspace.2",
+    "owner": "OmniWM",
+    "key": "3",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+4",
+    "action": "switchWorkspace.3",
+    "owner": "OmniWM",
+    "key": "4",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+5",
+    "action": "switchWorkspace.4",
+    "owner": "OmniWM",
+    "key": "5",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+6",
+    "action": "switchWorkspace.5",
+    "owner": "OmniWM",
+    "key": "6",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+7",
+    "action": "switchWorkspace.6",
+    "owner": "OmniWM",
+    "key": "7",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+8",
+    "action": "switchWorkspace.7",
+    "owner": "OmniWM",
+    "key": "8",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+9",
+    "action": "switchWorkspace.8",
+    "owner": "OmniWM",
+    "key": "9",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+=",
+    "action": "setContainerPrimarySpan.increase10Percent",
+    "owner": "OmniWM",
+    "key": "=",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+1",
+    "action": "moveColumnToWorkspace.0",
+    "owner": "OmniWM",
+    "key": "1",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+2",
+    "action": "moveColumnToWorkspace.1",
+    "owner": "OmniWM",
+    "key": "2",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+3",
+    "action": "moveColumnToWorkspace.2",
+    "owner": "OmniWM",
+    "key": "3",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+4",
+    "action": "moveColumnToWorkspace.3",
+    "owner": "OmniWM",
+    "key": "4",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+5",
+    "action": "moveColumnToWorkspace.4",
+    "owner": "OmniWM",
+    "key": "5",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+6",
+    "action": "moveColumnToWorkspace.5",
+    "owner": "OmniWM",
+    "key": "6",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+7",
+    "action": "moveColumnToWorkspace.6",
+    "owner": "OmniWM",
+    "key": "7",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+8",
+    "action": "moveColumnToWorkspace.7",
+    "owner": "OmniWM",
+    "key": "8",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+9",
+    "action": "moveColumnToWorkspace.8",
+    "owner": "OmniWM",
+    "key": "9",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+Shift+down",
+    "action": "Move column to monitor down",
+    "owner": "Hammerspoon",
+    "key": "down",
+    "mods": [
+      "control",
+      "command",
+      "option",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+Shift+h",
+    "action": "Move column to monitor left",
+    "owner": "Hammerspoon",
+    "key": "h",
+    "mods": [
+      "control",
+      "command",
+      "option",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+Shift+j",
+    "action": "Move column to monitor down",
+    "owner": "Hammerspoon",
+    "key": "j",
+    "mods": [
+      "control",
+      "command",
+      "option",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+Shift+k",
+    "action": "Move column to monitor up",
+    "owner": "Hammerspoon",
+    "key": "k",
+    "mods": [
+      "control",
+      "command",
+      "option",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+Shift+l",
+    "action": "Move column to monitor right",
+    "owner": "Hammerspoon",
+    "key": "l",
+    "mods": [
+      "control",
+      "command",
+      "option",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+Shift+left",
+    "action": "Move column to monitor left",
+    "owner": "Hammerspoon",
+    "key": "left",
+    "mods": [
+      "control",
+      "command",
+      "option",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+Shift+right",
+    "action": "Move column to monitor right",
+    "owner": "Hammerspoon",
+    "key": "right",
+    "mods": [
+      "control",
+      "command",
+      "option",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+Shift+up",
+    "action": "Move column to monitor up",
+    "owner": "Hammerspoon",
+    "key": "up",
+    "mods": [
+      "control",
+      "command",
+      "option",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+c",
+    "action": "centerVisibleColumns",
+    "owner": "OmniWM",
+    "key": "c",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+down",
+    "action": "moveWindowDown",
+    "owner": "OmniWM",
+    "key": "down",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+end",
+    "action": "moveColumnToLast",
+    "owner": "OmniWM",
+    "key": "end",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+escape",
+    "action": "rescueOffscreenWindows",
+    "owner": "OmniWM",
+    "key": "escape",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+f",
+    "action": "expandContainerToAvailablePrimarySpan",
+    "owner": "OmniWM",
+    "key": "f",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+f10",
+    "action": "Microphone mute",
+    "owner": "Hammerspoon",
+    "key": "f10",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+h",
+    "action": "moveColumn.left",
+    "owner": "OmniWM",
+    "key": "h",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+home",
+    "action": "moveColumnToFirst",
+    "owner": "OmniWM",
+    "key": "home",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+j",
+    "action": "moveWindowDownOrToWorkspaceDown",
+    "owner": "OmniWM",
+    "key": "j",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+k",
+    "action": "moveWindowUpOrToWorkspaceUp",
+    "owner": "OmniWM",
+    "key": "k",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+l",
+    "action": "moveColumn.right",
+    "owner": "OmniWM",
+    "key": "l",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+left",
+    "action": "Move column left",
+    "owner": "Hammerspoon",
+    "key": "left",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+pagedown",
+    "action": "Next track",
+    "owner": "Hammerspoon",
+    "key": "pagedown",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+pageup",
+    "action": "Previous track",
+    "owner": "Hammerspoon",
+    "key": "pageup",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+r",
+    "action": "resetWindowSecondarySpan",
+    "owner": "OmniWM",
+    "key": "r",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+right",
+    "action": "Move column right",
+    "owner": "Hammerspoon",
+    "key": "right",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+space",
+    "action": "Play/pause",
+    "owner": "Hammerspoon",
+    "key": "space",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+up",
+    "action": "moveWindowUp",
+    "owner": "OmniWM",
+    "key": "up",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+w",
+    "action": "toggleWorkspaceBarVisibility",
+    "owner": "OmniWM",
+    "key": "w",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Ctrl+z",
+    "action": "Open Zotero paper",
+    "owner": "Hammerspoon",
+    "key": "z",
+    "mods": [
+      "control",
+      "command",
+      "option"
+    ]
+  },
+  {
+    "physical": "Win+Shift+-",
+    "action": "setWindowSecondarySpan.decrease10Percent",
+    "owner": "OmniWM",
+    "key": "-",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+=",
+    "action": "setWindowSecondarySpan.increase10Percent",
+    "owner": "OmniWM",
+    "key": "=",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+b",
+    "action": "toggleSystemStats",
+    "owner": "OmniWM",
+    "key": "b",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+down",
+    "action": "Focus monitor down",
+    "owner": "Hammerspoon",
+    "key": "down",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+f",
+    "action": "Focus other layer",
+    "owner": "Hammerspoon",
+    "key": "f",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+g",
+    "action": "ChatGPT web",
+    "owner": "Hammerspoon",
+    "key": "g",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+h",
+    "action": "Focus monitor left",
+    "owner": "Hammerspoon",
+    "key": "h",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+j",
+    "action": "Focus monitor down",
+    "owner": "Hammerspoon",
+    "key": "j",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+k",
+    "action": "Focus monitor up",
+    "owner": "Hammerspoon",
+    "key": "k",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+l",
+    "action": "Focus monitor right",
+    "owner": "Hammerspoon",
+    "key": "l",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+left",
+    "action": "Focus monitor left",
+    "owner": "Hammerspoon",
+    "key": "left",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+m",
+    "action": "toggleFullscreen",
+    "owner": "OmniWM",
+    "key": "m",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+p",
+    "action": "Display sleep",
+    "owner": "Hammerspoon",
+    "key": "p",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+r",
+    "action": "cycleWindowSecondarySpanForward",
+    "owner": "OmniWM",
+    "key": "r",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+return",
+    "action": "Zen",
+    "owner": "Hammerspoon",
+    "key": "return",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+right",
+    "action": "Focus monitor right",
+    "owner": "Hammerspoon",
+    "key": "right",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+space",
+    "action": "Launch application (Spotlight)",
+    "owner": "Hammerspoon",
+    "key": "space",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+up",
+    "action": "Focus monitor up",
+    "owner": "Hammerspoon",
+    "key": "up",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+v",
+    "action": "PDF search",
+    "owner": "Hammerspoon",
+    "key": "v",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+Shift+z",
+    "action": "Copy citekey",
+    "owner": "Hammerspoon",
+    "key": "z",
+    "mods": [
+      "control",
+      "command",
+      "shift"
+    ]
+  },
+  {
+    "physical": "Win+[",
+    "action": "Consume/expel left",
+    "owner": "Hammerspoon",
+    "key": "[",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+]",
+    "action": "Consume/expel right",
+    "owner": "Hammerspoon",
+    "key": "]",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+b",
+    "action": "btop toggle",
+    "owner": "Hammerspoon",
+    "key": "b",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+c",
+    "action": "centerColumn",
+    "owner": "OmniWM",
+    "key": "c",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+down",
+    "action": "focus.down",
+    "owner": "OmniWM",
+    "key": "down",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+e",
+    "action": "Finder",
+    "owner": "Hammerspoon",
+    "key": "e",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+end",
+    "action": "focusColumnLast",
+    "owner": "OmniWM",
+    "key": "end",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+escape",
+    "action": "Pause/resume niri shortcuts",
+    "owner": "Hammerspoon",
+    "key": "escape",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+f",
+    "action": "toggleFocusedWindowFloating",
+    "owner": "OmniWM",
+    "key": "f17",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+g",
+    "action": "ChatGPT",
+    "owner": "Hammerspoon",
+    "key": "g",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+h",
+    "action": "focus.left",
+    "owner": "OmniWM",
+    "key": "h",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+home",
+    "action": "focusColumnFirst",
+    "owner": "OmniWM",
+    "key": "home",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+i",
+    "action": "LaTeX scratch",
+    "owner": "Hammerspoon",
+    "key": "i",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+j",
+    "action": "focusWindowOrWorkspaceDown",
+    "owner": "OmniWM",
+    "key": "j",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+k",
+    "action": "focusWindowOrWorkspaceUp",
+    "owner": "OmniWM",
+    "key": "k",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+l",
+    "action": "focus.right",
+    "owner": "OmniWM",
+    "key": "l",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+left",
+    "action": "Focus left",
+    "owner": "Hammerspoon",
+    "key": "left",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+m",
+    "action": "toggleContainerFullPrimarySpan",
+    "owner": "OmniWM",
+    "key": "m",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+o",
+    "action": "Obsidian",
+    "owner": "Hammerspoon",
+    "key": "o",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+pagedown",
+    "action": "switchWorkspace.next",
+    "owner": "OmniWM",
+    "key": "pagedown",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+pageup",
+    "action": "switchWorkspace.previous",
+    "owner": "OmniWM",
+    "key": "pageup",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+q",
+    "action": "toggleColumnTabbed",
+    "owner": "OmniWM",
+    "key": "f13",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+r",
+    "action": "cycleSizeForward",
+    "owner": "OmniWM",
+    "key": "r",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+return",
+    "action": "kitty",
+    "owner": "Hammerspoon",
+    "key": "return",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+right",
+    "action": "Focus right",
+    "owner": "Hammerspoon",
+    "key": "right",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+space",
+    "action": "Hapigo main search",
+    "owner": "Hapigo",
+    "key": "space",
+    "mods": [
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+t",
+    "action": "TODO",
+    "owner": "Hammerspoon",
+    "key": "t",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+tab",
+    "action": "workspaceBackAndForth",
+    "owner": "OmniWM",
+    "key": "tab",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+up",
+    "action": "focus.up",
+    "owner": "OmniWM",
+    "key": "up",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+v",
+    "action": "PDF viewer (Skim)",
+    "owner": "Hammerspoon",
+    "key": "v",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+w",
+    "action": "closeFocusedWindow",
+    "owner": "OmniWM",
+    "key": "w",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+y",
+    "action": "toggleOverview",
+    "owner": "OmniWM",
+    "key": "y",
+    "mods": [
+      "control",
+      "command"
+    ]
+  },
+  {
+    "physical": "Win+z",
+    "action": "Zotero",
+    "owner": "Hammerspoon",
+    "key": "z",
+    "mods": [
+      "control",
+      "command"
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 2,
+    "uuid": "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B",
+    "builtin": false,
+    "main": true,
+    "x": 0,
+    "y": 0,
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "id": 1,
+    "uuid": "37D8832A-2D66-02CA-B9F7-8F30A301B230",
+    "builtin": true,
+    "main": false,
+    "x": 1920,
+    "y": -956,
+    "width": 1470,
+    "height": 956
+  }
+]
