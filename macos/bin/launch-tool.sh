@@ -2,7 +2,8 @@
 set -euo pipefail
 source "$HOME/.dotfiles/macos/lib/env.sh"
 case "${1:-}" in
- terminal) exec kitty -1 --instance-group niri-mac --directory "$HOME" --session none ;;
+ # Tool windows use permanent titles; keep them out of the normal terminal process.
+ terminal) exec kitty -1 --instance-group niri-mac-terminal --directory "$HOME" --session none ;;
  pdf) label=PDF; command=("$NIRI_MAC_ROOT/bin/search_pdf.sh") ;;
  citekey) label='Zotero Citekey'; command=("$NIRI_MAC_ROOT/bin/zotero-fzf-copy-citekey.sh") ;;
  zotero-open) label='Zotero Open'; command=("$NIRI_MAC_ROOT/bin/zotero-fzf-open.sh") ;;

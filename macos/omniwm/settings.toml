@@ -1158,9 +1158,9 @@
 "type" = "specificDisplay"
 
 ["workspaces"."monitorAssignment"."output"]
-"name" = "Built-in Retina Display"
-"displayUUID" = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
-"displayId" = 1
+"name" = "P275MV PLUS"
+"displayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"displayId" = 2
 
 [["workspaces"]]
 "id" = "4AF9C906-232C-592E-9F24-1838DA33FFA0"
@@ -1172,6 +1172,6 @@
 "type" = "specificDisplay"
 
 ["workspaces"."monitorAssignment"."output"]
-"name" = "Built-in Retina Display"
-"displayUUID" = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
-"displayId" = 1
+"name" = "P275MV PLUS"
+"displayUUID" = "7B4E6EDD-D372-477B-8A88-09D69E5B3A3B"
+"displayId" = 2

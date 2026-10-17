@@ -26,3 +26,9 @@ Win+Escape 暂停或恢复本次快捷键。原生 Command 快捷键保留；锁
 Win+Space 发送 Hapigo 已配置的 Command+Space；外接键盘物理 Ctrl+Space 例外发送系统 Control+Space，切换输入法。两条例外包含在同一个改键组中。R75Pro 的其他物理 Ctrl 仍用于普通应用的 Command 快捷键，kitty 内保持 Control。内置 Control+Space 同样发送系统 Control+Space。内置 Option+Space 打开 Hapigo，Option+Control+H/L 移动列；kitty 中 Control+C 中断、Command+C/V 复制粘贴。
 
 双屏排列按官方要求分开：系统技术坐标为外屏下、内屏右上角相接；OmniWM 自定义方向图保留内屏左、外屏右。`displays/P275MV-PLUS-staircase.json` 和 `bin/display-origins.py` 提供原点记录与恢复；不自动修改未知显示器或分辨率。排查、实测与回退见迁移报告文末。
+
+普通终端（Win+Return）单独复用 `niri-mac-terminal` 实例组；固定标题的 PDF、TODO、btop、LaTeX 等工具仍使用 `niri-mac`，避免普通新窗口继承工具标题而被浮动和居中。
+
+Caps Lock 导航复用原有 Caps→Escape、Escape→Caps 的简单交换，在同一个 Karabiner 统一规则组中实现：单按 Caps 为 Esc；按住 Caps 配合 H/J/K/L 发出左/下/上/右方向键。Shift 等修饰键随方向键保留，Win 层优先。`physical-control.json` 中的 Escape 输入对应经过简单交换后的物理 Caps。内置和外接键盘均适用。
+
+Mac 字体依赖补充：Homebrew 的 `font-noto-sans-symbols-2` 和 `font-symbols-only-nerd-font`。主字体继续使用已安装的 JetBrainsMono Nerd Font Mono；`kitty/kitty.conf` 单独把 Starship 的 U+1F788 圆形提示符映射到 Noto Sans Symbols 2，避免缺字方框。共享 Starship 配置不改写。
