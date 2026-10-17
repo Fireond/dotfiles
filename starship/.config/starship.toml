@@ -1,5 +1,5 @@
 format = '''
-$directory$git_branch$rust$python$conda
+$os$hostname$directory$git_branch$rust$python$conda
 $character'''
 
 palette = 'colors'
@@ -15,6 +15,21 @@ color6 = '#131318'
 color7 = '#131318'
 color8 = '#c4c0ff'
 color9 = '#eab9d1'
+
+# Native system icon is selected on the host where Starship is running.
+[os]
+disabled = false
+format = "[](fg:color1)[$symbol](bg:color1 fg:color2)[](fg:color1) "
+
+[os.symbols]
+Macos = ""
+Arch = ""
+Linux = ""
+
+# Hostname is useful over SSH, including connections between identical OSes.
+[hostname]
+ssh_only = true
+format = "[](fg:color8)[$hostname](bg:color8 fg:color5)[](fg:color8) "
 
 # Prompt symbols 
 [character]

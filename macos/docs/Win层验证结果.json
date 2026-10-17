@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-11",
+  "userConfirmed": [
+    "Win+Return kitty launch",
+    "Win+H/L column navigation",
+    "Win+Ctrl+H/L column movement",
+    "Win+V Skim",
+    "kitty Alt+C/V copy/paste",
+    "kitty physical Ctrl+C interrupt",
+    "Win+F floating toggle",
+    "Win+Space / Win+F no longer change brightness",
+    "Win+Space Hapigo",
+    "physical Ctrl+Space input source in GUI and kitty",
+    "built-in Option+Space Hapigo",
+    "built-in Control+Space input source",
+    "built-in Option+H/L navigation",
+    "built-in Option+Control+H/L movement",
+    "built-in GUI Control+C/V clipboard",
+    "built-in kitty Control+C interrupt",
+    "built-in kitty Command+C/V clipboard",
+    "dual-screen Win+M then Win+Enter preserves left ChatGPT / right kitty visibility",
+    "dual-screen Win+Shift+H/L directions"
+  ],
+  "structural": [
+    "Karabiner 15.3.0 lint OK",
+    "live config loaded",
+    "103 distinct physical chords",
+    "47 Hammerspoon hotkeys registered without failures",
+    "58 native OmniWM bindings preserved",
+    "kitty 0.37 parsed and running default socket instance reloaded"
+  ],
+  "pending": [
+    "Win+R width cycle",
+    "Win+Comma/Period merge/split",
+    "Win+Ctrl+W bar",
+    "Win mouse wheel",
+    "cross-monitor and plug/unplug",
+    "sleep/wake"
+  ],
+  "automaticWindowChecks": "Inconclusive: focus/application visibility unstable; failed assertions retained in work/win-mod/live-verification.json, not treated as a pass.",
+  "brightnessConflictFix": {
+    "date": "2026-10-11",
+    "internalDispatch": {
+      "Win+Space": "Control+Command+F16",
+      "Win+F": "Control+Command+F17"
+    },
+    "physicalVerification": "user confirmed: both actions work, brightness unchanged",
+    "backup": "/Users/hanyu_yan/Documents/Codex/2026-09-16/linux-niri-mac-mac-m2-macbook/work/brightness-fix/20261011-220532-backup"
+  },
+  "spaceShortcuts": {
+    "Win+Space": "Hapigo native Command+Space",
+    "physical Ctrl+Space": "system Control+Space",
+    "managedRuleGroups": 1,
+    "physicalVerification": "user confirmed: Hapigo, input source in GUI and kitty, Win H/L, kitty Ctrl+C all work"
+  },
+  "builtInKeyboard": {
+    "detected": "Apple Internal Keyboard / Trackpad",
+    "identifiers": {
+      "is_keyboard": true,
+      "vendor_id": 0,
+      "product_id": 0
+    },
+    "physicalRoles": {
+      "Control": "Ctrl",
+      "Option": "Win / Mod",
+      "Command": "Alt"
+    },
+    "mod": "left and right Option",
+    "currentGuiCopyPaste": "Control+C/V (sends Command+C/V)",
+    "inputSource": "Control+Space",
+    "kittyCopyPaste": "Command+C/V (sends Option+C/V)",
+    "kittyInterrupt": "Control+C",
+    "copyPastePreference": "user confirmed Ctrl+C/V should match external keyboard",
+    "physicalVerification": "user confirmed all requested physical built-in tests work",
+    "backup": "/Users/hanyu_yan/Documents/Codex/2026-09-16/linux-niri-mac-mac-m2-macbook/work/builtin-keyboard/20261011-234054-backup",
+    "managedRuleGroups": 1,
+    "userConfirmed": [
+      "built-in Option+Space Hapigo",
+      "built-in Control+Space input source",
+      "built-in Option+H/L navigation",
+      "built-in Option+Control+H/L movement",
+      "built-in GUI Control+C/V clipboard",
+      "built-in kitty Control+C interrupt",
+      "built-in kitty Command+C/V clipboard"
+    ]
+  },
+  "dualScreenMaximizedColumn": {
+    "cause": "A partially visible maximized column overflow intersected the neighboring built-in display; OmniWM 0.6.10 hid the entire column as layout-transient-left.",
+    "fix": "Official staircase macOS origins + separate internal-left / external-right OmniWM routing map",
+    "automaticVerification": "passed in first same-workspace live snapshot",
+    "physicalUserVerification": "user confirmed expected ChatGPT/kitty visibility and Win+Shift+H/L monitor directions",
+    "persistence": "permanent",
+    "backup": "/Users/hanyu_yan/Documents/Codex/2026-09-16/linux-niri-mac-mac-m2-macbook/work/dual-screen-debug/20261011-235334-backup",
+    "hotkeysUnchanged": true
+  }
+}
