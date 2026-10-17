@@ -52,6 +52,7 @@
   "obsidian-bridge.nvim": { "branch": "main", "commit": "079f788c7df99b3063935249ff9ff6ddadd2b85a" },
   "obsidian.nvim": { "branch": "main", "commit": "2a8af7bd141123c7911fd0956ad986f29fe5bf12" },
   "outline.nvim": { "branch": "main", "commit": "2a132953b944561d45b52e4541ebfff71934a742" },
+  "overleaf.nvim": { "branch": "main", "commit": "dc470e34f2686bfbe6c9cea283dac10eaa11af7d" },
   "persistence.nvim": { "branch": "main", "commit": "b20b2a7887bd39c1a356980b45e03250f3dce49c" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "promise-async": { "branch": "main", "commit": "119e8961014c9bfaf1487bf3c2a393d254f337e2" },

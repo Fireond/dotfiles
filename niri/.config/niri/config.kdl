@@ -82,12 +82,12 @@ input {
 output "HDMI-A-1" {
   scale 2.0
   mode "3840x2160@60"
-  position x=0 y=0
+  position x=1280 y=0
   focus-at-startup
 }
 output "DP-1" {
   scale 2.0
-  mode "3840x2160@60"
+  mode "3840x2160@160"
   position x=-1920 y=0
 }
 
@@ -654,5 +654,5 @@ workspace "7" {
     open-on-output "HDMI-A-1"
 }
 
-workspace "21"  { open-on-output "DP-1"; }
-workspace "22" { open-on-output "DP-1"; }
+// workspace "21"  { open-on-output "DP-1"; }
+// workspace "22" { open-on-output "DP-1"; }

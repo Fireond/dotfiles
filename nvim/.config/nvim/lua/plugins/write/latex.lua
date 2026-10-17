@@ -93,4 +93,36 @@ return {
       },
     },
   },
+  {
+    "richwomanbtc/overleaf.nvim",
+    build = "cd node && npm install --allow-git=root",
+    config = function()
+      require("overleaf").setup({
+        env_file = vim.fn.stdpath("data") .. "/overleaf.env",
+        sync_dir = vim.fn.stdpath("data") .. "/overleaf-projects",
+      })
+
+      local buffer = require("overleaf.buffer")
+      local original_create = buffer.create
+
+      buffer.create = function(doc, ...)
+        local bufnr = original_create(doc, ...)
+
+        vim.api.nvim_clear_autocmds({
+          event = "BufWriteCmd",
+          buffer = bufnr,
+        })
+
+        vim.api.nvim_create_autocmd("BufWriteCmd", {
+          buffer = bufnr,
+          callback = function()
+            require("overleaf.sync").write_doc(doc)
+            vim.bo[bufnr].modified = false
+          end,
+        })
+
+        return bufnr
+      end
+    end,
+  },
 }
