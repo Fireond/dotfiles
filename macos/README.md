@@ -32,3 +32,5 @@ Win+Space 发送 Hapigo 已配置的 Command+Space；外接键盘物理 Ctrl+Spa
 Caps Lock 导航复用原有 Caps→Escape、Escape→Caps 的简单交换，在同一个 Karabiner 统一规则组中实现：单按 Caps 为 Esc；按住 Caps 配合 H/J/K/L 发出左/下/上/右方向键。Shift 等修饰键随方向键保留，Win 层优先。`physical-control.json` 中的 Escape 输入对应经过简单交换后的物理 Caps。内置和外接键盘均适用。
 
 Mac 字体依赖补充：Homebrew 的 `font-noto-sans-symbols-2` 和 `font-symbols-only-nerd-font`。主字体继续使用已安装的 JetBrainsMono Nerd Font Mono；`kitty/kitty.conf` 单独把 Starship 的 U+1F788 圆形提示符映射到 Noto Sans Symbols 2，避免缺字方框。共享 Starship 配置不改写。
+
+提示符的 Apple、Arch、Linux、文件夹和 Git 图标在 Mac kitty 中单独映射到 JetBrainsMono Nerd Font Mono，自带字形与正文共用基线；圆角分隔、字号、U+1F788 的 Noto 映射保持。系统图标和仅 SSH 显示的主机名由共用 Starship 配置定义。
