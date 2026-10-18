@@ -2,8 +2,9 @@
 
 local selected_or_hovered = ya.sync(function()
 	local tab, paths = cx.active, {}
-	for _, u in pairs(tab.selected) do
-		paths[#paths + 1] = tostring(u)
+	-- Yazi 26.9 returns File objects here, so read each file's URL.
+	for _, file in pairs(tab.selected) do
+		paths[#paths + 1] = tostring(file.url)
 	end
 	if #paths == 0 and tab.current.hovered then
 		paths[1] = tostring(tab.current.hovered.url)
@@ -36,13 +37,17 @@ return {
 			file_list_formatted = file_list_formatted .. "file://" .. encode_uri(path) .. "\r\n"
 		end
 
-		local status, err =
-			Command("wl-copy"):arg("--type"):arg("text/uri-list"):arg(file_list_formatted):spawn():wait()
+		local child, err =
+			Command("wl-copy"):arg("--type"):arg("text/uri-list"):arg(file_list_formatted):spawn()
+		local status
+		if child then
+			status, err = child:wait()
+		end
 
-		if status or status.succes then
+		if status and status.success then
 			ya.notify({
 				title = "System Clipboard",
-				content = "Succesfully copied the file(s) to system clipboard",
+				content = string.format("Successfully copied %d file(s) to system clipboard", #urls),
 				level = "info",
 				timeout = 5,
 			})

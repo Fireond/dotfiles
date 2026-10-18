@@ -29,8 +29,8 @@ return {
     ]],
       {
         c(1, {
-          t("Quantum Error Correction Theory"),
-          t("Algebraic Topology"),
+          t("Applied Stochastic Processes"),
+          t("Machine Learning"),
         }),
         i(2, "number"),
         i(0),
