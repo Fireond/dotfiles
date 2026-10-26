@@ -36,6 +36,8 @@ binds {
     // Mod+Shift+G { spawn "xdg-open" "http://localhost:8081/"; }
     Mod+Shift+G { spawn "xdg-open" "https://chatgpt.com"; }
     Mod+G { spawn "focus-or-launch.sh" "chatgpt" "chatgpt"; }
+    // WeChat: hide to tray, or bring the main window to this workspace.
+    Ctrl+Alt+W repeat=false { spawn-sh "~/.local/share/bin/toggle_wechat.sh"; }
     Mod+I { spawn-sh "~/.dotfiles/bin/.local/share/bin/quick_latex.sh"; }
 
     // -----------------------------

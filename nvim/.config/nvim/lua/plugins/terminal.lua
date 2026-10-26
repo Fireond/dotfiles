@@ -31,7 +31,6 @@ return {
         "<cmd>Yazi cwd<cr>",
         desc = "Open the file manager in nvim's working directory",
       },
-      { "<c-y>" },
       {
         -- NOTE: this requires a version of yazi that includes
         -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
@@ -44,10 +43,16 @@ return {
     opts = {
       -- if you want to open yazi instead of netrw, see below for more info
       open_for_directories = false,
+      highlight_hovered_buffers_in_same_directory = true,
       keymaps = {
         show_help = "<f1>",
+        copy_relative_path_to_selected_files = false,
       },
     },
+    config = function(_, opts)
+      require("config.yazi_highlight_fix").setup()
+      require("yazi").setup(opts)
+    end,
   },
   {
     "christoomey/vim-tmux-navigator",
